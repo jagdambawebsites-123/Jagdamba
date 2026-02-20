@@ -1,22 +1,25 @@
+// app/layout.js
 import { Libre_Baskerville, Libre_Franklin } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
 
-const baskerville = Libre_Baskerville({
-  subsets: ["latin"],
+const libreBaskerville = Libre_Baskerville({
   weight: ["400", "700"],
-  variable: "--font-baskerville",
+  subsets: ["latin"],
+  variable: "--font-serif", // We name the variable here
 });
 
-const franklin = Libre_Franklin({
+const libreFranklin = Libre_Franklin({
+  weight: ["300", "400", "500", "700"],
   subsets: ["latin"],
-  weight: ["300", "400", "600"],
-  variable: "--font-franklin",
+  variable: "--font-sans", // We name the variable here
 });
 
 export default function RootLayout({ children }) {
   return (
-    <html>
-      <body className={franklin.className}>
+    <html lang="en">
+      <body className={`${libreBaskerville.variable} ${libreFranklin.variable} antialiased`}>
+        <Header/>
         {children}
       </body>
     </html>
