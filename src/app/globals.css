@@ -8,9 +8,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-    /* This maps Tailwind's 'font-serif' utility to your Google Font */
+  /* This maps Tailwind's 'font-serif' utility to your Google Font */
   --font-serif: var(--font-serif);
-  
+
   /* This maps Tailwind's 'font-sans' utility to your Google Font */
   --font-sans: var(--font-sans);
 }
@@ -19,14 +19,19 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-    
+
   }
 }
 
 /* Infinite Scrolling Animation for Client Logos */
 @keyframes infinite-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-infinite-scroll {
@@ -40,15 +45,16 @@ body {
 }
 
 .container {
-  width: 100%;           
-  max-width: 1200px;     
-  margin: 0 auto;    
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
+
 .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
