@@ -6,8 +6,8 @@ import MissionStatement from '@/components/business/MissionStatement'
 
 import { businessPagesData } from '@/data/businesses/businessPagesData'
 
-export default function MiningCalcining() {
-  const pageData = businessPagesData["mining-and-calcining"];
+export default function MachiningCasting() {
+  const pageData = businessPagesData["machining-and-casting"];
   if (!pageData) return <div>Page not found</div>;
   return (
     <div>
