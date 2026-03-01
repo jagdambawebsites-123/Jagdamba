@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function MissionStatement() {
+export default function MissionStatement({ titleLine1, titleLine2, description, imageSrc }) {
   return (
     <div className="w-full bg-[#F5F5F5]">
       <section className="container mx-auto px-6 md:px-10 xl:px-25 py-10 md:py-24">
@@ -8,19 +8,19 @@ export default function MissionStatement() {
           {/* Left Column: Heading & Text */}
           <div className="w-full lg:w-1/2 flex flex-col items-start /*lg:items-start */text-left lg:text-left">
             <h2 className="text-2xl md:text-[40px] font-serif leading-tight mb-6 lg:mb-8">
-              <span className="block text-[#111C55]">Refining Excellence.</span>
-              <span className="block text-[#CA9015]">Mining Progress.</span>
+              <span className="block text-[#111C55]">{titleLine1}</span>
+              <span className="block text-[#CA9015]">{titleLine2}</span>
             </h2>
             <p className="text-[#6B7280] text-sm md:text-base leading-relaxed max-w-[400px]">
-              Driving advancements in mining and perfecting global industry standards.
+              {description}
             </p>
           </div>
           {/* Right Column: Image Container */}
           <div className="w-full lg:w-1/2">
             <div className="relative aspect-[70/44] overflow-hidden rounded-sm shadow-sm">
               <Image
-                src="/images/business/mining-footer.png"
-                alt="Mining and refining progress"
+                src={imageSrc}
+                alt={titleLine1}
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"

@@ -26,7 +26,7 @@ const NAV_ITEMS = [
         { name: 'Trailer Manufacturing', href: '/trailer-manufacturing' },
         { name: 'Structure Manufacturing', href: '/structure-manufacturing' },
         { name: 'Mining & Calcining', href: '/business/mining-calcining' },
-        { name: 'Machining & Casting', href: '/machining-casting' },
+        { name: 'Machining & Casting', href: '/business/machining-casting' },
       ],
       [
         { name: 'Waterpark', href: '/waterpark' },
