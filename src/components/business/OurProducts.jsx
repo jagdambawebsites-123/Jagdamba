@@ -36,12 +36,11 @@ export default function OurProducts({
     scrollRef.current.scrollLeft = scrollLeft - walk;
   };
 
-  // --- Fixed: Proportional Scroll Mapping ---
+  // --- Proportional Scroll Mapping ---
   const handleScroll = () => {
     if (!scrollRef.current) return;
     const container = scrollRef.current;
     
-    // Calculate the maximum distance the container can be scrolled
     const maxScroll = container.scrollWidth - container.clientWidth;
 
     if (maxScroll <= 0) {
@@ -49,10 +48,7 @@ export default function OurProducts({
       return;
     }
 
-    // Calculate scroll progress as a percentage (0.0 to 1.0)
     const scrollPercentage = container.scrollLeft / maxScroll;
-    
-    // Map that percentage directly to the dots index
     const newIndex = Math.round(scrollPercentage * (products.length - 1));
 
     if (newIndex !== activeIndex) {
@@ -60,14 +56,13 @@ export default function OurProducts({
     }
   };
 
-  // --- Fixed: Click Dot to Scroll Proportionally ---
+  // --- Click Dot to Scroll Proportionally ---
   const scrollToItem = (index) => {
     if (!scrollRef.current) return;
     const container = scrollRef.current;
     const maxScroll = container.scrollWidth - container.clientWidth;
 
     if (maxScroll > 0) {
-      // Find the exact scroll position percentage based on the clicked dot
       const targetScroll = (index / (products.length - 1)) * maxScroll;
       
       container.scrollTo({
@@ -153,8 +148,10 @@ export default function OurProducts({
 function ProductCard({ product, isCarousel }) {
   return (
     <div 
-      className={`relative group overflow-hidden rounded-lg md:rounded-xl bg-[#8a8a8a] ${
-        isCarousel ? "w-full h-full" : "aspect-square w-full"
+      className={`relative group overflow-hidden bg-[#8a8a8a] ${
+        isCarousel 
+          ? "w-full h-full" // Removed border radius here for Casting
+          : "aspect-square w-full rounded-lg md:rounded-xl" // Kept border radius here for Calcining
       }`}
     >
       {/* Image */}
