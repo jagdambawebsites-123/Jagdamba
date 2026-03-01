@@ -90,7 +90,7 @@ export default function OurProducts({
         {/* Bottom Row: Conditional Render */}
         {!isCarousel ? (
           // Standard Grid Layout (For Calcining)
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 justify-items-center">
             {products.map((product) => (
               <ProductCard key={product.name} product={product} isCarousel={false} />
             ))}
@@ -106,7 +106,7 @@ export default function OurProducts({
               onMouseUp={handleMouseUpOrLeave}
               onMouseMove={handleMouseMove}
               onScroll={handleScroll}
-              className={`flex overflow-x-auto gap-4 md:gap-6 pb-4 hide-scrollbar select-none ${
+              className={`flex overflow-x-auto gap-4 md:gap-6 pb-4 hide-scrollbar select-none [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] ${
                 isDragging ? "cursor-grabbing" : "cursor-grab active:cursor-grabbing"
               } ${!isDragging ? "scroll-smooth snap-x snap-mandatory" : ""}`}
             >
@@ -150,8 +150,8 @@ function ProductCard({ product, isCarousel }) {
     <div 
       className={`relative group overflow-hidden bg-[#8a8a8a] ${
         isCarousel 
-          ? "w-full h-full" // Removed border radius here for Casting
-          : "aspect-square w-full rounded-lg md:rounded-xl" // Kept border radius here for Calcining
+          ? "w-full h-full" 
+          : "w-full max-w-[244px] aspect-[244/220] mx-auto rounded-2xl lg:rounded-none" 
       }`}
     >
       {/* Image */}
@@ -165,7 +165,7 @@ function ProductCard({ product, isCarousel }) {
       />
       
       {/* Dark Overlay for Text Readability */}
-      <div className="absolute inset-0 bg-black/20 flex items-center justify-center p-2 transition-colors duration-300 group-hover:bg-black/40">
+      <div className="absolute inset-0 bg-black/50 flex items-center justify-center p-2 transition-colors duration-300 group-hover:bg-black/40">
         <h3 className={`text-white font-bold tracking-wider text-center uppercase ${
           isCarousel ? "text-[10px] sm:text-xs md:text-sm leading-tight" : "text-xs sm:text-sm md:text-lg"
         }`}>
