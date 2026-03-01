@@ -48,7 +48,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <div className=" relative h-[calc(100vh-96px)] w-full overflow-hidden bg-black text-white">
+    <div className="relative h-screen w-full overflow-hidden bg-black text-white">
       {/* Background Images Layer */}
       {slides.map((slide, index) => (
         <div
