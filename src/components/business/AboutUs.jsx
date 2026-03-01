@@ -16,7 +16,7 @@ export default function AboutUs({ titleStart, titleHighlight, paragraphs, bgDeco
           />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto">
+        <div className="relative z-10 mx-auto">
           {/* Top Row: Heading and Text */}
           <div className="flex flex-col lg:flex-row lg:justify-between gap-2 lg:gap-20">
             {/* Left Column: Heading & Button */}
