@@ -5,7 +5,7 @@ export default function ButtonPrimary({ content }) {
     <button className="
       group flex items-center justify-center gap-3
       w-[185px] h-[48px] rounded-full border border-white 
-      text-white text-[18px] font-medium
+      text-white text-[18px] font-medium bg-black/30
       transition-all duration-300 ease-in-out
       hover:bg-white hover:text-black
     ">

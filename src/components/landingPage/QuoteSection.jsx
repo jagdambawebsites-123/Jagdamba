@@ -3,8 +3,9 @@ import Image from "next/image";
 
 export default function QuoteSection() {
   return (
-    <div className="bg-[#111C55] py-9 text-white">
+    <div className="bg-[#111C55] py-9 text-white overflow-hidden">
       <div className="relative w-full flex justify-center items-center border-y-[1px] border-white/50">
+        
         {/* Quote Image Container */}
         <div className="absolute top-6 left-4 sm:top-[20px] sm:left-[40px] md:left-[100px] z-0">
           <Image
@@ -18,12 +19,14 @@ export default function QuoteSection() {
         </div>
 
         {/* Quote Text */}
-        <div className="container">
-            <p className="relative z-10 ml-[20px] sm:ml-[60px] px-6 sm:px-24 lg:px-44 w-full text-center border-l-[1px] rounded-bl-[40px] sm:rounded-bl-[72px] border-white/50 py-16 sm:py-32 lg:py-44 text-xl sm:text-3xl md:text-5xl font-serif font-normal">
-          “Success is not final, failure is not fatal: It is the courage to
-          continue that counts”
-        </p>
+        <div className="container mx-auto">
+          {/* REMOVED: w-full to prevent 100% + margin overflow calculation */}
+          <p className="relative z-10 ml-[20px] sm:ml-[60px] px-6 sm:px-24 lg:px-44 text-center border-l-[1px] rounded-bl-[40px] sm:rounded-bl-[72px] border-white/50 py-16 sm:py-32 lg:py-44 text-xl sm:text-3xl md:text-5xl font-serif font-normal">
+            “Success is not final, failure is not fatal: It is the courage to
+            continue that counts”
+          </p>
         </div>
+        
       </div>
     </div>
   );
