@@ -18,7 +18,7 @@ const TimelineSection = ({
   stroke2,
 }) => {
   return (
-    <section className={`relative w-full min-h-screen flex flex-col items-center snap-start overflow-hidden ${isDarkBlue ? 'bg-[#111C55]' : ''}`}>
+    <section className={`relative w-full h-screen md:min-h-screen flex flex-col items-center snap-start overflow-hidden pt-24 pb-6 ${isDarkBlue ? 'bg-[#111C55]' : ''}`}>
 
       {/* ── Stroke wave images (flag sections) ── */}
       {isDarkBlue && stroke1 && (
@@ -63,13 +63,13 @@ const TimelineSection = ({
         </div>
       )}
 
-      {/* ── Dotted line connector at the very top — matches hero bottom line ── */}
-      <div className="relative z-10 flex justify-center w-full pt-0">
-        <div className="w-px h-10 md:h-12 border-l-[3px] border-dashed border-white" />
+      {/* ── Dotted line connector — flows from top of section (behind header) into content ── */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10 flex justify-center" style={{ height: '10rem' }}>
+        <div className="w-px h-full" style={{ width: '3px', backgroundImage: 'repeating-linear-gradient(to bottom, white 0, white 8px, transparent 8px, transparent 26px)' }} />
       </div>
 
       {/* ── Year Heading ── */}
-      <div className="relative z-10 flex justify-center w-full mt-4 mb-14 md:mb-14">
+      <div className="relative z-10 flex justify-center w-full mt-16 mb-10 md:mb-10">
         <h2 className="text-5xl md:text-7xl font-(family-name:--font-libre-baskerville) text-[#b89146] tracking-widest select-none">
           {year}
         </h2>
@@ -92,7 +92,7 @@ const TimelineSection = ({
       ) : (
         /* ── Standard Image + Text Card ── */
         <div
-          className={`relative z-10 flex flex-col md:flex-row ${isReversed ? 'md:flex-row-reverse' : 'md:flex-row'} w-[92%] md:w-[88%] max-w-5xl bg-white shadow-2xl overflow-hidden mx-auto mb-6 h-[55vh] md:h-auto md:min-h-[478px]`}
+          className={`relative z-10 flex flex-col md:flex-row ${isReversed ? 'md:flex-row-reverse' : 'md:flex-row'} w-[320px] h-[365px] md:w-[88%] md:h-auto max-w-5xl bg-white shadow-2xl overflow-hidden mx-auto mb-6 md:min-h-[360px]`}
         >
           {/* Top (mobile) / Left or Right (desktop): Content Image */}
           <div className="relative w-full md:w-1/2 shrink-0 h-[45%] md:h-auto">
@@ -108,14 +108,14 @@ const TimelineSection = ({
           </div>
 
           {/* Bottom (mobile) / Right or Left (desktop): Text pane */}
-          <div className="flex-1 p-6 md:p-12 flex flex-col justify-center bg-white">
+          <div className="flex-1 p-8 md:p-12 flex flex-col justify-center bg-white overflow-hidden">
             {title && (
-              <h3 className="text-[20px] md:text-[28px] font-(family-name:--font-libre-baskerville) text-[#111C55] mb-3 leading-tight">
+              <h3 className="text-[18px] md:text-[28px] font-(family-name:--font-libre-baskerville) text-[#111C55] mb-3 leading-tight">
                 {title}
               </h3>
             )}
             {description && (
-              <p className="text-[#737373] font-(family-name:--font-libre-franklin) leading-relaxed text-[14px] md:text-[18px]">
+              <p className="text-[#737373] font-(family-name:--font-libre-franklin) leading-relaxed text-[12px] md:text-[18px]">
                 {description}
               </p>
             )}
@@ -124,28 +124,28 @@ const TimelineSection = ({
       )}
 
       {/* ── Right-side Vertical Timeline — hidden on mobile ── */}
-      <div className="hidden md:flex absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 flex-col items-end gap-3">
-        {allYears &&
-          allYears.map((y) => {
+      {allYears && allYears.length > 0 && (
+        <div className="hidden md:flex absolute right-4 md:right-8 top-0 bottom-0 z-20 flex-col items-end justify-between pt-40 pb-16">
+          {allYears.map((y) => {
             const isActive = y === year;
+            const isFirst = y === allYears[0];
+            const isLast = y === allYears[allYears.length - 1];
+            const showLabel = isActive || isFirst || isLast;
             return (
               <div key={y} className="flex items-center gap-2">
-                <span
-                  className={`text-[10px] font-bold tracking-widest transition-all duration-300 ${isActive ? 'text-white opacity-100' : 'text-white opacity-20'
-                    }`}
-                >
-                  {y}
-                </span>
-                <div
-                  className={`rounded-full transition-all duration-300 ${isActive
-                    ? 'w-[3px] h-10 bg-white'
-                    : 'w-[2px] h-6 bg-white/25'
-                    }`}
-                />
+                {showLabel ? (
+                  <span className={`text-xs font-bold tracking-widest transition-all duration-300 ${isActive ? 'text-white opacity-100' : 'text-white/30'}`}>
+                    {y}
+                  </span>
+                ) : (
+                  <span className="w-[36px]" />
+                )}
+                <div className={`transition-all duration-300 w-[8px] h-11 ${isActive ? 'bg-white' : 'bg-white/25'}`} />
               </div>
             );
           })}
-      </div>
+        </div>
+      )}
     </section>
   );
 };
