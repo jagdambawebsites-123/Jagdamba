@@ -57,29 +57,32 @@ const NAV_ITEMS = [
     href: '/contact'
   }
 ];
+
 export default function Header() {
-  // Desktop States
   const [hoveredLabel, setHoveredLabel] = useState(null);
   const [dropdownData, setDropdownData] = useState(null); 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); 
   const [isInitialHover, setIsInitialHover] = useState(false);
 
-  // Mobile States
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [expandedMobileItem, setExpandedMobileItem] = useState(null);
   
   const pathname = usePathname(); 
 
-  // Close everything when the route changes
+  // Check if we are on the root route
+  const isRoot = pathname === '/';
+  // Determine if the header should use "Dark Mode" (Dark background, white text)
+  // It should be dark if we are NOT on root, OR if the mobile menu is currently open.
+  const isDarkHeader = !isRoot || isMobileMenuOpen;
+
   useEffect(() => {
     setHoveredLabel(null);
     setIsDropdownOpen(false);
-    setIsMobileMenuOpen(false); // Snap mobile menu shut on route change
-    setExpandedMobileItem(null); // Reset mobile accordion
+    setIsMobileMenuOpen(false); 
+    setExpandedMobileItem(null); 
   }, [pathname]);
 
   const handleMouseEnter = (item) => {
-    // Only trigger desktop hover effects if mobile menu is closed
     if (isMobileMenuOpen) return;
 
     if (!hoveredLabel) {
@@ -109,21 +112,22 @@ export default function Header() {
 
   return (
     <header 
-      className={`absolute top-0 left-0 w-full z-50 transition-all duration-700 ease-in-out shadow-[0_2px_9px_0_rgba(0,0,0,0.1)]
-      ${isMobileMenuOpen ? 'bg-black/95' : 'bg-gradient-to-b from-black/70 to-black/50'}
+      className={`top-0 left-0 w-full z-50 transition-colors duration-700 ease-in-out shadow-[0_2px_9px_0_rgba(0,0,0,0.1)]
+      ${isRoot ? 'fixed' : 'absolute'}
+      ${isMobileMenuOpen ? 'bg-black/95' : isRoot ? 'bg-white' : 'bg-gradient-to-b from-black/70 to-black/50'}
       `}
       onMouseLeave={handleMouseLeave}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-50">
         <div className="flex justify-between items-center h-24">
           
-          {/* Logo Section */}
+          {/* Logo Section - Dynamically swaps based on header background */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="relative flex items-center" onClick={() => setIsMobileMenuOpen(false)}>
               <img 
-                src="/images/logo-white.png" 
+                src={isDarkHeader ? "/images/logo-white.png" : "/images/logo-dark.png"} 
                 alt="Logo" 
-                className="h-12 w-auto object-contain" 
+                className="h-12 w-auto object-contain transition-all duration-300" 
               />
             </Link>
           </div>
@@ -135,14 +139,17 @@ export default function Header() {
                 <Link 
                   href={item.href || '#'} 
                   onMouseEnter={() => handleMouseEnter(item)}
-                  className="relative flex items-center cursor-pointer text-white transition-colors duration-500 h-full"
+                  // Text color shifts dynamically
+                  className={`relative flex items-center cursor-pointer transition-colors duration-500 h-full
+                    ${isDarkHeader ? 'text-white' : 'text-gray-800'} hover:text-[#F6B426]
+                  `}
                 >
                   <span className="text-sm font-medium">{item.label}</span>
                   {item.subColumns && <ChevronDownIcon />}
                   
                   {/* Loading Bar Underline */}
                   <div 
-                    className={`absolute bottom-0 left-0 w-full h-1 bg-[#CA9015] origin-left
+                    className={`absolute bottom-0 left-0 w-full h-1 bg-[#F6B426] origin-left
                       ${hoveredLabel === item.label ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0'}
                       ${(hoveredLabel === item.label && isInitialHover) ? 'transition-all duration-500 ease-out' : 'transition-none'}
                     `} 
@@ -163,7 +170,7 @@ export default function Header() {
                       <Link 
                         key={sub.name} 
                         href={sub.href}
-                        className="text-[15px] font-bold text-gray-800 hover:text-[#CA9015] transition-colors duration-300"
+                        className="text-[15px] font-bold text-gray-800 hover:text-[#F6B426] transition-colors duration-300"
                       >
                         {sub.name}
                       </Link>
@@ -178,16 +185,15 @@ export default function Header() {
           <div className="md:hidden flex items-center">
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-white hover:text-[#CA9015] transition-colors duration-300"
+              // Hamburger color shifts dynamically
+              className={`transition-colors duration-300 hover:text-[#F6B426] ${isDarkHeader ? 'text-white' : 'text-gray-800'}`}
               aria-label="Toggle mobile menu"
             >
               {isMobileMenuOpen ? (
-                /* Close (X) Icon */
                 <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               ) : (
-                /* Hamburger Icon */
                 <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
@@ -219,7 +225,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay (Slides down from exactly under the header) */}
+      {/* Mobile Menu Overlay */}
       <div 
         className={`md:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-md overflow-hidden transition-all duration-500 ease-in-out border-t border-white/10
         ${isMobileMenuOpen ? 'max-h-[calc(100vh-6rem)] opacity-100 visible overflow-y-auto' : 'max-h-0 opacity-0 invisible pointer-events-none'}`}
@@ -235,11 +241,10 @@ export default function Header() {
                   >
                     {item.label}
                     <ChevronDownIcon 
-                      className={`transform transition-transform duration-300 ${expandedMobileItem === item.label ? 'rotate-180 text-[#CA9015]' : 'text-white/80'}`} 
+                      className={`transform transition-transform duration-300 ${expandedMobileItem === item.label ? 'rotate-180 text-[#F6B426]' : 'text-white/80'}`} 
                     />
                   </button>
                   
-                  {/* Mobile Accordion Content (Flattened list) */}
                   <div 
                     className={`grid transition-all duration-500 ease-in-out
                     ${expandedMobileItem === item.label ? 'grid-rows-[1fr] opacity-100 mt-5' : 'grid-rows-[0fr] opacity-0'}`}
@@ -249,7 +254,7 @@ export default function Header() {
                         <Link 
                           key={sub.name} 
                           href={sub.href}
-                          className="text-base font-medium text-gray-300 hover:text-[#CA9015] transition-colors"
+                          className="text-base font-medium text-gray-300 hover:text-[#F6B426] transition-colors"
                         >
                           {sub.name}
                         </Link>
@@ -260,7 +265,7 @@ export default function Header() {
               ) : (
                 <Link 
                   href={item.href || '#'}
-                  className="text-white text-lg font-medium w-full text-left hover:text-[#CA9015] transition-colors"
+                  className="text-white text-lg font-medium w-full text-left hover:text-[#F6B426] transition-colors"
                 >
                   {item.label}
                 </Link>
@@ -274,10 +279,10 @@ export default function Header() {
   );
 }
 
-// Updated Icon component to accept dynamic classes for mobile rotation
 function ChevronDownIcon({ className = "" }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" 
+      // Icon inherits current text color automatically
       className={`w-4 h-4 ml-1 transition-all duration-500 ${className || 'opacity-80'}`}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
     </svg>
