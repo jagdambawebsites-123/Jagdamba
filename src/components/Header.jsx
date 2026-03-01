@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const NAV_ITEMS = [
   {
@@ -19,12 +20,12 @@ const NAV_ITEMS = [
   },
   {
     label: 'Businesses',
-    href: '/businesses',
+    href: '/business',
     subColumns: [
       [
         { name: 'Trailer Manufacturing', href: '/trailer-manufacturing' },
         { name: 'Structure Manufacturing', href: '/structure-manufacturing' },
-        { name: 'Mining & Calcining', href: '/mining-calcining' },
+        { name: 'Mining & Calcining', href: '/business/mining-calcining' },
         { name: 'Machining & Casting', href: '/machining-casting' },
       ],
       [
@@ -62,6 +63,14 @@ export default function Header() {
   const [dropdownData, setDropdownData] = useState(null); 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); 
   const [isInitialHover, setIsInitialHover] = useState(false);
+  
+  const pathname = usePathname(); // Get the current route
+
+  // Effect to close the dropdown immediately when the route changes
+  useEffect(() => {
+    setHoveredLabel(null);
+    setIsDropdownOpen(false);
+  }, [pathname]);
 
   const handleMouseEnter = (item) => {
     if (!hoveredLabel) {
@@ -117,7 +126,7 @@ export default function Header() {
                   <span className="text-sm font-medium">{item.label}</span>
                   {item.subColumns && <ChevronDownIcon />}
                   
-                  {/* Loading Bar Underline -> Replaced with custom hex */}
+                  {/* Loading Bar Underline */}
                   <div 
                     className={`absolute bottom-0 left-0 w-full h-1 bg-[#CA9015] origin-left
                       ${hoveredLabel === item.label ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0'}
@@ -140,7 +149,6 @@ export default function Header() {
                       <Link 
                         key={sub.name} 
                         href={sub.href}
-                        // Replaced hover color with custom hex
                         className="text-[15px] font-bold text-gray-800 hover:text-[#CA9015] transition-colors duration-300"
                       >
                         {sub.name}
