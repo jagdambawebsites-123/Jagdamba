@@ -1,4 +1,6 @@
 import TimelineSection from '@/components/timeline/TimelineSection';
+import ScrollLock from '@/components/ScrollLock';
+import Footer from '@/components/Footer';
 
 // Asset Imports
 import DottedLine from '../../../assets/our-history/DottedLine.png';
@@ -194,7 +196,8 @@ const yearList = [...new Set(milestones.map((m) => m.year))];
 
 export default function About() {
   return (
-    <main className="overflow-x-hidden overflow-y-scroll snap-y snap-mandatory scroll-smooth h-screen">
+    <main className="overflow-x-hidden md:overflow-y-scroll md:snap-y md:snap-mandatory md:scroll-smooth md:h-screen">
+      <ScrollLock />
 
       {/* ───────────── 1. Hero / Intro Section ───────────── */}
       <section className="relative w-full h-screen flex flex-col items-center snap-start text-center px-4 bg-[#111C55] pt-72">
@@ -233,6 +236,11 @@ export default function About() {
           isDarkBlue={!!(milestone.stroke1)}
         />
       ))}
+
+      {/* ───────────── Footer snap section (desktop only — mobile uses global layout footer) ───────────── */}
+      <div className="hidden md:block snap-start">
+        <Footer />
+      </div>
     </main>
   );
 }
