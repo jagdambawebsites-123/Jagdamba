@@ -35,7 +35,7 @@ export default function AreasOfWork({ areas = AREAS }) {
                     {areas.map((area, index) => (
                         <div
                             key={index}
-                            className="shrink-0 w-[75vw] md:w-auto bg-[#111C55] rounded-2xl py-10 px-8 md:py-[82px] md:px-[62px] flex flex-col items-center text-center gap-5 hover:bg-[#1a2760] transition-colors duration-300"
+                            className="shrink-0 w-[75vw] md:w-auto bg-[#111C55] rounded-2xl py-10 px-8 md:py-20.5 md:px-15.5 flex flex-col items-center text-center gap-5 hover:bg-[#1a2760] transition-colors duration-300"
                         >
                             {/* Icon */}
                             <div className="mb-2 flex justify-center">

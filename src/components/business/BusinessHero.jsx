@@ -19,11 +19,11 @@ export default function BusinessHero({ image, title, link, buttonText = "About U
           className="object-cover"
         />
         {/* Main Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/40 to-transparent" />
       </div>
 
       {/* Content Layer */}
-      <div className="relative z-10 h-full flex items-center px-6 md:px-25">
+      <div className="relative z-10 h-full flex items-center px-6 md:px-10 xl:px-25">
         {/* The Container: Limits width to 1200px (or your theme's default) and centers itself */}
         <div className="container mx-auto">
           {/* Responsive Alignment: 
@@ -36,7 +36,7 @@ export default function BusinessHero({ image, title, link, buttonText = "About U
             </h1>
 
             {/* Accent Line */}
-            <div className="h-1 w-full max-w-[300px] md:max-w-none bg-[#CA9015]" />
+            <div className="h-1 w-full max-w-75 md:max-w-none bg-[#CA9015]" />
 
             <Link href={link}>
               <ButtonPrimary content={buttonText} />

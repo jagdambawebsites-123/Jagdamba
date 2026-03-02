@@ -10,7 +10,7 @@ export default function StructureStats({ stats = STATS }) {
 
     const Card = ({ stat, className = "" }) => (
         <div
-            className={`rounded-2xl px-5 py-6 md:px-8 md:py-10 flex flex-col justify-start min-h-[100px] md:min-h-[240px] transition-transform duration-300 hover:scale-[1.02]
+            className={`rounded-2xl px-5 py-6 md:px-8 md:py-10 flex flex-col justify-start min-h-25 md:min-h-60 transition-transform duration-300 hover:scale-[1.02]
                 ${stat.highlight ? "bg-[#CA9015]" : "bg-[#111C55]"} ${className}`}
         >
             <p className="text-[16px] md:text-[36px] font-bold mb-1 md:mb-2 font-serif text-white tracking-normal leading-tight">

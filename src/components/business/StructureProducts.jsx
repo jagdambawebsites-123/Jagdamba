@@ -34,7 +34,7 @@ export default function StructureProducts({ products = PRODUCTS }) {
                     {products.map((product, index) => (
                         <div
                             key={index}
-                            className="shrink-0 w-[44vw] md:w-[400px] h-[140px] md:h-[280px] rounded-3xl overflow-hidden"
+                            className="shrink-0 w-[44vw] md:w-100 h-35 md:h-70 rounded-3xl overflow-hidden"
                         >
                             <img
                                 src={product.src}
