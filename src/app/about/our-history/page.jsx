@@ -1,32 +1,32 @@
 import TimelineSection from '@/components/timeline/TimelineSection';
 
 // Asset Imports
-import DottedLine from '../../../assets/DottedLine.png';
-import T1 from '../../../assets/T1.png';
-import T2 from '../../../assets/T2.png';
-import T3 from '../../../assets/T3.png';
-import T4 from '../../../assets/T4.png';
-import T5 from '../../../assets/T5.png';
-import T6 from '../../../assets/T6.png';
-import T7 from '../../../assets/T7.png';
-import T9 from '../../../assets/T9.png';
-import T10 from '../../../assets/T10.png';
-import T11 from '../../../assets/T11.png';
-import T13 from '../../../assets/T13.png';
-import T15 from '../../../assets/T15.png';
-import T17 from '../../../assets/T17.png';
+import DottedLine from '../../../assets/our-history/DottedLine.png';
+import T1 from '../../../assets/our-history/T1.png';
+import T2 from '../../../assets/our-history/T2.png';
+import T3 from '../../../assets/our-history/T3.png';
+import T4 from '../../../assets/our-history/T4.png';
+import T5 from '../../../assets/our-history/T5.png';
+import T6 from '../../../assets/our-history/T6.png';
+import T7 from '../../../assets/our-history/T7.png';
+import T9 from '../../../assets/our-history/T9.png';
+import T10 from '../../../assets/our-history/T10.png';
+import T11 from '../../../assets/our-history/T11.png';
+import T13 from '../../../assets/our-history/T13.png';
+import T15 from '../../../assets/our-history/T15.png';
+import T17 from '../../../assets/our-history/T17.png';
 
 // Background Assets
-import T2_bg from '../../../assets/T2_bg.png';
-import T4_bg from '../../../assets/T4_bg.png';
-import T6_bg from '../../../assets/T6_bg.png';
-import T8_bg from '../../../assets/T8_bg.png';
-import T10_bg from '../../../assets/T10_bg.png';
-import T12_bg from '../../../assets/T12_bg.png';
-import T14_bg from '../../../assets/T14_bg.png';
+import T2_bg from '../../../assets/our-history/T2_bg.png';
+import T4_bg from '../../../assets/our-history/T4_bg.png';
+import T6_bg from '../../../assets/our-history/T6_bg.png';
+import T8_bg from '../../../assets/our-history/T8_bg.png';
+import T10_bg from '../../../assets/our-history/T10_bg.png';
+import T12_bg from '../../../assets/our-history/T12_bg.png';
+import T14_bg from '../../../assets/our-history/T14_bg.png';
 
-import Stroke1 from '../../../assets/Stroke1.png';
-import Stroke2 from '../../../assets/Stroke2.png';
+import Stroke1 from '../../../assets/our-history/Stroke1.png';
+import Stroke2 from '../../../assets/our-history/Stroke2.png';
 
 
 const milestones = [
