@@ -56,7 +56,7 @@ export const businessPagesData = {
         "With India's consumption of steel castings rising, we aim to support the nation's industrial growth by providing high-quality steel castings."
       ]
     },
-   productsSection: {
+    productsSection: {
       titleStart: "Our",
       titleHighlight: "Products",
       description: "We offer an extensive range of high-quality auto parts and automobile components designed to meet the diverse needs of the automotive industry. Our products are renowned for their precision, durability, and superior performance, making us a preferred choice for manufacturers and engineers.",
@@ -72,7 +72,7 @@ export const businessPagesData = {
         { name: "Z LOCK WASHER", src: "/images/business/casting/products/z-lock-washer.jpg" },
         { name: "U LOCK", src: "/images/business/casting/products/u-lock.jpg" },
         { name: "PIVOT PIN", src: "/images/business/casting/products/pivot-pin.png" },
-        { name: "LOCKING BUSH", src: "/images/business/casting/products/locking-brush.png" }, 
+        { name: "LOCKING BUSH", src: "/images/business/casting/products/locking-brush.png" },
         { name: "CHASSIS BUSH", src: "/images/business/casting/products/chassis-bush.png" },
         { name: "STABILIZER BUSH", src: "/images/business/casting/products/stabilizer-bush.png" },
         { name: "J LOCK BUSH", src: "/images/business/casting/products/j-lock-bush.png" }
@@ -84,5 +84,25 @@ export const businessPagesData = {
       description: "Advancing automotive excellence and perfecting global industry standards in machining and casting.",
       imageSrc: "/images/business/casting/casting-footer.png" // Update with your actual path
     }
+  },
+
+  "structure-manufacturing": {
+    hero: {
+      title: "Building Tomorrow's Infrastructure",
+      image: "/images/business/structure/hero-structure.png",
+      link: "/About",
+      buttonText: "About Us"
+    },
+    about: {
+      titleStart: "Building Tomorrow's",
+      titleHighlight: "Infrastructure, Today",
+      paragraphs: [
+        "Jagdamba Structurals Pvt. Ltd is a highly diversified, fastest growing company in fabrication, erection of Steel Structure, equipment, PEB & Building Projects.",
+
+        "Our team has earned its place in todays competitive market through a combination of our core beliefs and the consistent delivery of superior services and quality end products .The individualised care and unwavering attention that we bring to all of our projects are deciding factors in why our clients continuously choose us.",
+
+        "The range of products we manufacture and provide to our customers includes parts for industrial equipment, all kinds of necessary resources and supplies for engineering, manufacturing and other industrial spheres."
+      ]
+    }
   }
-};
+};;

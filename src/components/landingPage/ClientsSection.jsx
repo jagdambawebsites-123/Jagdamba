@@ -3,13 +3,13 @@ import Image from 'next/image';
 
 export default function ClientsSection() {
   const clients = [
-    { name: 'Jindal Stainless', src: '/images/landingPage/logos/jsla.png', width: 80, height: 40 },
-    { name: 'JSW Steel', src: '/images/landingPage/logos/jsw.png', width: 80, height: 40 },
-    { name: 'Jindal Steel & Power', src: '/images/landingPage/logos/jindalpower.png', width: 80, height: 40 },
-    { name: 'Mitsubishi Power', src: '/images/landingPage/logos/mitsubishii.png', width: 140, height: 40 },
-    { name: 'JSSL', src: '/images/landingPage/logos/jssll.png', width: 80, height: 40 },
-    { name: 'AM/NS India', src: '/images/landingPage/logos/amnss.png', width: 80, height: 40 },
-    { name: 'Tata Motors', src: '/images/landingPage/logos/tata.png', width: 80, height: 40 },
+    { name: 'Jindal Stainless', src: '/images/landingPage/logos/jsla.svg' },
+    { name: 'JSW Steel', src: '/images/landingPage/logos/jsw.svg' },
+    { name: 'Jindal Steel & Power', src: '/images/landingPage/logos/jindalpower.svg' },
+    { name: 'Mitsubishi Power', src: '/images/landingPage/logos/mitsubishii.svg' },
+    { name: 'JSSL', src: '/images/landingPage/logos/jssl.svg' },
+    { name: 'AM/NS India', src: '/images/landingPage/logos/amns.svg' },
+    { name: 'Tata Motors', src: '/images/landingPage/logos/tata.png' },
   ];
 
   const infiniteClients = [...clients, ...clients];
@@ -17,9 +17,9 @@ export default function ClientsSection() {
   return (
     <div className='w-full bg-[#F8F9FA]'>
       <div className="container bg-[#F8F9FA] py-16 sm:py-24 w-full overflow-hidden">
-        
+
         {/* Top Text Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-6 md:gap-12 mb-16 sm:mb-32 px-4 sm:px-6 lg:px-8 text-center md:text-left">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-6 md:gap-12 mb-16 sm:mb-32 px-6 md:px-10 xl:px-25 text-center md:text-left">
           <h2 className="text-4xl sm:text-[40px] font-serif text-[#111C55] whitespace-nowrap">
             Our <span className="text-[#B88C2E]">Clients</span>
           </h2>
@@ -31,10 +31,10 @@ export default function ClientsSection() {
         {/* Infinite Slider Container */}
         {/* Added: border-y and py-8 for spacing between borders and logos */}
         <div className="relative w-full border-y border-gray-200 py-8 flex overflow-hidden">
-          
+
           {/* Vignette/Fade Overlay using CSS Mask */}
           {/* This creates the smooth fade on left and right */}
-          <div 
+          <div
             className="absolute inset-0 z-10 pointer-events-none"
             style={{
               maskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)',
@@ -45,16 +45,15 @@ export default function ClientsSection() {
           {/* The scrolling track */}
           <div className="flex w-max animate-infinite-scroll">
             {infiniteClients.map((client, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="flex justify-center items-center w-[150px] sm:w-[200px] mx-4 sm:mx-8"
               >
-                <Image 
-                  src={client.src} 
-                  alt={client.name} 
-                  width={client.width} 
-                  height={client.height}
-                  className="h-8 sm:h-10 md:h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                <img
+                  src={client.src}
+                  alt={client.name}
+                  className="h-8 sm:h-10 md:h-12 w-auto object-contain transition-all duration-300"
+                  style={{ filter: 'brightness(0) saturate(100%) invert(11%) sepia(69%) saturate(750%) hue-rotate(208deg) brightness(95%)' }}
                 />
               </div>
             ))}
