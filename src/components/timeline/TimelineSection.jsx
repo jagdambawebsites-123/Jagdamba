@@ -70,7 +70,7 @@ const TimelineSection = ({
 
       {/* ── Year Heading ── */}
       <div className="relative z-10 flex justify-center w-full mt-16 mb-10 md:mb-10">
-        <h2 className="text-5xl md:text-7xl font-(family-name:--font-libre-baskerville) text-[#b89146] tracking-widest select-none">
+        <h2 className="text-5xl md:text-7xl font-serif text-[#b89146] tracking-widest select-none">
           {year}
         </h2>
       </div>
@@ -79,12 +79,12 @@ const TimelineSection = ({
         /* ── Text-Only Hero-Style Layout ── */
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 max-w-7xl mx-auto mb-16 flex-1">
           {title && (
-            <h3 className="text-[28px] md:text-[70px] font-(family-name:--font-libre-baskerville) text-[#b89146] mb-6 leading-tight">
+            <h3 className="text-[28px] md:text-[70px] font-serif text-[#b89146] mb-6 leading-tight">
               {title}
             </h3>
           )}
           {description && (
-            <p className="text-white/75 font-(family-name:--font-libre-franklin) leading-relaxed text-[16px] md:text-[30px] max-w-6xl">
+            <p className="text-white/75 font-sans leading-relaxed text-[16px] md:text-[30px] max-w-6xl">
               {description}
             </p>
           )}
@@ -110,12 +110,12 @@ const TimelineSection = ({
           {/* Bottom (mobile) / Right or Left (desktop): Text pane */}
           <div className="flex-1 p-8 md:p-12 flex flex-col justify-center bg-white overflow-hidden">
             {title && (
-              <h3 className="text-[18px] md:text-[28px] font-(family-name:--font-libre-baskerville) text-[#111C55] mb-3 leading-tight">
+              <h3 className="text-[18px] md:text-[28px] font-serif text-[#111C55] mb-3 leading-tight">
                 {title}
               </h3>
             )}
             {description && (
-              <p className="text-[#737373] font-(family-name:--font-libre-franklin) leading-relaxed text-[12px] md:text-[18px]">
+              <p className="text-[#737373] font-sans leading-relaxed text-[12px] md:text-[18px]">
                 {description}
               </p>
             )}
