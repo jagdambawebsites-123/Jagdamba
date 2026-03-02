@@ -112,8 +112,7 @@ export default function Header() {
 
   return (
      <header 
-      className={`top-0 left-0 w-full z-50 transition-colors duration-700 ease-in-out shadow-[0_2px_9px_0_rgba(0,0,0,0.1)]
-      ${isRoot ? 'fixed' : 'absolute'}
+      className={`fixed top-0 left-0 w-full z-50 transition-colors duration-700 ease-in-out shadow-[0_2px_9px_0_rgba(0,0,0,0.1)]
       ${isMobileMenuOpen ? 'bg-black/95' : isRoot ? 'bg-white' : 'bg-gradient-to-b from-black/70 to-black/50'}
       `}
       onMouseLeave={handleMouseLeave}
