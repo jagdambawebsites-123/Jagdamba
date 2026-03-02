@@ -16,13 +16,13 @@ const geistMono = Geist_Mono({
 const libreBaskerville = Libre_Baskerville({
   subsets: ["latin"],
   weight: ["400", "700"],
-  variable: "--font-libre-baskerville",
+  variable: "--font-serif",
 });
 
 const libreFranklin = Libre_Franklin({
   subsets: ["latin"],
   weight: ["300", "400", "500", "700"],
-  variable: "--font-libre-franklin",
+  variable: "--font-sans",
 });
 
 const playfairDisplay = Playfair_Display({
