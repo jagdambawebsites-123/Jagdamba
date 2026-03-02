@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 const NAV_ITEMS = [
@@ -140,10 +141,13 @@ export default function Header() {
           {/* Logo — white on all dark backgrounds */}
           <div className="shrink-0 flex items-center">
             <Link href="/" className="relative flex items-center" onClick={() => setIsMobileMenuOpen(false)}>
-              <img
+              <Image
                 src={isDarkHeader ? "/images/logo-white.png" : "/images/logo-dark.png"}
                 alt="Logo"
+                width={180}
+                height={48}
                 className="h-12 w-auto object-contain transition-all duration-300"
+                priority
               />
             </Link>
           </div>
