@@ -23,7 +23,7 @@ export default function BusinessHero({ image, title, link, buttonText = "About U
         </div>
 
       {/* Content Layer */}
-      <div className="relative z-10 h-full flex items-center md:px-25">
+      <div className="relative z-10 h-full flex items-center px-6 md:px-10 xl:px-25">
         {/* The Container: Limits width to 1200px (or your theme's default) and centers itself */}
         <div className="container mx-auto">
           {/* Responsive Alignment: 
