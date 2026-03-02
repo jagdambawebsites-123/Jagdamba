@@ -14,7 +14,7 @@ const NAV_ITEMS = [
         { name: 'Awards & Recognition', href: '/awards' },
       ],
       [
-        { name: 'Our History', href: '/About' },
+        { name: 'Our History', href: '/about/our-history' },
       ]
     ]
   },
@@ -60,14 +60,14 @@ const NAV_ITEMS = [
 
 export default function Header() {
   const [hoveredLabel, setHoveredLabel] = useState(null);
-  const [dropdownData, setDropdownData] = useState(null); 
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false); 
+  const [dropdownData, setDropdownData] = useState(null);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isInitialHover, setIsInitialHover] = useState(false);
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [expandedMobileItem, setExpandedMobileItem] = useState(null);
-  
-  const pathname = usePathname(); 
+
+  const pathname = usePathname();
 
   // Check if we are on the root route
   const isRoot = pathname === '/';
@@ -78,8 +78,8 @@ export default function Header() {
   useEffect(() => {
     setHoveredLabel(null);
     setIsDropdownOpen(false);
-    setIsMobileMenuOpen(false); 
-    setExpandedMobileItem(null); 
+    setIsMobileMenuOpen(false);
+    setExpandedMobileItem(null);
   }, [pathname]);
 
   const handleMouseEnter = (item) => {
@@ -90,9 +90,9 @@ export default function Header() {
     } else if (hoveredLabel !== item.label) {
       setIsInitialHover(false);
     }
-    
+
     setHoveredLabel(item.label);
-    
+
     if (item?.subColumns) {
       setDropdownData(item);
       setIsDropdownOpen(true);
@@ -103,7 +103,7 @@ export default function Header() {
 
   const handleMouseLeave = () => {
     setHoveredLabel(null);
-    setIsDropdownOpen(false); 
+    setIsDropdownOpen(false);
   };
 
   const toggleMobileAccordion = (label) => {
@@ -111,7 +111,7 @@ export default function Header() {
   };
 
   return (
-    <header 
+     <header 
       className={`top-0 left-0 w-full z-50 transition-colors duration-700 ease-in-out shadow-[0_2px_9px_0_rgba(0,0,0,0.1)]
       ${isRoot ? 'fixed' : 'absolute'}
       ${isMobileMenuOpen ? 'bg-black/95' : isRoot ? 'bg-white' : 'bg-gradient-to-b from-black/70 to-black/50'}
@@ -120,14 +120,14 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-50">
         <div className="flex justify-between items-center h-24">
-          
-          {/* Logo Section - Dynamically swaps based on header background */}
-          <div className="flex-shrink-0 flex items-center">
+
+          {/* Logo — white on all dark backgrounds */}
+          <div className="shrink-0 flex items-center">
             <Link href="/" className="relative flex items-center" onClick={() => setIsMobileMenuOpen(false)}>
-              <img 
-                src={isDarkHeader ? "/images/logo-white.png" : "/images/logo-dark.png"} 
-                alt="Logo" 
-                className="h-12 w-auto object-contain transition-all duration-300" 
+              <img
+                src={isDarkHeader ? "/images/logo-white.png" : "/images/logo-dark.png"}
+                alt="Logo"
+                className="h-12 w-auto object-contain transition-all duration-300"
               />
             </Link>
           </div>
@@ -136,8 +136,8 @@ export default function Header() {
           <nav className="relative hidden md:flex space-x-8 lg:space-x-10 h-full">
             {NAV_ITEMS.map((item) => (
               <div key={item.label} className="h-full flex items-center">
-                <Link 
-                  href={item.href || '#'} 
+                <Link
+                  href={item.href || '#'}
                   onMouseEnter={() => handleMouseEnter(item)}
                   // Text color shifts dynamically
                   className={`relative flex items-center cursor-pointer transition-colors duration-500 h-full
@@ -146,20 +146,20 @@ export default function Header() {
                 >
                   <span className="text-sm font-medium">{item.label}</span>
                   {item.subColumns && <ChevronDownIcon />}
-                  
+
                   {/* Loading Bar Underline */}
-                  <div 
+                  <div
                     className={`absolute bottom-0 left-0 w-full h-1 bg-[#F6B426] origin-left
                       ${hoveredLabel === item.label ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0'}
                       ${(hoveredLabel === item.label && isInitialHover) ? 'transition-all duration-500 ease-out' : 'transition-none'}
-                    `} 
+                    `}
                   />
                 </Link>
               </div>
             ))}
 
             {/* Desktop Sub-nav Text Layer */}
-            <div 
+            <div
               className={`absolute top-full left-0 w-max pt-10 pb-8 transition-all duration-500 ease-in-out
               ${isDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}
             >
@@ -167,8 +167,8 @@ export default function Header() {
                 {dropdownData?.subColumns?.map((column, colIdx) => (
                   <div key={colIdx} className="flex flex-col gap-y-6 min-w-[200px]">
                     {column.map((sub) => (
-                      <Link 
-                        key={sub.name} 
+                      <Link
+                        key={sub.name}
                         href={sub.href}
                         className="text-[15px] font-bold text-gray-800 hover:text-[#F6B426] transition-colors duration-300"
                       >
@@ -183,7 +183,7 @@ export default function Header() {
 
           {/* Mobile Menu Hamburger Toggle */}
           <div className="md:hidden flex items-center">
-            <button 
+            <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               // Hamburger color shifts dynamically
               className={`transition-colors duration-300 hover:text-[#F6B426] ${isDarkHeader ? 'text-white' : 'text-gray-800'}`}
@@ -204,13 +204,13 @@ export default function Header() {
       </div>
 
       {/* Desktop Background Curtain */}
-      <div 
+      <div
         className={`hidden md:grid absolute top-full left-0 w-full shadow-xl bg-white z-10 transition-all duration-700 ease-in-out
         ${isDropdownOpen ? 'grid-rows-[1fr] opacity-100 visible' : 'grid-rows-[0fr] opacity-0 invisible pointer-events-none'}`}
       >
         <div className="overflow-hidden">
           <div className={`w-full h-[1px] bg-gray-200 transition-opacity duration-200 ${isDropdownOpen ? 'opacity-100' : 'opacity-0'}`} />
-          
+
           <div className="pt-10 pb-8 invisible" aria-hidden="true">
             <div className="flex gap-x-20">
               {dropdownData?.subColumns?.map((column, colIdx) => (
@@ -226,7 +226,7 @@ export default function Header() {
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div 
+      <div
         className={`md:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-md overflow-hidden transition-all duration-500 ease-in-out border-t border-white/10
         ${isMobileMenuOpen ? 'max-h-[calc(100vh-6rem)] opacity-100 visible overflow-y-auto' : 'max-h-0 opacity-0 invisible pointer-events-none'}`}
       >
@@ -235,24 +235,25 @@ export default function Header() {
             <div key={item.label} className="flex flex-col border-b border-white/10 pb-4 last:border-0">
               {item.subColumns ? (
                 <>
-                  <button 
+                  <button
                     onClick={() => toggleMobileAccordion(item.label)}
                     className="flex justify-between items-center text-white text-lg font-medium w-full text-left"
                   >
                     {item.label}
-                    <ChevronDownIcon 
-                      className={`transform transition-transform duration-300 ${expandedMobileItem === item.label ? 'rotate-180 text-[#F6B426]' : 'text-white/80'}`} 
+                    <ChevronDownIcon
+                      className={`transform transition-transform duration-300 ${expandedMobileItem === item.label ? 'rotate-180 text-[#F6B426]' : 'text-white/80'}`}
                     />
                   </button>
-                  
-                  <div 
+
+                  {/* Mobile Accordion Content */}
+                  <div
                     className={`grid transition-all duration-500 ease-in-out
                     ${expandedMobileItem === item.label ? 'grid-rows-[1fr] opacity-100 mt-5' : 'grid-rows-[0fr] opacity-0'}`}
                   >
                     <div className="overflow-hidden flex flex-col gap-y-5 pl-4 border-l border-white/20">
                       {item.subColumns.flat().map((sub) => (
-                        <Link 
-                          key={sub.name} 
+                        <Link
+                          key={sub.name}
                           href={sub.href}
                           className="text-base font-medium text-gray-300 hover:text-[#F6B426] transition-colors"
                         >
@@ -263,7 +264,7 @@ export default function Header() {
                   </div>
                 </>
               ) : (
-                <Link 
+                <Link
                   href={item.href || '#'}
                   className="text-white text-lg font-medium w-full text-left hover:text-[#F6B426] transition-colors"
                 >
@@ -281,8 +282,7 @@ export default function Header() {
 
 function ChevronDownIcon({ className = "" }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" 
-      // Icon inherits current text color automatically
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"
       className={`w-4 h-4 ml-1 transition-all duration-500 ${className || 'opacity-80'}`}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
     </svg>

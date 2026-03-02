@@ -1,38 +1,33 @@
 import TimelineSection from '@/components/timeline/TimelineSection';
 
 // Asset Imports
-import DottedLine from '../../assets/DottedLine.png';
-import T1 from '../../assets/T1.png';
-import T2 from '../../assets/T2.png';
-import T3 from '../../assets/T3.png';
-import T4 from '../../assets/T4.png';
-import T5 from '../../assets/T5.png';
-import T6 from '../../assets/T6.png';
-import T7 from '../../assets/T7.png';
-import T9 from '../../assets/T9.png';
-import T10 from '../../assets/T10.png';
-import T11 from '../../assets/T11.png';
-import T13 from '../../assets/T13.png';
-import T15 from '../../assets/T15.png';
-import T17 from '../../assets/T17.png';
+import DottedLine from '../../../assets/DottedLine.png';
+import T1 from '../../../assets/T1.png';
+import T2 from '../../../assets/T2.png';
+import T3 from '../../../assets/T3.png';
+import T4 from '../../../assets/T4.png';
+import T5 from '../../../assets/T5.png';
+import T6 from '../../../assets/T6.png';
+import T7 from '../../../assets/T7.png';
+import T9 from '../../../assets/T9.png';
+import T10 from '../../../assets/T10.png';
+import T11 from '../../../assets/T11.png';
+import T13 from '../../../assets/T13.png';
+import T15 from '../../../assets/T15.png';
+import T17 from '../../../assets/T17.png';
 
 // Background Assets
-import T2_bg from '../../assets/T2_bg.png';
-import T4_bg from '../../assets/T4_bg.png';
-import T6_bg from '../../assets/T6_bg.png';
-import T8_bg from '../../assets/T8_bg.png';
-import T10_bg from '../../assets/T10_bg.png';
-import T12_bg from '../../assets/T12_bg.png';
-import T14_bg from '../../assets/T14_bg.png';
+import T2_bg from '../../../assets/T2_bg.png';
+import T4_bg from '../../../assets/T4_bg.png';
+import T6_bg from '../../../assets/T6_bg.png';
+import T8_bg from '../../../assets/T8_bg.png';
+import T10_bg from '../../../assets/T10_bg.png';
+import T12_bg from '../../../assets/T12_bg.png';
+import T14_bg from '../../../assets/T14_bg.png';
 
-import Stroke1 from '../../assets/Stroke1.png';
-import Stroke2 from '../../assets/Stroke2.png';
+import Stroke1 from '../../../assets/Stroke1.png';
+import Stroke2 from '../../../assets/Stroke2.png';
 
-// Full list of milestone years shown in the right-hand timeline strip
-const yearList = [
-  '2002', '2005', '2013', '2014', '2019', '2020', '2022',
-  '2023', '2024', '2025'
-];
 
 const milestones = [
   {
@@ -195,12 +190,14 @@ const milestones = [
   },
 ];
 
+const yearList = [...new Set(milestones.map((m) => m.year))];
+
 export default function About() {
   return (
-    <main className="overflow-y-scroll snap-y snap-mandatory scroll-smooth h-screen">
+    <main className="overflow-x-hidden overflow-y-scroll snap-y snap-mandatory scroll-smooth h-screen">
 
       {/* ───────────── 1. Hero / Intro Section ───────────── */}
-      <section className="relative w-full h-screen flex flex-col items-center snap-start text-center px-4 bg-[#111C55]">
+      <section className="relative w-full h-screen flex flex-col items-center snap-start text-center px-4 bg-[#111C55] pt-72">
 
         {/* Main content — title then dotted line then desc */}
         <div className="flex flex-col items-center justify-center flex-1 px-4">
@@ -209,9 +206,9 @@ export default function About() {
           </h1>
 
           {/* ── Dotted line between title and description ── */}
-          <div className="w-px h-12 md:h-16 border-l-[3px] border-dashed border-white my-4 md:my-6" />
+          <div className="h-12 md:h-16 my-4 md:my-6" style={{ width: '3px', backgroundImage: 'repeating-linear-gradient(to bottom, white 0, white 8px, transparent 8px, transparent 26px)' }} />
 
-          <p className="max-w-3xl text-white/70 font-(family-name:--font-libre-franklin) text-[15px] md:text-[30px] leading-relaxed">
+          <p className="max-w-3xl text-white/70 font-sans text-[15px] md:text-[30px] leading-relaxed">
             Our vision has driven us, our passion has inspired us,
             <br className="hidden sm:block" />
             and our relentless pursuit of excellence has defined
@@ -220,9 +217,9 @@ export default function About() {
           </p>
         </div>
 
-        {/* Bottom dashed line — runs to the bottom edge, visually continuing into T1 */}
-        <div className="flex flex-col items-center shrink-0 h-40">
-          <div className="w-px h-full border-l-[3px] border-dashed border-white" />
+        {/* Bottom dashed line — fills remaining space with custom wider-spaced dashes */}
+        <div className="flex flex-col items-center flex-1">
+          <div className="w-px h-full" style={{ width: '3px', backgroundImage: 'repeating-linear-gradient(to bottom, white 0, white 8px, transparent 8px, transparent 26px)' }} />
         </div>
       </section>
 
