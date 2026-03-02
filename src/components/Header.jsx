@@ -32,7 +32,7 @@ const NAV_ITEMS = [
       [
         { name: 'Waterpark', href: '/waterpark' },
         { name: 'Resort', href: '/resort' },
-        { name: 'Mall', href: '/mall' },
+        { name: 'Mall', href: '/business/mall' },
       ]
     ]
   },
