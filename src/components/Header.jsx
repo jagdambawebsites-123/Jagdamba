@@ -24,15 +24,15 @@ const NAV_ITEMS = [
     href: '/business',
     subColumns: [
       [
-        { name: 'Trailer Manufacturing', href: '/trailer-manufacturing' },
-        { name: 'Structure Manufacturing', href: '/structure-manufacturing' },
+        { name: 'Trailer Manufacturing', href: '/business/trailer-manufacturing' },
+        { name: 'Structure Manufacturing', href: '/business/structure-manufacturing' },
         { name: 'Mining & Calcining', href: '/business/mining-calcining' },
         { name: 'Machining & Casting', href: '/business/machining-casting' },
       ],
       [
         { name: 'Waterpark', href: '/waterpark' },
         { name: 'Resort', href: '/resort' },
-        { name: 'Mall', href: '/mall' },
+        { name: 'Mall', href: '/business/mall' },
       ]
     ]
   },
@@ -73,8 +73,11 @@ export default function Header() {
   // Check if we are on the root route
   const isRoot = pathname === '/';
   // Determine if the header should use "Dark Mode" (Dark background, white text)
-  // It should be dark if we are NOT on root, OR if the mobile menu is currently open.
-  const isDarkHeader = !isRoot || isMobileMenuOpen;
+  const isManagingDirectors = pathname === '/managing-directors';
+  const isBoardsOfDirectors = pathname === '/boards-of-directors';
+  const isTeam = pathname === '/team';
+  const isContact = pathname === '/contact';
+  const isDarkHeader = (!isRoot && !isManagingDirectors && !isBoardsOfDirectors && !isTeam && !isContact) || isMobileMenuOpen;
 
   useEffect(() => {
     setHoveredLabel(null);
@@ -117,43 +120,41 @@ export default function Header() {
     if (isMobileMenuOpen) return 'bg-black/95';
 
     // 2. White Header Pages
-    const whitePages = ['/', 'managing-directors'];
-    if (whitePages.includes(pathname)) return 'bg-white';
+    if (isRoot || isManagingDirectors || isBoardsOfDirectors || isContact) return 'bg-white';
 
-    // 3. Transparent Header Pages
-    const transparentPages = ['/about/our-history'];
-    if (transparentPages.includes(pathname)) return 'bg-transparent shadow-none';
+    // 3. Specific Background for history page
+    if (pathname.toLowerCase() === '/about/our-history') return 'bg-[#111C55]';
 
     // 4. Default Gradient (Fallback)
     return 'bg-gradient-to-b from-black/70 to-black/50 text-white';
   };
 
   return (
-     <header 
-      className={`fixed top-0 left-0 w-full z-50 transition-colors duration-700 ease-in-out shadow-[0_2px_9px_0_rgba(0,0,0,0.1)]
+    <header
+      className={`${(isRoot || isManagingDirectors || isBoardsOfDirectors || isContact) ? 'fixed' : 'absolute'} top-0 left-0 w-full z-50 transition-colors duration-700 ease-in-out shadow-[0_2px_9px_0_rgba(0,0,0,0.1)]
       ${getHeaderStyles()}
       `}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-50">
-        <div className="flex justify-between items-center h-24">
+      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-24 relative z-50">
+        <div className="flex justify-between items-center h-20 md:h-24">
 
-          {/* Logo — white on all dark backgrounds */}
-          <div className="shrink-0 flex items-center">
+          {/* Logo Section - Dynamically swaps based on header background */}
+          <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="relative flex items-center" onClick={() => setIsMobileMenuOpen(false)}>
               <Image
                 src={isDarkHeader ? "/images/logo-white.png" : "/images/logo-dark.png"}
                 alt="Logo"
                 width={180}
                 height={48}
-                className="h-12 w-auto object-contain transition-all duration-300"
+                className="h-8 sm:h-10 lg:h-12 xl:h-16 w-auto object-contain transition-all duration-300"
                 priority
               />
             </Link>
           </div>
 
           {/* Desktop Navigation Links */}
-          <nav className="relative hidden md:flex space-x-8 lg:space-x-10 h-full">
+          <nav className="relative hidden md:flex md:space-x-4 lg:space-x-8 xl:space-x-12 h-full">
             {NAV_ITEMS.map((item) => (
               <div key={item.label} className="h-full flex items-center">
                 <Link
@@ -161,10 +162,10 @@ export default function Header() {
                   onMouseEnter={() => handleMouseEnter(item)}
                   // Text color shifts dynamically
                   className={`relative flex items-center cursor-pointer transition-colors duration-500 h-full
-                    ${isDarkHeader ? 'text-white' : 'text-gray-800'} hover:text-[#F6B426]
+                    ${isDarkHeader ? 'text-white' : isManagingDirectors ? 'text-gray-500' : 'text-[#374151]'} hover:text-[#F6B426]
                   `}
                 >
-                  <span className="text-sm font-medium">{item.label}</span>
+                  <span className="md:text-sm lg:text-base xl:text-lg font-sans font-medium">{item.label}</span>
                   {item.subColumns && <ChevronDownIcon />}
 
                   {/* Loading Bar Underline */}
@@ -190,7 +191,7 @@ export default function Header() {
                       <Link
                         key={sub.name}
                         href={sub.href}
-                        className="text-[15px] font-bold text-[#6B7280] hover:text-[#F6B426] transition-colors duration-300"
+                        className="text-[15px] font-bold text-gray-700 hover:text-[#F6B426] transition-colors duration-300"
                       >
                         {sub.name}
                       </Link>
@@ -210,12 +211,12 @@ export default function Header() {
               aria-label="Toggle mobile menu"
             >
               {isMobileMenuOpen ? (
-                <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                <svg className="h-6 w-6 md:h-8 md:w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               ) : (
-                <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                <svg className="h-6 w-6 md:h-8 md:w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               )}
             </button>
@@ -250,32 +251,30 @@ export default function Header() {
         className={`md:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-md overflow-hidden transition-all duration-500 ease-in-out border-t border-white/10
         ${isMobileMenuOpen ? 'max-h-[calc(100vh-6rem)] opacity-100 visible overflow-y-auto' : 'max-h-0 opacity-0 invisible pointer-events-none'}`}
       >
-        <div className="px-6 py-8 flex flex-col gap-y-6">
+        <div className="px-6 py-10 flex flex-col gap-y-8">
           {NAV_ITEMS.map((item) => (
-            <div key={item.label} className="flex flex-col border-b border-white/10 pb-4 last:border-0">
+            <div key={item.label} className="flex flex-col border-b border-white/5 pb-6 last:border-0">
               {item.subColumns ? (
                 <>
                   <button
                     onClick={() => toggleMobileAccordion(item.label)}
-                    className="flex justify-between items-center text-white text-lg font-medium w-full text-left"
+                    className="flex justify-between items-center text-white text-xl font-sans font-medium w-full text-left"
                   >
                     {item.label}
                     <ChevronDownIcon
-                      className={`transform transition-transform duration-300 ${expandedMobileItem === item.label ? 'rotate-180 text-[#F6B426]' : 'text-white/80'}`}
+                      className={`transform transition-transform duration-300 w-5 h-5 ${expandedMobileItem === item.label ? 'rotate-180 text-[#F6B426]' : 'text-white/60'}`}
                     />
                   </button>
-
-                  {/* Mobile Accordion Content */}
                   <div
                     className={`grid transition-all duration-500 ease-in-out
-                    ${expandedMobileItem === item.label ? 'grid-rows-[1fr] opacity-100 mt-5' : 'grid-rows-[0fr] opacity-0'}`}
+                    ${expandedMobileItem === item.label ? 'grid-rows-[1fr] opacity-100 mt-6' : 'grid-rows-[0fr] opacity-0'}`}
                   >
-                    <div className="overflow-hidden flex flex-col gap-y-5 pl-4 border-l border-white/20">
+                    <div className="overflow-hidden flex flex-col gap-y-5 pl-4 border-l border-[#F6B426]/30">
                       {item.subColumns.flat().map((sub) => (
                         <Link
                           key={sub.name}
                           href={sub.href}
-                          className="text-base font-medium text-gray-300 hover:text-[#F6B426] transition-colors"
+                          className="text-lg font-sans font-medium text-gray-400 hover:text-[#F6B426] transition-colors"
                         >
                           {sub.name}
                         </Link>
@@ -286,7 +285,7 @@ export default function Header() {
               ) : (
                 <Link
                   href={item.href || '#'}
-                  className="text-white text-lg font-medium w-full text-left hover:text-[#F6B426] transition-colors"
+                  className="text-white text-xl font-sans font-medium w-full text-left hover:text-[#F6B426] transition-colors"
                 >
                   {item.label}
                 </Link>

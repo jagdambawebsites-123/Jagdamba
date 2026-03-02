@@ -62,7 +62,7 @@ const CONTACT_INFO = {
 
 export default function Footer() {
     return (
-        <footer className="bg-[#111C55] text-white">
+        <footer className="bg-[#111C55] text-white font-sans">
 
             {/* ── Nav columns ── */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">

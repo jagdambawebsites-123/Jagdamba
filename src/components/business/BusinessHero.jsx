@@ -9,18 +9,18 @@ export default function BusinessHero({ image, title, link, buttonText = "About U
   return (
     <div className=" relative h-screen w-full overflow-hidden bg-black text-white">
       {/* Background Images Layer */}
-        <div
-          className={`absolute inset-0`}
-        >
-          <Image
-            src={image}
-            alt="Hero Background"
-            fill
-            className="object-cover"
-          />
-          {/* Main Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
-        </div>
+      <div
+        className={`absolute inset-0`}
+      >
+        <Image
+          src={image}
+          alt="Hero Background"
+          fill
+          className="object-cover"
+        />
+        {/* Main Overlay */}
+        <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/40 to-transparent" />
+      </div>
 
       {/* Content Layer */}
       <div className="relative z-10 h-full flex items-center px-6 md:px-10 xl:px-25">
@@ -30,14 +30,14 @@ export default function BusinessHero({ image, title, link, buttonText = "About U
               items-center + text-center for mobile
               md:items-start + md:text-left for desktop
           */}
-          <div className="flex flex-col items-center text-center md:items-start md:text-left w-full md:w-fit gap-5 xl:gap-12 font-serif">
-            <h1 className="text-[28px] sm:text-[36px] md:text-[48px] lg:text-[64px] leading-tight flex items-center">
+          <div className="flex flex-col items-start text-left w-full md:w-fit gap-5 xl:gap-12 font-serif">
+            <h1 className="text-[28px] sm:text-[36px] md:text-[48px] lg:text-[64px] leading-tight">
               {title}
             </h1>
-            
+
             {/* Accent Line */}
-            <div className="h-1 w-full max-w-[300px] md:max-w-none bg-[#CA9015]" />
-            
+            <div className="h-1 w-full max-w-75 md:max-w-none bg-[#CA9015]" />
+
             <Link href={link}>
               <ButtonPrimary content={buttonText} />
             </Link>
