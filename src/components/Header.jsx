@@ -111,11 +111,27 @@ export default function Header() {
     setExpandedMobileItem(expandedMobileItem === label ? null : label);
   };
 
+  // Header color logic
+  const getHeaderStyles = () => {
+    // 1. Mobile menu always takes priority
+    if (isMobileMenuOpen) return 'bg-black/95';
+
+    // 2. White Header Pages
+    const whitePages = ['/', 'managing-directors'];
+    if (whitePages.includes(pathname)) return 'bg-white';
+
+    // 3. Transparent Header Pages
+    const transparentPages = ['/about/our-history'];
+    if (transparentPages.includes(pathname)) return 'bg-transparent shadow-none';
+
+    // 4. Default Gradient (Fallback)
+    return 'bg-gradient-to-b from-black/70 to-black/50 text-white';
+  };
+
   return (
      <header 
-      className={`top-0 left-0 w-full z-50 transition-colors duration-700 ease-in-out shadow-[0_2px_9px_0_rgba(0,0,0,0.1)]
-      ${isRoot ? 'fixed' : 'absolute'}
-      ${isMobileMenuOpen ? 'bg-black/95' : isRoot ? 'bg-white' : 'bg-gradient-to-b from-black/70 to-black/50'}
+      className={`fixed top-0 left-0 w-full z-50 transition-colors duration-700 ease-in-out shadow-[0_2px_9px_0_rgba(0,0,0,0.1)]
+      ${getHeaderStyles()}
       `}
       onMouseLeave={handleMouseLeave}
     >
@@ -174,7 +190,7 @@ export default function Header() {
                       <Link
                         key={sub.name}
                         href={sub.href}
-                        className="text-[15px] font-bold text-gray-800 hover:text-[#F6B426] transition-colors duration-300"
+                        className="text-[15px] font-bold text-[#6B7280] hover:text-[#F6B426] transition-colors duration-300"
                       >
                         {sub.name}
                       </Link>
