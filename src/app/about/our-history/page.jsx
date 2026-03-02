@@ -208,7 +208,7 @@ export default function About() {
           {/* ── Dotted line between title and description ── */}
           <div className="h-12 md:h-16 my-4 md:my-6" style={{ width: '3px', backgroundImage: 'repeating-linear-gradient(to bottom, white 0, white 8px, transparent 8px, transparent 26px)' }} />
 
-          <p className="max-w-3xl text-white/70 font-(family-name:--font-libre-franklin) text-[15px] md:text-[30px] leading-relaxed">
+          <p className="max-w-3xl text-white/70 font-sans text-[15px] md:text-[30px] leading-relaxed">
             Our vision has driven us, our passion has inspired us,
             <br className="hidden sm:block" />
             and our relentless pursuit of excellence has defined
