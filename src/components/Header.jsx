@@ -186,7 +186,7 @@ export default function Header() {
                       <Link
                         key={sub.name}
                         href={sub.href}
-                        className="text-[15px] font-bold text-gray-800 hover:text-[#F6B426] transition-colors duration-300"
+                        className="text-[15px] font-bold text-[#6B7280] hover:text-[#F6B426] transition-colors duration-300"
                       >
                         {sub.name}
                       </Link>
