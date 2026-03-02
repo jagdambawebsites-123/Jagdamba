@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 const NAV_ITEMS = [
@@ -110,11 +111,27 @@ export default function Header() {
     setExpandedMobileItem(expandedMobileItem === label ? null : label);
   };
 
+  // Header color logic
+  const getHeaderStyles = () => {
+    // 1. Mobile menu always takes priority
+    if (isMobileMenuOpen) return 'bg-black/95';
+
+    // 2. White Header Pages
+    const whitePages = ['/', 'managing-directors'];
+    if (whitePages.includes(pathname)) return 'bg-white';
+
+    // 3. Transparent Header Pages
+    const transparentPages = ['/about/our-history'];
+    if (transparentPages.includes(pathname)) return 'bg-transparent shadow-none';
+
+    // 4. Default Gradient (Fallback)
+    return 'bg-gradient-to-b from-black/70 to-black/50 text-white';
+  };
+
   return (
      <header 
-      className={`top-0 left-0 w-full z-50 transition-colors duration-700 ease-in-out shadow-[0_2px_9px_0_rgba(0,0,0,0.1)]
-      ${isRoot ? 'fixed' : 'absolute'}
-      ${isMobileMenuOpen ? 'bg-black/95' : isRoot ? 'bg-white' : 'bg-gradient-to-b from-black/70 to-black/50'}
+      className={`fixed top-0 left-0 w-full z-50 transition-colors duration-700 ease-in-out shadow-[0_2px_9px_0_rgba(0,0,0,0.1)]
+      ${getHeaderStyles()}
       `}
       onMouseLeave={handleMouseLeave}
     >
@@ -124,10 +141,13 @@ export default function Header() {
           {/* Logo — white on all dark backgrounds */}
           <div className="shrink-0 flex items-center">
             <Link href="/" className="relative flex items-center" onClick={() => setIsMobileMenuOpen(false)}>
-              <img
+              <Image
                 src={isDarkHeader ? "/images/logo-white.png" : "/images/logo-dark.png"}
                 alt="Logo"
+                width={180}
+                height={48}
                 className="h-12 w-auto object-contain transition-all duration-300"
+                priority
               />
             </Link>
           </div>
@@ -170,7 +190,7 @@ export default function Header() {
                       <Link
                         key={sub.name}
                         href={sub.href}
-                        className="text-[15px] font-bold text-gray-800 hover:text-[#F6B426] transition-colors duration-300"
+                        className="text-[15px] font-bold text-[#6B7280] hover:text-[#F6B426] transition-colors duration-300"
                       >
                         {sub.name}
                       </Link>

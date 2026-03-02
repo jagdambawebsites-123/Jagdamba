@@ -70,7 +70,7 @@ export default function HeroSection() {
       ))}
 
       {/* Content Layer */}
-      <div className="relative z-10 h-full flex items-center px-4">
+      <div className="relative z-10 h-full flex items-center px-6 md:px-10 xl:px-25">
         {/* The Container: Limits width to 1200px (or your theme's default) and centers itself */}
         <div className="container mx-auto">
           {/* Responsive Alignment: 
@@ -93,7 +93,7 @@ export default function HeroSection() {
       </div>
 
       {/* Navigation Dots - Locked to the container's left edge on desktop */}
-      <div className="absolute bottom-12 w-full px-4">
+      <div className="absolute bottom-12 w-full px-6 md:px-10 xl:px-25">
         <div className="container mx-auto flex justify-center md:justify-start gap-3">
           {slides.map((_, index) => (
             <button
