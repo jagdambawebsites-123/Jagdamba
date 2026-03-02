@@ -18,7 +18,7 @@ const TimelineSection = ({
   stroke2,
 }) => {
   return (
-    <section className={`relative w-full h-screen md:min-h-screen flex flex-col items-center snap-start overflow-hidden pt-24 pb-6 ${isDarkBlue ? 'bg-[#111C55]' : ''}`}>
+    <section className={`relative w-full min-h-screen md:h-screen flex flex-col items-center snap-start overflow-hidden pt-24 pb-6 ${isDarkBlue ? 'bg-[#111C55]' : ''}`}>
 
       {/* ── Stroke wave images (flag sections) ── */}
       {isDarkBlue && stroke1 && (
@@ -63,14 +63,14 @@ const TimelineSection = ({
         </div>
       )}
 
-      {/* ── Dotted line connector — flows from top of section (behind header) into content ── */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10 flex justify-center" style={{ height: '10rem' }}>
+      {/* ── Dotted line connector — flows from top of section into content ── */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10 flex justify-center" style={{ height: '8.5rem' }}>
         <div className="w-px h-full" style={{ width: '3px', backgroundImage: 'repeating-linear-gradient(to bottom, white 0, white 8px, transparent 8px, transparent 26px)' }} />
       </div>
 
       {/* ── Year Heading ── */}
-      <div className="relative z-10 flex justify-center w-full mt-16 mb-10 md:mb-10">
-        <h2 className="text-5xl md:text-7xl font-serif text-[#b89146] tracking-widest select-none">
+      <div className="relative z-10 flex justify-center w-full mt-6 mb-6 md:mb-8">
+        <h2 className="text-[64px] font-serif text-[#b89146] tracking-widest select-none">
           {year}
         </h2>
       </div>
