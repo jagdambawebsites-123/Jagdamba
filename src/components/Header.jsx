@@ -30,7 +30,7 @@ const NAV_ITEMS = [
         { name: 'Machining & Casting', href: '/business/machining-casting' },
       ],
       [
-        { name: 'Waterpark', href: '/waterpark' },
+        { name: 'Waterpark', href: '/business/waterpark' },
         { name: 'Resort', href: '/resort' },
         { name: 'Mall', href: '/business/mall' },
       ]
