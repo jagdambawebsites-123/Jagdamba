@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Throwback() {
   // Placeholders for your gallery images. Replace these with your actual file paths.
   const row1Images = [
-    "/images/business/waterpark/throwBack/gallery-1.png",
+    "/images/business/waterpark/throwBack/gallery1.png",
     "/images/business/waterpark/throwBack/gallery-2.png",
     "/images/business/waterpark/throwBack/gallery-3.png",
     "/images/business/waterpark/throwBack/gallery-4.png",
