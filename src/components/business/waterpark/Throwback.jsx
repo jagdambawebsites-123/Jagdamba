@@ -4,19 +4,19 @@ import Link from "next/link";
 export default function Throwback() {
   // Placeholders for your gallery images. Replace these with your actual file paths.
   const row1Images = [
-    "/images/business/waterpark/throwBack/gallery1.png",
-    "/images/business/waterpark/throwBack/gallery-2.png",
-    "/images/business/waterpark/throwBack/gallery-3.png",
-    "/images/business/waterpark/throwBack/gallery-4.png",
-    "/images/business/waterpark/throwBack/gallery-5.png",
+    "/images/business/waterpark/throwback/gallery-1.png",
+    "/images/business/waterpark/throwback/gallery-2.png",
+    "/images/business/waterpark/throwback/gallery-3.png",
+    "/images/business/waterpark/throwback/gallery-4.png",
+    "/images/business/waterpark/throwback/gallery-5.png",
   ];
 
   const row2Images = [
-    "/images/business/waterpark/throwBack/gallery-6.png",
-    "/images/business/waterpark/throwBack/gallery-7.png",
-    "/images/business/waterpark/throwBack/gallery-8.png",
-    "/images/business/waterpark/throwBack/gallery-9.png",
-    "/images/business/waterpark/throwBack/gallery-10.png",
+    "/images/business/waterpark/throwback/gallery-6.png",
+    "/images/business/waterpark/throwback/gallery-7.png",
+    "/images/business/waterpark/throwback/gallery-8.png",
+    "/images/business/waterpark/throwback/gallery-9.png",
+    "/images/business/waterpark/throwback/gallery-10.png",
   ];
 
   return (
@@ -34,7 +34,7 @@ export default function Throwback() {
       {/* Zigzag Decor - Top Right */}
       <div className="absolute top-8 -right-0 md:-top-0 md:right-0 w-32 h-16 md:w-48 md:h-20 z-10 pointer-events-none">
         <Image
-          src="/images/business/waterpark/throwBack/zig-zag-waves.svg"
+          src="/images/business/waterpark/throwback/zig-zag-waves.svg"
           alt="Decorative Zigzag"
           fill
           className="object-contain object-right"
