@@ -44,7 +44,6 @@ export default function ResortGettingHere({ stayArrowLeft, stayArrowRight, mapsU
     <section className="w-full bg-[#F5F5F5] py-12 md:py-16 lg:py-20">
       <div className="container mx-auto px-6 md:px-10 xl:px-25 flex flex-col gap-12 md:gap-16 lg:gap-20">
 
-        {/* Heading */}
         <div className="flex items-center justify-center gap-4 md:gap-10 lg:gap-14">
           <div className="relative w-16 h-6 md:w-24 md:h-8 lg:w-36 lg:h-10 shrink-0">
             <Image src={stayArrowLeft} alt="" fill className="object-contain" />
@@ -78,7 +77,6 @@ export default function ResortGettingHere({ stayArrowLeft, stayArrowRight, mapsU
             />
           </a>
 
-          {/* Left — info grid */}
           <div className="order-last lg:order-first flex-1 grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6 md:gap-y-8">
             {infoItems.map((item) => (
               <div key={item.label} className="flex flex-col gap-1 border-b border-[#46464640] pb-4 md:pb-6">
@@ -97,7 +95,6 @@ export default function ResortGettingHere({ stayArrowLeft, stayArrowRight, mapsU
           </div>
         </div>
 
-        {/* Bottom — To Know More */}
         <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
           <span className="font-serif font-normal text-[#464646] text-[18px] md:text-[28px] lg:text-[32px]">
             To Know More, Visit:

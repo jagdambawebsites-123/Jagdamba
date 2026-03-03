@@ -2,7 +2,6 @@ import TimelineSection from '@/components/timeline/TimelineSection';
 import ScrollLock from '@/components/ScrollLock';
 import Footer from '@/components/Footer';
 
-// Asset Imports
 import DottedLine from '../../../assets/our-history/DottedLine.png';
 import T1 from '../../../assets/our-history/T1.png';
 import T2 from '../../../assets/our-history/T2.png';
@@ -18,7 +17,6 @@ import T13 from '../../../assets/our-history/T13.png';
 import T15 from '../../../assets/our-history/T15.png';
 import T17 from '../../../assets/our-history/T17.png';
 
-// Background Assets
 import T2_bg from '../../../assets/our-history/T2_bg.png';
 import T4_bg from '../../../assets/our-history/T4_bg.png';
 import T6_bg from '../../../assets/our-history/T6_bg.png';
@@ -29,7 +27,6 @@ import T14_bg from '../../../assets/our-history/T14_bg.png';
 
 import Stroke1 from '../../../assets/our-history/Stroke1.png';
 import Stroke2 from '../../../assets/our-history/Stroke2.png';
-
 
 const milestones = [
   {
@@ -199,16 +196,13 @@ export default function About() {
     <main className="overflow-x-hidden md:overflow-y-scroll md:snap-y md:snap-mandatory md:scroll-smooth md:h-screen">
       <ScrollLock />
 
-      {/* ───────────── 1. Hero / Intro Section ───────────── */}
       <section className="relative w-full h-screen flex flex-col items-center snap-start text-center px-4 bg-[#111C55] pt-72">
 
-        {/* Main content — title then dotted line then desc */}
         <div className="flex flex-col items-center justify-center flex-1 px-4">
           <h1 className="text-[28px] md:text-[70px] font-(family-name:--font-playfair-display) text-[#b89146] mb-6 max-w-4xl leading-tight">
             20+ Years of Pioneering Excellence And Innovation
           </h1>
 
-          {/* ── Dotted line between title and description ── */}
           <div className="h-12 md:h-16 my-4 md:my-6" style={{ width: '3px', backgroundImage: 'repeating-linear-gradient(to bottom, white 0, white 8px, transparent 8px, transparent 26px)' }} />
 
           <p className="max-w-3xl text-white/70 font-sans text-[15px] md:text-[30px] leading-relaxed">
@@ -220,13 +214,11 @@ export default function About() {
           </p>
         </div>
 
-        {/* Bottom dashed line — fills remaining space with custom wider-spaced dashes */}
         <div className="flex flex-col items-center flex-1">
           <div className="w-px h-full" style={{ width: '3px', backgroundImage: 'repeating-linear-gradient(to bottom, white 0, white 8px, transparent 8px, transparent 26px)' }} />
         </div>
       </section>
 
-      {/* ───────────── 2. Milestone Sections ───────────── */}
       {milestones.map((milestone, index) => (
         <TimelineSection
           key={index}
@@ -237,7 +229,6 @@ export default function About() {
         />
       ))}
 
-      {/* ───────────── Footer snap section (desktop only — mobile uses global layout footer) ───────────── */}
       <div className="hidden md:block snap-start">
         <Footer />
       </div>

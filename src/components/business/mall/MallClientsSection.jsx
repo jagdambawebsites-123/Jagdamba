@@ -20,9 +20,7 @@ export default function MallClientsSection() {
   return (
     <div className="w-full bg-[#F5F5F5]">
       <div className="w-full py-12 overflow-hidden">
-        {/* Scrolling Track */}
         <div className="relative w-full py-8 flex overflow-hidden">
-          {/* Fade edges */}
           <div
             className="absolute inset-0 z-10 pointer-events-none"
             style={{
@@ -33,7 +31,6 @@ export default function MallClientsSection() {
             }}
           />
 
-          {/* Scrolling brands */}
           <div className="flex w-max animate-infinite-scroll">
             {infiniteBrands.map((brand, index) => (
               <div

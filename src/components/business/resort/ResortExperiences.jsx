@@ -30,7 +30,6 @@ export default function ResortExperiences({
     <section className="w-full bg-[#F5F5F5] py-12 md:py-16 lg:py-20">
       <div className="flex flex-col gap-12 md:gap-16 lg:gap-20">
 
-        {/* Heading — padded */}
         <div className="container mx-auto px-6 md:px-10 xl:px-25">
           <div className="flex items-center justify-center gap-8 md:gap-10 lg:gap-14">
             <div className="relative w-16 h-6 md:w-24 md:h-8 lg:w-36 lg:h-10 shrink-0">
@@ -45,9 +44,7 @@ export default function ResortExperiences({
           </div>
         </div>
 
-        {/* Carousel — full bleed with arrows pinned to left/right edges */}
         <div className="relative w-full">
-          {/* Images grid */}
           <div className="grid grid-cols-3 overflow-hidden">
             {visibleItems.map((exp, idx) => (
               <div key={`${exp.label}-${idx}`} className="relative overflow-hidden group" style={{ aspectRatio: "4/3" }}>
@@ -57,7 +54,6 @@ export default function ResortExperiences({
                   alt={exp.label}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
                 />
-                {/* Label */}
                 <div className="absolute bottom-0 left-0 right-0 px-2 py-2 md:py-6 bg-gradient-to-t from-black/70 to-transparent flex justify-center">
                   <span className="text-white font-serif font-normal text-[12px] md:text-[20px] lg:text-[28px] text-center">
                     {exp.label}
@@ -67,7 +63,6 @@ export default function ResortExperiences({
             ))}
           </div>
 
-          {/* Left Arrow — pinned to far left, high z-index */}
           <button
             onClick={prev}
             aria-label="Previous"
@@ -78,7 +73,6 @@ export default function ResortExperiences({
             </div>
           </button>
 
-          {/* Right Arrow — pinned to far right, high z-index */}
           <button
             onClick={next}
             aria-label="Next"
@@ -90,7 +84,6 @@ export default function ResortExperiences({
           </button>
         </div>
 
-        {/* Services / Feature Icons — padded */}
         <div className="container mx-auto px-6 md:px-10 xl:px-25">
           <div className="grid grid-cols-4 gap-3 md:gap-8">
             {features.map((feat) => (

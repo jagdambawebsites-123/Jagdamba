@@ -20,14 +20,12 @@ export default function ResortRoomsSection({
   const prev = () => setCurrent((c) => (c - 1 + total) % total);
   const next = () => setCurrent((c) => (c + 1) % total);
 
-  // Build the ordered list of cards to show (always `visible` cards starting from current)
   const visibleItems = Array.from({ length: visible }, (_, i) => items[(current + i) % total]);
 
   return (
     <section className="w-full bg-[#F5F5F5] py-12 md:py-16 lg:py-20">
       <div className="container mx-auto px-6 md:px-10 xl:px-25 flex flex-col items-center gap-12 md:gap-16 lg:gap-20">
 
-        {/* Logo */}
         <div className="relative w-36 md:w-48 lg:w-56 h-16 md:h-20 lg:h-24">
           <Image
             src={logo}
@@ -38,12 +36,10 @@ export default function ResortRoomsSection({
           />
         </div>
 
-        {/* Description */}
         <p className="text-[#464646] font-serif font-bold text-[16px] md:text-[32px] lg:text-[40px] leading-relaxed text-center max-w-4xl">
           {description}
         </p>
 
-        {/* Heading with decorative arrows */}
         <div className="flex items-center gap-4 md:gap-8 lg:gap-14">
           <div className="relative w-16 h-6 md:w-24 md:h-8 lg:w-36 lg:h-10 shrink-0">
             <Image src={stayArrowLeft} alt="" fill className="object-contain" />
@@ -56,10 +52,8 @@ export default function ResortRoomsSection({
           </div>
         </div>
 
-        {/* Carousel */}
         <div className="w-full">
           <div className="relative w-full">
-            {/* Left Arrow — desktop only */}
             <button
               onClick={prev}
               aria-label="Previous"
@@ -70,7 +64,6 @@ export default function ResortRoomsSection({
               </div>
             </button>
 
-            {/* Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-5 lg:gap-6 overflow-hidden md:px-16 lg:px-20">
               {visibleItems.map((room, idx) => (
                 <div
@@ -78,7 +71,6 @@ export default function ResortRoomsSection({
                   className={`flex flex-col bg-white border border-[#464646] overflow-hidden ${idx !== 0 ? 'hidden md:flex' : ''}`}
                   style={{ borderRadius: "8px" }}
                 >
-                  {/* Image */}
                   <div className="relative w-full shrink-0" style={{ height: "260px" }}>
                     <Image
                       src={room.src}
@@ -88,7 +80,6 @@ export default function ResortRoomsSection({
                     />
                   </div>
 
-                  {/* Info */}
                   <div className="flex flex-col gap-2 p-4 lg:p-5 flex-1">
                     <h3 className="font-serif font-normal text-[16px] md:text-[20px] lg:text-[24px] text-[#464646]">
                       {room.name}
@@ -109,7 +100,6 @@ export default function ResortRoomsSection({
               ))}
             </div>
 
-            {/* Right Arrow — desktop only */}
             <button
               onClick={next}
               aria-label="Next"
@@ -121,7 +111,6 @@ export default function ResortRoomsSection({
             </button>
           </div>
 
-          {/* Mobile-only: arrows below card, bottom-right */}
           <div className="flex md:hidden justify-end gap-3 mt-4">
             <button onClick={prev} aria-label="Previous" className="w-9 h-9 flex items-center justify-center">
               <div className="relative w-9 h-9">

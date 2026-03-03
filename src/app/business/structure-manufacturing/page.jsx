@@ -1,10 +1,10 @@
 import React from "react";
 import BusinessHero from '@/components/business/BusinessHero'
 import AboutUs from '@/components/business/AboutUs'
-import StructureStats from '@/components/business/StructureStats'
-import ClientsSection from '@/components/business/ClientsSection'
-import AreasOfWork from '@/components/business/AreasOfWork'
-import StructureProducts from '@/components/business/StructureProducts'
+import StructureStats from '@/components/business/structure/StructureStats'
+import ClientsSection from '@/components/business/structure/ClientsSection'
+import AreasOfWork from '@/components/business/structure/AreasOfWork'
+import StructureProducts from '@/components/business/structure/StructureProducts'
 import { businessPagesData } from '@/data/businesses/businessPagesData'
 
 export default function StructureManufacturing() {
