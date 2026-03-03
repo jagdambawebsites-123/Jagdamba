@@ -11,8 +11,8 @@ const NAV_ITEMS = [
     href: '/about',
     subColumns: [
       [
-        { name: 'About Jagdamba Group', href: '/about-group' },
-        { name: 'Awards & Recognition', href: '/awards' },
+        { name: 'About Jagdamba Group', href: '/about/aboutUs' },
+        { name: 'Awards & Recognition', href: '/about/about-awards' },
       ],
       [
         { name: 'Our History', href: '/about/our-history' },
