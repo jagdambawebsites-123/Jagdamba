@@ -5,7 +5,19 @@ import Link from "next/link";
 import { useState, useRef } from "react";
 
 
-
+// Inline Chevron Down Icon for Nav
+const ChevronDown = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-3 w-3 ml-2 opacity-70 group-hover:opacity-100 transition-opacity"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={3}
+  >
+    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+  </svg>
+);
 // Six Chevron Scroll Indicator Icon (Bottom Right)
 const ScrollIndicator = () => (
   <div className="flex flex-col items-center animate-bounce-slow-custom">
@@ -65,17 +77,17 @@ const ValuesSection = () => {
 
   const values = [
     {
-      icon: "/images/icon1.png",
+      icon: "/images/aboutPage/aboutUs/icon1.png",
       title: "Integrity",
       text: "Integrity is the foundation of every decision at Jagdamba Trailers."
     },
     {
-      icon: "/images/icon2.png",
+      icon: "/images/aboutPage/aboutUs/icon2.png",
       title: "One Team",
       text: "At Jagdamba Trailers, we work as one team, united by our commitment to integrity."
     },
     {
-      icon: "/images/icon3.png",
+      icon: "/images/aboutPage/aboutUs/icon3.png",
       title: "Safety",
       text: "Safety is our unwavering priority, upheld with the highest integrity at Jagdamba Trailers."
     }
@@ -148,7 +160,7 @@ const SustainabilitySection = () => {
           Our commitment to plantation and greenery reflects our dedication to preserving and enhancing the natural environment. Through tree-planting and green space development across our projects, we aim to promote ecological balance, reduce our carbon footprint, and create healthier, more vibrant communities for future generations.
         </>
       ),
-      image: "/images/cardImage1.png",
+      image: "/images/aboutPage/aboutUs/cardImage1.png",
       bgColor: "bg-[#11552C]",
       titleColor: "text-[#CA9015] md:text-white",
       textColor: "text-white/90 md:text-[#E6E6E6]"
@@ -161,7 +173,7 @@ const SustainabilitySection = () => {
           We believe that a safe workplace is a productive workplace. By fostering a culture of safety, we not only protect our employees but also enhance their overall well-being and job satisfaction.
         </>
       ),
-      image: "/images/cardImage2.png",
+      image: "/images/aboutPage/aboutUs/cardImage2.png",
       bgColor: "bg-[#CE9F3A]",
       titleColor: "text-white",
       textColor: "text-white/90"
@@ -174,7 +186,7 @@ const SustainabilitySection = () => {
           We forge strong industry partnerships and collaborate with global leaders to bring the best innovations to India. At Jagdamba Group, we pursue self-reliant, sustainable growth, embracing the challenge of shaping a prosperous future for India.
         </>
       ),
-      image: "/images/cardImage3.png",
+      image: "/images/aboutPage/aboutUs/cardImage3.png",
       bgColor: "bg-[#111C55]",
       titleColor: "text-[#CA9015] md:text-white",
       textColor: "text-white/90 md:text-[#E6E6E6]"
@@ -271,7 +283,7 @@ export default function AboutUsPage() {
         {/* Hero Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/about.png"
+            src="/images/aboutPage/aboutUs/about.png"
             alt="Jagdamba Industrial Site"
             fill
             className="object-cover"
@@ -294,10 +306,11 @@ export default function AboutUsPage() {
                 Future
               </h1>
               {/* Elegant Orange underline */}
-              <div className="w-full h-[4px] md:h-[5px] bg-brand-orange mt-2 md:mt-6 animate-grow-line-custom" />
+              <div className="w-full h-[4px] md:h-[5px] mt-2 md:mt-6 animate-grow-line-custom" style={{ backgroundColor: '#B88C2E' }} />
             </div>
           </div>
         </main>
+
 
         {/* Bottom Right Scroll Indicator */}
         <div className="absolute bottom-16 right-16 z-20 hidden md:block group cursor-pointer">
@@ -313,7 +326,7 @@ export default function AboutUsPage() {
           {/* Vector 14 - Right Side */}
           <div className="absolute top-40 right-[1%] w-[95%] h-[70%] z-0 opacity-40 pointer-events-none">
             <Image
-              src="/images/Vector 14.png"
+              src="/images/aboutPage/aboutUs/Vector 14.png"
               alt=""
               fill
               className="object-contain object-right-top"
@@ -323,7 +336,7 @@ export default function AboutUsPage() {
           {/* Vector 15 - Left Side */}
           <div className="absolute top-32 left-[4%] w-[50%] h-[25%] z-0 opacity-40 pointer-events-none">
             <Image
-              src="/images/Vector 15.png"
+              src="/images/aboutPage/aboutUs/Vector 15.png"
               alt=""
               fill
               className="object-contain"
@@ -396,7 +409,7 @@ export default function AboutUsPage() {
           {/* Image Content */}
           <div className="relative w-full aspect-[4/3] md:aspect-square lg:aspect-[4/3] rounded-3xl overflow-visible">
             <Image
-              src="/images/vision.png"
+              src="/images/aboutPage/aboutUs/vision.png"
               alt="Our Vision - Handshake"
               fill
               className="object-contain"
@@ -413,7 +426,7 @@ export default function AboutUsPage() {
           {/* Image Content */}
           <div className="relative w-full aspect-[4/3] md:aspect-square lg:aspect-[4/3] rounded-3xl overflow-visible order-2 lg:order-1">
             <Image
-              src="/images/mission.png"
+              src="/images/aboutPage/aboutUs/mission.png"
               alt="Our Mission - Safety Week"
               fill
               className="object-contain"

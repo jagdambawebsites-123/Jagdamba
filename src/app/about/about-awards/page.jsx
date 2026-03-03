@@ -62,7 +62,7 @@ export default function AwardsPage() {
       {/* Vector 1 - Top Right Large */}
       <div className="absolute top-60 right-[1%] w-[95%] h-[70%] z-0 opacity-100 pointer-events-none">
         <Image
-          src="/images/aboutPage/about-awards//Vector2.png"
+          src="/images/aboutPage/about-awards/Vector2.png"
           alt=""
           fill
           className="object-contain object-right-top"
