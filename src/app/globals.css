@@ -41,6 +41,16 @@
   animation: infinite-scroll 30s linear infinite;
 }
 
+/* Gallery scroll: continuous seamless loop (translate -50% of doubled track) */
+@keyframes gallery-scroll-step {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-gallery-scroll {
+  animation: gallery-scroll-step 30s linear infinite;
+}
+
 html {
   overflow-x: hidden;
 }
