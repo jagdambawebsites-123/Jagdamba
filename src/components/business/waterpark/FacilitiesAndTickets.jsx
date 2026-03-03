@@ -136,7 +136,7 @@ export default function FacilitiesAndTickets() {
         </div>
 
         {/* Tickets Grid */}
-        <div className="relative z-10 max-w-5xl w-full px-4 md:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+        <div className="relative z-10 max-w-7xl w-full px-4 md:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
           {/* Background Decor: Dotted Circle (Left) */}
           <div className="absolute bottom-0 -left-0 md:-top-20 md:-left-20 w-40 h-40 md:w-64 md:h-64 pointer-events-none opacity-80 z-0">
             <Image
@@ -150,35 +150,35 @@ export default function FacilitiesAndTickets() {
           {tickets.map((ticket, index) => (
             <div
               key={index}
-              className="relative bg-[#111C55] rounded-xl p-8 md:p-10 flex flex-col items-center justify-center min-h-[350px] shadow-2xl hover:-translate-y-2 transition-transform duration-300"
+              className="relative flex flex-col items-center justify-center min-h-[380px] hover:-translate-y-2 transition-transform duration-300"
             >
-              {/* Golden Corner Borders (Requires an exported SVG/PNG frame from Figma) */}
-              <div className="absolute inset-2 border-[1px] border-[#CA9015]/40 rounded-lg pointer-events-none" />
-              <div className="absolute inset-0 pointer-events-none">
-                {/* Export the ornate golden border frame from Figma and place it here */}
+              {/* Ticket Background Image */}
+              <div className="absolute inset-0 z-0 pointer-events-none drop-shadow-2xl">
                 <Image
-                  src="/images/business/waterpark/tickets/gold-frame-corners2.png"
-                  alt="Gold Frame"
-                  fill
-                  className="object-contain p-3"
-                />
-              </div>
-
-              {/* Ticket Content */}
-              <div className="w-16 h-16 relative mb-6">
-                <Image
-                  src="/images/business/waterpark/tickets/ticket-icon.png" // The blue circular ticket icon
-                  alt="Ticket Icon"
+                  src="/images/business/waterpark/tickets/ticket.png" // Ensure this is the correct path for the new image
+                  alt="Ticket Background"
                   fill
                   className="object-contain"
                 />
               </div>
-              <h3 className="text-white font-serif text-lg mb-4 text-center">
-                {ticket.title}
-              </h3>
-              <p className="text-white font-serif text-sm opacity-90 text-center">
-                {ticket.price}
-              </p>
+
+              {/* Ticket Content */}
+              <div className="relative z-10 flex flex-col items-center justify-center w-full px-8 md:px-10">
+                <div className="w-16 h-16 relative mb-6">
+                  <Image
+                    src="/images/business/waterpark/tickets/ticket-icon.png" // The blue circular ticket icon
+                    alt="Ticket Icon"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <h3 className="text-white font-serif text-lg mb-4 text-center">
+                  {ticket.title}
+                </h3>
+                <p className="text-white font-serif text-sm opacity-90 text-center">
+                  {ticket.price}
+                </p>
+              </div>
             </div>
           ))}
         </div>
