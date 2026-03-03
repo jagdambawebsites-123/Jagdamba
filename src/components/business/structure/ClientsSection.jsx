@@ -18,7 +18,6 @@ export default function ClientsSection() {
         <div className='w-full bg-[#F8F9FA]'>
             <div className="container bg-[#F8F9FA] py-16 sm:py-24 w-full overflow-hidden">
 
-                {/* Top Text Section */}
                 <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-5 md:gap-12 mb-16 sm:mb-32 px-6 md:px-10 xl:px-25 text-center md:text-left">
                     <h2 className="text-4xl sm:text-[40px] font-serif text-[#111C55] whitespace-nowrap">
                         Our <span className="text-[#B88C2E]">Clients</span>
@@ -28,12 +27,8 @@ export default function ClientsSection() {
                     </p>
                 </div>
 
-                {/* Infinite Slider Container */}
-                {/* Added: border-y and py-8 for spacing between borders and logos */}
                 <div className="relative w-full border-y border-gray-200 py-8 flex overflow-hidden">
 
-                    {/* Vignette/Fade Overlay using CSS Mask */}
-                    {/* This creates the smooth fade on left and right */}
                     <div
                         className="absolute inset-0 z-10 pointer-events-none"
                         style={{
@@ -42,7 +37,6 @@ export default function ClientsSection() {
                         }}
                     ></div>
 
-                    {/* The scrolling track */}
                     <div className="flex w-max animate-infinite-scroll">
                         {infiniteClients.map((client, index) => (
                             <div

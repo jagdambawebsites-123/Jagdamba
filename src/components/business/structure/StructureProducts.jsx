@@ -16,7 +16,6 @@ export default function StructureProducts({ products = PRODUCTS }) {
     return (
         <section className="w-full bg-[#F5F5F5] py-16 flex flex-col gap-18 font-sans">
 
-            {/* Heading row */}
             <div className="container mx-auto px-6 md:px-10 xl:px-25 flex flex-col lg:flex-row lg:justify-between items-center lg:items-start text-center lg:text-left gap-6 lg:gap-20">
                 <h2 className="text-3xl md:text-[40px] font-serif text-[#111C55] whitespace-nowrap">
                     Our <span className="text-[#B88C2E]">Products</span>
@@ -28,7 +27,6 @@ export default function StructureProducts({ products = PRODUCTS }) {
                 </p>
             </div>
 
-            {/* Manual-scroll strip */}
             <div className="w-full overflow-x-auto scrollbar-hide px-4 md:px-10">
                 <div className="flex gap-4 md:gap-6">
                     {products.map((product, index) => (
@@ -46,7 +44,6 @@ export default function StructureProducts({ products = PRODUCTS }) {
                 </div>
             </div>
 
-            {/* Visit link */}
             <div className="container mx-auto px-6 md:px-10 xl:px-25 flex flex-col md:flex-row items-center justify-center gap-3 md:gap-4">
                 <span className="text-[#6B7280] text-[24px] md:text-[32px] font-sans">To know more, visit:</span>
                 <a

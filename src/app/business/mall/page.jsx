@@ -1,10 +1,10 @@
 import React from "react";
 import BusinessHero from "@/components/business/BusinessHero";
-import MallAboutUs from "@/components/business/MallAboutUs";
-import MallClientsSection from "@/components/business/MallClientsSection";
-import MallExploreSection from "@/components/business/MallExploreSection";
-import MallGallerySection from "@/components/business/MallGallerySection";
-import MallContactSection from "@/components/business/MallContactSection";
+import MallAboutUs from "@/components/business/mall/MallAboutUs";
+import MallClientsSection from "@/components/business/mall/MallClientsSection";
+import MallExploreSection from "@/components/business/mall/MallExploreSection";
+import MallGallerySection from "@/components/business/mall/MallGallerySection";
+import MallContactSection from "@/components/business/mall/MallContactSection";
 
 import { businessPagesData } from "@/data/businesses/businessPagesData";
 

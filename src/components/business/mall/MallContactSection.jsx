@@ -12,17 +12,13 @@ export default function MallContactSection() {
     <section className="w-full bg-[#F5F5F5]">
       <div className="container mx-auto px-6 md:px-10 xl:px-25 py-14 md:py-20">
         <div className="flex flex-col md:flex-row gap-8 md:gap-10 lg:gap-16 items-start">
-          {/* On mobile: full column — title, map, then info. On lg: left=title+info, right=map */}
 
-          {/* Left Side — Title + Info (desktop) */}
           <div className="w-full md:w-1/2 lg:w-1/2 flex flex-col gap-6 md:gap-10 lg:gap-14">
-            {/* Section Title */}
             <h2 className="font-serif font-normal text-[24px] md:text-[36px] lg:text-[48px] leading-tight text-center md:text-left">
               <span className="text-[#111C55]">Contact </span>
               <span className="text-[#CA9015]">Us</span>
             </h2>
 
-            {/* Map — visible only on mobile (hidden from md up) */}
             <div className="block md:hidden w-full">
               <a
                 href={googleMapsUrl}
@@ -45,7 +41,6 @@ export default function MallContactSection() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 md:gap-y-8 lg:gap-y-10 gap-x-8 lg:gap-x-12">
-            {/* Mall Timing */}
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2.5 text-[#464646]">
                 <Icon
@@ -61,7 +56,6 @@ export default function MallContactSection() {
               </p>
             </div>
 
-            {/* Contact Us */}
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2.5 text-[#464646]">
                 <Icon
@@ -88,7 +82,6 @@ export default function MallContactSection() {
               </div>
             </div>
 
-            {/* Address */}
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2.5 text-[#464646]">
                 <Icon
@@ -108,7 +101,6 @@ export default function MallContactSection() {
               </p>
             </div>
 
-            {/* Social Network */}
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2.5 text-[#464646]">
                 <Icon
@@ -148,7 +140,6 @@ export default function MallContactSection() {
           </div>
           </div>
 
-          {/* Right Side — Map (tablet + desktop) */}
           <div className="hidden md:block w-full md:w-1/2 lg:w-auto lg:ml-auto">
             <a
               href={googleMapsUrl}

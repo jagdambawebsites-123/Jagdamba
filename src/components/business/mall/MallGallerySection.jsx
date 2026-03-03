@@ -25,7 +25,6 @@ export default function MallGallerySection() {
   return (
     <div className="w-full bg-[#F5F5F5]">
       <div className="flex flex-col lg:flex-row items-center lg:items-start py-12 md:py-16 lg:py-24 gap-8 md:gap-10 lg:gap-0">
-        {/* Left: Text — 40% */}
         <div className="w-full lg:w-[40%] flex flex-col justify-start items-center lg:items-start text-center lg:text-left px-6 md:px-10 xl:px-25 gap-6 shrink-0">
           <h2 className="text-[24px] md:text-[36px] lg:text-[48px] leading-[135%] font-serif font-normal text-[#111C55]">
             Gallery
@@ -40,7 +39,6 @@ export default function MallGallerySection() {
           </p>
         </div>
 
-        {/* Right: Auto-scrolling images — 60% */}
         <div className="w-full lg:w-[60%] overflow-hidden relative shrink-0">
           <div className="flex w-max animate-gallery-scroll gap-4 md:gap-5 lg:gap-6">
             {infiniteImages.map((src, index) => (

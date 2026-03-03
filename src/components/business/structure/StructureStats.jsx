@@ -25,12 +25,10 @@ export default function StructureStats({ stats = STATS }) {
     return (
         <section className="w-full bg-[#F5F5F5] px-6 md:px-10 xl:px-25 pb-16">
             <div className="container mx-auto flex flex-col gap-4 md:gap-6">
-                {/* Row 1 — 40 / 60 */}
                 <div className="flex gap-4 md:gap-6">
                     <Card stat={s0} className="w-[40%]" />
                     <Card stat={s1} className="w-[60%]" />
                 </div>
-                {/* Row 2 — 60 / 40 */}
                 <div className="flex gap-4 md:gap-6">
                     <Card stat={s2} className="w-[60%]" />
                     <Card stat={s3} className="w-[40%]" />
