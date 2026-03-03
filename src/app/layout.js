@@ -1,7 +1,13 @@
 import { Geist, Geist_Mono, Libre_Baskerville, Libre_Franklin, Playfair_Display } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+
+const sanomat = localFont({
+  src: "../fonts/Sanomat SansRegular.woff",
+  variable: "--font-sanomat",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,7 +46,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${libreBaskerville.variable} ${libreFranklin.variable} ${playfairDisplay.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${sanomat.variable} ${libreBaskerville.variable} ${libreFranklin.variable} ${playfairDisplay.variable} antialiased`}
       >
         <Header />
         {children}
