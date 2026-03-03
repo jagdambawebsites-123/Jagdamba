@@ -123,7 +123,7 @@ export default function ReserveParties() {
         {/* 3D Duck Graphic */}
         <div className="absolute -top-18 -left-6 md:-top-25 md:-left-12 w-34 h-34 md:w-52 md:h-52 z-20 pointer-events-none drop-shadow-2xl">
           <Image
-            src="/images/business/waterpark/reserveParties/3d-duck.png"
+            src="/images/business/waterpark/reserveParties/3d-duck-shadow.png"
             alt="Duck Mascot"
             fill
             className="object-contain"
