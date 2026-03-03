@@ -30,7 +30,7 @@ const NAV_ITEMS = [
         { name: 'Machining & Casting', href: '/business/machining-casting' },
       ],
       [
-        { name: 'Waterpark', href: '/waterpark' },
+        { name: 'Waterpark', href: '/business/waterpark' },
         { name: 'Resort', href: '/resort' },
         { name: 'Mall', href: '/business/mall' },
       ]
@@ -162,7 +162,7 @@ export default function Header() {
                   onMouseEnter={() => handleMouseEnter(item)}
                   // Text color shifts dynamically
                   className={`relative flex items-center cursor-pointer transition-colors duration-500 h-full
-                    ${isDarkHeader ? 'text-white' : isManagingDirectors ? 'text-gray-500' : 'text-[#374151]'} hover:text-[#F6B426]
+                    ${isDarkHeader ? 'text-white' : isManagingDirectors ? 'text-gray-500' : 'text-[#464646]'} hover:text-[#F6B426]
                   `}
                 >
                   <span className="md:text-sm lg:text-base xl:text-lg font-sans font-medium">{item.label}</span>
