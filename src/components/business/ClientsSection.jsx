@@ -47,7 +47,7 @@ export default function ClientsSection() {
                         {infiniteClients.map((client, index) => (
                             <div
                                 key={index}
-                                className="flex justify-center items-center w-[150px] sm:w-[200px] mx-4 sm:mx-8"
+                                className="flex justify-center items-center w-37.5 sm:w-50 mx-4 sm:mx-8"
                             >
                                 <img
                                     src={client.src}

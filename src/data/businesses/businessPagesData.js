@@ -172,5 +172,14 @@ export const businessPagesData = {
       link: "/About",
       buttonText: "About Us",
     },
+    about: {
+      titleStart: "About The",
+      titleHighlight: "Mall",
+      paragraphs: [
+        "Jagdamba Group, a distinguished conglomerate comprising seven diverse and rapidly expanding companies in sectors such as waterpark management, trailer manufacturing, mining, sponge iron production, resort management, and mall operations. With a robust presence across multiple cities, we have firmly established ourselves in today's competitive market by adhering to our core values and consistently delivering exceptional services and high-quality results.",
+      ],
+      statNumber: "2013",
+      statLabel: "Built Year",
+    },
   },
 };
