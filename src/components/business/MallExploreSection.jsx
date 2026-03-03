@@ -36,7 +36,7 @@ export default function MallExploreSection() {
         </h2>
 
         {/* Cards */}
-        <div className="grid grid-cols-2 gap-4 md:gap-5 lg:gap-8 w-full max-w-4xl">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-8 w-full max-w-4xl lg:max-w-full">
           {categories.map((cat) => (
             <div key={cat.label} className="flex flex-col items-center bg-white rounded-2xl p-2 md:p-3 pb-4 md:pb-5 shadow-lg w-full">
               {/* Image */}

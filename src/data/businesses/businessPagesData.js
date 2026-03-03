@@ -6,7 +6,7 @@ export const businessPagesData = {
     hero: {
       title: "Refining Excellence",
       image: "/images/landingPage/hero/hero-mining.png",
-      link: "/About",
+      link: "/about/aboutUs",
       buttonText: "About Us",
     },
     about: {
@@ -58,7 +58,7 @@ export const businessPagesData = {
     hero: {
       title: "Crafting Precision",
       image: "/images/landingPage/hero/hero-casting.png", // Update with your actual path
-      link: "/About",
+      link: "/about/aboutUs",
       buttonText: "About Us",
     },
     about: {
@@ -145,7 +145,7 @@ export const businessPagesData = {
     hero: {
       title: "Building Tomorrow's Infrastructure",
       image: "/images/business/structure/hero-structure.png",
-      link: "/About",
+      link: "/about/aboutUs",
       buttonText: "About Us",
     },
     about: {
@@ -161,15 +161,11 @@ export const businessPagesData = {
     },
   },
 
-     
-  // ==========================================
-  // MALL PAGE DATA
-  // ==========================================
   "mall": {
     hero: {
       title: "Shop. Dine.Unwind.",
       image: "/images/business/mall/mall-hero.png", // Update with your actual path
-      link: "/About",
+      link: "/about/aboutUs",
       buttonText: "About Us",
     },
     about: {
@@ -180,6 +176,71 @@ export const businessPagesData = {
       ],
       statNumber: "2013",
       statLabel: "Built Year",
+    },
+  },
+
+  "resort": {
+    hero: {
+      title: "Relax. Indulge. LÃ Fountain",
+      image: "/images/business/resort/resort-hero.png",
+      link: "/about/aboutUs",
+      buttonText: "About Us",
+    },
+    rooms: {
+      logo: "/images/business/resort/la-fountain-logo.png",
+      heading: "Choose Your Perfect Stay",
+      description:
+        '"Discover paradise at La\' Fountain Resort, where every moment is a luxurious escape."',
+      stayArrowLeft: "/images/business/resort/stay-arrowleft.png",
+      stayArrowRight: "/images/business/resort/stay-arrowright.png",
+      arrowLeft: "/images/business/resort/arrowleft.png",
+      arrowRight: "/images/business/resort/arrowright.png",
+      items: [
+        {
+          name: "Executive Room",
+          src: "/images/business/resort/executive.png",
+          details: ["Bed: 1 Bed", "View: Pool", "Guest: 2 Adults, 1 Child"],
+        },
+        {
+          name: "Deluxe Double Room",
+          src: "/images/business/resort/deluxe.png",
+          details: ["Bed: 2 Bed", "View: Pool", "Guest: 4 Adults"],
+        },
+        {
+          name: "Presidential Room",
+          src: "/images/business/resort/presidential.png",
+          details: ["Bed: 1 Bed", "View: Pool", "Guest: 2 Adults"],
+        },
+        {
+          name: "Suite Room",
+          src: "/images/business/resort/suite.png",
+          details: ["Bed: 1 Bed", "View: Pool", "Guest: 2 Adults"],
+        },
+      ],
+    },    galleryBanner: {
+      image: "/images/business/resort/gallery-img.png",
+      quote:
+        "Soothing waters, vibrant flora and fauna and peaceful surrounding create an enhancing holiday destination",
+      buttonText: "View Gallery",
+      buttonLink: "#",
+    },
+    experiences: {
+      stayArrowLeft: "/images/business/resort/stay-arrowleft.png",
+      stayArrowRight: "/images/business/resort/stay-arrowright.png",
+      arrowLeft: "/images/business/resort/left-arrow.png",
+      arrowRight: "/images/business/resort/right-arrow.png",
+      experiences: [
+        { label: "Fine Dine", src: "/images/business/resort/fine-dines.png" },
+        { label: "Luxurious Rooms", src: "/images/business/resort/lux-rooms.png" },
+        { label: "Weddings", src: "/images/business/resort/wedding.png" },
+        { label: "Waterpark Adventure", src: "/images/business/resort/waterpark.png" },
+        { label: "Night Pool", src: "/images/business/resort/night-pool.png" },
+      ],
+    },
+    gettingHere: {
+      stayArrowLeft: "/images/business/resort/stay-arrowleft.png",
+      stayArrowRight: "/images/business/resort/stay-arrowright.png",
+      mapsUrl: "https://www.google.com/maps/search/La+Fountain+Resort+Sarangarh+Chhattisgarh",
     },
   },
 };

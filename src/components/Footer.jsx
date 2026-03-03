@@ -9,31 +9,31 @@ const FOOTER_LINKS = [
     {
         heading: "HOME",
         links: [
-            { name: "About Us", href: "/about" },
-            { name: "Business", href: "/business" },
-            { name: "Team", href: "/team" },
-            { name: "News & Media", href: "/news" },
+            { name: "About Us", href: "/about/aboutUs" },
+            { name: "Business", href: "/#business" },
+            { name: "Team", href: "/boards-of-directors" },
+            { name: "News & Media", href: "#" },
             { name: "Contact Us", href: "/contact" },
         ],
     },
     {
         heading: "ABOUT US",
         links: [
-            { name: "About us", href: "/about" },
+            { name: "About us", href: "/about/aboutUs" },
             { name: "Our History", href: "/about/our-history" },
-            { name: "Awards", href: "/awards" },
+            { name: "Awards", href: "/about/about-awards" },
         ],
     },
     {
         heading: "BUSINESS",
         links: [
-            { name: "Trailer Manufacturing", href: "/trailer-manufacturing" },
-            { name: "Structural Manufacturing", href: "/structure-manufacturing" },
+            { name: "Trailer Manufacturing", href: "#" },
+            { name: "Structural Manufacturing", href: "/business/structure-manufacturing" },
             { name: "Mining & Calcining", href: "/business/mining-calcining" },
             { name: "Casting & Machining", href: "/business/machining-casting" },
-            { name: "Waterpark", href: "/waterpark" },
-            { name: "Resort", href: "/resort" },
-            { name: "Mall", href: "/mall" },
+            { name: "Waterpark", href: "#" },
+            { name: "Resort", href: "/business/resort" },
+            { name: "Mall", href: "/business/mall" },
         ],
     },
     {
@@ -41,7 +41,7 @@ const FOOTER_LINKS = [
         links: [
             { name: "Chairman", href: "/chairman" },
             { name: "Managing Director", href: "/managing-directors" },
-            { name: "Team", href: "/team" },
+            { name: "Board of Directors", href: "/boards-of-directors" },
         ],
     },
 ];
