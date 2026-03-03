@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import mailIcon from "@/assets/footer/mail.png";
 import phoneIcon from "@/assets/footer/phone.png";
+import { usePathname } from "next/navigation";
 
 const FOOTER_LINKS = [
     {
@@ -61,6 +62,11 @@ const CONTACT_INFO = {
 };
 
 export default function Footer() {
+    const pathname = usePathname();
+
+    // Do not render Footer on the Sanity Studio page
+    if (pathname?.startsWith('/studio')) return null;
+
     return (
         <footer className="bg-[#111C55] text-white font-sans">
 
