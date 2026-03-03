@@ -2,6 +2,7 @@ import React from 'react'
 import WaterparkHero from '@/components/business/waterpark/WaterparkHero'
 import EnhanceExperience from '@/components/business/waterpark/EnhanceExperience'
 import ReserveParties from '@/components/business/waterpark/ReserveParties'
+import Throwback from '@/components/business/waterpark/Throwback'
 
 export default function Waterpark() {
   return (
@@ -9,6 +10,7 @@ export default function Waterpark() {
       <WaterparkHero/>
       <EnhanceExperience/>
       <ReserveParties/>
+      <Throwback/>
     </div>
   )
 }
