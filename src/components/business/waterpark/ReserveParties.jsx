@@ -29,7 +29,7 @@ export default function ReserveParties() {
       title: "Banquet Hall Party",
       description:
         "Experience the elegance and sophistication of our state-of-the-art banquet hall, perfect for hosting weddings, corporate events, gala dinners, and special celebrations. Our versatile space can be tailored to suit your event's unique requirements, offering a luxurious ambiance complemented by modern amenities and impeccable service. From exquisite décor to gourmet catering, our dedicated team ensures every detail is flawlessly executed. Reserve our banquet hall today and let us help you create an unforgettable event that exceeds your expectations.",
-      image: "/images/business/waterpark/reserveParties/banquet-hall-party.png",
+      image: "/images/business/waterpark/reserveParties/banquet-hall-party2.png",
     },
     {
       title: "Fine Dine",

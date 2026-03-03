@@ -32,7 +32,7 @@ export default function Throwback() {
       </div>
 
       {/* Zigzag Decor - Top Right */}
-      <div className="absolute top-8 -right-0 md:-top-0 md:right-0 w-32 h-16 md:w-48 md:h-20 z-10 pointer-events-none opacity-50">
+      <div className="absolute top-8 -right-0 md:-top-0 md:right-0 w-32 h-16 md:w-48 md:h-20 z-10 pointer-events-none">
         <Image
           src="/images/business/waterpark/throwBack/zig-zag-waves.svg"
           alt="Decorative Zigzag"
@@ -109,14 +109,14 @@ export default function Throwback() {
 
       {/* Bottom Call to Action */}
       <div className="relative z-10 mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-        <span className="text-[#464646] text-xl md:text-2xl font-serif">
+        <span className="text-[#111C55] text-xl md:text-2xl font-serif">
           To Know More, Visit:
         </span>
         <Link 
           href="https://jagdambafunworld.com" 
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-3 px-6 py-2 border-2 border-[#2b3954] rounded-full text-[#2b3954] text-sm md:text-base font-medium hover:bg-[#2b3954] hover:text-white transition-all duration-300"
+          className="flex items-center gap-3 px-6 py-2 border-2 border-[#111C55] rounded-full text-[#111C55] text-sm md:text-base font-medium hover:bg-[#111C55] hover:text-white transition-all duration-300"
         >
           jagdambafunworld.com
           <svg 

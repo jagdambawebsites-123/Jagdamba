@@ -8,7 +8,7 @@ export default function WaterparkHero() {
   return (
     <section className="relative w-full bg-[#F5F5F5] overflow-hidden flex flex-col items-center">
       {/* --- TOP SECTION: HERO & WAVE --- */}
-      <div className="relative w-full bg-linear-to-b from-[#F5F5F5] from-50% to-[#BBDAE1] to-50% pt-20 -mt-10 sm:-mt-16 md:-mt-32 flex flex-col z-10">
+      <div className="relative w-full bg-linear-to-b from-[#F5F5F5] from-50% to-[#BBDAE1] to-50% -mt-10 sm:-mt-16 md:-mt-32 flex flex-col z-10">
         <div className="absolute inset-0 top-0 pointer-events-none opacity-50 z-0">
           <Image
             src="/images/business/waterpark/attraction/blue-clouds.png"
@@ -27,7 +27,7 @@ export default function WaterparkHero() {
             className="w-full h-auto block m-0 p-0"
             priority
           />
-          <div className="w-full pb-[10.6%]" />
+          <div className="w-full pb-[17.6%]" />
         </div>
       </div>
 
@@ -53,9 +53,9 @@ export default function WaterparkHero() {
         </div>
 
         {/* 3D Dolphin - Top Left */}
-        <div className="absolute left-0 md:left-12 lg:left-32 -top-10 md:-top-24 w-32 h-32 lg:w-60 lg:h-60 pointer-events-none z-10 drop-shadow-2xl">
+        <div className="absolute left-0 md:left-12 lg:left-32 -top-10 -scale-x-100 md:-top-24 w-32 h-32 lg:w-60 lg:h-60 pointer-events-none z-10 drop-shadow-2xl">
           <Image
-            src="/images/business/waterpark/facilities/dolphin.png" // Add your left-facing dolphin asset
+            src="/images/business/waterpark/facilities/dolphin2.png" // Add your left-facing dolphin asset
             alt="Dolphin Mascot Left"
             fill
             className="object-contain"
@@ -63,9 +63,9 @@ export default function WaterparkHero() {
         </div>
 
         {/* 3D Dolphin - Bottom Right */}
-        <div className="absolute right-0 md:right-12 lg:right-32 bottom-5 -scale-x-100 bottom-0 md:bottom-10 w-32 h-32 lg:w-60 lg:h-60 pointer-events-none z-10 drop-shadow-2xl">
+        <div className="absolute right-0 md:right-12 lg:right-32 bottom-5 bottom-0 md:bottom-10 w-32 h-32 lg:w-60 lg:h-60 pointer-events-none z-10 drop-shadow-2xl">
           <Image
-            src="/images/business/waterpark/facilities/dolphin.png" // Add your right-facing dolphin asset
+            src="/images/business/waterpark/facilities/dolphin2.png" // Add your right-facing dolphin asset
             alt="Dolphin Mascot Right"
             fill
             className="object-contain"

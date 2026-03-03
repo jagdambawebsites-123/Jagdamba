@@ -38,11 +38,11 @@ export default function FacilitiesAndTickets() {
     // Outer container with the beige/cream background
     <section className="relative w-full bg-[#F5F5F5] overflow-hidden flex flex-col items-center">
       {/* --- TOP SECTION: FACILITIES (White Background) --- */}
-      <div className="relative w-full bg-linear-to-b from-[#F6B426]/0 to-[#F6B426]/15 pt-20 pb-32 md:pb-48 flex flex-col items-center z-10">
+      <div className="relative w-full pt-20 pb-32 md:pb-48 flex flex-col items-center z-10">
         {/* 3D Dolphin - Top Right */}
-        <div className="absolute top-4 right-4 md:top-0 md:right-10 w-24 h-24 md:w-60 md:h-60 z-20 pointer-events-none drop-shadow-2xl">
+        <div className="absolute top-4 right-4 md:top-0 md:right-10 w-34 h-34 md:w-60 md:h-60 z-20 pointer-events-none drop-shadow-2xl">
           <Image
-            src="/images/business/waterpark/facilities/dolphin.png"
+            src="/images/business/waterpark/facilities/dolphin2.png"
             alt="Dolphin Mascot"
             fill
             className="object-contain"
@@ -77,17 +77,29 @@ export default function FacilitiesAndTickets() {
         </div>
 
         {/* SVG Wave Transition (Attached to the bottom of the white section) */}
-        <div className="absolute -bottom-[1px] left-0 w-full z-10 overflow-hidden leading-none rotate-180 pointer-events-none">
+        <div className="absolute -bottom-[1px] left-0 w-full z-10 overflow-hidden leading-none pointer-events-none">
           <svg
-            className="relative block w-full h-[60px] md:h-[120px]"
+            viewBox="0 0 1504 623"
+            fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
           >
-            {/* The fill color here matches the beige background of the bottom section */}
-            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-              fill="#F5F5F5"
+            <path
+              d="M1503.5 507.501C833 863.5 529.5 252.501 0 552.001V0H1503.5V507.501Z"
+              fill="url(#paint0_linear_878_7250)"
             />
+            <defs>
+              <linearGradient
+                id="paint0_linear_878_7250"
+                x1="751.75"
+                y1="0"
+                x2="751.75"
+                y2="622.677"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stopColor="#F6B426" stopOpacity="0" />
+                <stop offset="1" stopColor="#F6B426" stopOpacity="0.15" />
+              </linearGradient>
+            </defs>
           </svg>
         </div>
       </div>
@@ -98,9 +110,18 @@ export default function FacilitiesAndTickets() {
       {/* --- BOTTOM SECTION: TICKET PLAN (Beige Background) --- */}
       <div className="relative w-full py-20 flex flex-col items-center z-10">
         {/* Background Decor: Zigzag (Right) */}
-        <div className="absolute bottom-32 -right-4 md:bottom-40 md:right-8 w-32 h-16 md:w-48 md:h-24 pointer-events-none opacity-50 z-0">
+        <div className="absolute top-0 -right-4 md:bottom-40 md:right-8 w-30 h-12 md:w-48 md:h-24 pointer-events-none z-0">
           <Image
             src="/images/business/waterpark/throwBack/zig-zag-waves.svg"
+            alt="Decorative zigzag"
+            fill
+            className="object-contain"
+          />
+        </div>
+        {/* Background Decor: ORANGE WAVE (Right) */}
+        <div className="absolute -top-20 md:-top-60 -right-8 md:-right-8 w-22 h-25 md:w-40 md:h-80 pointer-events-none z-0">
+          <Image
+            src="/images/business/waterpark/tickets/peak-wave.svg"
             alt="Decorative zigzag"
             fill
             className="object-contain"
@@ -116,15 +137,15 @@ export default function FacilitiesAndTickets() {
 
         {/* Tickets Grid */}
         <div className="relative z-10 max-w-5xl w-full px-4 md:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
-              {/* Background Decor: Dotted Circle (Left) */}
-        <div className="absolute bottom-0 -left-0 md:-top-20 md:-left-20 w-40 h-40 md:w-64 md:h-64 pointer-events-none opacity-80 z-0">
-          <Image
-            src="/images/business/waterpark/tickets/doted-circle-golden.svg"
-            alt="Decorative dots"
-            fill
-            className="object-contain"
-          />
-        </div>
+          {/* Background Decor: Dotted Circle (Left) */}
+          <div className="absolute bottom-0 -left-0 md:-top-20 md:-left-20 w-40 h-40 md:w-64 md:h-64 pointer-events-none opacity-80 z-0">
+            <Image
+              src="/images/business/waterpark/tickets/doted-circle-golden.svg"
+              alt="Decorative dots"
+              fill
+              className="object-contain"
+            />
+          </div>
 
           {tickets.map((ticket, index) => (
             <div
