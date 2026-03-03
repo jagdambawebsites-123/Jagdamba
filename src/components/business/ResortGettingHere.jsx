@@ -57,10 +57,8 @@ export default function ResortGettingHere({ stayArrowLeft, stayArrowRight, mapsU
           </div>
         </div>
 
-        {/* Content: Info grid + Map — on mobile: map first, info below; on desktop: side by side */}
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
 
-          {/* Map — order-first on mobile, order-last on desktop */}
           <a
             href={mapsUrl}
             target="_blank"

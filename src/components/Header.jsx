@@ -24,14 +24,14 @@ const NAV_ITEMS = [
     href: '/business',
     subColumns: [
       [
-        { name: 'Trailer Manufacturing', href: '/business/trailer-manufacturing' },
+        { name: 'Trailer Manufacturing', href: '/trailer' },
         { name: 'Structure Manufacturing', href: '/business/structure-manufacturing' },
         { name: 'Mining & Calcining', href: '/business/mining-calcining' },
         { name: 'Machining & Casting', href: '/business/machining-casting' },
       ],
       [
-        { name: 'Waterpark', href: '/waterpark' },
-        { name: 'Resort', href: '/business/resort' },
+        { name: 'Waterpark', href: '/business/waterpark' },
+        { name: 'Resort', href: '/resort' },
         { name: 'Mall', href: '/business/mall' },
       ]
     ]
@@ -70,6 +70,9 @@ export default function Header() {
 
   const pathname = usePathname();
 
+  // Do not render Header on the Sanity Studio page
+  if (pathname?.startsWith('/studio')) return null;
+
   // Check if we are on the root route
   const isRoot = pathname === '/';
   // Determine if the header should use "Dark Mode" (Dark background, white text)
@@ -77,7 +80,10 @@ export default function Header() {
   const isBoardsOfDirectors = pathname === '/boards-of-directors';
   const isTeam = pathname === '/team';
   const isContact = pathname === '/contact';
-  const isDarkHeader = (!isRoot && !isManagingDirectors && !isBoardsOfDirectors && !isTeam && !isContact) || isMobileMenuOpen;
+  const isTrailer = pathname === '/trailer';
+  const isNews = pathname === '/news';
+
+  const isDarkHeader = (!isManagingDirectors && !isBoardsOfDirectors && !isContact && !isNews) || isMobileMenuOpen || isRoot || isTrailer;
 
   useEffect(() => {
     setHoveredLabel(null);
@@ -119,19 +125,22 @@ export default function Header() {
     // 1. Mobile menu always takes priority
     if (isMobileMenuOpen) return 'bg-black/95';
 
-    // 2. White Header Pages
-    if (isRoot || isManagingDirectors || isBoardsOfDirectors || isContact) return 'bg-white';
+    // 2. White Header Pages: Only for specific list pages
+    if (isManagingDirectors || isBoardsOfDirectors || isContact || isNews) return 'bg-white';
 
-    // 3. Specific Background for history page
+    // 3. Background for pages with Hero images (Home, Trailer) - Added black shade effect
+    if (isRoot || isTrailer) return 'bg-gradient-to-b from-black/90 via-black/40 to-transparent';
+
+    // 4. Specific Background for history page
     if (pathname.toLowerCase() === '/about/our-history') return 'bg-[#111C55]';
 
-    // 4. Default Gradient (Fallback)
-    return 'bg-gradient-to-b from-black/70 to-black/50 text-white';
+    // 5. Default Fallback
+    return 'bg-gradient-to-b from-black/80 to-transparent text-white';
   };
 
   return (
     <header
-      className={`${(isRoot || isManagingDirectors || isBoardsOfDirectors || isContact) ? 'fixed' : 'absolute'} top-0 left-0 w-full z-50 transition-colors duration-700 ease-in-out shadow-[0_2px_9px_0_rgba(0,0,0,0.1)]
+      className={`${(isManagingDirectors || isBoardsOfDirectors || isContact || isNews) ? 'fixed' : 'absolute'} top-0 left-0 w-full z-50 transition-all duration-700 ease-in-out
       ${getHeaderStyles()}
       `}
       onMouseLeave={handleMouseLeave}
@@ -162,11 +171,11 @@ export default function Header() {
                   onMouseEnter={() => handleMouseEnter(item)}
                   // Text color shifts dynamically
                   className={`relative flex items-center cursor-pointer transition-colors duration-500 h-full
-                    ${isDarkHeader ? 'text-white' : isManagingDirectors ? 'text-gray-500' : 'text-[#374151]'} hover:text-[#F6B426]
+                    ${isDarkHeader ? 'text-white' : (isManagingDirectors || isNews) ? 'text-gray-500' : 'text-[#374151]'} hover:text-[#F6B426]
                   `}
                 >
-                  <span className="md:text-sm lg:text-base xl:text-lg font-sans font-medium">{item.label}</span>
-                  {item.subColumns && <ChevronDownIcon />}
+                  <span className="md:text-sm lg:text-[15px] xl:text-[17px] font-sans font-medium tracking-wide">{item.label}</span>
+                  {item.subColumns && <ChevronDownIcon className="mt-0.5" />}
 
                   {/* Loading Bar Underline */}
                   <div
@@ -301,8 +310,8 @@ export default function Header() {
 
 function ChevronDownIcon({ className = "" }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"
-      className={`w-4 h-4 ml-1 transition-all duration-500 ${className || 'opacity-80'}`}>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor"
+      className={`w-3 h-3 ml-1.5 transition-all duration-500 opacity-90 ${className}`}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
     </svg>
   );
