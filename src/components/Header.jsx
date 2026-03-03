@@ -140,7 +140,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ease-in-out
+      className={`${(isManagingDirectors || isBoardsOfDirectors || isContact || isNews) ? 'fixed' : 'absolute'} top-0 left-0 w-full z-50 transition-all duration-700 ease-in-out
       ${getHeaderStyles()}
       `}
       onMouseLeave={handleMouseLeave}
@@ -171,7 +171,7 @@ export default function Header() {
                   onMouseEnter={() => handleMouseEnter(item)}
                   // Text color shifts dynamically
                   className={`relative flex items-center cursor-pointer transition-colors duration-500 h-full
-                     ${isDarkHeader ? 'text-white' : (isManagingDirectors || isNews) ? 'text-gray-500' : 'text-[#374151]'} hover:text-[#F6B426]
+                    ${isDarkHeader ? 'text-white' : (isManagingDirectors || isNews) ? 'text-gray-500' : 'text-[#374151]'} hover:text-[#F6B426]
                   `}
                 >
                   <span className="md:text-sm lg:text-[15px] xl:text-[17px] font-sans font-medium tracking-wide">{item.label}</span>
