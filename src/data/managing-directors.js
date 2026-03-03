@@ -30,7 +30,7 @@ export const DIRECTORS_DATA = [
   {
     name: "Umang Agrawal",
     image: D5,
-    description: "Umang Agrawal has recently taken on the management of Jagdamba Trailers service department for Jagdamba Group. In a new look, he represents the next step in their evolution, injecting fresh energy and innovative strategies for the growth and excellence in the construction sector."
+    description: "Umang Agrawal has recently taken on the management of Jagdamba Trailers service department for Jagdamba Group. As a new leader, he represents the next step in the group's evolution, bringing fresh perspectives and innovative strategies to drive growth and excellence in the construction sector."
   },
   {
     name: "Vidhi Agrawal",

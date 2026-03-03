@@ -16,6 +16,8 @@
 
   /* Add playfair mapping */
   --font-playfair: var(--font-playfair-display);
+  /* Add sanomat mapping */
+  --font-sanomat: var(--font-sanomat);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -43,12 +45,31 @@
 
 /* Gallery scroll: continuous seamless loop (translate -50% of doubled track) */
 @keyframes gallery-scroll-step {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-gallery-scroll {
   animation: gallery-scroll-step 30s linear infinite;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 15s linear infinite;
 }
 
 html {
