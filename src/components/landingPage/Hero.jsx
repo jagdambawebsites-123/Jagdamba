@@ -53,9 +53,8 @@ export default function HeroSection() {
       {slides.map((slide, index) => (
         <div
           key={slide.id}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            index === current ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === current ? "opacity-100" : "opacity-0"
+            }`}
         >
           <Image
             src={slide.image}
@@ -81,11 +80,11 @@ export default function HeroSection() {
             <h1 className="text-[28px] sm:text-[36px] md:text-[48px] lg:text-[64px] leading-tight flex items-center">
               {slides[current].title}
             </h1>
-            
+
             {/* Accent Line */}
             <div className="h-1 w-full max-w-[300px] md:max-w-none bg-[#CA9015]" />
-            
-            <Link href={slides[current].link}>
+
+            <Link href="/about/aboutUs">
               <ButtonPrimary content="About Us" />
             </Link>
           </div>
@@ -99,9 +98,8 @@ export default function HeroSection() {
             <button
               key={index}
               onClick={() => setCurrent(index)}
-              className={`h-2 transition-all duration-300 rounded-full ${
-                index === current ? "w-10 bg-[#CA9015]" : "w-2 bg-white/40 hover:bg-white/70"
-              }`}
+              className={`h-2 transition-all duration-300 rounded-full ${index === current ? "w-10 bg-[#CA9015]" : "w-2 bg-white/40 hover:bg-white/70"
+                }`}
             />
           ))}
         </div>
