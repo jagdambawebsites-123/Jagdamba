@@ -158,6 +158,8 @@ const milestones = [
       "In 2024, Jagdamba Group opens a luxurious LA Fountain resort in Raigarh, Chhattisgarh, offering an unparalleled blend of comfort and elegance. Redefining hospitality standards in the region, providing guests with an exceptional experience amidst the serene landscapes of Raigarh.",
     bgImg: T14_bg,
     textOnly: true,
+    overlayClass: 'hidden',
+    bgImgClass: 'opacity-100',
   },
   {
     year: '2025',
@@ -176,6 +178,8 @@ const milestones = [
       "Our journey on the tracks begins. In April 2025, we set up Swapan Engineering Co. in Kolkata—our gateway into railway electrical equipment manufacturing, driving progress in India's rail network.",
     bgImg: T14_bg,
     textOnly: true,
+    overlayClass: 'hidden',
+    bgImgClass: 'opacity-100',
   },
   {
     year: '2025',
