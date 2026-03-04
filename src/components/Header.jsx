@@ -8,7 +8,7 @@ import { usePathname } from 'next/navigation';
 const NAV_ITEMS = [
   {
     label: 'About',
-    href: '/about',
+    href: '#',
     subColumns: [
       [
         { name: 'About Jagdamba Group', href: '/about/aboutUs' },
@@ -21,7 +21,7 @@ const NAV_ITEMS = [
   },
   {
     label: 'Businesses',
-    href: '/business',
+    href: '#',
     subColumns: [
       [
         { name: 'Trailer Manufacturing', href: '/trailer' },
@@ -38,7 +38,7 @@ const NAV_ITEMS = [
   },
   {
     label: 'Team',
-    href: '/team',
+    href: '#',
     subColumns: [
       [
         { name: 'Chairman', href: '/chairman' },
@@ -140,7 +140,7 @@ export default function Header() {
 
   return (
     <header
-      className={`${(isManagingDirectors || isBoardsOfDirectors || isContact || isNews) ? 'fixed' : 'absolute'} top-0 left-0 w-full z-50 transition-all duration-700 ease-in-out
+      className={`${(isManagingDirectors || isBoardsOfDirectors || isContact || isNews) ? 'fixed' : 'fixed'} top-0 left-0 w-full z-50 transition-all duration-700 ease-in-out
       ${getHeaderStyles()}
       `}
       onMouseLeave={handleMouseLeave}
