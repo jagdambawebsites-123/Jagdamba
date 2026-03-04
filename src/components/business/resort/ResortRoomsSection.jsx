@@ -57,21 +57,21 @@ export default function ResortRoomsSection({
             <button
               onClick={prev}
               aria-label="Previous"
-              className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-30 w-14 h-14 lg:w-16 lg:h-16 items-center justify-center"
+              className="hidden md:flex absolute -left-8 lg:-left-14 top-1/2 -translate-y-1/2 z-30 w-14 h-14 lg:w-16 lg:h-16 items-center justify-center"
             >
               <div className="relative w-14 h-14 lg:w-16 lg:h-16">
                 <Image src={arrowLeft} alt="Previous" fill className="object-contain" />
               </div>
             </button>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-5 lg:gap-6 overflow-hidden md:px-16 lg:px-20">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 lg:gap-14 overflow-hidden md:px-10 lg:px-12 place-items-center">
               {visibleItems.map((room, idx) => (
                 <div
                   key={`${room.name}-${idx}`}
-                  className={`flex flex-col bg-white border border-[#464646] overflow-hidden ${idx !== 0 ? 'hidden md:flex' : ''}`}
+                  className={`flex flex-col bg-white border border-[#464646] overflow-hidden mx-auto md:mx-0 w-[350px] h-[368px] md:w-[400px] md:h-[612px] ${idx !== 0 ? 'hidden md:flex' : ''}`}
                   style={{ borderRadius: "8px" }}
                 >
-                  <div className="relative w-full shrink-0" style={{ height: "260px" }}>
+                  <div className="relative w-full shrink-0 h-[215px] md:h-[400px]">
                     <Image
                       src={room.src}
                       alt={room.name}
@@ -103,7 +103,7 @@ export default function ResortRoomsSection({
             <button
               onClick={next}
               aria-label="Next"
-              className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-30 w-14 h-14 lg:w-16 lg:h-16 items-center justify-center"
+              className="hidden md:flex absolute -right-8 lg:-right-14 top-1/2 -translate-y-1/2 z-30 w-14 h-14 lg:w-16 lg:h-16 items-center justify-center"
             >
               <div className="relative w-14 h-14 lg:w-16 lg:h-16">
                 <Image src={arrowRight} alt="Next" fill className="object-contain" />

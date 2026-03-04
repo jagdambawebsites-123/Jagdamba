@@ -71,8 +71,8 @@ export default function Footer() {
         <footer className="bg-[#111C55] text-white font-sans">
 
             {/* ── Nav columns ── */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
-                <div className="grid grid-cols-2 md:grid-cols-5 gap-8 p-6 sm:p-8 lg:p-10">
+            <div className="max-w-7xl mx-auto px-2 sm:px-2 lg:px-0 pt-12 pb-8">
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-8 p-6 sm:p-8 lg:p-4">
 
                     {/* Nav link columns — all 4 shown on both mobile and desktop */}
                     {FOOTER_LINKS.map((section) => (
