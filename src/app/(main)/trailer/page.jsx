@@ -158,7 +158,7 @@ const TrailerPage = () => {
                 </div>
                 <div className="relative z-10 h-full flex flex-col justify-start md:justify-center px-6 md:px-12 xl:px-24 pt-[7.5rem] md:pt-0">
                     <div className="container mx-auto">
-                        <div className="flex flex-col items-start w-full md:w-fit gap-5 xl:gap-8 mt-5 md:mt-10">
+                        <div className="flex flex-col items-start w-full md:w-fit gap-5 xl:gap-8 mt-5 md:-mt-40 lg:-mt-60">
                             <h1 className="text-[26px] sm:text-[30px] md:text-[36px] lg:text-[44px] xl:text-[54px] leading-tight font-serif trailer-hero-title font-normal drop-shadow-lg">
                                 Setting New Benchmarks
                             </h1>
