@@ -28,11 +28,11 @@ const FOOTER_LINKS = [
     {
         heading: "BUSINESS",
         links: [
-            { name: "Trailer Manufacturing", href: "#" },
+            { name: "Trailer Manufacturing", href: "trailer" },
             { name: "Structural Manufacturing", href: "/business/structure-manufacturing" },
             { name: "Mining & Calcining", href: "/business/mining-calcining" },
             { name: "Casting & Machining", href: "/business/machining-casting" },
-            { name: "Waterpark", href: "#" },
+            { name: "Waterpark", href: "business/waterpark" },
             { name: "Resort", href: "/business/resort" },
             { name: "Mall", href: "/business/mall" },
         ],
