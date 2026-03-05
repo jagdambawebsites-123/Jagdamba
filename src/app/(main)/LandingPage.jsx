@@ -11,16 +11,16 @@ import FeaturedStories from "@/components/landingPage/FeaturedStories"
 const LandingPage = () => {
   return (
     <div>
-        <Hero/>
-        <AboutSection/>
-        <BusinessSection/>
-        <ImpactSection/>
-        <TeamSection/>
-        <QuoteSection/>
-        <ClientsSection/>
-        <FeaturedStories/>
+      <Hero />
+      <AboutSection />
+      <BusinessSection />
+      <ImpactSection />
+      <TeamSection />
+      <QuoteSection />
+      <ClientsSection />
+      <FeaturedStories />
     </div>
-    
+
   )
 }
 

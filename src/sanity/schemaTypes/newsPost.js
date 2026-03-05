@@ -44,6 +44,13 @@ export const newsPost = {
             validation: (Rule) => Rule.required(),
         },
         {
+            name: 'featured',
+            title: 'Featured Story',
+            type: 'boolean',
+            description: 'If checked, this story will appear on the home page featured stories section.',
+            initialValue: false,
+        },
+        {
             name: 'content',
             title: 'Content',
             type: 'array',

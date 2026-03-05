@@ -2,41 +2,51 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { client } from "@/sanity/lib/client";
+import { urlFor } from "@/sanity/lib/image";
 
 export default function AwardsPage() {
   const [mounted, setMounted] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [awards, setAwards] = useState([]);
 
   useEffect(() => {
     setMounted(true);
+
+    const fetchAwards = async () => {
+      try {
+        const query = `*[_type == "featuredStory"] | order(_createdAt desc)[0...10]`;
+        const data = await client.fetch(query);
+
+        if (data && data.length > 0) {
+          const formattedAwards = data.map(item => ({
+            id: item._id,
+            image: item.mainImage ? urlFor(item.mainImage).url() : "/images/placeholder.jpg",
+            title: item.title,
+            date: item.date ? new Date(item.date).toLocaleDateString('en-US', {
+              day: 'numeric',
+              month: 'long',
+              year: 'numeric'
+            }) : "",
+            href: item.href || "#"
+          }));
+          setAwards(formattedAwards);
+        }
+      } catch (error) {
+        console.error("Error fetching awards from Sanity:", error);
+      }
+    };
+
+    fetchAwards();
   }, []);
 
-  const awards = [
-    {
-      id: 1,
-      image: "/images/aboutPage/about-awards/poster1.png",
-      title: <>Jagdamba Trailer awarded as an emerging brand<br />in Indian trailer industry</>,
-      date: "April 27, 2024",
-    },
-    {
-      id: 2,
-      image: "/images/aboutPage/about-awards/poster2.png",
-      title: "Listed in the global OEM ranking for World Trailer Manufacturers.",
-      date: "Sept 6, 2023",
-    },
-    {
-      id: 3,
-      image: "/images/aboutPage/about-awards/poster3.png",
-      title: "Recognized for excellence in manufacturing and innovation.",
-      date: "Oct 12, 2023",
-    },
-  ];
-
   const nextSlide = () => {
+    if (awards.length === 0) return;
     setCurrentIndex((prev) => (prev + 1) % awards.length);
   };
 
   const prevSlide = () => {
+    if (awards.length === 0) return;
     setCurrentIndex((prev) => (prev - 1 + awards.length) % awards.length);
   };
 
