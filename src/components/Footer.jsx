@@ -28,7 +28,7 @@ const FOOTER_LINKS = [
     {
         heading: "BUSINESS",
         links: [
-            { name: "Trailer Manufacturing", href: "trailer" },
+            { name: "Trailer Manufacturing", href: "/business/trailer" },
             { name: "Structural Manufacturing", href: "/business/structure-manufacturing" },
             { name: "Mining & Calcining", href: "/business/mining-calcining" },
             { name: "Casting & Machining", href: "/business/machining-casting" },

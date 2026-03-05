@@ -1,5 +1,51 @@
+"use client";
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useState, useRef } from 'react';
+
+// Custom Counter component for the animation
+function Counter({ end, suffix = "", duration = 2000 }) {
+  const [count, setCount] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    let startTime = null;
+    const animate = (currentTime) => {
+      if (!startTime) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      
+      // easeOutExpo function for a smooth slow-down at the end
+      const easeOut = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      setCount(Math.floor(easeOut * end));
+
+      if (progress < 1) {
+        window.requestAnimationFrame(animate);
+      }
+    };
+
+    window.requestAnimationFrame(animate);
+  }, [end, duration, isVisible]);
+
+  return <span ref={ref}>{count}{suffix}</span>;
+}
 
 export default function AboutSection() {
   return (
@@ -43,7 +89,7 @@ export default function AboutSection() {
                 At Jagdamba Group, we are dedicated to India's growth and development through our diverse business ventures. As a distinguished conglomerate, we operate in waterpark management, trailer manufacturing, mining, sponge iron production, resort management, and mall operations. Our efforts are focused on contributing to the nation's progress by creating employment opportunities, building world-class manufacturing facilities, and supporting local economies.
               </p>
               <p>
-                Our foundation is built on principles of integrity, honesty, safety, enjoyment, and strong industry partnerships, earning the trust of our clientele. Our skilled and experienced team, combined with a client-centric approach, ensures the successful completion of every project. By consistently delivering exceptional services and high-quality results, we reinforce our commitment to India's advancement and strive to shape a prosperous future for the nation.
+                Our foundation is built on principles of integrity, honesty, safety, enjoyment, and strong industry partnerships earning the trust of our clientele. Our skilled and experienced team, combined with a client-centric approach ensures the successful completion of every project. By consistently delivering exceptional services an high-quality results, we reinforce our commitment to India's advancement and strive to shape a prosperous futur for the nation.
               </p>
             </div>
           </div>
@@ -53,7 +99,9 @@ export default function AboutSection() {
 
             {/* Stat 1 */}
             <div className="flex-1 flex flex-col items-center text-center">
-              <span className="text-4xl md:text-5xl font-serif text-[#111C55] mb-1">20+</span>
+              <span className="text-4xl md:text-5xl font-serif text-[#111C55] mb-1">
+                <Counter end={20} suffix="+" />
+              </span>
               <span className="text-[#6B7280] text-sm md:text-base font-medium">Years of Experience</span>
             </div>
 
@@ -62,7 +110,9 @@ export default function AboutSection() {
 
             {/* Stat 2 */}
             <div className="flex-1 flex flex-col items-center text-center">
-              <span className="text-4xl md:text-5xl font-serif text-[#111C55] mb-1">3K+</span>
+              <span className="text-4xl md:text-5xl font-serif text-[#111C55] mb-1">
+                <Counter end={3} suffix="K+" />
+              </span>
               <span className="text-[#6B7280] text-sm md:text-base font-medium">No. of Employees</span>
             </div>
 
@@ -71,7 +121,9 @@ export default function AboutSection() {
 
             {/* Stat 3 */}
             <div className="flex-1 flex flex-col items-center text-center">
-              <span className="text-4xl md:text-5xl font-serif text-[#111C55] mb-1">500+</span>
+              <span className="text-4xl md:text-5xl font-serif text-[#111C55] mb-1">
+                <Counter end={500} suffix="+" />
+              </span>
               <span className="text-[#6B7280] text-sm md:text-base font-medium">Projects Completed</span>
             </div>
           </div>
@@ -79,7 +131,6 @@ export default function AboutSection() {
         </div>
       </section>
     </div>
-
   );
 }
 
