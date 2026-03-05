@@ -3,19 +3,24 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-// Import your data array here
 // import { businessesData } from './data';
 
 export default function BusinessSection() {
+  // For the standard card fade-in animation
   const [isVisible, setIsVisible] = useState({});
   const sectionRefs = useRef([]);
+  
+  // Refs for the scrolling dot & painted line logic
+  const trackRef = useRef(null);
+  const dotRef = useRef(null);
+  const lineRef = useRef(null);
 
   const businesses = [
     {
       id: "trailer-manufacturing",
       title: "Trailer Manufacturing",
       description:
-        "In 2019, Jagdamba Trailers has swiftly established itself as a prominent and trustworthy brand within the Indian Trailer Industry. We manufacture a wide array of trailer types, including flatbed trailers, tanker trailers, and specialized transport solutions.",
+        "In 2019, Jagdamba Trailers has swiftly established itself as a prominent and trustworthy brand within the Indian Trailer Industry. We manufacture a wide array of trailer types, including flatbed trailers, tanker trailers, and specialized transport solutions. Our products are designed to meet the rigorous demands of industries such as logistics, construction, and heavy equipment transport, providing reliable and efficient solutions for our clients.",
       image: "/images/landingPage/trailers.png",
       link: "/trailer",
       hasLink: true,
@@ -24,7 +29,7 @@ export default function BusinessSection() {
       id: "structure-manufacturing",
       title: "Structure Manufacturing",
       description:
-        "Jagdamba Structurals Pvt. Ltd is a highly diversified, fastest growing company in fabrication, erection of Steel Structure, equipment, PEB & Building Projects. The range of products we manufacture and provide to our customers includes parts for industrial equipment.",
+        "Jagdamba Structurals Pvt. Ltd is a highly diversified, fastest growing company in fabrication, erection of Steel Structure, equipment, PEB & Building Projects. The range of products we manufacture and provide to our customers includes parts for industrial equipment, all kinds of necessary resources and supplies for engineering, manufacturing and other industrial spheres.",
       image: "/images/landingPage/structure.png",
       link: "/business/structure-manufacturing",
       hasLink: true,
@@ -87,7 +92,7 @@ export default function BusinessSection() {
       id: "swapan-engineering",
       title: "Swapan Engineering Co.",
       description:
-        "Swapan Engineering Co. is Jagdamba Group’s latest venture, established in Kolkata to strengthen our footprint in the railway sector. Specializing in the manufacturing of railway electrical equipment, this new plant brings precision, quality, and innovation to components that power India’s rail infrastructure. With Swapan Engineering, we aim to drive forward reliable and future-ready rail solutions.",
+        "Swapan Engineering Co. is Jagdamba Group’s latest venture, established in Kolkata to strengthen our footprint in the railway sector. Specializing in the manufacturing of railway electrical equipment, this new plant brings precision, quality, and innovation to components that power India’s rail infrastructure. With Swapan Engineering, we aim to drive forward reliable and future-ready rail solutions.",
       image: "/images/landingPage/swapan-engineering.png",
       link: "/contact",
       hasLink: false,
@@ -96,7 +101,7 @@ export default function BusinessSection() {
       id: "jagdamba-agro",
       title: "Jagdamba Agro",
       description:
-        "Jagdamba Agro, the agricultural arm of Jagdamba Group, is dedicated to empowering modern farmers with robust and efficient equipment. From durable tractor trolleys to versatile farming implements, our products are engineered for reliability, ease of use, and high performance in diverse field conditions. Designed to enhance productivity and reduce manual labor, Jagdamba Agro's equipment supports sustainable agriculture and helps growers maximize yield with minimal effort.",
+        "Jagdamba Agro, the agricultural arm of Jagdamba Group, is dedicated to empowering modern farmers with robust and efficient equipment. From durable tractor trolleys to versatile farming implements, our products are engineered for reliability, ease of use, and high performance in diverse field conditions. Designed to enhance productivity and reduce manual labor, Jagdamba Agro’s equipment supports sustainable agriculture and helps growers maximize yield with minimal effort.",
       image: "/images/landingPage/agro.png",
       link: "/contact",
       hasLink: false,
@@ -105,12 +110,14 @@ export default function BusinessSection() {
       id: "jagdamba-trailer-service",
       title: "Jagdamba Trailer Service",
       description:
-        "Jagdamba Trailer Service is our dedicated support division, offering specialized maintenance and repair solutions for the trailer industry. From routine servicing to critical repairs, we ensure your trailers remain road-ready, reliable, and compliant with safety standards. Backed by expert technicians and prompt service, we help maximize uptime and extend the life of every trailer on the move.",
+        "Jagdamba Trailer Service is our dedicated support division, offering specialized maintenance and repair solutions for the trailer industry. From routine servicing to critical repairs, we ensure your trailers remain road-ready, reliable, and compliant with safety standards. Backed by expert technicians and prompt service, we help maximize uptime and extend the life of every trailer on the move.",
       image: "/images/landingPage/trailer-service.png",
       link: "/contact",
       hasLink: false,
     },
   ];
+
+  // 1. Standard Intersection Observer for basic fade-in (No popping/blurring)
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -120,7 +127,7 @@ export default function BusinessSection() {
           }
         });
       },
-      { threshold: 0.15 },
+      { threshold: 0.15 }
     );
 
     sectionRefs.current.forEach((ref) => {
@@ -130,9 +137,59 @@ export default function BusinessSection() {
     return () => observer.disconnect();
   }, []);
 
+  // 2. JavaScript logic to map the dot perfectly to the center of your screen
+  useEffect(() => {
+    let animationFrameId;
+    let currentY = 0;
+    let targetY = 0;
+
+    const handleScroll = () => {
+      if (!trackRef.current) return;
+      
+      const trackRect = trackRef.current.getBoundingClientRect();
+      const viewportCenter = window.innerHeight / 2;
+      
+      // Calculate distance from the top of the timeline track to the center of your screen
+      let progress = viewportCenter - trackRect.top;
+      
+      // Clamp it so it can't move above the track or below the track
+      targetY = Math.max(0, Math.min(progress, trackRect.height));
+    };
+
+    const animate = () => {
+      // Linear interpolation makes the dot move smoothly instead of strictly jumping pixels
+      currentY += (targetY - currentY) * 0.1;
+
+      // Update Dot Position
+      if (dotRef.current) {
+        dotRef.current.style.transform = `translateY(${currentY}px)`;
+      }
+      
+      // Update painted line height
+      if (lineRef.current) {
+        lineRef.current.style.height = `${currentY}px`;
+      }
+      
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    
+    // Initialize immediately on load
+    handleScroll();
+    currentY = targetY; 
+    animate();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
+
   return (
     <div className="w-full bg-[#F5F5F5]">
       <section className="container relative w-full bg-[#F5F5F5] px-6 md:px-10 xl:px-25 py-16 md:py-24 overflow-hidden mx-auto max-w-7xl">
+        
         {/* Header Section */}
         <div className="text-center mb-16 md:mb-24 relative z-20">
           <h2 className="text-4xl md:text-5xl font-serif text-[#111C55] mb-6 lg:mb-8">
@@ -140,8 +197,21 @@ export default function BusinessSection() {
           </h2>
         </div>
 
-        {/* Faint Base Line */}
-        <div className="absolute left-1/2 top-48 bottom-32 w-[2px] bg-[#B88C2E]/10 -translate-x-1/2 hidden md:block z-0" />
+        {/* --- CENTRAL TIMELINE WITH TRACKING DOT --- */}
+        <div 
+          ref={trackRef} 
+          className="absolute left-1/2 top-48 bottom-32 w-[2px] bg-[#B88C2E]/20 -translate-x-1/2 hidden md:block z-0"
+        >
+          {/* The solid yellow line that grows as you scroll */}
+          <div ref={lineRef} className="absolute top-0 left-0 w-full bg-[#FFC13D]" />
+          
+          {/* The Wrapper for the Dot (moved via JS) */}
+          <div ref={dotRef} className="absolute top-0 left-1/2 w-0 h-0 z-10 will-change-transform">
+             {/* The physical dot itself (offset to center perfectly on the line) */}
+             <div className="absolute -left-3 -top-3 w-6 h-6 rounded-full bg-[#FFC13D] border-[4px] border-[#F5F5F5] shadow-[0_0_12px_rgba(255,193,61,0.6)]" />
+          </div>
+        </div>
+        {/* ------------------------------------------ */}
 
         <div className="space-y-24 md:space-y-32 relative z-10">
           {businesses.map((item, index) => {
@@ -153,19 +223,12 @@ export default function BusinessSection() {
                 key={item.id}
                 id={item.id}
                 ref={(el) => (sectionRefs.current[index] = el)}
-                // md:flex-row-reverse flips the order on desktop for odd indices
                 className={`relative flex flex-col ${isEven ? "md:flex-row" : "md:flex-row-reverse"} items-start w-full group`}
               >
-                {/* Gradient Line Segment */}
-                <div className="absolute left-1/2 -translate-x-1/2 top-[175px] -translate-y-1/2 w-[2px] h-[600px] bg-gradient-to-b from-transparent via-[#FFC13D] to-transparent z-0 hidden md:block" />
-
-                {/* Central Bullet */}
-                <div className="absolute left-1/2 -translate-x-1/2 top-[175px] -translate-y-1/2 w-5 h-5 rounded-full bg-[#FFC13D] border-[4px] border-[#F5F5F5] shadow-sm z-10 hidden md:block" />
-
-                {/* DOM Item 1: ALWAYS THE IMAGE (Guarantees Image is on top on mobile) */}
+                {/* DOM Item 1: ALWAYS THE IMAGE */}
                 <div
                   className={`w-full md:w-1/2 flex transition-all duration-700 ease-out relative z-10
-                    ${shown ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
+                    ${shown ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"}
                     ${isEven ? "md:pr-12 lg:pr-20 md:justify-end" : "md:pl-12 lg:pl-20 md:justify-start"}
                   `}
                 >
@@ -182,7 +245,7 @@ export default function BusinessSection() {
                 {/* DOM Item 2: ALWAYS THE TEXT */}
                 <div
                   className={`w-full md:w-1/2 mt-8 md:mt-0 flex transition-all duration-700 ease-out delay-150 relative z-10
-                    ${shown ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
+                    ${shown ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"}
                     ${isEven ? "md:pl-12 lg:pl-20 md:justify-start" : "md:pr-12 lg:pr-20 md:justify-end"}
                   `}
                 >
@@ -225,7 +288,7 @@ function ExploreButton({ link }) {
 
       <Link
         href={link}
-        className="hidden md:inline-flex group px-8 py-2.5 w-fit rounded-full border border-[#161c3a] items-center gap-3 text-[#161c3a] font-medium hover:bg-[#161c3a] hover:text-white transition-all duration-300"
+        className="hidden md:inline-flex group px-8 py-2.5 w-fit rounded-full border border-[#161c3a] items-center gap-3 text-[#161c3a] font-medium hover:bg-[#161c3a] hover:text-white transition-all duration-300 pointer-events-auto"
       >
         Explore
         <ArrowUpRightIcon className="w-4 h-4 text-[#c19b4e] group-hover:text-[#c19b4e]" />
