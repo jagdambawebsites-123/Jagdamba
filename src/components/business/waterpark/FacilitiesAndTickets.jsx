@@ -4,27 +4,27 @@ export default function FacilitiesAndTickets() {
   const facilities = [
     {
       name: "Shower & Changing Room",
-      icon: "/images/business/waterpark/facilities/shower.svg",
+      icon: "/images/business/waterpark/facilities/shower.png",
     },
     {
       name: "Locker Room",
-      icon: "/images/business/waterpark/facilities/locker.svg",
+      icon: "/images/business/waterpark/facilities/locker.png",
     },
     {
       name: "Multi Cuisine Restaurant",
-      icon: "/images/business/waterpark/facilities/restaurant.svg",
+      icon: "/images/business/waterpark/facilities/restaurant.png",
     },
     {
       name: "Costumes For Rent",
-      icon: "/images/business/waterpark/facilities/costume.svg",
+      icon: "/images/business/waterpark/facilities/costume.png",
     },
     {
       name: "Parking",
-      icon: "/images/business/waterpark/facilities/parking.svg",
+      icon: "/images/business/waterpark/facilities/parking.png",
     },
     {
       name: "Life Guards",
-      icon: "/images/business/waterpark/facilities/lifeguard.svg",
+      icon: "/images/business/waterpark/facilities/lifeguard.png",
     },
   ];
 
@@ -112,7 +112,7 @@ export default function FacilitiesAndTickets() {
         {/* Background Decor: Zigzag (Right) */}
         <div className="absolute top-0 -right-4 md:bottom-40 md:right-8 w-30 h-12 md:w-48 md:h-24 pointer-events-none z-0">
           <Image
-            src="/images/business/waterpark/throwBack/zig-zag-waves.svg"
+            src="/images/business/waterpark/facilities/zig-zag-waves.png"
             alt="Decorative zigzag"
             fill
             className="object-contain"
