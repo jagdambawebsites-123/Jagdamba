@@ -24,7 +24,7 @@ const NAV_ITEMS = [
     href: '#',
     subColumns: [
       [
-        { name: 'Trailer Manufacturing', href: '/trailer' },
+        { name: 'Trailer Manufacturing', href: '/business/trailer' },
         { name: 'Structure Manufacturing', href: '/business/structure-manufacturing' },
         { name: 'Mining & Calcining', href: '/business/mining-calcining' },
         { name: 'Machining & Casting', href: '/business/machining-casting' },

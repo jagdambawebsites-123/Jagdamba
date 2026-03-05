@@ -12,8 +12,7 @@ const slides = [
     borderColor: "#4D5580",
     image: "/images/landingPage/impact.png",
     desc: [
-      "We are committed to building world-class manufacturing facilities and innovative business models that contribute to India's economic landscape. By generating employment across multiple sectors, we empower communities and support local economies.",
-      "We forge strong industry partnerships and collaborate with global leaders to bring the best innovations to India. At Jagdamba Group, we pursue self-reliant, sustainable growth.",
+      "We are committed to building world-class manufacturing facilities and innovative business models that contribute to India's economic landscape. By generating employment across multiple sectors, we empower communities and support local economies. Our client-centric approach ensures that we deliver exceptional services and high-quality results, reinforcing our commitment to India's advancement.. We forge strong industry partnerships and collaborate with global leaders to bring the best innovations to India. At Jagdamba Group, we pursue self-reliant, sustainable growth, embracing the challenge of shaping a prosperous future for India.",
     ],
   },
   {
@@ -24,8 +23,7 @@ const slides = [
     borderColor: "#F3D085",
     image: "/images/landingPage/safety.png",
     desc: [
-      "We are committed to ensuring the highest standards of safety for all our employees. Our comprehensive safety programs are designed to protect our staff in every aspect of their work.",
-      "We believe that a safe workplace is a productive workplace. By fostering a culture of safety, we not only protect our employees but also enhance their overall well-being and job satisfaction.",
+      "We are committed to ensuring the highest standards of safety for all our employees. Our comprehensive safety programs are designed to protect our staff in every aspect of their work. From rigorous training sessions to state-of-the-art safety equipment, we leave no stone unturned in maintaining a safe working environment. We believe that a safe workplace is a productive workplace. By fostering a culture of safety, we not only protect our employees but also enhance their overall well-being and job satisfaction.",
     ],
   },
   {
@@ -36,8 +34,7 @@ const slides = [
     borderColor: "#3D7C43",
     image: "/images/landingPage/greenery.png",
     desc: [
-      "Our commitment to plantation and greenery is a testament to our dedication to preserving and enhancing the natural environment. We actively engage in extensive tree-planting initiatives.",
-      "Our green initiatives are designed to reduce our carbon footprint and create healthier, more vibrant surroundings. We believe that a commitment to the environment is essential for the future.",
+      " Our commitment to plantation and greenery is a testament to our dedication to preserving and enhancing the natural environment. We actively engage in extensive tree-planting initiatives and green space development across our projects to promote ecological balance and improve the quality of life in the communities we serve. Our green initiatives are designed to reduce our carbon footprint, and create healthier, more vibrant surroundings. We believe that a commitment to the environment is essential for the well-being of our planet and the prosperity of future generations.",
     ],
   },
 ];
