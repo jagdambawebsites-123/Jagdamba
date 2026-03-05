@@ -10,7 +10,7 @@ export default function ReserveParties() {
     {
       title: "Resort",
       description:
-        "Welcome to our luxurious resort, a serene escape from everyday life. Ideal for romantic getaways, family vacations, and special events, our resort offers world-class amenities, including a pristine pool, fine dining, expansive lawns, and an elegant banquet hall. Enjoy comfortable accommodations and exceptional service in a tranquil setting. Explore nearby attractions, indulge in spa treatments, and participate in exciting recreational activities. Our dedicated staff is committed to making your stay unforgettable, ensuring every detail is perfect. Book your stay today and experience unparalleled relaxation and hospitality at our resort.",
+        "Welcome to our luxurious resort, a serene escape from everyday life. Ideal for romantic getaways, family vacations, and special events, our resort offers world-class amenities, including a pristine pool, fine dining, expansive lawns, and an elegant banquet hall. Enjoy comfortable accommodations and exceptional service in a tranquil setting.\n\nExplore nearby attractions, indulge in spa treatments, and participate in exciting recreational activities. Our dedicated staff is committed to making your stay unforgettable, ensuring every detail is perfect. Book your stay today and experience unparalleled relaxation and hospitality at our resort.",
       image: "/images/business/waterpark/reserveParties/resort.png",
     },
     {

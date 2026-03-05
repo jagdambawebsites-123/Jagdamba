@@ -14,8 +14,10 @@ export default function BusinessSection() {
     {
       id: "trailer-manufacturing",
       title: "Trailer Manufacturing",
-      description:
-        "In 2019, Jagdamba Trailers has swiftly established itself as a prominent and trustworthy brand within the Indian Trailer Industry. We manufacture a wide array of trailer types, including flatbed trailers, tanker trailers, and specialized transport solutions.",
+      description: [
+        "In 2019, Jagdamba Trailers has swiftly established itself as a prominent and trustworthy brand within the Indian Trailer Industry.",
+        "We manufacture a wide array of trailer types, including flatbed trailers, tanker trailers, and specialized transport solutions. Our products are designed to meet the rigorous demands of industries such as logistics, construction, and heavy equipment transport, providing reliable and efficient solutions for our clients.",
+      ],
       image: "/images/landingPage/trailers.png",
       link: "/trailer",
       hasLink: true,
@@ -23,8 +25,10 @@ export default function BusinessSection() {
     {
       id: "structure-manufacturing",
       title: "Structure Manufacturing",
-      description:
-        "Jagdamba Structurals Pvt. Ltd is a highly diversified, fastest growing company in fabrication, erection of Steel Structure, equipment, PEB & Building Projects. The range of products we manufacture and provide to our customers includes parts for industrial equipment.",
+      description: [
+        "Jagdamba Structurals Pvt. Ltd is a highly diversified, fastest growing company in fabrication, erection of Steel Structure, equipment, PEB & Building Projects.",
+        "The range of products we manufacture and provide to our customers includes parts for industrial equipment, all kinds of necessary resources and supplies for engineering, manufacturing and other industrial spheres.",
+      ],
       image: "/images/landingPage/structure.png",
       link: "/business/structure-manufacturing",
       hasLink: true,
@@ -32,8 +36,10 @@ export default function BusinessSection() {
     {
       id: "mining-calcining",
       title: "Mining & Calcining",
-      description:
-        "We specialize in the extraction, processing, and supply of high-quality minerals and stones. Our expertise encompasses a diverse range of products, including stone, aggregate, dolomite, calcined materials, and limestone, catering to a wide array of industrial and construction needs. The range of products we offer includes essential materials for construction, infrastructure projects, and various industrial applications.",
+      description: [
+        "We specialize in the extraction, processing, and supply of high-quality minerals and stones. Our expertise encompasses a diverse range of products, including stone, aggregate, dolomite, calcined materials, and limestone, catering to a wide array of industrial and construction needs.",
+        "The range of products we offer includes essential materials for construction, infrastructure projects, and various industrial applications.",
+      ],
       image: "/images/landingPage/mining.png",
       link: "/business/mining-calcining",
       hasLink: true,
@@ -41,8 +47,10 @@ export default function BusinessSection() {
     {
       id: "machining-casting",
       title: "Machining & Casting",
-      description:
-        "Our steel ingots serve railways, steel rolling mills, engineering industries, cement industries, power generation centers, industrial machinery manufacturers, and the automobile sector. We are committed to quality and safety, adhering to government regulations and industrial health standards aims to support the nation's industrial growth by providing high-quality steel castings.",
+      description: [
+        "Our steel ingots serve railways, steel rolling mills, engineering industries, cement industries, power generation centers, industrial machinery manufacturers, and the automobile sector.",
+        "We are committed to quality and safety, adhering to government regulations and industrial health standards aims to support the nation's industrial growth by providing high-quality steel castings.",
+      ],
       image: "/images/landingPage/casting.png",
       link: "/business/machining-casting",
       hasLink: true,
@@ -50,8 +58,10 @@ export default function BusinessSection() {
     {
       id: "la-fountain-resort",
       title: "LÃ Fountain Resort",
-      description:
-        "Nestled in serene surroundings, LÃ Fountain resort offers a perfect blend of luxury and tranquility, designed to provide an unforgettable experience for our guests. At LÃ Fountain Resort, we pride ourselves on delivering top-notch hospitality, exceptional service, and a range of amenities tailored to meet the diverse needs of our visitors. Whether you're seeking a relaxing getaway, a family vacation, or a venue for special events, our resort is the ideal destination.",
+      description: [
+        "Nestled in serene surroundings, LÃ Fountain resort offers a perfect blend of luxury and tranquility, designed to provide an unforgettable experience for our guests.",
+        "At LÃ Fountain Resort, we pride ourselves on delivering top-notch hospitality, exceptional service, and a range of amenities tailored to meet the diverse needs of our visitors. Whether you're seeking a relaxing getaway, a family vacation, or a venue for special events, our resort is the ideal destination.",
+      ],
       image: "/images/landingPage/la-fountain-resort.png",
       link: "/business/resort",
       hasLink: true,
@@ -59,8 +69,10 @@ export default function BusinessSection() {
     {
       id: "jagdamba-funworld",
       title: "Jagdamba Funworld",
-      description:
-        "Jagdamba Funworld nestled in the scenic beauty of Chandrahasini Timarlaga, near Raigarh in Chhattisgarh, India. This exciting destination offers a perfect blend of thrill, relaxation, and enjoyment for visitors of all ages. Thrill-seekers can indulge in exhilarating water slides that twist, turn, and plunge into refreshing pools below.",
+      description: [
+        "Jagdamba Funworld nestled in the scenic beauty of Chandrahasini Timarlaga, near Raigarh in Chhattisgarh, India. This exciting destination offers a perfect blend of thrill, relaxation, and enjoyment for visitors of all ages.",
+        "Thrill-seekers can indulge in exhilarating water slides that twist, turn, and plunge into refreshing pools below.",
+      ],
       image: "/images/landingPage/funworld.png",
       link: "/business/waterpark",
       hasLink: true,
@@ -68,8 +80,10 @@ export default function BusinessSection() {
     {
       id: "grand-mall",
       title: "Grand Mall",
-      description:
-        "We are committed to providing our visitors with a diverse range of high-quality retail stores, dining options, and entertainment facilities. From top fashion brands to gourmet restaurants and state-of-the-art cinemas, our mall caters to the varied tastes and preferences of our customers. Our spacious, modern design and welcoming atmosphere ensure a comfortable and enjoyable visit for families, friends, and solo shoppers alike.",
+      description: [
+        "We are committed to providing our visitors with a diverse range of high-quality retail stores, dining options, and entertainment facilities. From top fashion brands to gourmet restaurants and state-of-the-art cinemas, our mall caters to the varied tastes and preferences of our customers.",
+        "Our spacious, modern design and welcoming atmosphere ensure a comfortable and enjoyable visit for families, friends, and solo shoppers alike.",
+      ],
       image: "/images/landingPage/grand-mall.png",
       link: "/business/mall",
       hasLink: true,
@@ -77,8 +91,9 @@ export default function BusinessSection() {
     {
       id: "jagdamba-global-equipment",
       title: "Jagdamba Global Equipment Solution FZC",
-      description:
+      description: [
         "Jagdamba Global Equipment Solution FZC, based in Dubai, is a leading manufacturer specializing in high-quality trailers, pressure vessels, and precision fabrication for the refining and mixed-industry sectors. Combining advanced engineering with rigorous quality standards, we deliver robust, reliable, and customized solutions tailored to the demanding needs of our clients.",
+      ],
       image: "/images/landingPage/global-equipment.png",
       link: "/contact",
       hasLink: false,
@@ -86,8 +101,9 @@ export default function BusinessSection() {
     {
       id: "swapan-engineering",
       title: "Swapan Engineering Co.",
-      description:
-        "Swapan Engineering Co. is Jagdamba Group’s latest venture, established in Kolkata to strengthen our footprint in the railway sector. Specializing in the manufacturing of railway electrical equipment, this new plant brings precision, quality, and innovation to components that power India’s rail infrastructure. With Swapan Engineering, we aim to drive forward reliable and future-ready rail solutions.",
+      description: [
+        "Swapan Engineering Co. is Jagdamba Group's latest venture, established in Kolkata to strengthen our footprint in the railway sector. Specializing in the manufacturing of railway electrical equipment, this new plant brings precision, quality, and innovation to components that power India's rail infrastructure. With Swapan Engineering, we aim to drive forward reliable and future-ready rail solutions.",
+      ],
       image: "/images/landingPage/swapan-engineering.png",
       link: "/contact",
       hasLink: false,
@@ -95,8 +111,9 @@ export default function BusinessSection() {
     {
       id: "jagdamba-agro",
       title: "Jagdamba Agro",
-      description:
+      description: [
         "Jagdamba Agro, the agricultural arm of Jagdamba Group, is dedicated to empowering modern farmers with robust and efficient equipment. From durable tractor trolleys to versatile farming implements, our products are engineered for reliability, ease of use, and high performance in diverse field conditions. Designed to enhance productivity and reduce manual labor, Jagdamba Agro's equipment supports sustainable agriculture and helps growers maximize yield with minimal effort.",
+      ],
       image: "/images/landingPage/agro.png",
       link: "/contact",
       hasLink: false,
@@ -104,8 +121,9 @@ export default function BusinessSection() {
     {
       id: "jagdamba-trailer-service",
       title: "Jagdamba Trailer Service",
-      description:
+      description: [
         "Jagdamba Trailer Service is our dedicated support division, offering specialized maintenance and repair solutions for the trailer industry. From routine servicing to critical repairs, we ensure your trailers remain road-ready, reliable, and compliant with safety standards. Backed by expert technicians and prompt service, we help maximize uptime and extend the life of every trailer on the move.",
+      ],
       image: "/images/landingPage/trailer-service.png",
       link: "/contact",
       hasLink: false,
@@ -190,9 +208,11 @@ export default function BusinessSection() {
                     <h3 className="text-3xl font-serif font-semibold text-[#111C55] mb-4">
                       {item.title}
                     </h3>
-                    <p className="text-[#6B7280] text-base md:text-lg leading-relaxed mb-6 md:mb-8 font-sans">
-                      {item.description}
-                    </p>
+                    <div className="text-[#6B7280] text-base md:text-lg leading-relaxed mb-6 md:mb-8 font-sans space-y-3">
+                      {item.description.map((para, i) => (
+                        <p key={i}>{para}</p>
+                      ))}
+                    </div>
                     <div>
                       {item.hasLink ? (
                         <ExploreButton link={item.link} />
