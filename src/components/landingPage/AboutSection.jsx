@@ -86,16 +86,10 @@ export default function AboutSection() {
             {/* Right Column: Paragraphs */}
             <div className="w-full lg:w-2/3 text-center lg:text-left text-[#6B7280] text-base md:text-lg leading-relaxed space-y-6 font-sans">
               <p>
-                At Jagdamba Group, we are dedicated to India's growth and development through our
-                diverse business ventures. As a distinguished conglomerate, we operate in waterpark
-                management, trailer manufacturing, mining, sponge iron production, resort management,
-                and mall operations.
+                At Jagdamba Group, we are dedicated to India's growth and development through our diverse business ventures. As a distinguished conglomerate, we operate in waterpark management, trailer manufacturing, mining, sponge iron production, resort management, and mall operations. Our efforts are focused on contributing to the nation's progress by creating employment opportunities, building world-class manufacturing facilities, and supporting local economies.
               </p>
               <p>
-                Our foundation is built on principles of integrity, honesty, and strong
-                industry partnerships. By consistently delivering exceptional services and high-quality results, we
-                reinforce our commitment to India's advancement and strive to shape a prosperous
-                future for the nation.
+                Our foundation is built on principles of integrity, honesty, safety, enjoyment, and strong industry partnerships earning the trust of our clientele. Our skilled and experienced team, combined with a client-centric approach ensures the successful completion of every project. By consistently delivering exceptional services an high-quality results, we reinforce our commitment to India's advancement and strive to shape a prosperous futur for the nation.
               </p>
             </div>
           </div>
