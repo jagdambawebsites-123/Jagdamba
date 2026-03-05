@@ -22,7 +22,7 @@ export default function BusinessSection() {
       description:
         "In 2019, Jagdamba Trailers has swiftly established itself as a prominent and trustworthy brand within the Indian Trailer Industry. We manufacture a wide array of trailer types, including flatbed trailers, tanker trailers, and specialized transport solutions. Our products are designed to meet the rigorous demands of industries such as logistics, construction, and heavy equipment transport, providing reliable and efficient solutions for our clients.",
       image: "/images/landingPage/trailers.png",
-      link: "/trailer",
+      link: "/business/trailer",
       hasLink: true,
     },
     {
