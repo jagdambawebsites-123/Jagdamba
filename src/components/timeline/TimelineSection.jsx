@@ -16,6 +16,8 @@ const TimelineSection = ({
   isDarkBlue,
   stroke1,
   stroke2,
+  overlayClass,
+  bgImgClass,
 }) => {
   return (
     <section className={`relative w-full min-h-screen md:h-screen flex flex-col items-center snap-start overflow-hidden pt-24 pb-6 ${isDarkBlue ? 'bg-[#111C55]' : ''}`}>
@@ -55,21 +57,21 @@ const TimelineSection = ({
             src={bgImg}
             alt="section background"
             fill
-            className="object-cover opacity-60"
+            className={`object-cover ${bgImgClass || 'opacity-60'}`}
             priority
           />
           {/* Dark overlay */}
-          <div className="absolute inset-0 bg-black/60" />
+          <div className={`absolute inset-0 ${overlayClass || 'bg-black/30'}`} />
         </div>
       )}
 
       {/* ── Dotted line connector — flows from top of section into content ── */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10 flex justify-center" style={{ height: '8.5rem' }}>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10 flex justify-center h-[8.5rem] lg:h-[11rem]">
         <div className="w-px h-full" style={{ width: '3px', backgroundImage: 'repeating-linear-gradient(to bottom, white 0, white 8px, transparent 8px, transparent 26px)' }} />
       </div>
 
       {/* ── Year Heading ── */}
-      <div className="relative z-10 flex justify-center w-full mt-6 mb-6 md:mb-8">
+      <div className="relative z-10 flex justify-center w-full mt-10 lg:mt-14 mb-6 md:mb-8">
         <h2 className="text-[64px] font-serif text-[#b89146] tracking-widest select-none">
           {year}
         </h2>
@@ -92,10 +94,10 @@ const TimelineSection = ({
       ) : (
         /* ── Standard Image + Text Card ── */
         <div
-          className={`relative z-10 flex flex-col md:flex-row ${isReversed ? 'md:flex-row-reverse' : 'md:flex-row'} w-[320px] h-[365px] md:w-[88%] md:h-auto max-w-5xl bg-white shadow-2xl overflow-hidden mx-auto mb-6 md:min-h-[360px]`}
+          className={`relative z-10 flex flex-col md:flex-row ${isReversed ? 'md:flex-row-reverse' : 'md:flex-row'} w-[320px] h-[520px] md:w-[88%] md:h-auto max-w-5xl 2xl:max-w-6xl bg-white shadow-2xl overflow-hidden mx-auto mb-6 md:min-h-[360px] lg:min-h-[440px] 2xl:min-h-[400px] 2xl:max-h-[560px]`}
         >
           {/* Top (mobile) / Left or Right (desktop): Content Image */}
-          <div className="relative w-full md:w-1/2 shrink-0 h-[45%] md:h-auto">
+          <div className="relative w-full md:w-1/2 shrink-0 h-[55%] md:h-auto">
             {contentImg && (
               <Image
                 src={contentImg}

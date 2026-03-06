@@ -103,7 +103,7 @@ const PRODUCTS = [
     {
         id: 5,
         name: "Cement Ash Bulker",
-        description: "Durability and efficiency drive our cement & fly ash bulkers, ensuring seamless transport with robust design.\n\nFor 6W/10W prime movers and 12/14/16W rigid Chassis",
+        description: "Durability and efficiency drive our cement & fly ash bulkers, ensuring seamless transport with robust design.\nFor 6W/10W prime movers and 12/14/16W rigid Chassis",
         capacity: "32cum to 54cum",
         application: "All kinds of Powder form Materials such as Cement, Fly Ash etc.",
         price: "₹8 L*",

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
 
 export default function ResortRoomsSection({
@@ -13,14 +13,65 @@ export default function ResortRoomsSection({
   arrowRight,
   items = [],
 }) {
-  const [current, setCurrent] = useState(0);
   const total = items.length;
-  const visible = 3;
+  const cloneCount = 3;
 
-  const prev = () => setCurrent((c) => (c - 1 + total) % total);
-  const next = () => setCurrent((c) => (c + 1) % total);
+  // Seamless infinite loop: clone last 3 before, first 3 after
+  const extended = [
+    ...items.slice(-cloneCount),
+    ...items,
+    ...items.slice(0, cloneCount),
+  ];
 
-  const visibleItems = Array.from({ length: visible }, (_, i) => items[(current + i) % total]);
+  const [offset, setOffset] = useState(cloneCount); // start at first real card
+  const [transitioning, setTransitioning] = useState(false);
+  const trackRef = useRef(null);
+  const [stepPx, setStepPx] = useState(0);
+
+  // Measure step = card width + gap by diffing positions of two adjacent cards
+  const measure = useCallback(() => {
+    if (!trackRef.current) return;
+    const cards = trackRef.current.children;
+    if (cards.length < 2) return;
+    const step = cards[1].getBoundingClientRect().left - cards[0].getBoundingClientRect().left;
+    if (step > 0) setStepPx(step);
+  }, []);
+
+  useEffect(() => {
+    // Delay slightly so layout is complete before measuring
+    const id = setTimeout(measure, 50);
+    window.addEventListener("resize", measure);
+    return () => { clearTimeout(id); window.removeEventListener("resize", measure); };
+  }, [measure]);
+
+  const slide = (dir) => {
+    setTransitioning(true);
+    setOffset((o) => o + dir);
+  };
+
+  const handleTransitionEnd = () => {
+    const firstReal = cloneCount;
+    const lastReal = cloneCount + total - 1;
+    if (offset > lastReal) {
+      setTransitioning(false);
+      setOffset(firstReal + (offset - lastReal - 1));
+    } else if (offset < firstReal) {
+      setTransitioning(false);
+      setOffset(lastReal - (firstReal - offset - 1));
+    }
+  };
+
+  // Re-enable transition after a jump (double rAF to let DOM commit)
+  useEffect(() => {
+    if (!transitioning) {
+      const id = requestAnimationFrame(() =>
+        requestAnimationFrame(() => setTransitioning(true))
+      );
+      return () => cancelAnimationFrame(id);
+    }
+  }, [transitioning]);
+
+  const translateX = stepPx ? -(offset * stepPx) : 0;
 
   return (
     <section className="w-full bg-[#F5F5F5] py-12 md:py-16 lg:py-20">
@@ -55,69 +106,80 @@ export default function ResortRoomsSection({
         <div className="w-full">
           <div className="relative w-full">
             <button
-              onClick={prev}
+              onClick={() => slide(-1)}
               aria-label="Previous"
-              className="hidden md:flex absolute -left-8 lg:-left-14 top-1/2 -translate-y-1/2 z-30 w-14 h-14 lg:w-16 lg:h-16 items-center justify-center"
+              className="hidden md:flex absolute -left-8 lg:-left-14 top-1/2 -translate-y-1/2 z-30 w-9 h-9 lg:w-10 lg:h-10 items-center justify-center"
             >
-              <div className="relative w-14 h-14 lg:w-16 lg:h-16">
+              <div className="relative w-9 h-9 lg:w-10 lg:h-10">
                 <Image src={arrowLeft} alt="Previous" fill className="object-contain" />
               </div>
             </button>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 lg:gap-14 overflow-hidden md:px-10 lg:px-12 place-items-center">
-              {visibleItems.map((room, idx) => (
-                <div
-                  key={`${room.name}-${idx}`}
-                  className={`flex flex-col bg-white border border-[#464646] overflow-hidden mx-auto md:mx-0 w-[350px] h-[368px] md:w-[400px] md:h-[612px] ${idx !== 0 ? 'hidden md:flex' : ''}`}
-                  style={{ borderRadius: "8px" }}
-                >
-                  <div className="relative w-full shrink-0 h-[215px] md:h-[400px]">
-                    <Image
-                      src={room.src}
-                      alt={room.name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
+            <div className="overflow-hidden md:px-2 lg:px-3">
+              <div
+                ref={trackRef}
+                onTransitionEnd={handleTransitionEnd}
+                className="flex gap-6 md:gap-10 lg:gap-14"
+                style={{
+                  transform: `translateX(${translateX}px)`,
+                  transition: transitioning && stepPx ? "transform 500ms cubic-bezier(0.4, 0, 0.2, 1)" : "none",
+                  willChange: "transform",
+                }}
+              >
+                {extended.map((room, idx) => (
+                  <div
+                    key={idx}
+                    className="flex flex-col bg-white border border-[#464646] overflow-hidden shrink-0 w-[348px] h-[368px] md:w-[398px] md:h-[612px]"
+                    style={{ borderRadius: "8px" }}
+                  >
+                    <div className="relative w-full shrink-0 h-[215px] md:h-[400px]">
+                      <Image
+                        src={room.src}
+                        alt={room.name}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
 
-                  <div className="flex flex-col gap-2 p-4 lg:p-5 flex-1">
-                    <h3 className="font-serif font-normal text-[16px] md:text-[20px] lg:text-[24px] text-[#464646]">
-                      {room.name}
-                    </h3>
-                    <ul className="space-y-1 pl-4">
-                      {room.details.map((detail) => (
-                        <li
-                          key={detail}
-                          className="flex items-center gap-2 text-[#464646] font-sans font-normal text-[12px] md:text-[16px] lg:text-[20px]"
-                        >
-                          <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-[#464646] inline-block" />
-                          {detail}
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="flex flex-col gap-2 p-4 lg:p-5 flex-1">
+                      <h3 className="font-serif font-normal text-[16px] md:text-[20px] lg:text-[24px] text-[#464646]">
+                        {room.name}
+                      </h3>
+                      <ul className="space-y-1 pl-4">
+                        {room.details.map((detail) => (
+                          <li
+                            key={detail}
+                            className="flex items-center gap-2 text-[#464646] font-sans font-normal text-[12px] md:text-[16px] lg:text-[20px]"
+                          >
+                            <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-[#464646] inline-block" />
+                            {detail}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
             <button
-              onClick={next}
+              onClick={() => slide(1)}
               aria-label="Next"
-              className="hidden md:flex absolute -right-8 lg:-right-14 top-1/2 -translate-y-1/2 z-30 w-14 h-14 lg:w-16 lg:h-16 items-center justify-center"
+              className="hidden md:flex absolute -right-8 lg:-right-14 top-1/2 -translate-y-1/2 z-30 w-9 h-9 lg:w-10 lg:h-10 items-center justify-center"
             >
-              <div className="relative w-14 h-14 lg:w-16 lg:h-16">
+              <div className="relative w-9 h-9 lg:w-10 lg:h-10">
                 <Image src={arrowRight} alt="Next" fill className="object-contain" />
               </div>
             </button>
           </div>
 
           <div className="flex md:hidden justify-end gap-3 mt-4">
-            <button onClick={prev} aria-label="Previous" className="w-9 h-9 flex items-center justify-center">
+            <button onClick={() => slide(-1)} aria-label="Previous" className="w-9 h-9 flex items-center justify-center">
               <div className="relative w-9 h-9">
                 <Image src={arrowLeft} alt="Previous" fill className="object-contain" />
               </div>
             </button>
-            <button onClick={next} aria-label="Next" className="w-9 h-9 flex items-center justify-center">
+            <button onClick={() => slide(1)} aria-label="Next" className="w-9 h-9 flex items-center justify-center">
               <div className="relative w-9 h-9">
                 <Image src={arrowRight} alt="Next" fill className="object-contain" />
               </div>
