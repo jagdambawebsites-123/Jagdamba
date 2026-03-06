@@ -9,7 +9,7 @@ export default function BusinessSection() {
   // For the standard card fade-in animation
   const [isVisible, setIsVisible] = useState({});
   const sectionRefs = useRef([]);
-  
+
   // Refs for the scrolling dot & painted line logic
   const trackRef = useRef(null);
   const dotRef = useRef(null);
@@ -19,15 +19,10 @@ export default function BusinessSection() {
     {
       id: "trailer-manufacturing",
       title: "Trailer Manufacturing",
-<<<<<<< HEAD
       description: [
         "In 2019, Jagdamba Trailers has swiftly established itself as a prominent and trustworthy brand within the Indian Trailer Industry.",
         "We manufacture a wide array of trailer types, including flatbed trailers, tanker trailers, and specialized transport solutions. Our products are designed to meet the rigorous demands of industries such as logistics, construction, and heavy equipment transport, providing reliable and efficient solutions for our clients.",
       ],
-=======
-      description:
-        "In 2019, Jagdamba Trailers has swiftly established itself as a prominent and trustworthy brand within the Indian Trailer Industry. We manufacture a wide array of trailer types, including flatbed trailers, tanker trailers, and specialized transport solutions. Our products are designed to meet the rigorous demands of industries such as logistics, construction, and heavy equipment transport, providing reliable and efficient solutions for our clients.",
->>>>>>> 0ef5e793c113a697a92d79f93f36218247463465
       image: "/images/landingPage/trailers.png",
       link: "/business/trailer",
       hasLink: true,
@@ -35,15 +30,10 @@ export default function BusinessSection() {
     {
       id: "structure-manufacturing",
       title: "Structure Manufacturing",
-<<<<<<< HEAD
       description: [
         "Jagdamba Structurals Pvt. Ltd is a highly diversified, fastest growing company in fabrication, erection of Steel Structure, equipment, PEB & Building Projects.",
         "The range of products we manufacture and provide to our customers includes parts for industrial equipment, all kinds of necessary resources and supplies for engineering, manufacturing and other industrial spheres.",
       ],
-=======
-      description:
-        "Jagdamba Structurals Pvt. Ltd is a highly diversified, fastest growing company in fabrication, erection of Steel Structure, equipment, PEB & Building Projects. The range of products we manufacture and provide to our customers includes parts for industrial equipment, all kinds of necessary resources and supplies for engineering, manufacturing and other industrial spheres.",
->>>>>>> 0ef5e793c113a697a92d79f93f36218247463465
       image: "/images/landingPage/structure.png",
       link: "/business/structure-manufacturing",
       hasLink: true,
@@ -136,14 +126,9 @@ export default function BusinessSection() {
     {
       id: "jagdamba-trailer-service",
       title: "Jagdamba Trailer Service",
-<<<<<<< HEAD
       description: [
         "Jagdamba Trailer Service is our dedicated support division, offering specialized maintenance and repair solutions for the trailer industry. From routine servicing to critical repairs, we ensure your trailers remain road-ready, reliable, and compliant with safety standards. Backed by expert technicians and prompt service, we help maximize uptime and extend the life of every trailer on the move.",
       ],
-=======
-      description:
-        "Jagdamba Trailer Service is our dedicated support division, offering specialized maintenance and repair solutions for the trailer industry. From routine servicing to critical repairs, we ensure your trailers remain road-ready, reliable, and compliant with safety standards. Backed by expert technicians and prompt service, we help maximize uptime and extend the life of every trailer on the move.",
->>>>>>> 0ef5e793c113a697a92d79f93f36218247463465
       image: "/images/landingPage/trailer-service.png",
       link: "/contact",
       hasLink: false,
@@ -178,13 +163,13 @@ export default function BusinessSection() {
 
     const handleScroll = () => {
       if (!trackRef.current) return;
-      
+
       const trackRect = trackRef.current.getBoundingClientRect();
       const viewportCenter = window.innerHeight / 2;
-      
+
       // Calculate distance from the top of the timeline track to the center of your screen
       let progress = viewportCenter - trackRect.top;
-      
+
       // Clamp it so it can't move above the track or below the track
       targetY = Math.max(0, Math.min(progress, trackRect.height));
     };
@@ -197,20 +182,20 @@ export default function BusinessSection() {
       if (dotRef.current) {
         dotRef.current.style.transform = `translateY(${currentY}px)`;
       }
-      
+
       // Update painted line height
       if (lineRef.current) {
         lineRef.current.style.height = `${currentY}px`;
       }
-      
+
       animationFrameId = requestAnimationFrame(animate);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    
+
     // Initialize immediately on load
     handleScroll();
-    currentY = targetY; 
+    currentY = targetY;
     animate();
 
     return () => {
@@ -222,7 +207,7 @@ export default function BusinessSection() {
   return (
     <div className="w-full bg-[#F5F5F5]">
       <section className="container relative w-full bg-[#F5F5F5] px-6 md:px-10 xl:px-25 py-16 md:py-24 overflow-hidden mx-auto max-w-7xl">
-        
+
         {/* Header Section */}
         <div className="text-center mb-16 md:mb-24 relative z-20">
           <h2 className="text-4xl md:text-5xl font-serif text-[#111C55] mb-6 lg:mb-8">
@@ -231,17 +216,17 @@ export default function BusinessSection() {
         </div>
 
         {/* --- CENTRAL TIMELINE WITH TRACKING DOT --- */}
-        <div 
-          ref={trackRef} 
+        <div
+          ref={trackRef}
           className="absolute left-1/2 top-48 bottom-32 w-[2px] bg-[#B88C2E]/20 -translate-x-1/2 hidden md:block z-0"
         >
           {/* The solid yellow line that grows as you scroll */}
           <div ref={lineRef} className="absolute top-0 left-0 w-full bg-[#FFC13D]" />
-          
+
           {/* The Wrapper for the Dot (moved via JS) */}
           <div ref={dotRef} className="absolute top-0 left-1/2 w-0 h-0 z-10 will-change-transform">
-             {/* The physical dot itself (offset to center perfectly on the line) */}
-             <div className="absolute -left-3 -top-3 w-6 h-6 rounded-full bg-[#FFC13D] border-[4px] border-[#F5F5F5] shadow-[0_0_12px_rgba(255,193,61,0.6)]" />
+            {/* The physical dot itself (offset to center perfectly on the line) */}
+            <div className="absolute -left-3 -top-3 w-6 h-6 rounded-full bg-[#FFC13D] border-[4px] border-[#F5F5F5] shadow-[0_0_12px_rgba(255,193,61,0.6)]" />
           </div>
         </div>
         {/* ------------------------------------------ */}
