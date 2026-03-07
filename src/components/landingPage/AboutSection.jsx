@@ -86,10 +86,10 @@ export default function AboutSection() {
             {/* Right Column: Paragraphs */}
             <div className="w-full lg:w-2/3 text-center lg:text-left text-[#6B7280] text-base md:text-lg leading-relaxed space-y-6 font-sans">
               <p>
-                At Jagdamba Group, we are dedicated to India's growth and development through our diverse business ventures. As a distinguished conglomerate, we operate in waterpark management, trailer manufacturing, mining, sponge iron production, resort management, and mall operations. Our efforts are focused on contributing to the nation's progress by creating employment opportunities, building world-class manufacturing facilities, and supporting local economies.
+                At Jagdamba Group, we are dedicated to India&apos;s growth and development through our diverse business ventures. As a distinguished conglomerate, we operate in waterpark management, trailer manufacturing, mining, sponge iron production, resort management, and mall operations. Our efforts are focused on contributing to the nation&apos;s progress by creating employment opportunities, building world-class manufacturing facilities, and supporting local economies.
               </p>
               <p>
-                Our foundation is built on principles of integrity, honesty, safety, enjoyment, and strong industry partnerships earning the trust of our clientele. Our skilled and experienced team, combined with a client-centric approach ensures the successful completion of every project. By consistently delivering exceptional services an high-quality results, we reinforce our commitment to India's advancement and strive to shape a prosperous futur for the nation.
+                Our foundation is built on principles of integrity, honesty, safety, enjoyment, and strong industry partnerships earning the trust of our clientele. Our skilled and experienced team, combined with a client-centric approach ensures the successful completion of every project. By consistently delivering exceptional services an high-quality results, we reinforce our commitment to India&apos;s advancement and strive to shape a prosperous futur for the nation.
               </p>
             </div>
           </div>
@@ -99,32 +99,32 @@ export default function AboutSection() {
 
             {/* Stat 1 */}
             <div className="flex-1 flex flex-col items-center text-center">
-              <span className="text-4xl md:text-5xl font-serif text-[#111C55] mb-1">
+              <span className="text-4xl md:text-[52px] font-serif text-[#111C55] mb-1">
                 <Counter end={20} suffix="+" />
               </span>
-              <span className="text-[#6B7280] text-sm md:text-base font-medium">Years of Experience</span>
+              <span className="text-[#6B7280] text-sm md:text-xl font-sans">Years of Experience</span>
             </div>
 
             {/* Divider: Horizontal on mobile, Vertical on MD+ */}
-            <div className="w-16 h-[1px] md:w-[2px] md:h-16 bg-[#B88C2E] opacity-50 md:opacity-100"></div>
+            <div className="w-16 h-[1px] md:w-[2px] md:h-25 bg-[#B88C2E] opacity-50 md:opacity-100"></div>
 
             {/* Stat 2 */}
             <div className="flex-1 flex flex-col items-center text-center">
-              <span className="text-4xl md:text-5xl font-serif text-[#111C55] mb-1">
+              <span className="text-4xl md:text-[52px] font-serif text-[#111C55] mb-1">
                 <Counter end={3} suffix="K+" />
               </span>
-              <span className="text-[#6B7280] text-sm md:text-base font-medium">No. of Employees</span>
+              <span className="text-[#6B7280] text-sm md:text-xl font-sans">No. of Employees</span>
             </div>
 
             {/* Divider: Horizontal on mobile, Vertical on MD+ */}
-            <div className="w-16 h-[1px] md:w-[2px] md:h-16 bg-[#B88C2E] opacity-50 md:opacity-100"></div>
+            <div className="w-16 h-[1px] md:w-[2px] md:h-25 bg-[#B88C2E] opacity-50 md:opacity-100"></div>
 
             {/* Stat 3 */}
             <div className="flex-1 flex flex-col items-center text-center">
-              <span className="text-4xl md:text-5xl font-serif text-[#111C55] mb-1">
+              <span className="text-4xl md:text-[52px] font-serif text-[#111C55] mb-1">
                 <Counter end={500} suffix="+" />
               </span>
-              <span className="text-[#6B7280] text-sm md:text-base font-medium">Projects Completed</span>
+              <span className="text-[#6B7280] text-sm md:text-xl font-sans">Projects Completed</span>
             </div>
           </div>
 
