@@ -19,15 +19,10 @@ export default function BusinessSection() {
     {
       id: "trailer-manufacturing",
       title: "Trailer Manufacturing",
-<<<<<<< HEAD
       description: [
         "In 2019, Jagdamba Trailers has swiftly established itself as a prominent and trustworthy brand within the Indian Trailer Industry.",
         "We manufacture a wide array of trailer types, including flatbed trailers, tanker trailers, and specialized transport solutions. Our products are designed to meet the rigorous demands of industries such as logistics, construction, and heavy equipment transport, providing reliable and efficient solutions for our clients.",
       ],
-=======
-      description:
-        "In 2019, Jagdamba Trailers has swiftly established itself as a prominent and trustworthy brand within the Indian Trailer Industry. We manufacture a wide array of trailer types, including flatbed trailers, tanker trailers, and specialized transport solutions. Our products are designed to meet the rigorous demands of industries such as logistics, construction, and heavy equipment transport, providing reliable and efficient solutions for our clients.",
->>>>>>> 0ef5e793c113a697a92d79f93f36218247463465
       image: "/images/landingPage/trailers.png",
       link: "/business/trailer",
       hasLink: true,
@@ -35,15 +30,10 @@ export default function BusinessSection() {
     {
       id: "structure-manufacturing",
       title: "Structure Manufacturing",
-<<<<<<< HEAD
       description: [
         "Jagdamba Structurals Pvt. Ltd is a highly diversified, fastest growing company in fabrication, erection of Steel Structure, equipment, PEB & Building Projects.",
         "The range of products we manufacture and provide to our customers includes parts for industrial equipment, all kinds of necessary resources and supplies for engineering, manufacturing and other industrial spheres.",
       ],
-=======
-      description:
-        "Jagdamba Structurals Pvt. Ltd is a highly diversified, fastest growing company in fabrication, erection of Steel Structure, equipment, PEB & Building Projects. The range of products we manufacture and provide to our customers includes parts for industrial equipment, all kinds of necessary resources and supplies for engineering, manufacturing and other industrial spheres.",
->>>>>>> 0ef5e793c113a697a92d79f93f36218247463465
       image: "/images/landingPage/structure.png",
       link: "/business/structure-manufacturing",
       hasLink: true,
@@ -136,14 +126,9 @@ export default function BusinessSection() {
     {
       id: "jagdamba-trailer-service",
       title: "Jagdamba Trailer Service",
-<<<<<<< HEAD
       description: [
         "Jagdamba Trailer Service is our dedicated support division, offering specialized maintenance and repair solutions for the trailer industry. From routine servicing to critical repairs, we ensure your trailers remain road-ready, reliable, and compliant with safety standards. Backed by expert technicians and prompt service, we help maximize uptime and extend the life of every trailer on the move.",
       ],
-=======
-      description:
-        "Jagdamba Trailer Service is our dedicated support division, offering specialized maintenance and repair solutions for the trailer industry. From routine servicing to critical repairs, we ensure your trailers remain road-ready, reliable, and compliant with safety standards. Backed by expert technicians and prompt service, we help maximize uptime and extend the life of every trailer on the move.",
->>>>>>> 0ef5e793c113a697a92d79f93f36218247463465
       image: "/images/landingPage/trailer-service.png",
       link: "/contact",
       hasLink: false,

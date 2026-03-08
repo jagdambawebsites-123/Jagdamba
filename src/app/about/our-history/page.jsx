@@ -95,6 +95,7 @@ const milestones = [
     stroke1: Stroke1,
     stroke2: Stroke2,
     isReversed: false,
+    titleClassName: "text-[18px] md:text-[28px] font-serif font-normal text-[#111C55] mb-3 leading-[100%] md:leading-[40px] tracking-normal capitalize",
   },
   {
     year: '2022',
@@ -103,6 +104,8 @@ const milestones = [
       "Jagdamba Trailers designs and manufactures state-of-the-art missile-carrying trailers for DRDO, enhancing India's defence capabilities with precision and innovation",
     bgImg: T8_bg,
     textOnly: true,
+    titleClassName: "text-[24px] md:text-[48px] font-serif font-normal text-[#b89146] mb-6 leading-[100%] md:leading-[28px] tracking-normal capitalize text-center",
+    descClassName: "text-white/75 font-sans font-medium text-[14px] md:text-[28px] leading-[152%] md:leading-[40px] tracking-normal max-w-6xl text-center",
   },
   {
     year: '2022',
@@ -122,6 +125,7 @@ const milestones = [
     contentImg: T10,
     bgImg: T10_bg,
     isReversed: true,
+    titleClassName: "text-[18px] md:text-[24px] font-serif font-normal text-[#111C55] mb-3 leading-[100%] md:leading-[40px] tracking-normal capitalize",
   },
   {
     year: '2023',
@@ -132,6 +136,7 @@ const milestones = [
     stroke1: Stroke1,
     stroke2: Stroke2,
     isReversed: false,
+    titleClassName: "text-[18px] md:text-[28px] font-serif font-normal text-[#111C55] mb-3 leading-[100%] md:leading-[40px] tracking-normal capitalize",
   },
   {
     year: '2023',
@@ -140,6 +145,8 @@ const milestones = [
       "Mumbai Steel honours Jagdamba Structures with the Expo Participant Award, celebrating their outstanding contributions and presence in the industry.",
     bgImg: T12_bg,
     textOnly: true,
+    titleClassName: "text-[24px] md:text-[64px] font-serif font-normal text-[#b89146] mb-6 leading-[100%] tracking-normal capitalize text-center",
+    descClassName: "text-white/75 font-sans font-medium text-[14px] md:text-[28px] leading-[21px] md:leading-[40px] tracking-normal max-w-6xl text-center",
   },
   {
     year: '2023',
@@ -160,6 +167,8 @@ const milestones = [
     textOnly: true,
     overlayClass: 'hidden',
     bgImgClass: 'opacity-100',
+    titleClassName: "text-[24px] md:text-[64px] font-serif font-normal text-[#b89146] mb-6 leading-[100%] tracking-normal capitalize text-center",
+    descClassName: "text-white/75 font-sans font-medium text-[14px] md:text-[28px] leading-[21px] md:leading-[40px] tracking-normal max-w-6xl text-center",
   },
   {
     year: '2025',
@@ -170,6 +179,8 @@ const milestones = [
     stroke1: Stroke1,
     stroke2: Stroke2,
     isReversed: false,
+    titleClassName: "text-[18px] md:text-[28px] font-serif font-normal text-[#111C55] mb-3 leading-[100%] md:leading-[40px] tracking-normal capitalize",
+    descClassName: "text-[#737373] font-sans font-normal text-[12px] md:text-[18px] leading-[18px] md:leading-[26px] tracking-normal",
   },
   {
     year: '2025',
@@ -180,6 +191,8 @@ const milestones = [
     textOnly: true,
     overlayClass: 'hidden',
     bgImgClass: 'opacity-100',
+    titleClassName: "text-[24px] md:text-[64px] font-serif font-normal text-[#b89146] mb-6 leading-[100%] tracking-normal capitalize text-center",
+    descClassName: "text-white/75 font-sans font-medium text-[14px] md:text-[28px] leading-[21px] md:leading-[40px] tracking-normal max-w-6xl text-center",
   },
   {
     year: '2025',
@@ -190,6 +203,8 @@ const milestones = [
     stroke1: Stroke1,
     stroke2: Stroke2,
     isReversed: false,
+    titleClassName: "text-[18px] md:text-[28px] font-serif font-normal text-[#111C55] mb-3 leading-[100%] md:leading-[40px] tracking-normal capitalize",
+    descClassName: "text-[#737373] font-sans font-normal text-[12px] md:text-[18px] leading-[18px] md:leading-[26px] tracking-normal",
   },
 ];
 
@@ -197,19 +212,19 @@ const yearList = [...new Set(milestones.map((m) => m.year))];
 
 export default function About() {
   return (
-    <main className="overflow-x-hidden md:overflow-y-scroll md:snap-y md:snap-mandatory md:scroll-smooth md:h-screen">
+    <main className="overflow-x-hidden md:overflow-y-scroll md:snap-y md:snap-mandatory md:scroll-smooth md:h-screen bg-[#111C55] hide-scrollbar">
       <ScrollLock />
 
       <section className="relative w-full h-screen flex flex-col items-center snap-start text-center px-4 bg-[#111C55] pt-72">
 
         <div className="flex flex-col items-center justify-center flex-1 px-4">
-          <h1 className="text-[28px] md:text-[70px] font-(family-name:--font-playfair-display) text-[#b89146] mb-6 max-w-4xl leading-tight">
+          <h1 className="text-[26px] md:text-[70px] font-(family-name:--font-sanomat) font-normal text-[#b89146] mb-6 max-w-4xl leading-[135%] md:leading-[84px] tracking-normal text-center">
             20+ Years of Pioneering Excellence And Innovation
           </h1>
 
           <div className="h-12 md:h-16 my-4 md:my-6" style={{ width: '3px', backgroundImage: 'repeating-linear-gradient(to bottom, white 0, white 8px, transparent 8px, transparent 26px)' }} />
 
-          <p className="max-w-3xl text-white/70 font-sans text-[15px] md:text-[30px] leading-relaxed">
+          <p className="max-w-3xl text-white/70 font-sans font-normal text-[16px] md:text-[30px] leading-[21px] md:leading-[48px] tracking-normal text-center">
             Our vision has driven us, our passion has inspired us,
             <br className="hidden sm:block" />
             and our relentless pursuit of excellence has defined
@@ -233,8 +248,8 @@ export default function About() {
         />
       ))}
 
-      <div className="hidden md:block snap-start">
-        <Footer />
+      <div className="block snap-start">
+        <Footer forceShow />
       </div>
     </main>
   );

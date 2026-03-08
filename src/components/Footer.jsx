@@ -61,11 +61,12 @@ const CONTACT_INFO = {
     },
 };
 
-export default function Footer() {
+export default function Footer({ forceShow = false }) {
     const pathname = usePathname();
 
-    // Do not render Footer on the Sanity Studio page
+    // Do not render Footer on pages that manage their own footer
     if (pathname?.startsWith('/studio')) return null;
+    if (!forceShow && pathname === '/about/our-history') return null;
 
     return (
         <footer className="bg-[#111C55] text-white font-sans">
