@@ -43,9 +43,9 @@ const ScrollIndicator = () => (
 );
 
 const StatCard = ({ number, title, text }) => (
-  <div className="bg-[#111C55] rounded-[40px] p-10 md:p-12 flex flex-col items-start gap-4 h-full">
+  <div className="bg-[#111C55] rounded-[20px] p-6 md:p-8 flex flex-col items-start text-left gap-4 h-auto min-h-[320px] w-full">
     <div className="space-y-1">
-      <h2 className="text-[#E6E6E6] text-[40px] font-[family-name:var(--font-libre-baskerville)] font-bold leading-[1.52] tracking-normal">{number}</h2>
+      <h2 className="text-[#E6E6E6] text-[40px] font-serif font-bold leading-[1.52] tracking-normal">{number}</h2>
       <h3 className="text-[#E6E6E6] text-[28px] font-[family-name:var(--font-libre-franklin)] font-normal leading-[1.52] tracking-normal">{title}</h3>
     </div>
 
@@ -58,13 +58,13 @@ const StatCard = ({ number, title, text }) => (
 );
 
 const ValueCard = ({ icon, title, text }) => (
-  <div className="bg-white rounded-[32px] md:rounded-[40px] p-8 md:p-12 flex flex-col items-center text-center gap-6 h-full shadow-lg z-10 relative">
-    <div className="relative w-24 h-24 md:w-28 md:h-28">
+  <div className="bg-white rounded-[20px] p-8 md:p-10 flex flex-col items-center text-center gap-6 h-full shadow-lg z-10 relative w-full">
+    <div className="relative w-20 h-20 md:w-24 md:h-24">
       <Image src={icon} alt={title} fill className="object-contain" />
     </div>
-    <div className="space-y-3 md:space-y-4">
-      <h3 className="text-[#111C55]/95 text-[24px] md:text-[28px] font-[family-name:var(--font-libre-franklin)] font-semibold leading-none">{title}</h3>
-      <p className="text-[#6B7280] text-[16px] md:text-[18px] leading-[22px] md:leading-[24px] font-[family-name:var(--font-libre-franklin)] font-normal tracking-normal text-center">
+    <div className="space-y-4">
+      <h3 className="text-[#111C55]/95 text-[28px] font-[family-name:var(--font-libre-franklin)] font-semibold leading-none">{title}</h3>
+      <p className="text-[#535D77] text-[14px] md:text-[16px] leading-[22px] md:leading-[24px] font-[family-name:var(--font-libre-franklin)] font-normal tracking-tight text-center max-w-[280px] mx-auto opacity-90">
         {text}
       </p>
     </div>
@@ -79,17 +79,29 @@ const ValuesSection = () => {
     {
       icon: "/images/aboutPage/aboutUs/icon1.png",
       title: "Integrity",
-      text: "Integrity is the foundation of every decision at Jagdamba Trailers."
+      text: (
+        <>
+          Integrity is the foundation of <br /> every decision at Jagdamba <br /> Trailers.
+        </>
+      )
     },
     {
       icon: "/images/aboutPage/aboutUs/icon2.png",
       title: "One Team",
-      text: "At Jagdamba Trailers, we work as one team, united by our commitment to integrity."
+      text: (
+        <>
+          At Jagdamba Trailers, we work as <br /> one team, united by our <br /> commitment to integrity.
+        </>
+      )
     },
     {
       icon: "/images/aboutPage/aboutUs/icon3.png",
       title: "Safety",
-      text: "Safety is our unwavering priority, upheld with the highest integrity at Jagdamba Trailers."
+      text: (
+        <>
+          Safety is our unwavering priority, <br /> upheld with the highest integrity <br /> at Jagdamba Trailers.
+        </>
+      )
     }
   ];
 
@@ -104,13 +116,14 @@ const ValuesSection = () => {
 
   return (
     <section className="relative w-full py-16 md:py-32 bg-[#111C55] overflow-hidden">
-      {/* Decorative Curved Frame */}
-      <div className="absolute top-[80px] left-[20px] md:left-[80px] right-0 bottom-[-50px] border-t border-l border-white/50 rounded-tl-[60px] md:rounded-tl-[80px] pointer-events-none" />
+      {/* Decorative Curved Frame & Lines */}
+      <div className="absolute top-[80px] left-0 right-0 h-[1px] bg-white pointer-events-none" />
+      <div className="absolute top-[80px] left-[20px] md:left-[80px] right-0 bottom-[-50px] border-t border-l border-white rounded-tl-[80px] pointer-events-none" />
 
       <div className="relative z-10 w-full space-y-10 md:space-y-16 mt-6 md:mt-12">
         {/* Section Header */}
         <div className="text-center space-y-4 px-10 max-w-7xl mx-auto">
-          <h2 className="text-[36px] md:text-[56px] font-[family-name:var(--font-libre-baskerville)] text-white leading-tight flex justify-center items-baseline gap-3">
+          <h2 className="text-[40px] font-serif text-white leading-tight flex justify-center items-baseline gap-3">
             <span className="font-normal tracking-wide">Our</span>
             <span className="text-[#B88C2E] font-bold tracking-wide">Values</span>
           </h2>
@@ -163,8 +176,8 @@ const SustainabilitySection = () => {
       ),
       image: "/images/aboutPage/aboutUs/cardImage1.png",
       bgColor: "bg-[#11552C]",
-      titleColor: "text-[#CA9015] md:text-white",
-      textColor: "text-white/90 md:text-[#E6E6E6]"
+      titleClassName: "text-[32px] font-serif font-normal leading-none text-[#B88C2E]",
+      textClassName: "text-[15px] md:text-[18px] leading-relaxed font-[family-name:var(--font-libre-franklin)] text-white/90 md:text-[#E6E6E6]"
     },
     {
       title: "Safety",
@@ -183,8 +196,8 @@ const SustainabilitySection = () => {
       ),
       image: "/images/aboutPage/aboutUs/cardImage2.png",
       bgColor: "bg-[#CE9F3A]",
-      titleColor: "text-white",
-      textColor: "text-white/90"
+      titleClassName: "text-[32px] font-serif font-normal leading-none text-white",
+      textClassName: "text-[15px] md:text-[18px] leading-relaxed font-[family-name:var(--font-libre-franklin)] text-white/90"
     },
     {
       title: "Impact",
@@ -196,8 +209,8 @@ const SustainabilitySection = () => {
       ),
       image: "/images/aboutPage/aboutUs/cardImage3.png",
       bgColor: "bg-[#111C55]",
-      titleColor: "text-[#CA9015] md:text-white",
-      textColor: "text-white/90 md:text-[#E6E6E6]"
+      titleClassName: "text-[32px] font-serif font-normal leading-none text-white",
+      textClassName: "text-[15px] md:text-[18px] leading-relaxed font-[family-name:var(--font-libre-franklin)] text-white/90 md:text-[#E6E6E6]"
     }
   ];
 
@@ -221,11 +234,11 @@ const SustainabilitySection = () => {
   };
 
   return (
-    <section className="relative w-full py-20 md:py-32 bg-[#F3F4F6] overflow-hidden">
+    <section className="relative w-full py-20 md:py-32 bg-white overflow-hidden">
       <div className="w-full space-y-16">
         {/* Section Header */}
         <div className="text-center space-y-4 px-10 max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-[family-name:var(--font-libre-baskerville)] text-[#000133] font-bold leading-tight flex justify-center items-baseline gap-3">
+          <h2 className="text-[40px] font-serif text-[#111C55] font-bold leading-tight flex justify-center items-baseline gap-3">
             <span className="font-normal">Sustainability</span>
           </h2>
         </div>
@@ -241,7 +254,7 @@ const SustainabilitySection = () => {
             {cards.map((card, idx) => (
               <div
                 key={idx}
-                className={`w-[90vw] md:w-[85vw] lg:w-[1200px] max-w-none shrink-0 snap-center rounded-[24px] md:rounded-[40px] flex flex-col md:flex-row overflow-hidden shadow-2xl ${card.bgColor}`}
+                className={`w-[90vw] md:w-[85vw] lg:w-[1200px] max-w-none shrink-0 snap-center rounded-[20px] flex flex-col md:flex-row-reverse overflow-hidden ${card.bgColor}`}
               >
                 {/* Image Side - Positioned FIRST on mobile so it sits on top */}
                 <div className="w-full h-[60vw] max-h-[400px] md:h-auto md:w-1/2 relative md:min-h-full md:aspect-auto">
@@ -249,8 +262,8 @@ const SustainabilitySection = () => {
                 </div>
                 {/* Text Side - Positioned BELOW on mobile */}
                 <div className="w-full md:w-1/2 p-8 sm:p-10 md:p-16 lg:p-20 flex flex-col justify-center space-y-4 md:space-y-8">
-                  <h3 className={`text-[32px] md:text-[44px] font-[family-name:var(--font-libre-baskerville)] font-normal ${card.titleColor}`}>{card.title}</h3>
-                  <p className={`text-[15px] md:text-[18px] leading-relaxed font-[family-name:var(--font-libre-franklin)] ${card.textColor}`}>
+                  <h3 className={card.titleClassName}>{card.title}</h3>
+                  <p className={card.textClassName}>
                     {card.text}
                   </p>
                 </div>
@@ -308,13 +321,13 @@ export default function AboutUsPage() {
         <main className="relative z-10 flex flex-col justify-center h-full pt-20 md:pt-0 px-6 sm:px-10 md:px-24">
           <div className="max-w-6xl space-y-6">
             <div className="relative inline-block">
-              <h1 className="text-[36px] min-[400px]:text-4xl md:text-5xl lg:text-7xl font-[family-name:var(--font-libre-baskerville)] font-normal text-white leading-[1.15] tracking-tight animate-fade-in-custom drop-shadow-xl">
+              <h1 className="text-[28px] sm:text-[36px] md:text-[48px] lg:text-[64px] font-serif font-normal text-white leading-[1.15] tracking-tight animate-fade-in-custom drop-shadow-xl">
                 Towards Prosperous
                 <br />
                 Future
               </h1>
               {/* Elegant Orange underline */}
-              <div className="w-full h-[4px] md:h-[5px] mt-2 md:mt-6 animate-grow-line-custom" style={{ backgroundColor: '#B88C2E' }} />
+              <div className="w-full h-[4px] md:h-[5px] mt-2 md:mt-4 animate-grow-line-custom" style={{ backgroundColor: '#B88C2E' }} />
             </div>
           </div>
         </main>
@@ -327,7 +340,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* 2. OVERVIEW & STATS SECTION */}
-      <section className="relative w-full py-20 md:py-32 px-10 md:px-24 bg-[#F9F9F9]">
+      <section className="relative w-full py-20 md:py-32 px-10 md:px-24 bg-white">
 
         {/* Background Decorative Elements */}
         <div className="absolute inset-0 z-0 pointer-events-none">
@@ -355,20 +368,20 @@ export default function AboutUsPage() {
         <div className="relative z-10 max-w-7xl mx-auto text-center space-y-16">
           {/* Section Header Text */}
           <div className="space-y-8">
-            <h2 className="text-[#B88C2E] text-[24px] font-[family-name:var(--font-libre-baskerville)] font-bold leading-[1.52] max-w-5xl mx-auto tracking-normal">
-              At Jagdamba Group, our belief in aligning our business goals with the nation's progress has been the cornerstone of our journey.
+            <h2 className="text-[#B88C2E] text-[24px] font-serif font-bold leading-[1.52] max-w-5xl mx-auto tracking-normal">
+              At Jagdamba Group, our belief in aligning our business goals with the <br /> nation&apos;s progress has been the cornerstone of our journey.
             </h2>
 
-            <div className="space-y-6 text-[#6B7280] text-[18px] leading-[26px] max-w-4xl mx-auto font-[family-name:var(--font-libre-franklin)] font-normal tracking-normal">
+            <div className="space-y-10 text-[#535D77] text-[16px] md:text-[19px] leading-[28px] md:leading-[32px] max-w-7xl mx-auto font-[family-name:var(--font-libre-franklin)] font-normal tracking-tight text-center opacity-90">
               <p>
-                We have evolved from our beginnings in mining, casting, and calcining to becoming an integrated
-                player in trailer manufacturing, structure manufacturing. By expanding into mall operations,
-                waterpark management, we are setting new standards and contributing to India's development.
-                Through strong industry partnerships and eco-friendly practices, we are dedicated to shaping a
+                We have evolved from our beginnings in mining, casting, and calcining to becoming an integrated <br />
+                player in trailer manufacturing, structure manufacturing. By expanding into mall operations, <br />
+                waterpark management, we are setting new standards and contributing to India&apos;s development. <br />
+                Through strong industry partnerships and eco-friendly practices, we are dedicated to shaping a <br />
                 prosperous and green future for India.
               </p>
               <p>
-                At Jagdamba Group, every project we undertake is a step towards a brighter, more sustainable future for the nation.
+                At Jagdamba Group, every project we undertake is a step towards a brighter, <br /> more sustainable future for the nation.
               </p>
             </div>
           </div>
@@ -400,12 +413,12 @@ export default function AboutUsPage() {
 
           {/* Text Content */}
           <div className="space-y-8 max-w-xl">
-            <h2 className="text-4xl md:text-6xl font-serif text-[#000133] leading-tight flex items-baseline gap-3">
+            <h2 className="text-4xl md:text-[48px] font-serif text-[#000133] leading-tight flex items-baseline gap-3">
               <span className="font-normal">Our</span>
-              <span className="text-[#B2831E] font-medium">Vision</span>
+              <span className="text-[#B88C2E] font-medium">Vision</span>
             </h2>
 
-            <p className="text-[#535D77] text-[16px] md:text-[18px] leading-relaxed font-sans opacity-90 text-justify">
+            <p className="text-[#535D77] text-[16px] md:text-[18px] leading-[26px] font-sans opacity-90 text-justify">
               At Jagdamba Group, our vision is to drive sustainable growth and innovation through diverse industries.
               We aim to lead with integrity, foster strong partnerships, and create value for our clients and communities.
               By consistently delivering excellence, we aspire to shape a prosperous future. We are committed to
@@ -443,12 +456,12 @@ export default function AboutUsPage() {
 
           {/* Text Content */}
           <div className="space-y-8 max-w-xl order-1 lg:order-2">
-            <h2 className="text-4xl md:text-6xl font-serif text-[#000133] leading-tight flex items-baseline gap-3">
+            <h2 className="text-4xl md:text-[48px] font-serif text-[#000133] leading-tight flex items-baseline gap-3">
               <span className="font-normal">Our</span>
-              <span className="text-[#B2831E] font-medium">Mission</span>
+              <span className="text-[#B88C2E] font-medium">Mission</span>
             </h2>
 
-            <p className="text-[#535D77] text-[16px] md:text-[18px] leading-relaxed font-sans opacity-90 text-justify">
+            <p className="text-[#535D77] text-[16px] md:text-[18px] leading-[26px] font-sans opacity-90 text-justify">
               At Jagdamba Group, our mission is to deliver exceptional value in all our ventures.
               We uphold the highest standards of integrity, safety, and quality, driving innovation and
               sustainability to meet our clients' needs. We create jobs, foster a supportive work
