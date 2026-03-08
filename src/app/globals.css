@@ -16,8 +16,10 @@
 
   /* Add playfair mapping */
   --font-playfair: var(--font-playfair-display);
-  /* Add sanomat mapping */
   --font-sanomat: var(--font-sanomat);
+  /* Font mappings used in page.jsx */
+  --font-baskerville: var(--font-serif);
+  --font-libre: var(--font-sans);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -118,6 +120,7 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-a, button {
+a,
+button {
   cursor: pointer;
 }
