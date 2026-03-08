@@ -33,8 +33,8 @@ export default function MallExploreSection() {
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-8 w-full max-w-4xl lg:max-w-full">
           {categories.map((cat) => (
-            <div key={cat.label} className="flex flex-col items-center bg-white rounded-2xl p-2 md:p-3 pb-4 md:pb-5 shadow-lg w-full">
-              <div className="w-full h-35 md:h-52 lg:h-72 rounded-xl overflow-hidden">
+            <div key={cat.label} className="flex flex-col items-center bg-white p-6 shadow-lg w-full gap-6" style={{ borderRadius: '7.98px' }}>
+              <div className="w-full h-35 md:h-52 lg:h-72 overflow-hidden" style={{ borderRadius: '3.99px' }}>
                 <Image
                   src={cat.src}
                   alt={cat.label}
@@ -43,7 +43,7 @@ export default function MallExploreSection() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <span className="text-[#111C55] font-sans font-medium text-[11px] md:text-[16px] lg:text-[20px] leading-[135%] tracking-widest uppercase text-center mt-3 px-1">
+              <span className="text-[#111C55] font-sans font-medium text-[10px] md:text-[20px] leading-[135%] md:leading-[28px] tracking-normal md:tracking-[0.05em] uppercase text-center">
                 {cat.label}
               </span>
             </div>

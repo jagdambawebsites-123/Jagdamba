@@ -87,7 +87,7 @@ export default function ResortRoomsSection({
           />
         </div>
 
-        <p className="text-[#464646] font-serif font-bold text-[16px] md:text-[32px] lg:text-[40px] leading-relaxed text-center max-w-4xl">
+        <p className="text-[#464646] font-serif font-normal text-[14px] md:text-[32px] leading-[21px] md:leading-[100%] tracking-normal text-center max-w-4xl">
           {description}
         </p>
 
@@ -95,7 +95,7 @@ export default function ResortRoomsSection({
           <div className="relative w-16 h-6 md:w-24 md:h-8 lg:w-36 lg:h-10 shrink-0">
             <Image src={stayArrowLeft} alt="" fill className="object-contain" />
           </div>
-          <h2 className="font-serif font-normal text-[16px] md:text-[36px] lg:text-[48px] text-[#464646] leading-tight whitespace-nowrap">
+          <h2 className="font-serif font-normal text-[16px] md:text-[40px] text-[#464646] leading-[100%] tracking-normal text-center whitespace-nowrap">
             {heading}
           </h2>
           <div className="relative w-16 h-6 md:w-24 md:h-8 lg:w-36 lg:h-10 shrink-0">
@@ -141,15 +141,15 @@ export default function ResortRoomsSection({
                       />
                     </div>
 
-                    <div className="flex flex-col gap-2 p-4 lg:p-5 flex-1">
-                      <h3 className="font-serif font-normal text-[16px] md:text-[20px] lg:text-[24px] text-[#464646]">
+                    <div className="flex flex-col p-4 lg:p-5 flex-1">
+                      <h3 className="font-serif font-normal text-[16px] md:text-[24px] text-[#464646] leading-[100%] tracking-normal mb-6">
                         {room.name}
                       </h3>
                       <ul className="space-y-1 pl-4">
                         {room.details.map((detail) => (
                           <li
                             key={detail}
-                            className="flex items-center gap-2 text-[#464646] font-sans font-normal text-[12px] md:text-[16px] lg:text-[20px]"
+                            className="flex items-center gap-2 text-[#464646] font-sans font-normal text-[12px] md:text-[20px] leading-[10px] md:leading-[100%] tracking-normal"
                           >
                             <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-[#464646] inline-block" />
                             {detail}

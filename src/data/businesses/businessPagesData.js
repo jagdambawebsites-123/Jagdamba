@@ -182,7 +182,8 @@ export const businessPagesData = {
   "resort": {
     hero: {
       title: "Relax. Indulge. LÃ Fountain",
-      image: "/images/business/resort/resort-hero.png",
+      image: "/images/business/resort/resort-hero-desktop.png",
+      mobileImage: "/images/business/resort/resort-hero.png",
       link: "/about/aboutUs",
       buttonText: "About Us",
     },
