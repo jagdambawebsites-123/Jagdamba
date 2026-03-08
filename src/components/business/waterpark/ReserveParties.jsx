@@ -60,7 +60,7 @@ export default function ReserveParties() {
 
       {/* Heading */}
       <div className="w-full max-w-5xl px-4 md:px-8 relative z-10 flex justify-center md:justify-start mb-20">
-        <h2 className="text-3xl w-full md:text-4xl text-[#CA9015] font-serif font-bold text-center">
+        <h2 className="w-full text-[20px] md:text-3xl lg:text-[40px] text-[#CA9015] font-serif font-bold text-center">
           Reserve For Parties
         </h2>
       </div>

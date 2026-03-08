@@ -76,17 +76,17 @@ export default function WaterparkHero() {
         <div className="w-full max-w-4xl relative z-10 flex flex-col items-center mt-8 md:mt-20">
           
           {/* Main Heading */}
-          <h1 className="text-2xl md:text-3xl lg:text-4xl text-[#CA9015] font-serif font-bold text-center mb-4 md:mb-6">
+          <h1 className="text-[20px] md:text-3xl lg:text-[40px] text-[#CA9015] font-serif font-bold text-center mb-5 md:mb-8">
             Jagdamba Funworld - Experience Endless Thrill
           </h1>
 
           {/* Sub Heading */}
-          <h2 className="text-xl md:text-2xl lg:text-3xl text-[#1a2b5e] font-serif font-bold text-center mb-6 md:mb-8">
+          <h2 className="text-base md:text-2xl lg:text-[32px] text-[#111C55] font-serif font-bold text-center mb-4 md:mb-8">
             What’s On
           </h2>
 
           {/* Descriptive Paragraph */}
-          <p className="text-[#464646] text-center text-sm md:text-base leading-relaxed">
+          <p className="text-[#6B7280] text-center text-sm md:text-[18px] leading-relaxed">
             Jagdamba Funworld is a vibrant waterpark nestled in the scenic beauty of Chandrahasini Timarlaga, near Raigarh in Chhattisgarh, India. This exciting destination offers a perfect blend of thrill, relaxation, and enjoyment for visitors of all ages. Thrill-seekers can indulge in exhilarating water slides that twist, turn, and plunge into refreshing pools below. From high-speed slides that get the heart racing to meandering lazy rivers perfect for a leisurely float, there&apos;s something to satisfy every adrenaline craving.
           </p>
           

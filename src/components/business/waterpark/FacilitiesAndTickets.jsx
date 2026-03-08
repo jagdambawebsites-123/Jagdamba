@@ -51,7 +51,7 @@ export default function FacilitiesAndTickets() {
 
         {/* Heading */}
         <div className="w-full relative z-10 flex justify-center mb-12">
-          <h2 className="text-3xl md:text-4xl text-[#CA9015] font-serif font-bold text-center">
+          <h2 className="text-[20px] md:text-3xl lg:text-[40px] text-[#CA9015] font-serif font-bold text-center">
             Facilities
           </h2>
         </div>
@@ -69,7 +69,7 @@ export default function FacilitiesAndTickets() {
                   className="object-contain"
                 />
               </div>
-              <span className="text-[#2b3954] text-sm md:text-base font-serif max-w-[150px] leading-tight">
+              <span className="text-[#111C55] text-sm md:text-base font-serif max-w-[150px] leading-tight">
                 {fac.name}
               </span>
             </div>
@@ -130,7 +130,7 @@ export default function FacilitiesAndTickets() {
 
         {/* Heading */}
         <div className="w-full relative z-10 flex justify-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl text-[#CA9015] font-serif font-bold text-center">
+          <h2 className="text-[20px] md:text-3xl lg:text-[40px] text-[#CA9015] font-serif font-bold text-center">
             Our Ticket Plan
           </h2>
         </div>

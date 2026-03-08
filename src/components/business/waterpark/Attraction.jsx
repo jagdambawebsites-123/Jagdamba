@@ -171,7 +171,7 @@ export default function Attraction() {
         </div>
 
         <div className="w-full relative z-10 flex justify-center mb-8 md:mb-12">
-          <h2 className="text-3xl md:text-4xl text-[#CA9015] font-serif font-bold text-center">
+          <h2 className="text-[20px] md:text-3xl lg:text-[40px] text-[#CA9015] font-serif font-bold text-center">
             Jagdamba Attraction
           </h2>
         </div>
@@ -191,7 +191,7 @@ export default function Attraction() {
               key={index}
               className="flex flex-col items-center flex-shrink-0 group pointer-events-none"
             >
-              <div className="relative w-36 h-36 md:w-52 md:h-52 rounded-full border-[1.5px] border-dashed border-[#2b3954] p-2 md:p-3 transition-transform duration-300 group-hover:scale-105">
+              <div className="relative w-36 h-36 md:w-52 md:h-52 rounded-full border-[1.5px] border-dashed border-[#111C55] p-2 md:p-3 transition-transform duration-300 group-hover:scale-105">
                 <div className="relative w-full h-full rounded-full overflow-hidden shadow-sm">
                   <Image
                     src={attr.image}
@@ -202,7 +202,7 @@ export default function Attraction() {
                   />
                 </div>
               </div>
-              <span className="text-[#2b3954] text-sm md:text-base font-serif mt-4 text-center select-none">
+              <span className="text-[#111C55] text-sm md:text-base font-serif mt-4 text-center select-none">
                 {attr.name}
               </span>
             </div>
