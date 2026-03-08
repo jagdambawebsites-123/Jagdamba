@@ -71,7 +71,7 @@ export default function ImpactSection() {
           style={{ backgroundColor: currentBgColor }}
         >
           <span
-            className="text-[36px] sm:text-[48px] lg:text-[128px] whitespace-nowrap leading-none font-serif font-bold transition-all duration-1000 ease-in-out block"
+            className="text-[44px] sm:text-[48px] lg:text-[128px] whitespace-nowrap leading-none font-serif font-bold transition-all duration-1000 ease-in-out block"
             style={{
               WebkitTextStroke: `2px ${currentBorderColor}`,
               color: currentBgColor,
@@ -90,7 +90,7 @@ export default function ImpactSection() {
             style={{ borderColor: currentBorderColor }}
           >
             {/* Height-establishing container */}
-            <div className="relative w-full min-h-[750px] lg:min-h-[500px] md:mb-[250px] lg:mb-[30px]">
+            <div className="relative w-full min-h-[750px] lg:min-h-[500px] mb-[50px] md:mb-[300px] lg:mb-[30px]">
               {slides.map((slide, index) => (
                 <div
                   key={slide.id}

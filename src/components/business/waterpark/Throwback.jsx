@@ -43,7 +43,7 @@ export default function Throwback() {
 
       {/* Heading */}
       <div className="w-full relative z-10 flex justify-center mb-12 md:mb-16">
-        <h2 className="text-3xl md:text-4xl text-[#CA9015] font-serif font-bold text-center">
+        <h2 className="text-[20px] md:text-3xl lg:text-[40px] text-[#CA9015] font-serif font-bold text-center">
           Throw You Back
         </h2>
       </div>

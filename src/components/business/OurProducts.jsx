@@ -82,7 +82,7 @@ export default function OurProducts({
           <h2 className="text-2xl lg:w-1/2 md:text-[40px] font-serif text-[#111C55] text-center lg:text-left">
             {titleStart} <span className="text-[#CA9015]">{titleHighlight}</span>
           </h2>
-          <p className="w-full lg:w-1/2 text-center lg:text-left text-[#6B7280] text-sm md:text-base leading-relaxed font-sans">
+          <p className="w-full lg:w-1/2 text-center lg:text-left text-[#6B7280] text-[12px] md:text-[16px] leading-6 font-sans">
             {description}
           </p>
         </div>

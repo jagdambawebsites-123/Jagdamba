@@ -37,7 +37,7 @@ export default function EnhanceExperience() {
       {/* Content Container */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-8">
         {/* Section Heading */}
-        <h2 className="text-3xl md:text-4xl text-center text-white font-serif mb-10 md:mb-14 drop-shadow-md">
+        <h2 className="text-2xl md:text-[40px] text-center text-white font-serif mb-10 md:mb-14 drop-shadow-md">
           Enhance Your Experience
         </h2>
 
@@ -49,10 +49,10 @@ export default function EnhanceExperience() {
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-lg flex flex-col p-3 md:p-4 transition-transform hover:-translate-y-1 duration-300"
+              className="bg-white rounded-xl shadow-lg flex flex-col px-2 pt-2 md:px-4 md:pt-4 transition-transform hover:-translate-y-1 duration-300"
             >
               {/* Card Image Container (creates the framed effect) */}
-              <div className="relative w-full aspect-[5/4] sm:aspect-[4/3] rounded-lg overflow-hidden">
+              <div className="relative w-full aspect-square rounded-lg overflow-hidden">
                 <Image
                   src={exp.image}
                   alt={exp.title}
@@ -62,8 +62,8 @@ export default function EnhanceExperience() {
               </div>
 
               {/* Card Text */}
-              <div className="pt-4 pb-2 flex-grow flex items-center justify-center">
-                <h3 className="text-[#1a2b5e] font-bold text-xs sm:text-sm md:text-base tracking-wide text-center">
+              <div className="py-2 md:py-6 flex-grow flex items-center justify-center">
+                <h3 className="text-[#111C55] font-medium text-[10px] sm:text-sm md:text-[20px] tracking-normal text-center">
                   {exp.title}
                 </h3>
               </div>

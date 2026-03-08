@@ -1,64 +1,28 @@
-import { client } from "@/sanity/lib/client";
-import { urlFor } from "@/sanity/lib/image";
-import Link from "next/link";
+import React from "react";
 import Image from "next/image";
 
-const FALLBACK_STORIES = [
+const stories = [
   {
     id: 1,
     image: "/images/landingPage/award-ceremony.jpg",
     title: "Jagdamba Trailer awarded as an emerging brand in Indian trailer industry.",
     date: "April 27, 2024",
-    href: "/news"
   },
   {
     id: 2,
     image: "/images/landingPage/oem-ranking.png",
     title: "Listed in the global OEM ranking for World Trailer Manufacturers.",
     date: "Sep 26, 2023",
-    href: "/news"
   },
   {
     id: 3,
     image: "/images/landingPage/motorindia-feature.png",
     title: "Jagdamba Trailer got featured in Nov, 2024 Motor India Magazine.",
     date: "Nov 22, 2024",
-    href: "/news"
   },
 ];
 
-async function getFeaturedStories() {
-  try {
-    if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
-      return FALLBACK_STORIES;
-    }
-
-    // Fetch specifically from the Featured Stories collection (fetching more than 3 to allow scrolling)
-    const query = `*[_type == "featuredStory"] | order(_createdAt desc)[0...10]`;
-    const stories = await client.fetch(query, {}, { next: { revalidate: 60 } });
-
-    if (!stories || stories.length === 0) return FALLBACK_STORIES;
-
-    return stories.map(post => ({
-      id: post._id,
-      image: post.mainImage ? urlFor(post.mainImage).url() : null,
-      title: post.title,
-      date: post.date ? new Date(post.date).toLocaleDateString('en-US', {
-        month: 'short',
-        day: 'numeric',
-        year: 'numeric'
-      }) : "",
-      href: post.href || "/news"
-    }));
-  } catch (error) {
-    console.error("Error fetching featured stories:", error);
-    return FALLBACK_STORIES;
-  }
-}
-
-export default async function FeaturedStories() {
-  const stories = await getFeaturedStories();
-
+export default function FeaturedStories() {
   return (
     <div className="relative w-full">
       {/* 80% Dark Navy Background Layer */}
@@ -66,11 +30,11 @@ export default async function FeaturedStories() {
 
       {/* Bottom 20% Light Background Layer */}
       <div className="absolute bottom-0 left-0 w-full h-[20%] bg-[#fbfbfb] -z-20"></div>
-
+      
       <div className="container mx-auto">
         <section className="relative z-0 pb-16 md:pb-24">
           <div className="mx-auto px-4 sm:px-6 lg:px-[100px] pt-16 md:pt-20">
-
+            
             {/* Header Area */}
             <div className="flex justify-center md:justify-between items-center mb-8 md:mb-14">
               <h2 className="text-3xl text-center md:text-left sm:text-[40px] font-serif text-[#111C55] md:text-white">
@@ -79,52 +43,45 @@ export default async function FeaturedStories() {
 
               {/* Desktop Button: Hidden on mobile */}
               <div className="hidden md:block">
-                <Link href="/news">
-                  <ViewAllButton variant="desktop" />
-                </Link>
+                <ViewAllButton variant="desktop" />
               </div>
             </div>
 
-            {/* Cards Grid - Updated to be scrollable on desktop if needed */}
+            {/* Cards Grid */}
             <div className="
-              grid grid-flow-col auto-cols-[85%] sm:auto-cols-[45%] overflow-x-auto gap-6 pb-6 snap-x snap-mandatory 
-              md:auto-cols-[calc(33.333%-16px)] scrollbar-hide
+              grid grid-flow-col auto-cols-[85%] sm:auto-cols-[45%] overflow-x-auto gap-6 pb-4 snap-x snap-mandatory scrollbar-hide
+              md:grid-cols-3 md:grid-flow-row md:auto-cols-auto md:overflow-visible md:pb-0
             ">
               {stories.map((story) => (
-                <Link
-                  href={story.href || "/news"}
+                <div
                   key={story.id}
-                  className="bg-white rounded-sm shadow-lg overflow-hidden flex flex-col h-full snap-center"
+                  className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col h-full snap-center"
                 >
-                  <div className="bg-white rounded-sm shadow-lg overflow-hidden flex flex-col h-full transition-transform duration-300 hover:-translate-y-2">
-                    <div className="relative w-full aspect-[407/489] bg-[#f8f9fa]">
-                      <Image
-                        src={story.image || "/images/placeholder.jpg"}
-                        alt={story.title}
-                        fill
-                        sizes="(max-width: 768px) 85vw, (max-width: 1200px) 33vw, 407px"
-                        className="object-cover object-center"
-                      />
-                    </div>
-
-                    <div className="p-6 md:p-8 flex flex-col flex-grow">
-                      <p className="text-[#4b5563] text-sm md:text-base mb-6 leading-relaxed flex-grow">
-                        {story.title}
-                      </p>
-                      <p className="text-[#0a1a44] font-bold text-xs uppercase tracking-wider">
-                        {story.date}
-                      </p>
-                    </div>
+                  <div className="relative w-full aspect-[407/489] bg-[#f8f9fa]">
+                    <Image
+                      src={story.image}
+                      alt={story.title}
+                      fill
+                      sizes="(max-width: 768px) 85vw, (max-width: 1200px) 33vw, 407px"
+                      className="object-cover object-center"
+                    />
                   </div>
-                </Link>
+
+                  <div className="p-6 md:p-8 flex flex-col flex-grow">
+                    <p className="text-[#6B7280] text-sm md:text-[18px] mb-6 leading-relaxed flex-grow font-sans">
+                      {story.title}
+                    </p>
+                    <p className="text-[#111C55] font-medium text-base uppercase tracking-wider font-sans">
+                      {story.date}
+                    </p>
+                  </div>
+                </div>
               ))}
             </div>
 
             {/* Mobile Button: Full width at the bottom */}
             <div className="mt-10 flex justify-center md:hidden">
-              <Link href="/news" className="w-full">
-                <ViewAllButton variant="mobile" />
-              </Link>
+              <ViewAllButton variant="mobile" />
             </div>
           </div>
         </section>
@@ -136,13 +93,13 @@ export default async function FeaturedStories() {
 // Responsive View All Button
 function ViewAllButton({ variant }) {
   const isMobile = variant === "mobile";
-
+  
   return (
     <button className={`
-      group flex items-center justify-center gap-2 rounded-full border transition-all duration-300
-      ${isMobile
-        ? "w-full py-3.5 border-[#0a1a44]/40 text-[#0a1a44] text-sm font-bold hover:text-white hover:bg-[#0a1a44] tracking-wide"
-        : "px-6 py-2.5 border-white text-white text-sm font-medium hover:bg-white hover:text-[#0a1a44]"
+      group flex items-center justify-center gap-2 rounded-full border transition-all duration-300 font-sans
+      ${isMobile 
+        ? "w-full py-3.5 border-[#0a1a44]/40 text-[#0a1a44] text-sm font-normal hover:text-white hover:bg-[#0a1a44] tracking-wide" 
+        : "px-6 py-2.5 border-white text-white text-base  font-normal hover:bg-white hover:text-[#0a1a44]"
       }
     `}>
       View All

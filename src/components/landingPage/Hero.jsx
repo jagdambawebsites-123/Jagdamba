@@ -76,13 +76,13 @@ export default function HeroSection() {
               items-center + text-center for mobile
               md:items-start + md:text-left for desktop
           */}
-          <div className="flex flex-col items-center text-center md:items-start md:text-left w-full md:w-fit gap-5 xl:gap-12 font-serif">
-            <h1 className="text-[28px] sm:text-[36px] md:text-[48px] lg:text-[64px] leading-tight flex items-center">
+          <div className="flex flex-col items-center text-center md:items-start md:text-left w-full md:w-fit font-serif">
+            <h1 className="text-[28px] sm:text-[36px] md:text-[48px] lg:text-[64px] leading-tight mb-1.5 flex items-center">
               {slides[current].title}
             </h1>
 
             {/* Accent Line */}
-            <div className="h-1 w-full max-w-[300px] md:max-w-none bg-[#CA9015]" />
+            <div className="h-1 w-full max-w-[300px] md:max-w-none bg-[#CA9015] mb-4 md:mb-12" />
 
             <Link href="/about/aboutUs">
               <ButtonPrimary content="About Us" />

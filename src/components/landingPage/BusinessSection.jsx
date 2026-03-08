@@ -9,7 +9,7 @@ export default function BusinessSection() {
   // For the standard card fade-in animation
   const [isVisible, setIsVisible] = useState({});
   const sectionRefs = useRef([]);
-
+  
   // Refs for the scrolling dot & painted line logic
   const trackRef = useRef(null);
   const dotRef = useRef(null);
@@ -163,13 +163,13 @@ export default function BusinessSection() {
 
     const handleScroll = () => {
       if (!trackRef.current) return;
-
+      
       const trackRect = trackRef.current.getBoundingClientRect();
       const viewportCenter = window.innerHeight / 2;
-
+      
       // Calculate distance from the top of the timeline track to the center of your screen
       let progress = viewportCenter - trackRect.top;
-
+      
       // Clamp it so it can't move above the track or below the track
       targetY = Math.max(0, Math.min(progress, trackRect.height));
     };
@@ -182,20 +182,20 @@ export default function BusinessSection() {
       if (dotRef.current) {
         dotRef.current.style.transform = `translateY(${currentY}px)`;
       }
-
+      
       // Update painted line height
       if (lineRef.current) {
         lineRef.current.style.height = `${currentY}px`;
       }
-
+      
       animationFrameId = requestAnimationFrame(animate);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-
+    
     // Initialize immediately on load
     handleScroll();
-    currentY = targetY;
+    currentY = targetY; 
     animate();
 
     return () => {
@@ -206,8 +206,8 @@ export default function BusinessSection() {
 
   return (
     <div className="w-full bg-[#F5F5F5]">
-      <section className="container relative w-full bg-[#F5F5F5] px-6 md:px-10 xl:px-25 py-16 md:py-24 overflow-hidden mx-auto max-w-7xl">
-
+      <section className="container relative w-full bg-[#F5F5F5] px-6 xl:px-25 py-16 md:py-24 overflow-hidden mx-auto max-w-7xl">
+        
         {/* Header Section */}
         <div className="text-center mb-16 md:mb-24 relative z-20">
           <h2 className="text-4xl md:text-[40px] font-serif text-[#111C55] mb-6 lg:mb-8">
@@ -216,17 +216,17 @@ export default function BusinessSection() {
         </div>
 
         {/* --- CENTRAL TIMELINE WITH TRACKING DOT --- */}
-        <div
-          ref={trackRef}
+        <div 
+          ref={trackRef} 
           className="absolute left-1/2 top-48 bottom-32 w-[2px] bg-[#B88C2E]/20 -translate-x-1/2 hidden md:block z-0"
         >
           {/* The solid yellow line that grows as you scroll */}
           <div ref={lineRef} className="absolute top-0 left-0 w-full bg-[#FFC13D]" />
-
+          
           {/* The Wrapper for the Dot (moved via JS) */}
           <div ref={dotRef} className="absolute top-0 left-1/2 w-0 h-0 z-10 will-change-transform">
-            {/* The physical dot itself (offset to center perfectly on the line) */}
-            <div className="absolute -left-3 -top-3 w-6 h-6 rounded-full bg-[#FFC13D] border-[4px] border-[#F5F5F5] shadow-[0_0_12px_rgba(255,193,61,0.6)]" />
+             {/* The physical dot itself (offset to center perfectly on the line) */}
+             <div className="absolute -left-3 -top-3 w-6 h-6 rounded-full bg-[#FFC13D] border-[4px] border-[#F5F5F5] shadow-[0_0_12px_rgba(255,193,61,0.6)]" />
           </div>
         </div>
         {/* ------------------------------------------ */}
@@ -250,12 +250,12 @@ export default function BusinessSection() {
                     ${isEven ? "md:pr-12 lg:pr-20 justify-center md:justify-start" : "md:pl-12 lg:pl-20 justify-center md:justify-end"}
                   `}
                 >
-                  <div className="relative w-full max-w-[454px] h-[350px] rounded-[16px] overflow-hidden sm:shadow-lg flex-shrink-0">
+                  <div className="relative w-full md:max-w-[454px] aspect-[330/255] bg-[#F5F5F5] rounded-[16px] overflow-hidden  flex-shrink-0">
                     <Image
                       src={item.image}
                       alt={item.title}
                       fill
-                      className="object-cover"
+                      className="object-contain object-left"
                     />
                   </div>
                 </div>
@@ -267,11 +267,11 @@ export default function BusinessSection() {
                     ${isEven ? "md:pl-12 lg:pl-20 justify-center md:justify-start" : "md:pr-12 lg:pr-20 justify-center md:justify-start"}
                   `}
                 >
-                  <div className="w-full max-w-[454px] md:max-w-[554px] text-left pt-2">
+                  <div className="w-full md:max-w-[554px] text-left pt-2">
                     <h3 className="text-[28px] font-serif font-semibold text-[#111C55] mb-4">
                       {item.title}
                     </h3>
-                    <div className="text-[#6B7280] text-base md:text-base leading-relaxed mb-6 md:mb-8 font-sans space-y-3">
+                    <div className="text-[#6B7280] text-[14px] md:text-lg leading-relaxed mb-6 md:mb-8 font-sans space-y-3">
                       {item.description.map((para, i) => (
                         <p key={i}>{para}</p>
                       ))}
