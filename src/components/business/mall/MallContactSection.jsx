@@ -125,7 +125,7 @@ export default function MallContactSection() {
           </div>
           </div>
 
-          <div className="hidden md:block shrink-0">
+          <div className="hidden md:block shrink-0 ml-auto">
             <a
               href={googleMapsUrl}
               target="_blank"
