@@ -98,8 +98,8 @@ function ViewAllButton({ variant }) {
     <button className={`
       group flex items-center justify-center gap-2 rounded-full border transition-all duration-300 font-sans
       ${isMobile 
-        ? "w-full py-3.5 border-[#0a1a44]/40 text-[#0a1a44] text-sm font-bold hover:text-white hover:bg-[#0a1a44] tracking-wide" 
-        : "px-6 py-2.5 border-white text-white text-base font-normal hover:bg-white hover:text-[#0a1a44]"
+        ? "w-full py-3.5 border-[#0a1a44]/40 text-[#0a1a44] text-sm font-normal hover:text-white hover:bg-[#0a1a44] tracking-wide" 
+        : "px-6 py-2.5 border-white text-white text-base  font-normal hover:bg-white hover:text-[#0a1a44]"
       }
     `}>
       View All

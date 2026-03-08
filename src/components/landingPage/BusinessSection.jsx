@@ -206,7 +206,7 @@ export default function BusinessSection() {
 
   return (
     <div className="w-full bg-[#F5F5F5]">
-      <section className="container relative w-full bg-[#F5F5F5] px-6 md:px-10 xl:px-25 py-16 md:py-24 overflow-hidden mx-auto max-w-7xl">
+      <section className="container relative w-full bg-[#F5F5F5] px-6 xl:px-25 py-16 md:py-24 overflow-hidden mx-auto max-w-7xl">
         
         {/* Header Section */}
         <div className="text-center mb-16 md:mb-24 relative z-20">
@@ -250,12 +250,12 @@ export default function BusinessSection() {
                     ${isEven ? "md:pr-12 lg:pr-20 justify-center md:justify-start" : "md:pl-12 lg:pl-20 justify-center md:justify-end"}
                   `}
                 >
-                  <div className="relative w-full max-w-[454px] h-[350px] rounded-[16px] overflow-hidden sm:shadow-lg flex-shrink-0">
+                  <div className="relative w-full md:max-w-[454px] aspect-[330/255] bg-[#F5F5F5] rounded-[16px] overflow-hidden  flex-shrink-0">
                     <Image
                       src={item.image}
                       alt={item.title}
                       fill
-                      className="object-cover"
+                      className="object-contain object-left"
                     />
                   </div>
                 </div>
@@ -267,11 +267,11 @@ export default function BusinessSection() {
                     ${isEven ? "md:pl-12 lg:pl-20 justify-center md:justify-start" : "md:pr-12 lg:pr-20 justify-center md:justify-start"}
                   `}
                 >
-                  <div className="w-full max-w-[454px] md:max-w-[554px] text-left pt-2">
+                  <div className="w-full md:max-w-[554px] text-left pt-2">
                     <h3 className="text-[28px] font-serif font-semibold text-[#111C55] mb-4">
                       {item.title}
                     </h3>
-                    <div className="text-[#6B7280] text-base md:text-base leading-relaxed mb-6 md:mb-8 font-sans space-y-3">
+                    <div className="text-[#6B7280] text-[14px] md:text-lg leading-relaxed mb-6 md:mb-8 font-sans space-y-3">
                       {item.description.map((para, i) => (
                         <p key={i}>{para}</p>
                       ))}

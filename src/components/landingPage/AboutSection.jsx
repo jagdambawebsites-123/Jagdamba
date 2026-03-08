@@ -84,7 +84,7 @@ export default function AboutSection() {
             </div>
 
             {/* Right Column: Paragraphs */}
-            <div className="w-full lg:w-2/3 text-center lg:text-left text-[#6B7280] text-base md:text-lg leading-relaxed space-y-6 font-sans">
+            <div className="w-full lg:w-2/3 text-center lg:text-left text-[#6B7280] text-[14px] md:text-lg leading-relaxed space-y-6 font-sans">
               <p>
                 At Jagdamba Group, we are dedicated to India&apos;s growth and development through our diverse business ventures. As a distinguished conglomerate, we operate in waterpark management, trailer manufacturing, mining, sponge iron production, resort management, and mall operations. Our efforts are focused on contributing to the nation&apos;s progress by creating employment opportunities, building world-class manufacturing facilities, and supporting local economies.
               </p>
