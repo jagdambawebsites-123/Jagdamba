@@ -33,11 +33,11 @@ export default function FeaturedStories() {
       
       <div className="container mx-auto">
         <section className="relative z-0 pb-16 md:pb-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-20">
+          <div className="mx-auto px-4 sm:px-6 lg:px-[100px] pt-16 md:pt-20">
             
             {/* Header Area */}
             <div className="flex justify-center md:justify-between items-center mb-8 md:mb-14">
-              <h2 className="text-3xl text-center md:text-left md:text-5xl font-serif text-[#111C55] md:text-white">
+              <h2 className="text-3xl text-center md:text-left sm:text-[40px] font-serif text-[#111C55] md:text-white">
                 Our <span className="text-[#c19a49]">Featured Stories</span>
               </h2>
 
@@ -55,7 +55,7 @@ export default function FeaturedStories() {
               {stories.map((story) => (
                 <div
                   key={story.id}
-                  className="bg-white rounded-sm shadow-lg overflow-hidden flex flex-col h-full snap-center"
+                  className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col h-full snap-center"
                 >
                   <div className="relative w-full aspect-[407/489] bg-[#f8f9fa]">
                     <Image
@@ -68,10 +68,10 @@ export default function FeaturedStories() {
                   </div>
 
                   <div className="p-6 md:p-8 flex flex-col flex-grow">
-                    <p className="text-[#4b5563] text-sm md:text-base mb-6 leading-relaxed flex-grow">
+                    <p className="text-[#6B7280] text-sm md:text-[18px] mb-6 leading-relaxed flex-grow font-sans">
                       {story.title}
                     </p>
-                    <p className="text-[#0a1a44] font-bold text-xs uppercase tracking-wider">
+                    <p className="text-[#111C55] font-medium text-base uppercase tracking-wider font-sans">
                       {story.date}
                     </p>
                   </div>
@@ -96,13 +96,13 @@ function ViewAllButton({ variant }) {
   
   return (
     <button className={`
-      group flex items-center justify-center gap-2 rounded-full border transition-all duration-300
+      group flex items-center justify-center gap-2 rounded-full border transition-all duration-300 font-sans
       ${isMobile 
         ? "w-full py-3.5 border-[#0a1a44]/40 text-[#0a1a44] text-sm font-bold hover:text-white hover:bg-[#0a1a44] tracking-wide" 
-        : "px-6 py-2.5 border-white text-white text-sm font-medium hover:bg-white hover:text-[#0a1a44]"
+        : "px-6 py-2.5 border-white text-white text-base font-normal hover:bg-white hover:text-[#0a1a44]"
       }
     `}>
-      VIEW ALL STORIES
+      View All
       <ArrowUpRightIcon className={`
         w-4 h-4 text-[#c19a49] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5
         ${!isMobile && "group-hover:text-[#0a1a44]"}

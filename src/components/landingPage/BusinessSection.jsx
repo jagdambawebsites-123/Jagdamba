@@ -247,10 +247,10 @@ export default function BusinessSection() {
                 <div
                   className={`w-full md:w-1/2 flex transition-all duration-700 ease-out relative z-10
                     ${shown ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"}
-                    ${isEven ? "md:pr-12 lg:pr-20 md:justify-start" : "md:pl-12 lg:pl-20 md:justify-end"}
+                    ${isEven ? "md:pr-12 lg:pr-20 justify-center md:justify-start" : "md:pl-12 lg:pl-20 justify-center md:justify-end"}
                   `}
                 >
-                  <div className="relative w-full max-w-[454px] h-[350px] rounded-[16px] overflow-hidden shadow-lg flex-shrink-0">
+                  <div className="relative w-full max-w-[454px] h-[350px] rounded-[16px] overflow-hidden sm:shadow-lg flex-shrink-0">
                     <Image
                       src={item.image}
                       alt={item.title}
@@ -264,10 +264,10 @@ export default function BusinessSection() {
                 <div
                   className={`w-full md:w-1/2 mt-8 md:mt-0 flex transition-all duration-700 ease-out delay-150 relative z-10
                     ${shown ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"}
-                    ${isEven ? "md:pl-12 lg:pl-20 md:justify-start" : "md:pr-12 lg:pr-20 md:justify-start"}
+                    ${isEven ? "md:pl-12 lg:pl-20 justify-center md:justify-start" : "md:pr-12 lg:pr-20 justify-center md:justify-start"}
                   `}
                 >
-                  <div className="w-full max-w-[554px] text-left pt-2">
+                  <div className="w-full max-w-[454px] md:max-w-[554px] text-left pt-2">
                     <h3 className="text-[28px] font-serif font-semibold text-[#111C55] mb-4">
                       {item.title}
                     </h3>

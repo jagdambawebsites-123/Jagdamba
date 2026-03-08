@@ -26,10 +26,10 @@ export default function TeamSection() {
     <div className="w-full bg-[#fbfbfb]">
       <div className="container mx-auto">
         <section className="w-full bg-[#fbfbfb] py-20 lg:py-28 overflow-hidden">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className=" mx-auto px-4 sm:px-6 lg:px-25">
             {/* Header Area */}
-            <div className="flex justify-between items-center mb-8">
-              <h2 className="text-4xl md:text-5xl font-serif text-[#111C55]">
+            <div className="flex justify-between items-center mb-[60px]">
+              <h2 className="text-3xl md:text-[40px] font-serif text-[#111C55]">
                 Our <span className="text-[#B88C2E]">Team</span>
               </h2>
 
@@ -48,7 +48,7 @@ export default function TeamSection() {
             >
               {teamData.map((member) => (
                 <div key={member.id} className="flex flex-col snap-center">
-                  <div className="relative w-full aspect-[4/5] bg-[#111832] rounded-[2rem] overflow-hidden mb-6 shadow-md">
+                  <div className="relative w-full aspect-[400/423] bg-[#111832] rounded-[20px] overflow-hidden mb-6 shadow-md">
                     <Image
                       src={member.image}
                       alt={member.name}
@@ -89,12 +89,12 @@ function ViewAllButton() {
             flex items-center justify-center gap-2 
             px-8 py-3.5             /* Increased padding for better tap target */
             rounded-full border border-[#161c3a]/40 
-            text-[#161c3a] text-sm font-bold tracking-wide
+            text-[#161c3a] text-sm font-normal tracking-wide
             hover:bg-[#161c3a] hover:text-white 
             transition-all duration-300
         "
     >
-      VIEW ALL MEMBERS
+      View All
       <ArrowUpRightIcon className="w-4 h-4 text-[#c19b4e] group-hover:text-[#c19b4e] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
     </button>
   );
