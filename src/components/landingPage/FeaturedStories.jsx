@@ -69,11 +69,11 @@ export default async function FeaturedStories() {
 
       <div className="container mx-auto">
         <section className="relative z-0 pb-16 md:pb-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-20">
+          <div className="mx-auto px-4 sm:px-6 lg:px-[100px] pt-16 md:pt-20">
 
             {/* Header Area */}
             <div className="flex justify-center md:justify-between items-center mb-8 md:mb-14">
-              <h2 className="text-3xl text-center md:text-left md:text-5xl font-serif text-[#111C55] md:text-white">
+              <h2 className="text-3xl text-center md:text-left sm:text-[40px] font-serif text-[#111C55] md:text-white">
                 Our <span className="text-[#c19a49]">Featured Stories</span>
               </h2>
 
@@ -94,7 +94,7 @@ export default async function FeaturedStories() {
                 <Link
                   href={story.href || "/news"}
                   key={story.id}
-                  className="group block h-full snap-center"
+                  className="bg-white rounded-sm shadow-lg overflow-hidden flex flex-col h-full snap-center"
                 >
                   <div className="bg-white rounded-sm shadow-lg overflow-hidden flex flex-col h-full transition-transform duration-300 hover:-translate-y-2">
                     <div className="relative w-full aspect-[407/489] bg-[#f8f9fa]">
@@ -145,7 +145,7 @@ function ViewAllButton({ variant }) {
         : "px-6 py-2.5 border-white text-white text-sm font-medium hover:bg-white hover:text-[#0a1a44]"
       }
     `}>
-      VIEW ALL STORIES
+      View All
       <ArrowUpRightIcon className={`
         w-4 h-4 text-[#c19a49] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5
         ${!isMobile && "group-hover:text-[#0a1a44]"}

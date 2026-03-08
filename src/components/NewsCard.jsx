@@ -43,7 +43,7 @@ export default function NewsCard({ image, source, title, date, href }) {
                     {source && (
                         <div className="flex">
                             <span
-                                className="bg-[#111C55] text-white text-[10px] md:text-[13px] font-medium uppercase tracking-wider px-4 rounded-sm text-center"
+                                className="bg-[#111C55] text-white text-[10px] md:text-[14px] font-semibold uppercase tracking-wider px-4 rounded-sm text-center"
                                 style={{ height: '22px', display: 'inline-flex', alignItems: 'center' }}
                             >
                                 {source}
@@ -52,7 +52,7 @@ export default function NewsCard({ image, source, title, date, href }) {
                     )}
 
                     {/* Headline */}
-                    <h3 className="text-[#6B7280] text-[13px] md:text-[20px] leading-snug font-medium">
+                    <h3 className="text-[#6B7280] text-[14px] md:text-[18px] leading-snug font-medium">
                         {title}
                     </h3>
 

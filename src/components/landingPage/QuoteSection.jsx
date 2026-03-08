@@ -21,7 +21,7 @@ export default function QuoteSection() {
         {/* Quote Text */}
         <div className="container mx-auto">
           {/* REMOVED: w-full to prevent 100% + margin overflow calculation */}
-          <p className="relative z-10 ml-[20px] sm:ml-[60px] px-6 sm:px-24 lg:px-44 text-center border-l-[1px] rounded-bl-[40px] sm:rounded-bl-[72px] border-white/50 py-16 sm:py-32 lg:py-44 text-xl sm:text-3xl md:text-5xl font-serif font-normal">
+          <p className="relative z-10 ml-[20px] sm:ml-[60px] px-6 sm:px-24 lg:px-44 text-center border-l-[1px] rounded-bl-[40px] sm:rounded-bl-[72px] border-white/50 py-16 sm:py-32 lg:py-44 text-xl sm:text-3xl md:text-5xl font-serif font-normal leading-relaxed">
             “Success is not final, failure is not fatal: It is the courage to
             continue that counts”
           </p>

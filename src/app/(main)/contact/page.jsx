@@ -11,9 +11,9 @@ export default function ContactPage() {
             <div className="container mx-auto px-4 sm:px-6 lg:px-16 relative z-10">
                 {/* Section Title */}
                 <div className="max-w-7xl mx-auto mt-20 md:mt-0 mb-6 md:mb-8 text-center lg:text-left px-4 lg:px-0">
-                    <h1 className="text-[clamp(1.5rem,4vw,2.625rem)] font-serif leading-tight">
-                        <span className="text-[#1A2B56]">Get In </span>
-                        <span className="text-[#B88C2E]">Touch</span>
+                    <h1 className="text-[24px] md:text-[40px] font-serif leading-tight">
+                        <span className="text-[#111C55]">Get In </span>
+                        <span className="text-[#CA9015]">Touch</span>
                     </h1>
                 </div>
 
@@ -30,7 +30,7 @@ export default function ContactPage() {
                         </div>
                         <div className="pt-0 pb-6 px-6 md:p-8 flex flex-col flex-grow justify-start md:justify-center">
                             <div className="space-y-4 md:space-y-6">
-                                <h2 className="text-[#111C55] text-sm md:text-[26px] font-medium mt-[-1.25rem] md:mt-0 mb-3 md:mb-4">Jagdamba Group</h2>
+                                <h2 className="text-[#111C55] text-sm md:text-[24px] font-medium mt-[-1.25rem] md:mt-0 mb-3 md:mb-4">Jagdamba Group</h2>
                                 <div className="space-y-2 md:space-y-6">
                                     {/* Location */}
                                     <div className="flex items-start gap-4">
@@ -42,7 +42,7 @@ export default function ContactPage() {
                                                 className="object-contain"
                                             />
                                         </div>
-                                        <p className="text-[#6B7280] leading-snug text-[11px] md:text-[18px] font-normal">
+                                        <p className="text-[#6B7280] leading-snug text-[12px] md:text-[18px] font-normal">
                                             Nandeli Road, National Highway 49, Jorapali,<br />
                                             Chhattisgarh 496001 India
                                         </p>
@@ -58,7 +58,7 @@ export default function ContactPage() {
                                                 className="object-contain"
                                             />
                                         </div>
-                                        <a href="mailto:info@jagdambagroup.co" className="text-[#6B7280] text-[11px] md:text-[18px] font-normal hover:text-[#B88C2E] transition-colors">
+                                        <a href="mailto:info@jagdambagroup.co" className="text-[#6B7280] text-[12px] md:text-[18px] font-normal hover:text-[#CA9015] transition-colors">
                                             info@jagdambagroup.co
                                         </a>
                                     </div>
@@ -73,7 +73,7 @@ export default function ContactPage() {
                                                 className="object-contain"
                                             />
                                         </div>
-                                        <a href="tel:+917898385218" className="text-[#6B7280] text-[11px] md:text-[18px] font-normal hover:text-[#B88C2E] transition-colors">
+                                        <a href="tel:+917898385218" className="text-[#6B7280] text-[12px] md:text-[18px] font-normal hover:text-[#CA9015] transition-colors">
                                             +91 78983 85218
                                         </a>
                                     </div>
@@ -88,7 +88,7 @@ export default function ContactPage() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                                 {/* Name */}
                                 <div className="">
-                                    <label className="block mb-2 text-[15px] md:text-base font-normal md:font-medium text-gray-500 tracking-wide">Name</label>
+                                    <label className="block mb-2 text-[15px] md:text-base font-normal md:font-medium text-[#737373] tracking-wide">Name</label>
                                     <input
                                         type="text"
                                         placeholder="Enter your name"
@@ -97,7 +97,7 @@ export default function ContactPage() {
                                 </div>
                                 {/* Email */}
                                 <div className="">
-                                    <label className="block mb-2 text-[15px] md:text-base font-normal md:font-medium text-gray-500 tracking-wide">Email Address</label>
+                                    <label className="block mb-2 text-[15px] md:text-base font-normal md:font-medium text-[#737373] tracking-wide">Email Address</label>
                                     <input
                                         type="email"
                                         placeholder="Enter your email"
@@ -106,7 +106,7 @@ export default function ContactPage() {
                                 </div>
                                 {/* Company */}
                                 <div className="">
-                                    <label className="block mb-2 text-[15px] md:text-base font-normal md:font-medium text-gray-500 tracking-wide">Company (Optional)</label>
+                                    <label className="block mb-2 text-[15px] md:text-base font-normal md:font-medium text-[#737373] tracking-wide">Company (Optional)</label>
                                     <input
                                         type="text"
                                         placeholder="Enter company name"
@@ -115,7 +115,7 @@ export default function ContactPage() {
                                 </div>
                                 {/* Mobile */}
                                 <div className="">
-                                    <label className="block mb-2 text-[15px] md:text-base font-normal md:font-medium text-gray-500 tracking-wide">Mobile Number</label>
+                                    <label className="block mb-2 text-[15px] md:text-base font-normal md:font-medium text-[#737373] tracking-wide">Mobile Number</label>
                                     <input
                                         type="tel"
                                         placeholder="Enter mobile number"
@@ -126,7 +126,7 @@ export default function ContactPage() {
 
                             {/* Message */}
                             <div className="">
-                                <label className="block mb-2 text-base font-normal md:font-medium text-gray-500 tracking-wide">Message</label>
+                                <label className="block mb-2 text-base font-normal md:font-medium text-[#737373] tracking-wide">Message</label>
                                 <textarea
                                     rows={1}
                                     placeholder="Enter your message"
@@ -138,7 +138,7 @@ export default function ContactPage() {
                             <div className="mt-auto pt-0 md:pt-4">
                                 <button
                                     type="submit"
-                                    className="w-full py-3.5 bg-[#111C55] text-white text-sm font-medium rounded-full hover:bg-[#1a2b56] transition-all duration-300 shadow-sm hover:shadow-md active:scale-[0.98]"
+                                    className="w-full py-3.5 bg-[#111C55] text-white text-sm font-semibold rounded-full hover:bg-[#1a2b56] transition-all duration-300 shadow-sm hover:shadow-md active:scale-[0.98]"
                                 >
                                     Let's Connect
                                 </button>

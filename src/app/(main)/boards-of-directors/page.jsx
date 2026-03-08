@@ -31,9 +31,9 @@ export default function BoardsOfDirectorsPage() {
             <div className="container mx-auto px-4 sm:px-6 lg:px-24 relative z-10">
                 {/* Title Section */}
                 <div className="text-center mb-4 md:mb-6">
-                    <h1 className="text-3xl md:text-[40px] font-serif text-[#1A2B56] flex items-center justify-center gap-4">
+                    <h1 className="text-[24px] md:text-[40px] font-serif text-[#111C55] flex items-center justify-center gap-4">
                         <span className="font-normal">Our</span>
-                        <span className="text-[#B88C2E] font-normal">Team</span>
+                        <span className="text-[#CA9015] font-normal">Team</span>
                     </h1>
                 </div>
 

@@ -164,7 +164,7 @@ const TrailerPage = () => {
                             </h1>
                             <div className="h-[4px] w-full max-w-[280px] md:max-w-[800px] bg-[#CA9015] -mt-2 md:-mt-4" />
                             <Link href="/about">
-                                <button className="group mt-0 flex items-center gap-3 px-8 py-3 rounded-full border-2 border-white text-white font-sans font-medium hover:bg-white hover:text-black transition-all duration-300">
+                                <button className="group mt-0 flex items-center gap-3 px-8 py-3 rounded-full border-2 border-white text-white font-sans text-[18px] font-medium hover:bg-white hover:text-black transition-all duration-300">
                                     About Us
                                     <ArrowUpRightIcon className="w-5 h-5" />
                                 </button>
@@ -192,9 +192,9 @@ const TrailerPage = () => {
 
                 <div className="max-w-screen-2xl mx-auto flex flex-col lg:flex-row lg:justify-between gap-8 lg:gap-24 mb-[32px] md:mb-[100px] relative z-10">
                     <div className="lg:w-[41%] text-center lg:text-left">
-                        <h2 className="text-[24px] md:text-[42px] font-serif leading-tight">
-                            <span className="text-[#111C55]">Crafting The</span> <span className="text-[#B88C2E]">Future</span> <br />
-                            <span className="text-[#B88C2E]">of Transportation</span>
+                        <h2 className="text-[24px] md:text-[40px] font-serif leading-tight">
+                            <span className="text-[#111C55]">Crafting The</span> <span className="text-[#CA9015]">Future</span> <br />
+                            <span className="text-[#CA9015]">of Transportation</span>
                         </h2>
                     </div>
                     <div className="lg:w-[49%] flex flex-col gap-0 md:gap-8 text-[#6B7280] text-xs md:text-lg font-sans leading-normal md:leading-relaxed text-center lg:text-left">
@@ -216,7 +216,7 @@ const TrailerPage = () => {
                             <div key={i} className="relative flex-shrink-0 w-[65vw] overflow-hidden rounded-lg h-[140px]">
                                 <Image src={card.img} alt={card.label} fill className="object-cover" />
                                 <div className="absolute inset-0 bg-black/20 flex flex-col items-center justify-center text-center p-4 text-white font-serif">
-                                    <h3 className="text-lg font-bold mb-1 tracking-wide">{card.label}</h3>
+                                    <h3 className="text-[16px] font-bold mb-1 tracking-wide">{card.label}</h3>
                                     <p className="text-[10px] font-normal tracking-wider opacity-90">{card.desc}</p>
                                 </div>
                             </div>
@@ -233,7 +233,7 @@ const TrailerPage = () => {
                                 <Image src={card.img} alt={card.label} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
                                 <div className="absolute inset-0 bg-black/10 flex flex-col items-center justify-center text-center p-6 text-white text-shadow-md font-serif">
                                     <h3 className="text-[36px] font-bold mb-3 tracking-wide">{card.label}</h3>
-                                    <p className="text-lg font-bold tracking-wider opacity-90">{card.desc}</p>
+                                    <p className="text-[18px] font-bold tracking-wider opacity-90">{card.desc}</p>
                                 </div>
                             </div>
                         ))}
@@ -246,9 +246,9 @@ const TrailerPage = () => {
                 <div className="max-w-screen-2xl mx-auto px-6 md:px-12 xl:px-24">
                     <div className="flex flex-col lg:flex-row gap-6 lg:gap-24 mb-1 md:mb-20 items-center lg:items-start text-center lg:text-left">
                         <div className="lg:w-[40%]">
-                            <h2 className="text-[24px] md:text-[42px] font-serif leading-tight">
-                                <span className="text-[#111C55]">Our Vendors </span> <span className="text-[#B88C2E]">&</span> <br className="hidden md:block" />
-                                <span className="text-[#B88C2E]">Suppliers</span>
+                            <h2 className="text-[24px] md:text-[40px] font-serif leading-tight">
+                                <span className="text-[#111C55]">Our Vendors </span> <span className="text-[#CA9015]">&</span> <br className="hidden md:block" />
+                                <span className="text-[#CA9015]">Suppliers</span>
                             </h2>
                         </div>
                         <div className="lg:w-[55%] mt-2 md:mt-0">
@@ -280,8 +280,8 @@ const TrailerPage = () => {
             {/* --- Our Products Slider --- */}
             <section className="w-full bg-[#F5F5F7] px-6 md:px-12 xl:px-24 pt-4 md:pt-0 pb-16 md:pb-32">
                 <div className="max-w-screen-2xl mx-auto">
-                    <h2 className="text-[26px] md:text-[40px] font-serif mb-10 md:mb-16 text-center lg:text-left">
-                        <span className="text-[#111C55]">Our </span> <span className="text-[#B88C2E]">Products</span>
+                    <h2 className="text-[24px] md:text-[40px] font-serif mb-10 md:mb-16 text-center lg:text-left">
+                        <span className="text-[#111C55]">Our </span> <span className="text-[#CA9015]">Products</span>
                     </h2>
 
                     <div className="bg-transparent md:bg-white md:rounded-3xl px-0 md:px-12 lg:px-16 pt-0 md:pt-16 lg:pt-20 pb-0 md:pb-24 lg:pb-28 flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-20 relative">
@@ -296,7 +296,7 @@ const TrailerPage = () => {
                         </div>
 
                         <div key={currentProduct} className="w-full lg:w-[51%] lg:pl-16 flex flex-col gap-4 font-sans animate-in fade-in duration-700">
-                            <h3 className="text-[22px] md:text-3xl font-serif font-medium text-[#111C55] md:-translate-y-3">{PRODUCTS[currentProduct].name}</h3>
+                            <h3 className="text-[24px] md:text-[32px] font-serif font-normal text-[#111C55] md:-translate-y-3">{PRODUCTS[currentProduct].name}</h3>
                             <p className="text-[#6B7280] text-[12px] md:text-xl leading-snug">{PRODUCTS[currentProduct].description}</p>
 
                             <div className="space-y-4 text-[12px] md:text-xl">
@@ -348,7 +348,7 @@ const TrailerPage = () => {
             <section className="w-full bg-[#F5F5F7] px-4 md:px-12 xl:px-24 pb-20 overflow-hidden">
                 <div className="max-w-screen-2xl mx-auto">
                     <h2 className="text-[24px] md:text-[48px] font-serif mb-8 md:mb-16 text-center md:text-left ml-2 md:ml-0">
-                        <span className="text-[#111C55]">Our </span> <span className="text-[#B88C2E]">Facilities</span>
+                        <span className="text-[#111C55]">Our </span> <span className="text-[#CA9015]">Facilities</span>
                     </h2>
 
                     {/* horizontal scroller container */}
@@ -364,7 +364,7 @@ const TrailerPage = () => {
                                 {/* ── MOBILE LAYOUT ── */}
                                 <div className="flex flex-col justify-between h-full md:hidden relative z-10">
                                     <div className="space-y-3">
-                                        <h3 className="text-[23px] font-serif font-light leading-tight whitespace-nowrap">
+                                        <h3 className="text-[24px] font-serif font-light leading-tight whitespace-nowrap">
                                             {facility.title.join(" ")}
                                         </h3>
                                         <div className="text-[12px] text-white/70 font-serif font-light leading-snug space-y-0.5">
@@ -407,7 +407,7 @@ const TrailerPage = () => {
 
                 <div className="max-w-screen-2xl mx-auto relative z-10">
                     <h2 className="text-[24px] md:text-[48px] font-serif mb-10 md:mb-16 text-center lg:text-left">
-                        <span className="text-[#111C55]">Our </span> <span className="text-[#B88C2E]">Presence</span>
+                        <span className="text-[#111C55]">Our </span> <span className="text-[#CA9015]">Presence</span>
                     </h2>
 
                     <div className="relative mb-16 md:mb-24 flex justify-center">
@@ -420,32 +420,32 @@ const TrailerPage = () => {
                     {/* Stats Row - 3 columns on all screens to match reference image */}
                     <div className="grid grid-cols-3 gap-2 md:gap-12 text-center mb-16 md:mb-24">
                         <div className="flex flex-col items-center">
-                            <span className="text-[22px] md:text-5xl font-serif font-bold text-[#111C55] leading-none">20+</span>
-                            <p className="text-[#6B7280] font-sans text-[10px] md:text-[24px] font-medium leading-tight mt-2 md:mt-4 px-1 max-w-[100px] md:max-w-none">
+                            <span className="text-[20px] md:text-5xl font-serif font-bold text-[#111C55] leading-none">20+</span>
+                            <p className="text-[#6B7280] font-sans text-[11px] md:text-[24px] font-medium leading-tight mt-2 md:mt-4 px-1 max-w-[100px] md:max-w-none">
                                 Years of <br className="md:hidden" /> Experience
                             </p>
                         </div>
                         <div className="flex flex-col items-center">
-                            <span className="text-[22px] md:text-5xl font-serif font-bold text-[#111C55] leading-none">3K+</span>
-                            <p className="text-[#6B7280] font-sans text-[10px] md:text-[24px] font-medium leading-tight mt-2 md:mt-4 px-1 max-w-[100px] md:max-w-none">
+                            <span className="text-[20px] md:text-5xl font-serif font-bold text-[#111C55] leading-none">3K+</span>
+                            <p className="text-[#6B7280] font-sans text-[11px] md:text-[24px] font-medium leading-tight mt-2 md:mt-4 px-1 max-w-[100px] md:max-w-none">
                                 No. of <br className="md:hidden" /> Employees
                             </p>
                         </div>
                         <div className="flex flex-col items-center">
-                            <span className="text-[22px] md:text-5xl font-serif font-bold text-[#111C55] leading-none">500+</span>
-                            <p className="text-[#6B7280] font-sans text-[10px] md:text-[24px] font-medium leading-tight mt-2 md:mt-4 px-1 max-w-[100px] md:max-w-none">
+                            <span className="text-[20px] md:text-5xl font-serif font-bold text-[#111C55] leading-none">500+</span>
+                            <p className="text-[#6B7280] font-sans text-[11px] md:text-[24px] font-medium leading-tight mt-2 md:mt-4 px-1 max-w-[100px] md:max-w-none">
                                 Projects <br className="md:hidden" /> Completed
                             </p>
                         </div>
                     </div>
 
                     {/* Website Visit Button */}
-                    <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 text-base md:text-2xl text-[#111C55] font-serif -translate-y-6 md:translate-y-0 relative z-10">
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 text-[14px] md:text-2xl text-[#111C55] font-serif -translate-y-6 md:translate-y-0 relative z-10">
                         <span className="opacity-90">To know more, visit:</span>
                         <Link href="https://jagdambatralier.com" target="_blank" className="inline-block">
                             <button className="flex items-center gap-3 md:gap-4 px-6 md:px-8 py-2 md:py-3 rounded-full border border-[#111C55] bg-white/60 backdrop-blur-md hover:bg-[#111C55] hover:text-white transition-all duration-500 group">
-                                <span className="font-sans text-sm md:text-lg tracking-wide font-medium">jagdambatralier.com</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="#B88C2E" className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">
+                                <span className="font-sans text-[12px] md:text-lg tracking-wide font-medium">jagdambatralier.com</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="#CA9015" className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
                                 </svg>
                             </button>

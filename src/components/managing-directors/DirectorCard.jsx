@@ -7,7 +7,7 @@ const DirectorCard = ({ name, description, image, isReversed }) => {
             {/* Text Content */}
             <div className="w-full lg:w-[45%] text-center lg:text-left">
                 <div className="max-w-xl xl:max-w-2xl mx-auto lg:mx-0">
-                    <h3 className="text-2xl md:text-3xl xl:text-4xl font-serif text-[#111C55] mb-4 leading-tight">{name}</h3>
+                    <h3 className="text-[24px] lg:text-[26px] xl:text-[28px] font-serif text-[#111C55] mb-4 leading-tight">{name}</h3>
                     <p className="text-[#6B7280] font-sans leading-relaxed text-sm md:text-base lg:text-base xl:text-lg">
                         {description}
                     </p>

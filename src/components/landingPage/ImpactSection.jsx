@@ -71,7 +71,7 @@ export default function ImpactSection() {
           style={{ backgroundColor: currentBgColor }}
         >
           <span
-            className="text-[36px] sm:text-[48px] md:text-[80px] lg:text-[128px] whitespace-nowrap leading-none font-serif font-bold transition-all duration-1000 ease-in-out block"
+            className="text-[36px] sm:text-[48px] lg:text-[128px] whitespace-nowrap leading-none font-serif font-bold transition-all duration-1000 ease-in-out block"
             style={{
               WebkitTextStroke: `2px ${currentBorderColor}`,
               color: currentBgColor,
@@ -83,14 +83,14 @@ export default function ImpactSection() {
 
        <div className="container">
          {/* Inner Content - Removed vertical padding from here so the child touches the borders */}
-        <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
+        <div className="w-full mx-auto px-4 sm:px-8 lg:px-25 relative z-10">
           {/* Left Border Decoration - Added vertical padding (py-10 lg:py-24) here instead */}
           <div
             className="w-full border-l-[1px] border-b-[1px] rounded-bl-[40px] sm:rounded-bl-[72px] transition-colors duration-1000 ease-in-out py-10 lg:py-24"
             style={{ borderColor: currentBorderColor }}
           >
             {/* Height-establishing container */}
-            <div className="relative w-full min-h-[750px] lg:min-h-[500px]">
+            <div className="relative w-full min-h-[750px] lg:min-h-[500px] md:mb-[250px] lg:mb-[30px]">
               {slides.map((slide, index) => (
                 <div
                   key={slide.id}
@@ -102,10 +102,10 @@ export default function ImpactSection() {
                 >
                   {/* Left Column: Text Content */}
                   <div className="w-full lg:w-1/2 flex flex-col justify-center h-auto lg:h-full">
-                    <h2 className="text-4xl md:text-6xl font-serif mb-4 md:mb-6">
+                    <h2 className="text-[20px] md:text-[32px] font-serif mb-4 md:mb-4">
                       {slide.title}
                     </h2>
-                    <div className="space-y-4 md:space-y-6 text-white/90 text-sm md:text-base leading-relaxed font-sans">
+                    <div className="space-y-4 md:space-y-6 text-white/90 text-sm md:text-[18px] leading-relaxed font-sans">
                       {slide.desc.map((p, i) => (
                         <p key={i}>{p}</p>
                       ))}
@@ -131,7 +131,7 @@ export default function ImpactSection() {
                   {/* Right Column: Image & Mobile Dots */}
                   <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-end justify-center">
                     {/* Image */}
-                    <div className="relative w-full max-w-[500px] mx-auto lg:mx-0 lg:ml-auto aspect-[4/3] rounded-tl-2xl rounded-tr-2xl rounded-bl-2xl rounded-br-[6rem] overflow-hidden shadow-2xl border border-white/10">
+                    <div className="relative w-full mx-auto lg:mx-0 lg:ml-auto aspect-[642/489] rounded-tl-2xl rounded-tr-2xl rounded-bl-2xl rounded-br-[6rem] overflow-hidden shadow-2xl border border-white/10">
                       <Image
                         src={slide.image}
                         alt={slide.title}

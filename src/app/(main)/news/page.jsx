@@ -86,14 +86,14 @@ export default async function NewsMediaPage() {
     const newsItems = await getNews();
 
     return (
-        <main className="w-full min-h-screen bg-[#F5F5F5] pt-28 md:pt-36 pb-24 px-6 md:px-12 xl:px-24">
+        <main className="w-full min-h-screen bg-[#F5F5F5] pt-16 md:pt-24 pb-24 px-6 md:px-12 xl:px-24">
             <div className="max-w-screen-xl mx-auto">
 
                 {/* Page Heading */}
-                <div className="text-center mt-20 sm:mt-24 md:mt-24 lg:mt-12 mb-10 md:mb-14">
+                <div className="text-center mt-12 sm:mt-16 md:mt-16 lg:mt-8 mb-10 md:mb-14">
                     <h1 className="text-[24px] md:text-[40px] font-serif">
                         <span className="text-[#111C55]">News &amp; </span>
-                        <span className="text-[#B88C2E]">Media</span>
+                        <span className="text-[#CA9015]">Media</span>
                     </h1>
                 </div>
 

@@ -11,7 +11,7 @@ export default function ManagingDirectorsPage() {
                 {/* Top Header Section */}
                 <div className="text-center mb-2 md:mb-10">
                     <h1 className="text-2xl md:text-[40px] font-serif text-[#111C55] mb-2">
-                        Managing <span className="text-[#B88C2E]">Directors</span>
+                        Managing <span className="text-[#CA9015]">Directors</span>
                     </h1>
                 </div>
 

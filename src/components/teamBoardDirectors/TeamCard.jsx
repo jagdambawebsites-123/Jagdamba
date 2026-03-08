@@ -15,7 +15,7 @@ const TeamCard = ({ image, name, designation }) => {
                 <h3 className="text-[#111C55] text-xl md:text-[24px] font-medium font-sans mb-2.5 tracking-tight">
                     {name}
                 </h3>
-                <p className="text-[#6B7280] text-sm md:text-[15px] font-sans font-medium uppercase tracking-[0.08em]">
+                <p className="text-[#686868] text-sm md:text-[16px] font-sans font-medium uppercase tracking-[0.08em]">
                     {designation}
                 </p>
             </div>
