@@ -11,7 +11,7 @@ export default function StructureManufacturing() {
     const pageData = businessPagesData["structure-manufacturing"];
     if (!pageData) return <div>Page not found</div>;
     return (
-        <div>
+        <div className="bg-[#F5F5F5]">
             <BusinessHero {...pageData.hero} title={<>Building Tomorrow&apos;s<br />Infrastructure</>} />
             <AboutUs
                 titleStart={pageData.about.titleStart}

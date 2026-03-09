@@ -21,13 +21,13 @@ export default function AboutUs({ titleStart, titleHighlight, paragraphs, bgDeco
           <div className="flex flex-col lg:flex-row lg:justify-between gap-2 lg:gap-20">
             {/* Left Column: Heading & Button */}
             <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
-              <h2 className="text-2xl md:text-[40px] font-serif text-[#111C55] mb-4 lg:mb-8">
+              <h2 className="font-serif font-normal capitalize text-[24px] leading-[150%] tracking-normal text-center md:text-[40px] md:leading-[56px] md:text-left text-[#111C55] mb-4 lg:mb-8">
                 {titleStart} <span className="text-[#CA9015]">{titleHighlight}</span>
               </h2>
             </div>
 
             {/* Right Column: Paragraphs */}
-            <div className="w-full lg:w-1/2 text-center lg:text-left text-[#6B7280] text-[12px] md:text-[16px] leading-6 space-y-6 font-sans">
+            <div className="w-full lg:w-1/2 text-center lg:text-left text-[#6B7280] space-y-6 font-sans font-normal tracking-normal text-[12px] leading-[20px] md:text-[18px] md:leading-[26px]">
               {paragraphs.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}

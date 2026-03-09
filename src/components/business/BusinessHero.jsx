@@ -33,20 +33,16 @@ export default function BusinessHero({ image, mobileImage, title, link, buttonTe
       </div>
 
       {/* Content Layer */}
-      <div className="relative z-10 h-full flex items-center px-6 md:px-10 xl:px-25">
+      <div className="relative z-10 h-full flex items-center px-[18px] md:px-10 xl:px-25">
         {/* The Container: Limits width to 1200px (or your theme's default) and centers itself */}
         <div className="container mx-auto">
-          {/* Responsive Alignment: 
-              items-center + text-center for mobile
-              md:items-start + md:text-left for desktop
-          */}
-          <div className="flex flex-col items-start text-left w-full md:w-fit font-serif">
-            <h1 className="text-[28px] sm:text-[36px] md:text-[48px] lg:text-[64px] leading-tight mb-1.5">
+          <div className="flex flex-col items-start text-left w-fit font-sanomat gap-[10px] md:gap-0 pt-[10px] pb-[10px] md:pt-0 md:pb-0">
+            <h1 className="text-[28px] md:text-[48px] lg:text-[64px] leading-tight md:leading-[135%] font-normal tracking-normal md:mb-1.5">
               {title}
             </h1>
 
             {/* Accent Line */}
-            <div className="h-1 w-full max-w-75 md:max-w-none bg-[#CA9015] mb-4 md:mb-12" />
+            <div className="h-[3px] md:h-1 w-full bg-[#CA9015] md:mb-12" />
 
             <Link href={link}>
               <ButtonPrimary content={buttonText} />

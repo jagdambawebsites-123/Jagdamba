@@ -25,7 +25,7 @@ export default function AreasOfWork({ areas = AREAS }) {
     return (
         <section className="w-full bg-[#F5F5F5] px-6 md:px-10 xl:px-25 py-16">
             <div className="container mx-auto">
-                <h2 className="text-3xl md:text-[40px] font-serif text-[#111C55] mb-10 text-center">
+                <h2 className="font-serif font-normal capitalize tracking-normal text-[#111C55] mb-10 text-center text-[24px] leading-[150%] md:text-[40px] md:leading-[150%]">
                     Areas <span className="text-[#B88C2E]">Of Work</span>
                 </h2>
 
@@ -33,23 +33,23 @@ export default function AreasOfWork({ areas = AREAS }) {
                     {areas.map((area, index) => (
                         <div
                             key={index}
-                            className="shrink-0 w-[75vw] md:w-auto bg-[#111C55] rounded-2xl py-10 px-8 md:py-20.5 md:px-15.5 flex flex-col items-center text-center gap-5 hover:bg-[#1a2760] transition-colors duration-300"
+                            className="shrink-0 w-[330px] h-[300px] md:w-[416px] md:h-[478px] bg-[#111C55] rounded-[12px] md:rounded-[20px] py-[24px] px-[16px] md:py-[82px] md:px-[62px] flex flex-col items-center text-center gap-[20px] md:gap-[40px] hover:bg-[#1a2760] transition-colors duration-300"
                         >
                             <div className="mb-2 flex justify-center">
                                 <Image
                                     src={area.icon}
                                     alt={area.title}
-                                    width={64}
-                                    height={64}
-                                    className="w-14 h-14 object-contain"
+                                    width={72}
+                                    height={72}
+                                    className="w-[72px] h-[72px] object-contain"
                                 />
                             </div>
 
-                            <h3 className="text-[#8E94B3] text-[24px] font-sans font-semibold leading-snug">
+                            <h3 className="text-center capitalize tracking-normal text-[#8E94B3] font-serif font-normal text-[20px] leading-[100%] md:text-white md:font-sans md:font-semibold md:text-[24px] md:leading-[152%]">
                                 {area.title}
                             </h3>
 
-                            <p className="text-[#8E94B3] text-[16px] font-sans leading-relaxed">
+                            <p className="text-center tracking-normal text-[#8E94B3] font-serif font-normal text-[12px] leading-[17px] md:text-white md:font-sans md:text-[16px] md:leading-[22px]">
                                 {area.description}
                             </p>
                         </div>
