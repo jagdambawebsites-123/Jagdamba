@@ -17,6 +17,7 @@
   /* Add playfair mapping */
   --font-playfair: var(--font-playfair-display);
   --font-sanomat: var(--font-sanomat);
+  --font-sanomat-web: var(--font-sanomat-web);
   /* Font mappings used in page.jsx */
   --font-baskerville: var(--font-serif);
   --font-libre: var(--font-sans);

@@ -15,19 +15,19 @@ export default function ClientsSection() {
     const infiniteClients = [...clients, ...clients];
 
     return (
-        <div className='w-full bg-[#F8F9FA]'>
-            <div className="container bg-[#F8F9FA] py-16 sm:py-24 w-full overflow-hidden">
+        <div className='w-full bg-[#F5F5F5]'>
+            <div className="container bg-[#F5F5F5] py-16 sm:py-24 w-full overflow-hidden">
 
                 <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-5 md:gap-12 mb-16 sm:mb-32 px-6 md:px-10 xl:px-25 text-center md:text-left">
-                    <h2 className="text-4xl sm:text-[40px] font-serif text-[#111C55] whitespace-nowrap">
+                    <h2 className="font-serif font-normal tracking-normal capitalize text-center md:text-left text-[#111C55] text-[24px] leading-[150%] md:text-[40px] md:leading-[100%] whitespace-nowrap">
                         Our <span className="text-[#B88C2E]">Clients</span>
                     </h2>
-                    <p className="text-[#6B7280] font-light text-base sm:text-2xl leading-relaxed max-w-xl">
+                    <p className="text-[#6B7280] font-sans font-normal tracking-normal text-[24px] leading-[36px] max-w-xl text-center md:text-left">
                         We are committed to the idea of respect and decency, in relation to our employees, as well as to customers, partners and suppliers of the company.
                     </p>
                 </div>
 
-                <div className="relative w-full border-y border-gray-200 py-8 flex overflow-hidden">
+                <div className="relative w-full py-8 flex overflow-hidden">
 
                     <div
                         className="absolute inset-0 z-10 pointer-events-none"

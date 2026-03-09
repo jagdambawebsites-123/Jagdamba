@@ -45,12 +45,12 @@ export default function StructureProducts({ products = PRODUCTS }) {
             </div>
 
             <div className="container mx-auto px-6 md:px-10 xl:px-25 flex flex-col md:flex-row items-center justify-center gap-3 md:gap-4">
-                <span className="text-[#6B7280] text-[24px] md:text-[32px] font-sans">To know more, visit:</span>
+                <span className="align-middle tracking-normal font-serif font-normal text-[#111C55] text-[16px] leading-[100%] md:font-sans md:text-[#6B7280] md:text-[32px] md:leading-[100%]">To know more, visit:</span>
                 <a
                     href="https://jagdambastructure.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="border border-[#111C55] text-[#111C55] text-[18px] font-sans px-5 py-2 rounded-full hover:bg-[#111C55] hover:text-white transition-colors duration-300 flex items-center gap-2"
+                    className="border border-[#111C55] text-[#111C55] font-sans tracking-normal hover:bg-[#111C55] hover:text-white transition-colors duration-300 flex items-center w-[224px] h-[32px] md:w-[294px] md:h-[48px] pt-[16px] pr-[32px] pb-[16px] pl-[32px] gap-[10px] md:gap-[4px] rounded-[30px] md:rounded-full border font-normal text-[12px] leading-[100%] md:font-medium md:text-[18px] md:leading-[27px]"
                 >
                     jagdambastructure.com
                     <ArrowUpRightIcon className="w-3.5 h-3.5 text-[#B88C2E]" />
