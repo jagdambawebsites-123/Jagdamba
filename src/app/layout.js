@@ -9,6 +9,11 @@ const sanomat = localFont({
   variable: "--font-sanomat",
 });
 
+const sanomatWeb = localFont({
+  src: "../fonts/Sanomat Web Medium Regular.ttf",
+  variable: "--font-sanomat-web",
+});
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -46,7 +51,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${sanomat.variable} ${libreBaskerville.variable} ${libreFranklin.variable} ${playfairDisplay.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${sanomat.variable} ${sanomatWeb.variable} ${libreBaskerville.variable} ${libreFranklin.variable} ${playfairDisplay.variable} antialiased`}
       >
         <Header />
         {children}
