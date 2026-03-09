@@ -16,8 +16,10 @@
 
   /* Add playfair mapping */
   --font-playfair: var(--font-playfair-display);
-  /* Add sanomat mapping */
   --font-sanomat: var(--font-sanomat);
+  /* Font mappings used in page.jsx */
+  --font-baskerville: var(--font-serif);
+  --font-libre: var(--font-sans);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -56,6 +58,15 @@
 
 .animate-gallery-scroll {
   animation: gallery-scroll-step 30s linear infinite;
+}
+
+/* Hide scrollbar for snap-scroll containers */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 @keyframes spin-slow {
@@ -109,6 +120,7 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-a, button {
+a,
+button {
   cursor: pointer;
 }

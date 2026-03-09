@@ -55,7 +55,7 @@ export default function ResortExperiences({
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
                 />
                 <div className="absolute bottom-0 left-0 right-0 px-2 py-2 md:py-6 bg-gradient-to-t from-black/70 to-transparent flex justify-center">
-                  <span className="text-white font-serif font-normal text-[12px] md:text-[20px] lg:text-[28px] text-center">
+                  <span className="text-white font-serif font-normal text-[12px] md:text-[28px] leading-[100%] tracking-normal text-center">
                     {exp.label}
                   </span>
                 </div>

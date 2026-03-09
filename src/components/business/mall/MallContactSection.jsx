@@ -14,7 +14,7 @@ export default function MallContactSection() {
         <div className="flex flex-col md:flex-row gap-8 md:gap-10 lg:gap-16 items-start">
 
           <div className="w-full md:w-1/2 lg:w-1/2 flex flex-col gap-6 md:gap-10 lg:gap-14">
-            <h2 className="font-serif font-normal text-[24px] md:text-[36px] lg:text-[48px] leading-tight text-center md:text-left">
+            <h2 className="font-serif font-normal text-[24px] lg:text-[40px] leading-[150%] lg:leading-[100%] capitalize text-center md:text-left">
               <span className="text-[#111C55]">Contact </span>
               <span className="text-[#CA9015]">Us</span>
             </h2>
@@ -24,17 +24,17 @@ export default function MallContactSection() {
                 href={googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+                className="block rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow"
               >
                 <iframe
                   src={googleMapsEmbedUrl}
-                  width="100%"
-                  height="220"
+                  width="350"
+                  height="350"
                   style={{ border: 0 }}
                   allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-55 block pointer-events-none"
+                  className="w-[350px] h-[350px] block pointer-events-none rounded-xl"
                   title="Grand Mall Raigarh on Google Maps"
                 />
               </a>
@@ -42,120 +42,105 @@ export default function MallContactSection() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 md:gap-y-8 lg:gap-y-10 gap-x-8 lg:gap-x-12">
             <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2.5 text-[#464646]">
+              <div className="flex items-center gap-2.5 text-[#374151]">
                 <Icon
                   icon="mdi:clock-outline"
-                  className="text-[14px] md:text-[16px] lg:text-[20px] shrink-0"
+                  className="text-[14px] lg:text-[16px] shrink-0"
                 />
-                <span className="font-sans font-normal text-[14px] md:text-[16px] lg:text-[20px] text-[#464646]">
+                <span className="font-sans font-normal lg:font-medium text-[14px] lg:text-[16px] leading-[100%] text-[#374151]">
                   Mall Timing
                 </span>
               </div>
-              <p className="font-sans font-normal text-[14px] md:text-[16px] lg:text-[20px] text-[#464646] leading-relaxed pl-6 lg:pl-7.5">
+              <p className="font-sans font-normal text-[14px] lg:text-[16px] leading-[100%] lg:leading-[24px] text-[#8B8B8C] pl-6 lg:pl-0">
                 10:00 am - 9:30 pm
               </p>
+              <hr className="w-[248px] ml-[27px] lg:ml-0 border-t border-[#4646464D] lg:border-[#6B72804D]" />
             </div>
 
             <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2.5 text-[#464646]">
+              <div className="flex items-center gap-2.5 text-[#374151]">
                 <Icon
                   icon="mdi:phone-outline"
-                  className="text-[14px] md:text-[16px] lg:text-[20px] shrink-0"
+                  className="text-[14px] lg:text-[16px] shrink-0"
                 />
-                <span className="font-sans font-normal text-[14px] md:text-[16px] lg:text-[20px] text-[#464646]">
+                <span className="font-sans font-normal lg:font-medium text-[14px] lg:text-[16px] leading-[100%] text-[#374151]">
                   Contact Us
                 </span>
               </div>
-              <div className="pl-6 lg:pl-7.5 space-y-0.5">
+              <div className="pl-6 lg:pl-0 space-y-0.5">
                 <a
                   href="tel:9302871009"
-                  className="block font-sans font-normal text-[14px] md:text-[16px] lg:text-[20px] text-[#464646] leading-relaxed hover:text-[#CA9015] transition-colors"
+                  className="block font-sans font-normal text-[14px] lg:text-[16px] leading-[100%] lg:leading-[24px] text-[#8B8B8C] hover:text-[#CA9015] transition-colors"
                 >
                   9302871009
                 </a>
                 <a
                   href="mailto:balajiinfraventures@gmail.com"
-                  className="block font-sans font-normal text-[14px] md:text-[16px] lg:text-[20px] text-[#464646] leading-relaxed hover:text-[#CA9015] transition-colors break-all"
+                  className="block font-sans font-normal text-[14px] lg:text-[16px] leading-[100%] lg:leading-[24px] text-[#8B8B8C] hover:text-[#CA9015] transition-colors break-all"
                 >
                   balajiinfraventures@gmail.com
                 </a>
               </div>
+              <hr className="w-[248px] ml-[27px] lg:ml-0 border-t border-[#4646464D] lg:border-[#6B72804D]" />
             </div>
 
             <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2.5 text-[#464646]">
+              <div className="flex items-center gap-2.5 text-[#374151]">
                 <Icon
                   icon="mdi:map-marker-outline"
-                  className="text-[14px] md:text-[16px] lg:text-[20px] shrink-0"
+                  className="text-[14px] lg:text-[16px] shrink-0"
                 />
-                <span className="font-sans font-normal text-[14px] md:text-[16px] lg:text-[20px] text-[#464646]">
+                <span className="font-sans font-normal lg:font-medium text-[14px] lg:text-[16px] leading-[100%] text-[#374151]">
                   Address
                 </span>
               </div>
-              <p className="font-sans font-normal text-[14px] md:text-[16px] lg:text-[20px] text-[#464646] leading-relaxed pl-6 lg:pl-7.5">
+              <p className="font-sans font-normal text-[14px] lg:text-[16px] leading-[100%] lg:leading-[24px] text-[#8B8B8C] pl-6 lg:pl-0">
                 Gauri Shankar Mandir, New Market
                 <br />
                 Road, Raigarh, Chhattisgarh
                 <br />
                 496001
               </p>
+              <hr className="w-[248px] ml-[27px] lg:ml-0 border-t border-[#4646464D] lg:border-[#6B72804D]" />
             </div>
 
             <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2.5 text-[#464646]">
+              <div className="flex items-center gap-2.5 text-[#374151]">
                 <Icon
                   icon="mdi:web"
-                  className="text-[14px] md:text-[16px] lg:text-[20px] shrink-0"
+                  className="text-[14px] lg:text-[16px] shrink-0"
                 />
-                <span className="font-sans font-normal text-[14px] md:text-[16px] lg:text-[20px] text-[#464646]">
+                <span className="font-sans font-normal lg:font-medium text-[14px] lg:text-[16px] leading-[100%] text-[#374151]">
                   Social Network
                 </span>
               </div>
-              <p className="font-sans font-normal text-[14px] md:text-[16px] lg:text-[20px] text-[#464646] leading-relaxed pl-6 lg:pl-7.5">
+              <p className="font-sans font-normal text-[14px] lg:text-[16px] leading-[100%] lg:leading-[24px] text-[#8B8B8C] pl-6 lg:pl-0">
                 Stay in touch and follow us on
                 <br />
                 social media
               </p>
-              <div className="flex items-center gap-3 pl-6 lg:pl-7.5 mt-1">
-                <a
-                  href="https://facebook.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-full bg-[#464646] text-white flex items-center justify-center hover:bg-[#CA9015] transition-colors"
-                  aria-label="Facebook"
-                >
-                  <Icon icon="mdi:facebook" className="text-lg" />
-                </a>
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-full bg-[#464646] text-white flex items-center justify-center hover:bg-[#CA9015] transition-colors"
-                  aria-label="Instagram"
-                >
-                  <Icon icon="mdi:instagram" className="text-lg" />
-                </a>
-              </div>
+              
+              <hr className="w-[248px] ml-[27px] lg:ml-0 border-t border-[#4646464D] lg:border-[#6B72804D]" />
             </div>
           </div>
           </div>
 
-          <div className="hidden md:block w-full md:w-1/2 lg:w-auto lg:ml-auto">
+          <div className="hidden md:block shrink-0 ml-auto">
             <a
               href={googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+              className="block rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow"
             >
               <iframe
                 src={googleMapsEmbedUrl}
-                width="100%"
+                width="462"
                 height="483"
                 style={{ border: 0 }}
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="w-full lg:w-120.75 h-85 md:h-100 lg:h-120.75 block pointer-events-none"
+                className="w-[462px] h-[483px] block pointer-events-none"
                 title="Grand Mall Raigarh on Google Maps"
               />
             </a>

@@ -5,18 +5,28 @@ import Image from "next/image";
 import Link from "next/link";
 import ButtonPrimary from "../landingPage/ButtonPrimary";
 
-export default function BusinessHero({ image, title, link, buttonText = "About Us" }) {
+export default function BusinessHero({ image, mobileImage, title, link, buttonText = "About Us" }) {
   return (
     <div className=" relative h-screen w-full overflow-hidden bg-black text-white">
       {/* Background Images Layer */}
       <div
         className={`absolute inset-0`}
       >
+        {/* Mobile image */}
+        {mobileImage && (
+          <Image
+            src={mobileImage}
+            alt="Hero Background"
+            fill
+            className="object-cover md:hidden"
+          />
+        )}
+        {/* Desktop image */}
         <Image
           src={image}
           alt="Hero Background"
           fill
-          className="object-cover"
+          className={`object-cover ${mobileImage ? 'hidden md:block' : ''}`}
         />
         {/* Main Overlay */}
         <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/40 to-transparent" />

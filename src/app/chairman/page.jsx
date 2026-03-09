@@ -61,34 +61,35 @@ export default function ChairmanTeamPage() {
                             </h1>
 
                             <div className="mb-6 lg:mb-10 relative flex flex-col items-center lg:items-start w-full lg:w-fit px-2 md:px-0">
-                                <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-[40px] font-libre font-extralight text-[#BBBBBB] leading-[1.35] tracking-[0.1em] sm:tracking-[0.2em] text-center lg:text-left w-full uppercase">
+                                <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-[40px] font-libre font-extralight text-[#BBBBBB] leading-[1.35] tracking-[0.1em] sm:tracking-[0.2em] text-center lg:text-left w-full">
                                     Chairman
                                 </h2>
                                 <div className="hidden lg:block w-full h-[3px] bg-[#FF9E02] mt-3 shadow-[0_0_20px_rgba(255,158,2,0.6)]"></div>
                             </div>
 
-                            <div className="relative max-w-sm lg:max-w-2xl px-4 lg:px-0 lg:pr-12 mt-4 lg:mt-12 group mx-auto lg:ml-8">
-                                <div className="flex flex-row items-center gap-1 mb-2 md:mb-3 -ml-2 lg:-ml-8 justify-center lg:justify-start">
-                                    <Image src="/images/chairman/quote1.png" alt="opening quote" width={25} height={35} className="object-contain w-[11px] h-[16px] lg:w-[25px] lg:h-[35px]" />
-                                    <Image src="/images/chairman/quote1.png" alt="opening quote" width={25} height={35} className="object-contain w-[11px] h-[16px] lg:w-[25px] lg:h-[35px]" />
+                            <div className="relative max-w-sm lg:max-w-2xl px-1 sm:px-4 lg:px-0 lg:pr-12 mt-10 md:mt-12 group mx-auto lg:ml-12 text-center lg:text-left">
+                                {/* Quote Icons - Absolute for mobile, Relative/Flex for desktop */}
+                                <div className="absolute -top-10 left-2 md:relative md:top-0 md:left-0 flex flex-row items-center gap-1 mb-2 md:mb-3 md:-ml-12 justify-center lg:justify-start">
+                                    <Image src="/images/chairman/quote1.png" alt="opening quote" width={25} height={35} className="object-contain w-[18px] h-[26px] lg:w-[25px] lg:h-[35px]" />
+                                    <Image src="/images/chairman/quote1.png" alt="opening quote" width={25} height={35} className="object-contain w-[18px] h-[26px] lg:w-[25px] lg:h-[35px]" />
                                 </div>
 
-                                <p className="text-sm xs:text-base md:text-lg lg:text-[28px] font-libre font-light text-white/90 leading-relaxed relative z-10 -mt-2 md:-mt-4">
+                                <p className="text-base xs:text-lg md:text-lg lg:text-[28px] font-libre font-light text-[#BBBBBB] md:text-white/90 leading-relaxed relative z-10 lg:ml-6">
                                     In every challenge lies the seed of<br className="hidden md:block" />
                                     opportunity; the leaders who embrace<br className="hidden md:block" />
                                     it will see it blossom into success.
                                 </p>
 
-                                <div className="flex flex-row items-center justify-end gap-1 -mt-1 lg:-mt-2 mr-0.5 lg:-mr-8">
-                                    <Image src="/images/chairman/quote2.png" alt="closing quote" width={25} height={35} className="object-contain w-[14px] h-[20px] lg:w-[25px] lg:h-[35px]" />
-                                    <Image src="/images/chairman/quote2.png" alt="closing quote" width={25} height={35} className="object-contain w-[14px] h-[20px] lg:w-[25px] lg:h-[35px]" />
+                                <div className="absolute -bottom-10 right-2 md:relative md:bottom-0 md:right-0 flex flex-row items-center justify-end gap-1 md:-mt-2 mr-0.5 lg:mr-18">
+                                    <Image src="/images/chairman/quote2.png" alt="closing quote" width={25} height={35} className="object-contain w-[22px] h-[30px] lg:w-[25px] lg:h-[35px]" />
+                                    <Image src="/images/chairman/quote2.png" alt="closing quote" width={25} height={35} className="object-contain w-[22px] h-[30px] lg:w-[25px] lg:h-[35px]" />
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div className="w-full lg:w-[45%] flex justify-center items-end h-auto lg:h-full relative mt-auto animate-in fade-in slide-in-from-bottom-12 duration-1000">
-                        <div className="relative w-full h-[300px] sm:h-[400px] lg:h-full lg:max-h-[85vh] flex items-end overflow-hidden">
+                    <div className="w-full lg:w-[45%] flex justify-center items-end h-auto lg:h-full relative mt-12 lg:mt-auto animate-in fade-in slide-in-from-bottom-12 duration-1000">
+                        <div className="relative w-full h-[400px] sm:h-[500px] lg:h-full lg:max-h-[85vh] flex items-end overflow-hidden">
                             <Image
                                 src="/images/chairman/chairman.png"
                                 alt="Umesh Agrawal - Chairman"
@@ -106,7 +107,7 @@ export default function ChairmanTeamPage() {
                 <div className="absolute top-80 right-[1%] w-[95%] h-[70%] z-10 opacity-100 pointer-events-none">
                     <Image src="/images/chairman/Vector1.png" alt="" fill className="object-contain object-right-top" />
                 </div>
-                <div className="absolute top-[-120px] md:top-70 left-[5%] w-[50%] h-[25%] z-10 opacity-100 pointer-events-none">
+                <div className="absolute top-[-120px] md:top-72 left-[5%] w-[50%] h-[25%] z-10 opacity-100 pointer-events-none">
                     <Image src="/images/chairman/Vector2.png" alt="" fill className="object-contain" />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[#111C55]/40 to-[#0a1440] -z-30"></div>

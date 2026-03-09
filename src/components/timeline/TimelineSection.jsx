@@ -18,6 +18,8 @@ const TimelineSection = ({
   stroke2,
   overlayClass,
   bgImgClass,
+  titleClassName,
+  descClassName,
 }) => {
   return (
     <section className={`relative w-full min-h-screen md:h-screen flex flex-col items-center snap-start overflow-hidden pt-24 pb-6 ${isDarkBlue ? 'bg-[#111C55]' : ''}`}>
@@ -72,7 +74,7 @@ const TimelineSection = ({
 
       {/* ── Year Heading ── */}
       <div className="relative z-10 flex justify-center w-full mt-10 lg:mt-14 mb-6 md:mb-8">
-        <h2 className="text-[64px] font-serif text-[#b89146] tracking-widest select-none">
+        <h2 className="text-[64px] font-serif font-normal text-[#b89146] leading-[100%] tracking-normal text-center capitalize select-none">
           {year}
         </h2>
       </div>
@@ -81,12 +83,12 @@ const TimelineSection = ({
         /* ── Text-Only Hero-Style Layout ── */
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 max-w-7xl mx-auto mb-16 flex-1">
           {title && (
-            <h3 className="text-[28px] md:text-[70px] font-serif text-[#b89146] mb-6 leading-tight">
+            <h3 className={titleClassName || "text-[24px] md:text-[28px] font-serif font-normal text-[#b89146] mb-6 leading-[100%] tracking-normal capitalize text-center"}>
               {title}
             </h3>
           )}
           {description && (
-            <p className="text-white/75 font-sans leading-relaxed text-[16px] md:text-[30px] max-w-6xl">
+            <p className={descClassName || "text-white/75 font-sans font-medium text-[14px] md:text-[18px] leading-[152%] md:leading-[26px] tracking-normal max-w-6xl text-center"}>
               {description}
             </p>
           )}
@@ -112,12 +114,12 @@ const TimelineSection = ({
           {/* Bottom (mobile) / Right or Left (desktop): Text pane */}
           <div className="flex-1 p-8 md:p-12 flex flex-col justify-center bg-white overflow-hidden">
             {title && (
-              <h3 className="text-[18px] md:text-[28px] font-serif text-[#111C55] mb-3 leading-tight">
+              <h3 className={titleClassName || "text-[18px] md:text-[28px] font-serif font-normal text-[#111C55] mb-3 leading-[100%] tracking-normal capitalize"}>
                 {title}
               </h3>
             )}
             {description && (
-              <p className="text-[#737373] font-sans leading-relaxed text-[12px] md:text-[18px]">
+              <p className={descClassName || "text-[#737373] font-sans font-normal text-[12px] md:text-[18px] leading-[18px] md:leading-[26px] tracking-normal"}>
                 {description}
               </p>
             )}

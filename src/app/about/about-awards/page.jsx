@@ -89,7 +89,7 @@ export default function AwardsPage() {
       <main className="relative z-10 px-8 md:px-20 pt-24 md:pt-32 lg:pt-40 pb-12 md:pb-20">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 xl:gap-24 items-start">
           <div className="lg:w-[40%] animate-slide-left lg:pl-12 z-20">
-            <h1 className="font-baskerville mb-6 md:mb-10 leading-[1.2] tracking-normal text-[28px] sm:text-[36px] md:text-[45px] lg:text-[50px] font-normal">
+            <h1 className="font-baskerville mb-6 md:mb-10 leading-[1.24] tracking-normal text-[40px] font-normal">
               Awards & <span className="text-[#FFB800] font-baskerville">Recognition</span>
             </h1>
             <div className="space-y-4 md:space-y-10 text-white/80 text-[16px] sm:text-[18px] md:text-[22px] leading-[1.5] md:leading-[1.6] font-light max-w-none tracking-wide">
@@ -188,7 +188,7 @@ export default function AwardsPage() {
             <div className="absolute top-4 left-4 md:top-4 md:left-4">
               <Image src="/images/aboutPage/about-awards/Quotes left.png" alt="Opening Quote" width={60} height={45} className="w-10 h-auto md:w-20" />
             </div>
-            <blockquote className="font-baskerville font-normal text-[#111C55] text-[16px] md:text-[20px] leading-[24px] md:leading-[28px] text-center max-w-2xl px-2">
+            <blockquote className="font-baskerville font-normal text-[#111C55] text-[18px] leading-[26px] text-center max-w-2xl px-2">
               The team is dedicated, and the work environment <br className="hidden md:block" />
               promotes growth. The company&apos;s commitment to <br className="hidden md:block" />
               quality and innovation is inspiring.
@@ -200,14 +200,14 @@ export default function AwardsPage() {
 
           <div className="flex flex-col md:flex-row justify-center md:justify-end items-center gap-16 md:gap-20 pb-6 md:pb-32 pr-0 w-full lg:w-auto order-1 lg:order-2 mt-10 lg:mt-0">
             <div className="flex flex-row items-center gap-6 group">
-              <span className="text-[48px] md:text-[64px] font-baskerville font-normal text-[#CA9015] leading-[1.24] transition-transform group-hover:scale-110 duration-500">2K</span>
+              <span className="text-[48px] font-baskerville font-normal text-[#CA9015] leading-[1.24] transition-transform group-hover:scale-110 duration-500">2K</span>
               <div className="flex flex-col text-left">
                 <span className="text-[20px] md:text-[24px] font-libre font-normal text-[#BBBBBB] leading-[1.24]">Combined</span>
                 <span className="text-[20px] md:text-[24px] font-libre font-normal text-[#BBBBBB] leading-[1.24]">Reviews</span>
               </div>
             </div>
             <div className="flex flex-row items-center gap-6 group">
-              <span className="text-[48px] md:text-[64px] font-baskerville font-normal text-[#CA9015] leading-[1.24] transition-transform group-hover:scale-110 duration-500">10K</span>
+              <span className="text-[48px] font-baskerville font-normal text-[#CA9015] leading-[1.24] transition-transform group-hover:scale-110 duration-500">10K</span>
               <div className="flex flex-col text-left">
                 <span className="text-[20px] md:text-[24px] font-libre font-normal text-[#BBBBBB] leading-[1.24]">Happy</span>
                 <span className="text-[20px] md:text-[24px] font-libre font-normal text-[#BBBBBB] leading-[1.24]">Clients</span>

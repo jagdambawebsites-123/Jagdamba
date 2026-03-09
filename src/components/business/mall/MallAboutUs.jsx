@@ -25,10 +25,10 @@ export default function MallAboutUs({
         <div className="relative z-10 mx-auto">
           <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-8 lg:gap-20">
             <div className="w-full lg:w-3/5 flex flex-col gap-4 text-center lg:text-left">
-              <h2 className="text-[24px] md:text-[36px] lg:text-[48px] leading-[135%] font-serif text-[#111C55]">
+              <h2 className="text-[24px] md:text-[40px] leading-[150%] md:leading-[135%] font-serif font-normal text-[#111C55] capitalize">
                 {titleStart}{" "}{titleHighlight}
               </h2>
-              <div className="text-[#111C55]/63 text-[12px] md:text-[18px] lg:text-[24px] leading-[151.5%] space-y-4 md:space-y-6 lg:space-y-8 font-sans font-medium">
+              <div className="text-[#111C55]/63 text-[12px] md:text-[18px] leading-[20px] md:leading-[26px] space-y-4 md:space-y-6 lg:space-y-8 font-sans font-normal md:font-medium text-center lg:text-left">
                 {paragraphs.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
@@ -36,10 +36,10 @@ export default function MallAboutUs({
             </div>
 
             <div className="w-full lg:w-2/5 flex flex-col items-center lg:items-end text-center lg:text-right">
-              <span className="text-[40px] md:text-[60px] lg:text-[80px] leading-[151.5%] font-serif text-[#CA9015]">
+              <span className="text-[40px] md:text-[72px] leading-[152%] font-serif font-normal text-[#CA9015]">
                 {statNumber}
               </span>
-              <span className="text-[12px] md:text-[18px] lg:text-[24px] leading-[151.5%] tracking-[0.25em] uppercase text-[#111C55]/63 font-sans mt-2">
+              <span className="text-[12px] md:text-[24px] leading-[152%] tracking-[0.17em] uppercase font-sans font-normal text-[#111C55]/63 mt-2 bg-[#111C55A1] md:bg-transparent px-2 md:px-0 text-white md:text-[#111C55]/63">
                 {statLabel}
               </span>
             </div>
