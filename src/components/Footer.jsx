@@ -72,13 +72,13 @@ export default function Footer({ forceShow = false }) {
         <footer className="bg-[#111C55] text-white font-sans">
 
             {/* ── Nav columns ── */}
-            <div className="max-w-7xl mx-auto px-2 sm:px-2 lg:px-0 pt-12 pb-8">
-                <div className="grid grid-cols-2 md:grid-cols-5 gap-8 p-6 sm:p-8 lg:p-4">
+            <div className="w-full px-4 pt-8 md:px-[100px] md:pt-[100px] pb-8">
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
 
                     {/* Nav link columns — all 4 shown on both mobile and desktop */}
                     {FOOTER_LINKS.map((section) => (
                         <div key={section.heading}>
-                            <h3 className="text-[#B88C2E] text-sm font-bold tracking-wider mb-5 font-sans">
+                            <h3 className="text-[#B88C2E] text-[16px] md:text-[20px] font-libre font-normal md:font-medium leading-[1.0] tracking-[0] mb-5 uppercase">
                                 {section.heading}
                             </h3>
                             <ul className="flex flex-col gap-3">
@@ -86,7 +86,7 @@ export default function Footer({ forceShow = false }) {
                                     <li key={link.name}>
                                         <Link
                                             href={link.href}
-                                            className="text-white/80 text-sm hover:text-[#F6B426] transition-colors duration-300"
+                                            className="text-white/80 text-[14px] md:text-[16px] font-libre font-normal leading-[1.0] tracking-[0] hover:text-[#F6B426] transition-colors duration-300"
                                         >
                                             {link.name}
                                         </Link>
@@ -98,25 +98,25 @@ export default function Footer({ forceShow = false }) {
 
                     {/* Contact Us — desktop only */}
                     <div className="hidden md:block">
-                        <h3 className="text-[#B88C2E] text-sm font-bold tracking-wider mb-5 font-sans">
+                        <h3 className="text-[#B88C2E] text-[16px] md:text-[20px] font-libre font-normal md:font-medium leading-[1.0] tracking-[0] mb-5 uppercase">
                             {CONTACT_INFO.heading}
                         </h3>
                         <div className="flex flex-col gap-5">
                             <div className="flex items-start gap-3">
-                                <Image src={mailIcon} alt="Mail" width={20} height={20} className="w-10 h-10 mt-0.5 opacity-70" />
+                                <Image src={mailIcon} alt="Mail" width={40} height={40} className="w-[40px] h-[40px] mt-2" />
                                 <div>
-                                    <p className="text-white/60 text-xs mb-0.5">{CONTACT_INFO.email.label}</p>
-                                    <a href={CONTACT_INFO.email.href} className="text-white/80 text-sm hover:text-[#F6B426] transition-colors duration-300">
+                                    <p className="text-white/80 font-libre font-normal text-[16px] leading-[1.35] tracking-[0] mb-0.5">{CONTACT_INFO.email.label}</p>
+                                    <a href={CONTACT_INFO.email.href} className="text-white/80 font-libre font-normal text-[16px] leading-[1.35] tracking-[0] hover:text-[#F6B426] transition-colors duration-300">
                                         {CONTACT_INFO.email.value}
                                     </a>
                                 </div>
                             </div>
 
                             <div className="flex items-start gap-3">
-                                <Image src={phoneIcon} alt="Phone" width={20} height={20} className="w-10 h-10 mt-0.5 opacity-70" />
+                                <Image src={phoneIcon} alt="Phone" width={40} height={40} className="w-[40px] h-[40px] mt-2" />
                                 <div>
-                                    <p className="text-white/60 text-xs mb-0.5">{CONTACT_INFO.phone.label}</p>
-                                    <a href={CONTACT_INFO.phone.href} className="text-white/80 text-sm hover:text-[#F6B426] transition-colors duration-300">
+                                    <p className="text-white/80 font-libre font-normal text-[16px] leading-[1.35] tracking-[0] mb-0.5">{CONTACT_INFO.phone.label}</p>
+                                    <a href={CONTACT_INFO.phone.href} className="text-white/80 font-libre font-normal text-[16px] leading-[1.35] tracking-[0] hover:text-[#F6B426] transition-colors duration-300">
                                         {CONTACT_INFO.phone.value}
                                     </a>
                                 </div>
@@ -170,7 +170,7 @@ export default function Footer({ forceShow = false }) {
             {/* ── DESKTOP bottom section ── */}
             <div className="hidden md:block">
                 {/* Logo row — right aligned */}
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-4 flex justify-end">
+                <div className="w-full px-4 sm:px-6 lg:px-8 pt-6 pb-4 flex justify-end">
                     <Image
                         src="/images/logo-white.png"
                         alt="Jagdamba Group"
@@ -181,7 +181,7 @@ export default function Footer({ forceShow = false }) {
                 </div>
 
                 {/* Copyright row */}
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 pb-8 flex flex-row justify-between items-center">
+                <div className="w-full px-4 sm:px-6 lg:px-8 py-4 pb-8 flex flex-row justify-between items-center">
                     <p className="text-white/50 text-xs">
                         © 2025 , Jagdamba Group. All rights reserved
                     </p>
