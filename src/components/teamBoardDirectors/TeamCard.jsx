@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const TeamCard = ({ image, name, designation }) => {
     return (
-        <div className="bg-white border-2 border-gray-200 shadow-[0_4px_30px_0_rgba(0,0,0,0.06)] p-6 flex flex-col items-center group transition-all duration-300 hover:shadow-xl rounded-md w-full max-sm:max-w-[320px] max-w-[400px] mx-auto">
+        <div className="bg-white border-2 border-gray-200 shadow-[0_4px_30px_0_rgba(0,0,0,0.06)] p-7 flex flex-col items-center group transition-all duration-300 hover:shadow-xl rounded-md w-full max-sm:max-w-[406px] max-w-[469px] mx-auto">
             <div className="relative w-full aspect-square mb-6 overflow-hidden bg-[#F3F4F6] rounded-md">
                 <Image
                     src={image}
