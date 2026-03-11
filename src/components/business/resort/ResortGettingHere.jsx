@@ -48,7 +48,7 @@ export default function ResortGettingHere({ stayArrowLeft, stayArrowRight, mapsU
           <div className="relative w-16 h-6 md:w-24 md:h-8 lg:w-36 lg:h-10 shrink-0">
             <Image src={stayArrowLeft} alt="" fill className="object-contain" />
           </div>
-          <h2 className="font-serif font-normal text-[16px] md:text-[40px] lg:text-[48px] text-[#464646] leading-tight whitespace-nowrap">
+          <h2 className="font-serif font-normal text-[16px] md:text-[40px] lg:text-[40px] text-[#464646] leading-tight whitespace-nowrap">
             Getting Here
           </h2>
           <div className="relative w-16 h-6 md:w-24 md:h-8 lg:w-36 lg:h-10 shrink-0">
@@ -80,13 +80,13 @@ export default function ResortGettingHere({ stayArrowLeft, stayArrowRight, mapsU
           <div className="order-last lg:order-first flex-1 grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6 md:gap-y-8">
             {infoItems.map((item) => (
               <div key={item.label} className="flex flex-col gap-1 border-b border-[#46464640] pb-4 md:pb-6">
-                <span className="text-[#46464680] font-sans font-normal text-[14px] md:text-[18px] lg:text-[20px] flex items-center gap-2">
+                <span className="text-[#46464680] font-sans font-normal text-[14px] md:text-[16px] lg:text-[16px] flex items-center gap-2">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={item.icon} alt="" className="w-4 h-4 md:w-5 md:h-5 object-contain opacity-50" />
                   {item.label}
                 </span>
                 {item.lines.map((line, i) => (
-                  <p key={i} className="text-[#464646] font-sans font-normal text-[14px] md:text-[18px] lg:text-[20px] leading-relaxed pl-[24px] md:pl-[28px]">
+                  <p key={i} className="text-[#464646] font-sans font-normal text-[14px] md:text-[16px] lg:text-[16px] leading-relaxed pl-[24px] md:pl-[28px]">
                     {line}
                   </p>
                 ))}
@@ -96,18 +96,18 @@ export default function ResortGettingHere({ stayArrowLeft, stayArrowRight, mapsU
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
-          <span className="font-serif font-normal text-[#464646] text-[18px] md:text-[28px] lg:text-[32px]">
+          <span className="font-serif font-normal text-[#464646] text-[12px] md:text-[18px] lg:text-[18px]">
             To Know More, Visit:
           </span>
           <a
             href="https://lafountainresorts.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 md:px-5 md:py-2.5 rounded-full border border-[#111C55] text-[#111C55] font-sans font-semibold text-[14px] hover:bg-[#111C55] hover:text-white transition-colors"
+            className="flex items-center gap-2 px-4 py-2 md:px-5 md:py-2.5 rounded-full border border-[#111C55] text-[#111C55] font-sans font-semibold text-[12px] md:text-[18px] lg:text-[18px] hover:bg-[#111C55] hover:text-white transition-colors"
           >
             lafountainresorts.com
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
+              <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </a>
         </div>

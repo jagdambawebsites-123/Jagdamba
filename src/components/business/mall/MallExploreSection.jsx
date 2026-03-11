@@ -27,7 +27,7 @@ export default function MallExploreSection() {
       />
 
       <div className="relative z-10 flex flex-col items-center justify-center min-h-[60vh] md:min-h-[70vh] lg:min-h-screen px-6 md:px-10 xl:px-25 py-12 lg:py-20 gap-10 md:gap-16 lg:gap-28">
-        <h2 className="text-white font-serif font-normal text-[32px] md:text-[48px] lg:text-[64px] leading-none text-center">
+        <h2 className="text-white font-serif font-normal text-[18px] md:text-[36px] lg:text-[52px] leading-none text-center">
           Explore, Enjoy, Elevate.
         </h2>
 

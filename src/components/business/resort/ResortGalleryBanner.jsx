@@ -17,7 +17,7 @@ export default function ResortGalleryBanner({ image, quote, buttonText, buttonLi
           </p>
           <Link
             href={buttonLink || "#"}
-            className="self-start px-4 py-1.5 md:px-6 md:py-2.5 rounded-full border border-white bg-transparent text-white font-sans font-medium text-[11px] md:text-[18px] lg:text-[24px] hover:bg-white hover:text-[#111C55] transition-colors"
+            className="self-start px-4 py-1.5 md:px-6 md:py-2.5 rounded-full border border-white bg-transparent text-white font-sans font-medium text-[12px] md:text-[18px] lg:text-[24px] hover:bg-white hover:text-[#111C55] transition-colors"
           >
             {buttonText}
           </Link>

@@ -22,7 +22,7 @@ export default function ClientsSection() {
                     <h2 className="font-serif font-normal tracking-normal capitalize text-center md:text-left text-[#111C55] text-[24px] leading-[150%] md:text-[40px] md:leading-[100%] whitespace-nowrap">
                         Our <span className="text-[#B88C2E]">Clients</span>
                     </h2>
-                    <p className="text-[#6B7280] font-sans font-normal tracking-normal text-[24px] leading-[36px] max-w-xl text-center md:text-left">
+                    <p className="text-[#6B7280] font-sans font-normal tracking-normal text-[12px] leading-[18px] md:text-[24px] md:leading-[36px] max-w-xl text-center md:text-left">
                         We are committed to the idea of respect and decency, in relation to our employees, as well as to customers, partners and suppliers of the company.
                     </p>
                 </div>

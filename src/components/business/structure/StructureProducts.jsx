@@ -17,10 +17,10 @@ export default function StructureProducts({ products = PRODUCTS }) {
         <section className="w-full bg-[#F5F5F5] py-16 flex flex-col gap-18 font-sans">
 
             <div className="container mx-auto px-6 md:px-10 xl:px-25 flex flex-col lg:flex-row lg:justify-between items-center lg:items-start text-center lg:text-left gap-6 lg:gap-20">
-                <h2 className="text-3xl md:text-[40px] font-serif text-[#111C55] whitespace-nowrap">
+                <h2 className="text-[24px] leading-[150%] md:text-[40px] md:leading-normal font-serif text-[#111C55] whitespace-nowrap">
                     Our <span className="text-[#B88C2E]">Products</span>
                 </h2>
-                <p className="w-full lg:w-1/2 text-[#6B7280] text-[18px] md:text-[24px] leading-relaxed font-sans">
+                <p className="w-full lg:w-1/2 text-[#6B7280] text-[12px] leading-[18px] md:text-[24px] md:leading-relaxed font-sans">
                     At Jagdamba we pride ourselves on our commitment to excellence in fabrication
                     and erection of steel structures, equipment, Pre-engineering buildings,
                     bridges, deck sheet installation.
@@ -62,16 +62,16 @@ export default function StructureProducts({ products = PRODUCTS }) {
 }
 
 function ArrowUpRightIcon({ className }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={2.5}
-      stroke="currentColor"
-      className={className}
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-    </svg>
-  );
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2.5}
+            stroke="currentColor"
+            className={className}
+        >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+        </svg>
+    );
 }

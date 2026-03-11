@@ -35,7 +35,7 @@ export default function ResortExperiences({
             <div className="relative w-16 h-6 md:w-24 md:h-8 lg:w-36 lg:h-10 shrink-0">
               <Image src={stayArrowLeft} alt="" fill className="object-contain" />
             </div>
-            <h2 className="font-serif font-normal text-[16px] md:text-[40px] lg:text-[48px] text-[#464646] leading-tight text-center">
+            <h2 className="font-serif font-normal text-[16px] md:text-[40px] lg:text-[40px] text-[#464646] leading-tight text-center">
               Experiences
             </h2>
             <div className="relative w-16 h-6 md:w-24 md:h-8 lg:w-36 lg:h-10 shrink-0">
@@ -91,7 +91,7 @@ export default function ResortExperiences({
                 <div className="relative w-8 h-8 md:w-16 md:h-16 lg:w-20 lg:h-20">
                   <Image src={feat.src} alt={feat.label} fill className="object-contain" />
                 </div>
-                <span className="text-[#464646] font-serif font-normal text-[12px] md:text-[24px] lg:text-[32px] text-center">
+                <span className="text-[#464646] font-serif font-normal text-[12px] md:text-[24px] lg:text-[24.54px] text-center">
                   {feat.label}
                 </span>
               </div>
