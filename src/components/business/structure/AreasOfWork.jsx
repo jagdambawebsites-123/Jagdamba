@@ -33,7 +33,7 @@ export default function AreasOfWork({ areas = AREAS }) {
                     {areas.map((area, index) => (
                         <div
                             key={index}
-                            className="shrink-0 w-[330px] h-[300px] md:w-[416px] md:h-[478px] bg-[#111C55] rounded-[12px] md:rounded-[20px] py-[24px] px-[16px] md:py-[82px] md:px-[62px] flex flex-col items-center text-center gap-[20px] md:gap-[40px] hover:bg-[#1a2760] transition-colors duration-300"
+                            className="shrink-0 w-[330px] h-[300px] md:w-full md:h-auto md:min-h-[380px] bg-[#111C55] rounded-[12px] md:rounded-[20px] py-[24px] px-[16px] md:py-[40px] md:px-[32px] xl:py-[82px] xl:px-[62px] flex flex-col items-center text-center gap-[20px] md:gap-[32px] xl:gap-[40px] hover:bg-[#1a2760] transition-colors duration-300"
                         >
                             <div className="mb-2 flex justify-center">
                                 <Image
