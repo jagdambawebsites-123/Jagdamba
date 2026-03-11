@@ -33,11 +33,11 @@ export default function FeaturedStories() {
       
       <div className="container mx-auto">
         <section className="relative z-0 pb-16 md:pb-24">
-          <div className="mx-auto px-4 sm:px-6 lg:px-[100px] pt-16 md:pt-20">
+          <div className="mx-auto px-4 sm:px-6 lg:px-[100px] pt-4 md:pt-20">
             
             {/* Header Area */}
             <div className="flex justify-center md:justify-between items-center mb-8 md:mb-14">
-              <h2 className="text-3xl text-center md:text-left sm:text-[40px] font-serif text-[#111C55] md:text-white">
+              <h2 className="text-[24px] text-center md:text-left sm:text-[40px] font-serif text-[#111C55] md:text-white">
                 Our <span className="text-[#c19a49]">Featured Stories</span>
               </h2>
 
@@ -67,11 +67,11 @@ export default function FeaturedStories() {
                     />
                   </div>
 
-                  <div className="p-6 md:p-8 flex flex-col flex-grow">
-                    <p className="text-[#6B7280] text-sm md:text-[18px] mb-6 leading-relaxed flex-grow font-sans">
+                  <div className="p-3 md:p-6 flex flex-col flex-grow">
+                    <p className="text-[#6B7280] text-[12px] sm:text-sm md:text-[18px] mb-2 md:mb-4 leading-relaxed flex-grow font-sans">
                       {story.title}
                     </p>
-                    <p className="text-[#111C55] font-medium text-base uppercase tracking-wider font-sans">
+                    <p className="text-[#111C55] font-medium text-[18px] uppercase tracking-wider font-sans">
                       {story.date}
                     </p>
                   </div>
@@ -99,7 +99,7 @@ function ViewAllButton({ variant }) {
       group flex items-center justify-center gap-2 rounded-full border transition-all duration-300 font-sans
       ${isMobile 
         ? "w-full py-3.5 border-[#0a1a44]/40 text-[#0a1a44] text-sm font-normal hover:text-white hover:bg-[#0a1a44] tracking-wide" 
-        : "px-6 py-2.5 border-white text-white text-base  font-normal hover:bg-white hover:text-[#0a1a44]"
+        : "px-8 py-2.5 border-white text-white text-lg  font-normal hover:bg-white hover:text-[#0a1a44]"
       }
     `}>
       View All
