@@ -37,7 +37,7 @@ export default function BusinessHero({ image, mobileImage, title, link, buttonTe
         {/* The Container: Limits width to 1200px (or your theme's default) and centers itself */}
         <div className="container mx-auto">
           <div className="flex flex-col items-start text-left w-fit font-sanomat gap-[10px] md:gap-0 pt-[10px] pb-[10px] md:pt-0 md:pb-0">
-            <h1 className="text-[28px] md:text-[48px] lg:text-[64px] leading-tight md:leading-[135%] font-normal tracking-normal md:mb-1.5">
+            <h1 className="text-[26px] md:text-[48px] lg:text-[64px] leading-tight md:leading-[135%] font-normal tracking-normal md:mb-1.5 font-sanomat-web">
               {title}
             </h1>
 

@@ -129,14 +129,14 @@ export default function FacilitiesAndTickets() {
         </div>
 
         {/* Heading */}
-        <div className="w-full relative z-10 flex justify-center mb-12 md:mb-16">
+        <div className="w-full relative z-10 flex justify-center mb-6 md:mb-16">
           <h2 className="text-[20px] md:text-3xl lg:text-[40px] text-[#CA9015] font-serif font-bold text-center">
             Our Ticket Plan
           </h2>
         </div>
 
         {/* Tickets Grid */}
-        <div className="relative z-10 max-w-7xl w-full px-4 md:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+        <div className="relative z-10 max-w-7xl w-full px-4 md:px-8 grid grid-cols-1 md:grid-cols-3 gap-2 sm:gap-8 md:gap-0">
           {/* Background Decor: Dotted Circle (Left) */}
           <div className="absolute bottom-0 -left-0 md:-top-20 md:-left-20 w-40 h-40 md:w-64 md:h-64 pointer-events-none opacity-80 z-0">
             <Image
@@ -172,10 +172,10 @@ export default function FacilitiesAndTickets() {
                     className="object-contain"
                   />
                 </div>
-                <h3 className="text-white font-serif text-lg mb-4 text-center">
+                <h3 className="text-white font-serif text-base md:text-lg mb-4 text-center">
                   {ticket.title}
                 </h3>
-                <p className="text-white font-serif text-sm opacity-90 text-center">
+                <p className="text-white font-serif test-[12px] md:text-sm opacity-90 text-center">
                   {ticket.price}
                 </p>
               </div>
