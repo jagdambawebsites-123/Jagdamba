@@ -66,17 +66,17 @@ export default function AboutSection() {
         <div className="relative z-10 max-w-7xl mx-auto">
 
           {/* Top Row: Heading and Text */}
-          <div className="flex flex-col lg:flex-row lg:justify-between gap-10 lg:gap-20 mb-12 md:mb-20 lg:mb-28">
+          <div className="flex flex-col lg:flex-row lg:justify-between gap-0 lg:gap-20 mb-12 md:mb-20 lg:mb-28">
 
             {/* Left Column: Heading & Button */}
             <div className="w-full lg:w-1/3 flex flex-col items-center lg:items-start text-center lg:text-left">
-              <h2 className="text-4xl md:text-5xl font-serif text-[#111C55] mb-6 lg:mb-8">
+              <h2 className="text-[24px] md:text-[40px] font-serif text-[#111C55] mb-6 lg:mb-8">
                 About <span className="text-[#B88C2E]">Us</span>
               </h2>
 
               {/* Hidden on mobile/tablet, flex on desktop */}
               <Link href="/about/aboutUs">
-                <button className="hidden lg:flex group px-8 py-2.5 rounded-full border border-[#161c3a] items-center gap-3 text-[#161c3a] font-medium hover:bg-[#161c3a] hover:text-white transition-all duration-300">
+                <button className="hidden lg:flex text-lg group px-8 py-2.5 rounded-full border border-[#161c3a] items-center gap-3 text-[#161c3a] font-medium hover:bg-[#161c3a] hover:text-white transition-all duration-300">
                   Explore
                   <ArrowUpRightIcon className="w-4 h-4 text-[#c19b4e] group-hover:text-[#c19b4e]" />
                 </button>
@@ -95,36 +95,36 @@ export default function AboutSection() {
           </div>
 
           {/* Bottom Row: Statistics */}
-          <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-0">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-0">
 
             {/* Stat 1 */}
             <div className="flex-1 flex flex-col items-center text-center">
-              <span className="text-4xl md:text-[52px] font-serif text-[#111C55] mb-1">
+              <span className="text-[40px] md:text-[52px] font-serif text-[#111C55] mb-1">
                 <Counter end={20} suffix="+" />
               </span>
-              <span className="text-[#6B7280] text-sm md:text-xl font-sans">Years of Experience</span>
+              <span className="text-[#6B7280] text-base md:text-xl font-sans">Years of Experience</span>
             </div>
 
             {/* Divider: Horizontal on mobile, Vertical on MD+ */}
-            <div className="w-16 h-[1px] md:w-[2px] md:h-25 bg-[#B88C2E] opacity-50 md:opacity-100"></div>
+            <div className="hidden md:block w-[2px] h-25 bg-[#B88C2E] opacity-50 md:opacity-100"></div>
 
             {/* Stat 2 */}
             <div className="flex-1 flex flex-col items-center text-center">
-              <span className="text-4xl md:text-[52px] font-serif text-[#111C55] mb-1">
+              <span className="text-[40px] md:text-[52px] font-serif text-[#111C55] mb-1">
                 <Counter end={3} suffix="K+" />
               </span>
-              <span className="text-[#6B7280] text-sm md:text-xl font-sans">No. of Employees</span>
+              <span className="text-[#6B7280] text-base md:text-xl font-sans">No. of Employees</span>
             </div>
 
             {/* Divider: Horizontal on mobile, Vertical on MD+ */}
-            <div className="w-16 h-[1px] md:w-[2px] md:h-25 bg-[#B88C2E] opacity-50 md:opacity-100"></div>
+            <div className="hidden md:block w-[2px] h-25 bg-[#B88C2E] opacity-50 md:opacity-100"></div>
 
             {/* Stat 3 */}
             <div className="flex-1 flex flex-col items-center text-center">
-              <span className="text-4xl md:text-[52px] font-serif text-[#111C55] mb-1">
+              <span className="text-[40px] md:text-[52px] font-serif text-[#111C55] mb-1">
                 <Counter end={500} suffix="+" />
               </span>
-              <span className="text-[#6B7280] text-sm md:text-xl font-sans">Projects Completed</span>
+              <span className="text-[#6B7280] text-base md:text-xl font-sans">Projects Completed</span>
             </div>
           </div>
 

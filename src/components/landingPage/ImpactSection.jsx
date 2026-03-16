@@ -107,7 +107,7 @@ export default function ImpactSection() {
                     </h2>
                     <div className="space-y-4 md:space-y-6 text-white/90 text-sm md:text-[18px] leading-relaxed font-sans">
                       {slide.desc.map((p, i) => (
-                        <p key={i}>{p}</p>
+                        <p className="mb-0" key={i}>{p}</p>
                       ))}
                     </div>
 

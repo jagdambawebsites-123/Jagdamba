@@ -11,7 +11,7 @@ const teamData = [
     id: 2,
     name: "Amit Agrawal",
     role: "MANAGING DIRECTOR",
-    image: "/images/landingPage/amit-agrawal.png",
+    image: "/images/landingPage/amit-agrawal.jpg",
   },
   {
     id: 3,
@@ -28,8 +28,8 @@ export default function TeamSection() {
         <section className="w-full bg-[#fbfbfb] py-20 lg:py-28 overflow-hidden">
           <div className=" mx-auto px-4 sm:px-6 lg:px-25">
             {/* Header Area */}
-            <div className="flex justify-between items-center mb-[60px]">
-              <h2 className="text-3xl md:text-[40px] font-serif text-[#111C55]">
+            <div className="flex justify-between items-center mb-[24px] md:mb-[60px]">
+              <h2 className="text-[24px] md:text-[40px] font-serif text-[#111C55]">
                 Our <span className="text-[#B88C2E]">Team</span>
               </h2>
 
@@ -57,10 +57,10 @@ export default function TeamSection() {
                     />
                   </div>
                   <div className="flex flex-col items-start px-2">
-                    <h3 className="text-xl font-bold text-[#161c3a] mb-1.5">
+                    <h3 className="text-lg md:text-[24px] font-bold text-[#111C55]  mb-1 md:mb-1.5">
                       {member.name}
                     </h3>
-                    <p className="text-[#8c92a4] text-sm font-semibold tracking-wider uppercase">
+                    <p className="text-[#6B7280] text-sm md:text-lg font-semibold tracking-wider uppercase">
                       {member.role}
                     </p>
                   </div>
@@ -87,9 +87,9 @@ function ViewAllButton() {
             group 
             w-full sm:w-auto        /* Full width on mobile, auto on desktop */
             flex items-center justify-center gap-2 
-            px-8 py-3.5             /* Increased padding for better tap target */
+            py-3.5 px-8 md:py-2.5             /* Increased padding for better tap target */
             rounded-full border border-[#161c3a]/40 
-            text-[#161c3a] text-sm font-normal tracking-wide
+            text-[#161c3a] text-sm md:text-lg font-normal tracking-wide
             hover:bg-[#161c3a] hover:text-white 
             transition-all duration-300
         "

@@ -11,7 +11,7 @@ export default function MissionStatement({ titleLine1, titleLine2, description, 
               <span className="block text-[#111C55]">{titleLine1}</span>
               <span className="block text-[#CA9015]">{titleLine2}</span>
             </h2>
-            <p className="text-[#6B7280] text-[12px] md:text-[16px] leading-6 max-w-[400px]">
+            <p className="text-[#6B7280] text-[12px] md:text-[16px] leading-5 md:leading-6 max-w-[400px]">
               {description}
             </p>
           </div>

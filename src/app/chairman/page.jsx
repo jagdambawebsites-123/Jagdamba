@@ -56,12 +56,12 @@ export default function ChairmanTeamPage() {
                 <section className="relative flex-1 px-6 md:px-16 lg:px-24 flex flex-col lg:flex-row items-center justify-center lg:justify-between z-10 overflow-hidden pt-12 lg:pt-0">
                     <div className="w-full lg:w-[55%] flex flex-col justify-center items-center lg:items-start text-center lg:text-left h-auto lg:h-full pt-16 sm:pt-24 lg:pt-0 pb-4 lg:pb-12">
                         <div className="animate-in fade-in slide-in-from-bottom-12 lg:slide-in-from-left-12 duration-1000 w-full">
-                            <h1 className="text-[2.6rem] leading-[1.1] sm:text-6xl lg:text-7xl font-serif mb-2 md:mb-4 text-white drop-shadow-2xl whitespace-nowrap">
+                            <h1 className="text-[32px] leading-[1.0] md:text-[64px] md:leading-[1.35] font-baskerville font-normal tracking-[0] mb-2 md:mb-4 text-white drop-shadow-2xl text-center lg:text-left whitespace-nowrap">
                                 Umesh Agrawal
                             </h1>
 
                             <div className="mb-6 lg:mb-10 relative flex flex-col items-center lg:items-start w-full lg:w-fit px-2 md:px-0">
-                                <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-[40px] font-libre font-extralight text-[#BBBBBB] leading-[1.35] tracking-[0.1em] sm:tracking-[0.2em] text-center lg:text-left w-full">
+                                <h2 className="text-[20px] md:text-[40px] font-libre font-extralight text-[#BBBBBB] leading-[1.35] tracking-[0] text-center lg:text-left w-full">
                                     Chairman
                                 </h2>
                                 <div className="hidden lg:block w-full h-[3px] bg-[#FF9E02] mt-3 shadow-[0_0_20px_rgba(255,158,2,0.6)]"></div>
@@ -74,7 +74,7 @@ export default function ChairmanTeamPage() {
                                     <Image src="/images/chairman/quote1.png" alt="opening quote" width={25} height={35} className="object-contain w-[18px] h-[26px] lg:w-[25px] lg:h-[35px]" />
                                 </div>
 
-                                <p className="text-base xs:text-lg md:text-lg lg:text-[28px] font-libre font-light text-[#BBBBBB] md:text-white/90 leading-relaxed relative z-10 lg:ml-6">
+                                <p className="text-[14px] md:text-[28px] font-libre font-normal text-[#BBBBBB] md:text-white/90 leading-[20px] md:leading-[1.24] tracking-[0] relative z-10 lg:ml-6 text-center lg:text-left">
                                     In every challenge lies the seed of<br className="hidden md:block" />
                                     opportunity; the leaders who embrace<br className="hidden md:block" />
                                     it will see it blossom into success.
@@ -135,11 +135,11 @@ export default function ChairmanTeamPage() {
                             <div className="w-full h-[2px] md:h-[3px] bg-[#CA9015]"></div>
                         </div>
 
-                        <div className="w-full space-y-6 md:space-y-8 text-[16px] md:text-[18px] text-[#6B7280] leading-[24px] md:leading-[26px] font-libre font-normal text-justify md:text-left px-2 md:px-0">
-                            <p>Mr. Umesh Agrawal (born 9th June 1971) epitomizes the indomitable entrepreneurial spirit of a visionary dedicated to transforming the industrial landscape. As the District President of Raigarh (Chhattisgarh), he is lauded for his dynamic leadership, pioneering efforts, and innovative genius.</p>
-                            <p>His extraordinary vision has redefined the potential of the Indian manufacturing sector, particularly in machining, casting, and trailer manufacturing. The corporate philosophy he champions is clear: &ldquo;Innovate Relentlessly. Lead with Integrity. Strive for Excellence.&rdquo;</p>
-                            <p>Under Mr. Umesh Agrawal&apos;s visionary leadership, Jagdamba Group has emerged as a leading force in various industries, carving out a distinct place in the competitive market.</p>
-                            <p>Mr. Umesh Agrawal&apos;s contributions have been recognized by numerous national and international organizations, earning him accolades for his exceptional service to industry and trade.</p>
+                        <div className="w-full space-y-6 md:space-y-8 text-[14px] md:text-[18px] text-[#6B7280] leading-[20px] md:leading-[26px] font-libre font-normal tracking-[0] text-center md:text-left px-2 md:px-0">
+                            <p>Mr. Umesh Agrawal (born 9th June 1971) epitomizes the indomitable entrepreneurial spirit of a visionary dedicated to transforming the industrial landscape. As the District President of Raigarh (Chhattisgarh), he is lauded for his dynamic leadership, pioneering efforts, and innovative genius. Mr. Umesh Agrawal has become an inspiring figure, sparking the imagination of a generation of entrepreneurs and business leaders in India.</p>
+                            <p>His extraordinary vision has redefined the potential of the Indian manufacturing sector, particularly in machining, casting, and trailer manufacturing. He challenged conventional wisdom, recognizing the strategic importance of innovation and quality in industrial growth. The corporate philosophy he champions is clear: &ldquo;Innovate Relentlessly. Lead with Integrity. Strive for Excellence.&rdquo;</p>
+                            <p>Under Mr. Umesh Agrawal&apos;s visionary leadership, Jagdamba Group has emerged as a leading force in various industries, carving out a distinct place in the competitive market. His entrepreneurial mission has set numerous revolutionary precedents, contributing significantly to the social and economic development of the region.</p>
+                            <p>Mr. Umesh Agrawal&apos;s contributions have been recognized by numerous national and international organizations, earning him accolades for his exceptional service to industry and trade. His relentless pursuit of excellence and his unwavering commitment to progress continue to drive the Jagdamba Group towards new heights, aligning with his grand vision for India&apos;s industrial future.</p>
                         </div>
                     </div>
                 </div>
@@ -151,13 +151,13 @@ export default function ChairmanTeamPage() {
                             <div
                                 className="flex transition-transform duration-700 ease-in-out gap-4 md:gap-8"
                                 style={{
-                                    transform: `translateX(calc(-${currentIndex * (typeof window !== 'undefined' ? (window.innerWidth < 768 ? 266 : window.innerWidth < 1024 ? 632 : 832) : 832)}px + 50% - ${typeof window !== 'undefined' ? (window.innerWidth < 768 ? 125 : window.innerWidth < 1024 ? 300 : 400) : 400}px))`
+                                    transform: `translateX(calc(-${currentIndex * (typeof window !== 'undefined' ? (window.innerWidth < 768 ? 216 : 718) : 718)}px + 50% - ${typeof window !== 'undefined' ? (window.innerWidth < 768 ? 100 : 351) : 351}px))`
                                 }}
                             >
                                 {extendedImages.map((num, idx) => (
                                     <div
                                         key={`${num}-${idx}`}
-                                        className="relative shrink-0 w-[250px] sm:w-[400px] md:w-[600px] lg:w-[800px] h-[180px] sm:h-[300px] md:h-[400px] lg:h-[500px] rounded-[20px] md:rounded-[40px] lg:rounded-[50px] overflow-hidden transition-all duration-700 origin-center"
+                                        className="relative shrink-0 w-[200px] h-[135px] md:w-[702px] md:h-[475px] rounded-[12px] md:rounded-[50px] overflow-hidden transition-all duration-700 origin-center"
                                     >
                                         <Image src={`/images/chairman/${num}.png`} alt={`Chairman Moment ${num}`} fill className="object-cover" />
                                     </div>
@@ -165,7 +165,7 @@ export default function ChairmanTeamPage() {
                             </div>
                         </div>
 
-                        <div className="flex items-center gap-4 mt-8 md:-mt-10 z-30 relative">
+                        <div className="flex items-center gap-4 -mt-6 md:-mt-8 z-30 relative">
                             <button onClick={prevSlide} className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#CA9015] flex items-center justify-center text-white hover:bg-[#a87812] transition-all hover:scale-110 active:scale-95">
                                 <svg className="w-5 h-5 md:w-8 md:h-8 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12H3m18 0l-6-6m6 6l-6 6" /></svg>
                             </button>

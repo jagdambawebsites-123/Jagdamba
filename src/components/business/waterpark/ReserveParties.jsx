@@ -89,7 +89,7 @@ export default function ReserveParties() {
                     className="object-contain"
                   />
                 </div>
-                <h3 className="text-2xl md:text-3xl text-[#464646] text-center md:text-left font-serif mb-4 md:mb-6">
+                <h3 className="text-2xl md:text-[33px] text-[#464646] text-center md:text-left font-serif mb-4 md:mb-6">
                   {slide.title}
                 </h3>
                 <p className="text-[#464646] text-xs md:text-sm leading-relaxed text-justify opacity-90">

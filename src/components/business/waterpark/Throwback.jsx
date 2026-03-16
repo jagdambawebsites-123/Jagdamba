@@ -109,7 +109,7 @@ export default function Throwback() {
 
       {/* Bottom Call to Action */}
       <div className="relative z-10 mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-        <span className="text-[#111C55] text-xl md:text-2xl font-serif">
+        <span className="text-[#111C55] text-xl md:text-[32px] font-serif">
           To Know More, Visit:
         </span>
         <Link 

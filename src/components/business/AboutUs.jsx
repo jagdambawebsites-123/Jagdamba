@@ -27,9 +27,9 @@ export default function AboutUs({ titleStart, titleHighlight, paragraphs, bgDeco
             </div>
 
             {/* Right Column: Paragraphs */}
-            <div className="w-full lg:w-1/2 text-center lg:text-left text-[#6B7280] space-y-6 font-sans font-normal tracking-normal text-[12px] leading-[20px] md:text-[18px] md:leading-[26px]">
+            <div className="w-full lg:w-1/2 text-center lg:text-left text-[#6B7280] space-y-6 font-sans font-normal tracking-normal text-[12px] leading-[20px] md:text-[16px] md:leading-[26px]">
               {paragraphs.map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
+                <p className="mb-4 md:mb-0" key={index}>{paragraph}</p>
               ))}
             </div>
           </div>

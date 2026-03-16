@@ -206,7 +206,7 @@ export default function BusinessSection() {
 
   return (
     <div className="w-full bg-[#F5F5F5]">
-      <section className="container relative w-full bg-[#F5F5F5] px-6 xl:px-25 py-16 md:py-24 overflow-hidden mx-auto max-w-7xl">
+      <section className="container relative w-full bg-[#F5F5F5] px-6 xl:px-25 py-4 md:py-24 overflow-hidden mx-auto max-w-7xl">
         
         {/* Header Section */}
         <div className="text-center mb-16 md:mb-24 relative z-20">
@@ -226,12 +226,12 @@ export default function BusinessSection() {
           {/* The Wrapper for the Dot (moved via JS) */}
           <div ref={dotRef} className="absolute top-0 left-1/2 w-0 h-0 z-10 will-change-transform">
              {/* The physical dot itself (offset to center perfectly on the line) */}
-             <div className="absolute -left-3 -top-3 w-6 h-6 rounded-full bg-[#FFC13D] border-[4px] border-[#F5F5F5] shadow-[0_0_12px_rgba(255,193,61,0.6)]" />
+             <div className="absolute -left-4 -top-4 w-8 h-8 rounded-full bg-[#FFC13D] border-[8px] border-[#FEF1D4]" />
           </div>
         </div>
         {/* ------------------------------------------ */}
 
-        <div className="space-y-24 md:space-y-32 relative z-10">
+        <div className="space-y-8 md:space-y-32 relative z-10">
           {businesses.map((item, index) => {
             const isEven = index % 2 === 0;
             const shown = isVisible[item.id];
@@ -250,7 +250,7 @@ export default function BusinessSection() {
                     ${isEven ? "md:pr-12 lg:pr-20 justify-center md:justify-start" : "md:pl-12 lg:pl-20 justify-center md:justify-end"}
                   `}
                 >
-                  <div className="relative w-full md:max-w-[454px] aspect-[330/255] bg-[#F5F5F5] rounded-[16px] overflow-hidden  flex-shrink-0">
+                  <div className="relative w-full md:max-w-[454px] aspect-[330/255] bg-[#F5F5F5] rounded-[20px] overflow-hidden  flex-shrink-0">
                     <Image
                       src={item.image}
                       alt={item.title}
@@ -268,12 +268,12 @@ export default function BusinessSection() {
                   `}
                 >
                   <div className="w-full md:max-w-[554px] text-left pt-2">
-                    <h3 className="text-[28px] font-serif font-semibold text-[#111C55] mb-4">
+                    <h3 className="text-[20px] md:text-[28px] font-serif font-semibold text-[#111C55] mb-4 md:mb-6">
                       {item.title}
                     </h3>
-                    <div className="text-[#6B7280] text-[14px] md:text-lg leading-relaxed mb-6 md:mb-8 font-sans space-y-3">
+                    <div className="text-[#6B7280] text-[14px] md:text-[16px] leading-relaxed mb-6 md:mb-7 font-sans space-y-3">
                       {item.description.map((para, i) => (
-                        <p key={i}>{para}</p>
+                        <p className="mb-0" key={i}>{para}</p>
                       ))}
                     </div>
                     <div>
@@ -300,10 +300,10 @@ function ExploreButton({ link }) {
     <>
       <Link
         href={link}
-        className="md:hidden flex items-center gap-2 border-b-2 border-[#111C55] pb-1 text-[#111C55] text-[1.1rem] font-medium w-fit"
+        className="md:hidden flex items-center gap-2 border-b border-[#111C55] pb-1 text-[#111C55] text-[14px] font-medium w-fit"
       >
         Explore
-        <ArrowUpRightIcon className="w-5 h-5 text-[#B88C2E]" />
+        <ArrowUpRightIcon className="w-4 h-4 text-[#B88C2E]" />
       </Link>
 
       <Link
