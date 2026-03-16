@@ -54,7 +54,7 @@ export default function MallContactSection() {
               <p className="font-sans font-normal text-[14px] lg:text-[16px] leading-[100%] lg:leading-[24px] text-[#8B8B8C] pl-6 lg:pl-0">
                 10:00 am - 9:30 pm
               </p>
-              <hr className="w-[248px] ml-[27px] lg:ml-0 border-t border-[#4646464D] lg:border-[#6B72804D]" />
+              <hr className="w-full max-w-[248px] ml-[27px] lg:ml-0 border-t border-[#4646464D] lg:border-[#6B72804D]" />
             </div>
 
             <div className="flex flex-col gap-2">
@@ -81,7 +81,7 @@ export default function MallContactSection() {
                   balajiinfraventures@gmail.com
                 </a>
               </div>
-              <hr className="w-[248px] ml-[27px] lg:ml-0 border-t border-[#4646464D] lg:border-[#6B72804D]" />
+              <hr className="w-full max-w-[248px] ml-[27px] lg:ml-0 border-t border-[#4646464D] lg:border-[#6B72804D]" />
             </div>
 
             <div className="flex flex-col gap-2">
@@ -101,7 +101,7 @@ export default function MallContactSection() {
                 <br />
                 496001
               </p>
-              <hr className="w-[248px] ml-[27px] lg:ml-0 border-t border-[#4646464D] lg:border-[#6B72804D]" />
+              <hr className="w-full max-w-[248px] ml-[27px] lg:ml-0 border-t border-[#4646464D] lg:border-[#6B72804D]" />
             </div>
 
             <div className="flex flex-col gap-2">
@@ -120,7 +120,7 @@ export default function MallContactSection() {
                 social media
               </p>
               
-              <hr className="w-[248px] ml-[27px] lg:ml-0 border-t border-[#4646464D] lg:border-[#6B72804D]" />
+              <hr className="w-full max-w-[248px] ml-[27px] lg:ml-0 border-t border-[#4646464D] lg:border-[#6B72804D]" />
             </div>
           </div>
           </div>
