@@ -151,7 +151,7 @@ const TrailerPage = () => {
     return (
         <div className="w-full bg-white">
             {/* --- Hero Section --- */}
-            <section className="relative h-[73vh] md:h-[140vh] w-full overflow-hidden bg-black text-white font-serif md:mt-0">
+            <section className="relative h-[60vh] md:h-[100vh] w-full overflow-hidden bg-black text-white font-serif md:mt-0">
                 <div className="absolute inset-0">
                     <Image src={TopImg} alt="Trailer Hero" fill priority className="object-cover hero-top-img" />
                     <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent flex flex-col justify-end"></div>
@@ -159,12 +159,12 @@ const TrailerPage = () => {
                 <div className="relative z-10 h-full flex flex-col justify-center items-center px-6 md:px-12 xl:px-24 md:pt-0">
                     <div className="container mx-auto">
                         <div className="flex flex-col items-start w-[289px] md:w-fit gap-[10px] xl:gap-8 pt-[10px] pb-[10px] md:py-0 border-b-[3px] border-[#CA9015] md:border-0 md:mt-10">
-                            <h1 className="text-[26px] sm:text-[30px] md:text-[36px] lg:text-[44px] xl:text-[64px] leading-tight xl:leading-[135%] font-sanomat-web trailer-hero-title font-normal xl:tracking-[0%] drop-shadow-lg">
+                            <h1 className="relative -top-10 text-[26px] sm:text-[30px] md:text-[36px] lg:text-[64px] xl:text-[64px] leading-tight xl:leading-[135%] font-sanomat-web trailer-hero-title font-normal xl:tracking-[0%] drop-shadow-lg -mt-1">
                                 Setting New Benchmarks
                             </h1>
-                            <div className="hidden md:block h-[4px] w-full max-w-[800px] bg-[#CA9015] -mt-4" />
+                            <div className="relative -top-10 hidden md:block h-[4px] w-full max-w-[800px] bg-[#CA9015] -mt-4" />
                             <Link href="/about">
-                                <button className="group mt-0 flex items-center gap-3 px-8 py-3 rounded-full border-2 border-white text-white font-sans text-[18px] font-medium hover:bg-white hover:text-black transition-all duration-300">
+                                <button className="relative -top-10 group mt-0 flex items-center gap-3 px-8 py-3 rounded-full border-2 border-white text-white font-sans text-[18px] font-medium hover:bg-white hover:text-black transition-all duration-300">
                                     About Us
                                     <ArrowUpRightIcon className="w-5 h-5" />
                                 </button>
@@ -233,7 +233,7 @@ const TrailerPage = () => {
                                 <Image src={card.img} alt={card.label} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
                                 <div className="absolute inset-0 bg-black/10 flex flex-col items-center justify-center text-center p-6 text-white text-shadow-md font-serif">
                                     <h3 className="text-[36px] font-bold mb-3 tracking-wide">{card.label}</h3>
-                                    <p className="text-[18px] font-bold tracking-wider opacity-90">{card.desc}</p>
+                                    <p className="text-[20px] font-bold tracking-wider opacity-90">{card.desc}</p>
                                 </div>
                             </div>
                         ))}
