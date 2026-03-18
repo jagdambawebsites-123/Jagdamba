@@ -83,7 +83,10 @@ export default function Header() {
   const isTrailer = pathname === '/trailer';
   const isNews = pathname === '/news';
 
-  const isDarkHeader = (!isManagingDirectors && !isBoardsOfDirectors && !isContact && !isNews) || isMobileMenuOpen || isRoot || isTrailer;
+  // When dropdown is open, the header turns white so we need dark text/logo
+  const isDarkHeader = isDropdownOpen
+    ? false
+    : (!isManagingDirectors && !isBoardsOfDirectors && !isContact && !isNews) || isMobileMenuOpen || isRoot || isTrailer;
 
   useEffect(() => {
     setHoveredLabel(null);
@@ -125,16 +128,19 @@ export default function Header() {
     // 1. Mobile menu always takes priority
     if (isMobileMenuOpen) return 'bg-black/95';
 
-    // 2. White Header Pages: Only for specific list pages
+    // 2. Dropdown open: white background to stay in sync with the curtain below
+    if (isDropdownOpen) return 'bg-white';
+
+    // 3. White Header Pages: Only for specific list pages
     if (isManagingDirectors || isBoardsOfDirectors || isContact || isNews) return 'bg-white';
 
-    // 3. Background for pages with Hero images (Home, Trailer) - Added black shade effect
+    // 4. Background for pages with Hero images (Home, Trailer) - Added black shade effect
     if (isRoot || isTrailer) return 'bg-gradient-to-b from-black/90 via-black/40 to-transparent';
 
-    // 4. Specific Background for history page
+    // 5. Specific Background for history page
     if (pathname.toLowerCase() === '/about/our-history') return 'bg-[#111C55]';
 
-    // 5. Default Fallback
+    // 6. Default Fallback
     return 'bg-gradient-to-b from-black/80 to-transparent text-white';
   };
 
