@@ -144,7 +144,7 @@ export const businessPagesData = {
   "structure-manufacturing": {
     hero: {
       title: "Building Tomorrow's Infrastructure",
-      image: "/images/business/structure/hero-structure.png",
+      image: "/images/landingPage/hero/hero-structure.png",
       link: "/about/aboutUs",
       buttonText: "About Us",
     },
@@ -182,8 +182,8 @@ export const businessPagesData = {
   "resort": {
     hero: {
       title: "Relax. Indulge. LÃ Fountain",
-      image: "/images/business/resort/resort-hero-desktop.png",
-      mobileImage: "/images/business/resort/resort-hero.png",
+      image: "/images/landingPage/hero/hero-resort.png",
+      mobileImage: "/images/landingPage/hero/hero-resort.png",
       link: "/about/aboutUs",
       buttonText: "About Us",
     },
