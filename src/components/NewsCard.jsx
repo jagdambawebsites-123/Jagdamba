@@ -12,17 +12,17 @@ import Image from "next/image";
 export default function NewsCard({ image, source, title, date, href }) {
     const CardWrapper = ({ children }) =>
         href ? (
-            <a href={href} target="_blank" rel="noopener noreferrer" className="block h-full">
+            <a href={href} target="_blank" rel="noopener noreferrer" className="block h-full group">
                 {children}
             </a>
         ) : (
-            <div className="h-full">{children}</div>
+            <div className="h-full group">{children}</div>
         );
 
     return (
         <CardWrapper>
             <div
-                className="bg-white overflow-hidden border border-gray-300 flex flex-col h-full w-full"
+                className="bg-white overflow-hidden border border-gray-300 flex flex-col h-full w-full transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-y-1 group-hover:border-blue-900/10"
                 style={{ borderRadius: '26px' }}
             >
                 {/* Image Section - Simplified for visibility */}
@@ -33,7 +33,7 @@ export default function NewsCard({ image, source, title, date, href }) {
                     <img
                         src={typeof image === 'string' ? image : image.src}
                         alt={title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                 </div>
 

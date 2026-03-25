@@ -1,11 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export default function Attraction() {
   const sliderRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+
+  const [isPaused, setIsPaused] = useState(false);
 
   // FIX: Store drag variables in a ref so they survive component re-renders
   const dragState = useRef({
@@ -27,6 +29,7 @@ export default function Attraction() {
     dragState.current.isDown = false;
     if (!sliderRef.current) return;
     sliderRef.current.classList.remove("cursor-grabbing");
+    setIsPaused(false);
   };
 
   const handleMouseUp = () => {
@@ -42,6 +45,29 @@ export default function Attraction() {
     const walk = (x - dragState.current.startX) * 1.5; // Adjusted slightly for smoother pull
     sliderRef.current.scrollLeft = dragState.current.scrollLeft - walk;
   };
+
+  // --- Auto-Scroll Logic ---
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      if (!sliderRef.current) return;
+      const container = sliderRef.current;
+      const { scrollLeft, scrollWidth, clientWidth } = container;
+      const maxScroll = scrollWidth - clientWidth;
+
+      if (Math.ceil(scrollLeft) >= maxScroll - 5) {
+        container.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        // Find the index of the next card to scroll to
+        const childWidth = container.children[0].clientWidth + 32; // card + gap
+        const nextScroll = scrollLeft + childWidth;
+        container.scrollTo({ left: nextScroll, behavior: "smooth" });
+      }
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [isPaused]);
 
   // --- Scroll Tracking & Dot Navigation ---
   const handleScroll = () => {
@@ -179,12 +205,13 @@ export default function Attraction() {
         {/* Cards Container */}
         <div 
           ref={sliderRef}
+          onMouseEnter={() => setIsPaused(true)}
           onMouseDown={handleMouseDown}
           onMouseLeave={handleMouseLeave}
           onMouseUp={handleMouseUp}
           onMouseMove={handleMouseMove}
           onScroll={handleScroll}
-          className="w-full pt-8 flex gap-4 md:gap-8 overflow-x-auto hide-scrollbar px-6 md:px-12 z-10 pb-4 cursor-grab active:cursor-grabbing select-none"
+          className="w-full pt-8 flex gap-4 md:gap-8 overflow-x-auto hide-scrollbar px-6 md:px-12 z-10 pb-4 cursor-grab active:cursor-grabbing select-none scroll-smooth"
         >
           {attractions.map((attr, index) => (
             <div

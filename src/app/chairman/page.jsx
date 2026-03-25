@@ -157,9 +157,9 @@ export default function ChairmanTeamPage() {
                                 {extendedImages.map((num, idx) => (
                                     <div
                                         key={`${num}-${idx}`}
-                                        className="relative shrink-0 w-[200px] h-[135px] md:w-[702px] md:h-[475px] rounded-[12px] md:rounded-[50px] overflow-hidden transition-all duration-700 origin-center"
+                                        className="relative shrink-0 w-[200px] h-[135px] md:w-[702px] md:h-[475px] rounded-[12px] md:rounded-[50px] overflow-hidden transition-all duration-700 origin-center hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] cursor-pointer"
                                     >
-                                        <Image src={`/images/chairman/${num}.png`} alt={`Chairman Moment ${num}`} fill className="object-cover" />
+                                        <Image src={`/images/chairman/${num}.png`} alt={`Chairman Moment ${num}`} fill className="object-cover transition-transform duration-700 hover:scale-110" />
                                     </div>
                                 ))}
                             </div>
