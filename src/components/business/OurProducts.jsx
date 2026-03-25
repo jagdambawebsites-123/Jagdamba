@@ -79,10 +79,10 @@ export default function OurProducts({
         
         {/* Top Row: Responsive Heading and Description */}
         <div className="flex flex-col lg:flex-row lg:justify-between items-center lg:items-start gap-6 lg:gap-20 mb-12 md:mb-16">
-          <h2 className="font-serif font-normal capitalize tracking-normal text-[#111C55] text-center lg:text-left lg:w-1/2 text-[24px] leading-[150%] md:text-[40px] md:leading-[150%]">
+          <h2 className="text-2xl lg:w-1/2 md:text-[40px] font-serif text-[#111C55] text-center lg:text-left">
             {titleStart} <span className="text-[#CA9015]">{titleHighlight}</span>
           </h2>
-          <p className="w-full lg:w-1/2 text-center lg:text-left text-[#6B7280] font-sans font-normal tracking-normal text-[12px] leading-[20px] md:text-[24px] md:leading-[36px]">
+          <p className="w-full lg:w-1/2 text-center lg:text-left text-[#6B7280] text-[12px] leading-[20px] md:text-[16px] md:leading-[26px] font-sans">
             {description}
           </p>
         </div>
@@ -151,7 +151,7 @@ function ProductCard({ product, isCarousel }) {
       className={`relative group overflow-hidden bg-[#8a8a8a] ${
         isCarousel 
           ? "w-full h-full" 
-          : "w-[177px] h-[120px] md:w-[443px] md:h-[300px] rounded-[10.67px] md:rounded-[20px] mx-auto" 
+          : "w-full max-w-[244px] aspect-[244/220] mx-auto rounded-2xl lg:rounded-none" 
       }`}
     >
       {/* Image */}
@@ -165,8 +165,10 @@ function ProductCard({ product, isCarousel }) {
       />
       
       {/* Dark Overlay for Text Readability */}
-      <div className="absolute inset-0 bg-[#0D0D0D4D] flex items-center justify-center p-2 transition-colors duration-300 group-hover:bg-black/40">
-        <h3 className="text-white font-sans uppercase tracking-normal text-center leading-[152%] text-[11px] font-normal md:text-[20px] md:font-semibold">
+      <div className="absolute inset-0 bg-black/50 flex items-center justify-center p-2 transition-colors duration-300 group-hover:bg-black/40">
+        <h3 className={`text-white font-bold tracking-wider text-center uppercase ${
+          isCarousel ? "text-[10px] sm:text-xs md:text-sm leading-tight" : "text-xs sm:text-sm md:text-lg"
+        }`}>
           {product.name}
         </h3>
       </div>

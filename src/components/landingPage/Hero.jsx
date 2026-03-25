@@ -9,7 +9,7 @@ const slides = [
   {
     id: 1,
     image: "/images/landingPage/hero/hero-structure.png",
-    title: <>Building Tomorrow's <br /> Infrastructure</>,
+    title: <>Building Tomorrow&apos;s <br /> Infrastructure</>,
     link: "/services/structure"
   },
   {

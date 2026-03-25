@@ -74,7 +74,7 @@ const TimelineSection = ({
 
       {/* ── Year Heading ── */}
       <div className="relative z-10 flex justify-center w-full mt-10 lg:mt-14 mb-6 md:mb-8">
-        <h2 className="text-[64px] font-serif font-normal text-[#b89146] leading-[100%] tracking-normal text-center capitalize select-none">
+        <h2 className="text-[36px] md:text-[64px] font-serif font-normal text-[#b89146] leading-[100%] tracking-normal text-center capitalize select-none">
           {year}
         </h2>
       </div>
@@ -96,7 +96,7 @@ const TimelineSection = ({
       ) : (
         /* ── Standard Image + Text Card ── */
         <div
-          className={`relative z-10 flex flex-col md:flex-row ${isReversed ? 'md:flex-row-reverse' : 'md:flex-row'} w-[320px] h-[520px] md:w-[88%] md:h-auto max-w-5xl 2xl:max-w-6xl bg-white shadow-2xl overflow-hidden mx-auto mb-6 md:min-h-[360px] lg:min-h-[440px] 2xl:min-h-[400px] 2xl:max-h-[560px]`}
+          className={`relative z-10 flex flex-col md:flex-row ${isReversed ? 'md:flex-row-reverse' : 'md:flex-row'} w-[320px] h-[390px] md:w-[88%] md:h-auto max-w-5xl 2xl:max-w-6xl bg-white shadow-2xl overflow-hidden mx-auto mb-6 md:min-h-[360px] lg:min-h-[440px] 2xl:min-h-[400px] 2xl:max-h-[560px]`}
         >
           {/* Top (mobile) / Left or Right (desktop): Content Image */}
           <div className="relative w-full md:w-1/2 shrink-0 h-[55%] md:h-auto">
@@ -112,7 +112,7 @@ const TimelineSection = ({
           </div>
 
           {/* Bottom (mobile) / Right or Left (desktop): Text pane */}
-          <div className="flex-1 p-8 md:p-12 flex flex-col justify-center bg-white overflow-hidden">
+          <div className="flex-1 p-4 md:p-12 flex flex-col justify-center bg-white overflow-hidden">
             {title && (
               <h3 className={titleClassName || "text-[18px] md:text-[28px] font-serif font-normal text-[#111C55] mb-3 leading-[100%] tracking-normal capitalize"}>
                 {title}

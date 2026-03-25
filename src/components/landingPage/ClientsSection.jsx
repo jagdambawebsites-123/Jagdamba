@@ -20,10 +20,10 @@ export default function ClientsSection() {
 
         {/* Top Text Section */}
         <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-6 md:gap-12 mb-16 sm:mb-32 px-6 md:px-10 xl:px-25 text-center md:text-left">
-          <h2 className="text-3xl sm:text-[40px] font-serif text-[#111C55] whitespace-nowrap">
+          <h2 className="text-[24px] sm:text-[40px] font-serif text-[#111C55] whitespace-nowrap">
             Our <span className="text-[#B88C2E]">Clients</span>
           </h2>
-          <p className="text-[#6B7280] font-sans text-[14px] sm:text-2xl leading-relaxed sm:leading-9 max-w-xl">
+          <p className="text-[#6B7280] font-sans text-[12px] sm:text-2xl leading-relaxed sm:leading-9 max-w-xl">
             We are committed to the idea of respect and decency, in relation to our employees, as well as to customers, partners and suppliers of the company.
           </p>
         </div>
