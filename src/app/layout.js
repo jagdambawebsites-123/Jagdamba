@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import GlobalScrollAnimation from "@/components/GlobalScrollAnimation";
 
 const sanomat = localFont({
   src: "../fonts/Sanomat SansRegular.woff",
@@ -55,6 +56,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} ${sanomat.variable} ${sanomatWeb.variable} ${libreBaskerville.variable} ${libreFranklin.variable} ${playfairDisplay.variable} antialiased`}
       >
         <Header />
+        <GlobalScrollAnimation />
         {children}
         <Footer />
         <Analytics />
