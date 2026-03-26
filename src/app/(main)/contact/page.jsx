@@ -33,20 +33,25 @@ export default function ContactPage() {
                                 <h2 className="text-[#111C55] text-sm md:text-[24px] font-medium mt-[-1.25rem] md:mt-0 mb-3 md:mb-4">Jagdamba Group</h2>
                                 <div className="space-y-2 md:space-y-6">
                                     {/* Location */}
-                                    <div className="flex items-start gap-4">
+                                    <a 
+                                        href="https://www.google.com/maps/search/?api=1&query=Jagdamba+Group+Nandeli+Road+National+Highway+49+Jorapali+Chhattisgarh+496001+India"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-start gap-4 group transition-all duration-300"
+                                    >
                                         <div className="w-4 h-4 md:w-5 md:h-5 mt-0.5 flex-shrink-0 relative">
                                             <Image
                                                 src={IconMapPin}
                                                 alt="Location"
                                                 fill
-                                                className="object-contain"
+                                                className="object-contain group-hover:scale-110 transition-transform"
                                             />
                                         </div>
-                                        <p className="text-[#6B7280] leading-snug text-[12px] md:text-[18px] font-normal">
+                                        <p className="text-[#6B7280] leading-snug text-[12px] md:text-[18px] font-normal group-hover:text-[#CA9015] transition-colors">
                                             Nandeli Road, National Highway 49, Jorapali,<br />
                                             Chhattisgarh 496001 India
                                         </p>
-                                    </div>
+                                    </a>
 
                                     {/* Email */}
                                     <div className="flex items-center gap-4">

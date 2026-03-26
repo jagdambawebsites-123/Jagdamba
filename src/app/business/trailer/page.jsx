@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import ScrollStack, { ScrollStackItem } from "@/components/ScrollStack";
 
 // Assets
 import TopImg from "@/assets/trailer/Topimg.png";
@@ -172,7 +173,7 @@ const TrailerPage = () => {
     return (
         <div className="w-full bg-white">
             {/* --- Hero Section --- */}
-            <section className="relative h-[60vh] md:h-[100vh] w-full overflow-hidden bg-black text-white font-serif md:mt-0">
+            <section className="relative h-screen w-full overflow-hidden bg-black text-white font-serif md:mt-0">
                 <div className="absolute inset-0">
                     <Image src={TopImg} alt="Trailer Hero" fill priority className="object-cover hero-top-img" />
                     <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent flex flex-col justify-end"></div>
@@ -366,61 +367,60 @@ const TrailerPage = () => {
             </section >
 
             {/* --- Our Facilities --- */}
-            <section className="w-full bg-[#F5F5F7] px-4 md:px-12 xl:px-24 pb-20 overflow-hidden">
+            <section className="w-full bg-[#F5F5F7] px-4 md:px-12 xl:px-24 pb-8 md:pb-24 overflow-hidden">
                 <div className="max-w-screen-2xl mx-auto">
-                    <h2 className="text-[24px] md:text-[48px] font-serif mb-8 md:mb-16 text-center md:text-left ml-2 md:ml-0">
+                    <h2 className="text-[24px] md:text-[48px] font-serif mb-10 text-center md:text-left ml-2 md:ml-0">
                         <span className="text-[#111C55]">Our </span> <span className="text-[#CA9015]">Facilities</span>
                     </h2>
 
-                    {/* horizontal scroller container */}
-                    <div
-                        ref={scrollRef}
-                        onMouseEnter={() => setIsPaused(true)}
-                        onMouseLeave={() => setIsPaused(false)}
-                        className="flex overflow-x-auto gap-4 md:gap-8 pb-8 px-2 md:px-0 scrollbar-hide snap-x transition-all duration-500 scroll-smooth"
-                    >
+                    {/* vertical stack scroll animation */}
+                    <ScrollStack useWindowScroll={true} itemStackDistance={20} stackPosition="15%">
                         {FACILITIES.map((facility, idx) => (
-                            <div
+                            <ScrollStackItem
                                 key={idx}
-                                className="flex-shrink-0 w-[82vw] md:w-[80vw] 2xl:w-[1300px] min-h-[170px] md:min-h-[350px] 2xl:min-h-[480px] bg-[#111C55] rounded-xl md:rounded-3xl px-6 md:px-16 lg:pl-12 lg:pr-24 xl:pl-16 xl:pr-32 2xl:pl-20 2xl:pr-44 pt-4 md:pt-12 2xl:pt-20 pb-4 md:pb-16 2xl:pb-24 text-white relative overflow-hidden group snap-center"
+                                itemClassName={`!bg-transparent !p-0 !h-auto !shadow-none !rounded-none`}
                             >
-                                {/* Subtle inner glow for premium feel */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none"></div>
+                                <div
+                                    className="w-full min-h-[170px] md:min-h-[350px] 2xl:min-h-[480px] bg-[#111C55] rounded-xl md:rounded-3xl px-6 md:px-16 lg:pl-12 lg:pr-24 xl:pl-16 xl:pr-32 2xl:pl-20 2xl:pr-44 pt-4 md:pt-12 2xl:pt-20 pb-4 md:pb-16 2xl:pb-24 text-white relative overflow-hidden group mb-8"
+                                >
+                                    {/* Subtle inner glow for premium feel */}
+                                    <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none"></div>
 
-                                {/* ── MOBILE LAYOUT ── */}
-                                <div className="flex flex-col justify-between h-full md:hidden relative z-10">
-                                    <div className="space-y-3">
-                                        <h3 className="text-[24px] font-serif font-light leading-tight whitespace-nowrap">
-                                            {facility.title.join(" ")}
-                                        </h3>
-                                        <div className="text-[12px] text-white/70 font-serif font-light leading-snug space-y-0.5">
-                                            {facility.description.map((line, i) => <div key={i}>{line}</div>)}
+                                    {/* ── MOBILE LAYOUT ── */}
+                                    <div className="flex flex-col justify-between h-full md:hidden relative z-10">
+                                        <div className="space-y-3">
+                                            <h3 className="text-[24px] font-serif font-light leading-tight whitespace-nowrap">
+                                                {facility.title.join(" ")}
+                                            </h3>
+                                            <div className="text-[12px] text-white/70 font-serif font-light leading-snug space-y-0.5">
+                                                {facility.description.map((line, i) => <div key={i}>{line}</div>)}
+                                            </div>
+                                        </div>
+                                        <div className={`relative ${idx >= 2 ? 'w-24 h-24' : 'w-28 h-28'} mt-6 opacity-80`}>
+                                            <Image src={facility.mobileIcon} alt={facility.title.join(" ")} fill className="object-contain animate-spin-slow" />
                                         </div>
                                     </div>
-                                    <div className={`relative ${idx >= 2 ? 'w-24 h-24' : 'w-28 h-28'} mt-6 opacity-80`}>
-                                        <Image src={facility.mobileIcon} alt={facility.title.join(" ")} fill className="object-contain animate-spin-slow" />
+
+                                    {/* ── DESKTOP LAYOUT ── */}
+                                    <div className="hidden md:flex flex-row items-center justify-between gap-12 h-full">
+                                        <div className="w-3/5 space-y-6">
+                                            <h3 className="text-3xl lg:text-4xl 2xl:text-5xl font-serif font-light leading-tight">
+                                                {facility.title.map((line, i) => <div key={i}>{line}</div>)}
+                                            </h3>
+                                            <div className="text-lg lg:text-2xl 2xl:text-3xl text-white/70 font-serif font-light leading-snug space-y-1">
+                                                {facility.description.map((line, i) => <div key={i}>{line}</div>)}
+                                            </div>
+                                        </div>
+                                        <div className="w-1/3 flex justify-end">
+                                            <div className={`relative ${idx >= 2 ? 'w-40 lg:w-60 2xl:w-64 h-40 lg:h-60 2xl:h-64' : 'w-48 lg:w-72 2xl:w-80 h-48 lg:h-72 2xl:h-80'} opacity-90 transition-transform duration-1000 group-hover:scale-105`}>
+                                                <Image src={facility.icon} alt={facility.title.join(" ")} fill className="object-contain animate-spin-slow" />
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-
-                                {/* ── DESKTOP LAYOUT ── */}
-                                <div className="hidden md:flex flex-row items-center justify-between gap-12 h-full">
-                                    <div className="w-3/5 space-y-6">
-                                        <h3 className="text-3xl lg:text-4xl 2xl:text-5xl font-serif font-light leading-tight">
-                                            {facility.title.map((line, i) => <div key={i}>{line}</div>)}
-                                        </h3>
-                                        <div className="text-lg lg:text-2xl 2xl:text-3xl text-white/70 font-serif font-light leading-snug space-y-1">
-                                            {facility.description.map((line, i) => <div key={i}>{line}</div>)}
-                                        </div>
-                                    </div>
-                                    <div className="w-1/3 flex justify-end">
-                                        <div className={`relative ${idx >= 2 ? 'w-40 lg:w-60 2xl:w-64 h-40 lg:h-60 2xl:h-64' : 'w-48 lg:w-72 2xl:w-80 h-48 lg:h-72 2xl:h-80'} opacity-90 transition-transform duration-1000 group-hover:scale-105`}>
-                                            <Image src={facility.icon} alt={facility.title.join(" ")} fill className="object-contain animate-spin-slow" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            </ScrollStackItem>
                         ))}
-                    </div>
+                    </ScrollStack>
                 </div>
             </section >
 
