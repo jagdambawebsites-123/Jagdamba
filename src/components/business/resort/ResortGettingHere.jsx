@@ -81,8 +81,14 @@ export default function ResortGettingHere({ stayArrowLeft, stayArrowRight, mapsU
             {infoItems.map((item) => (
               <div key={item.label} className="flex flex-col gap-1 border-b border-[#46464640] pb-4 md:pb-6">
                 <span className="text-[#46464680] font-sans font-normal text-[14px] md:text-[16px] lg:text-[16px] flex items-center gap-2">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={item.icon} alt="" className="w-4 h-4 md:w-5 md:h-5 object-contain opacity-50" />
+                  <Image
+                    src={item.icon}
+                    alt=""
+                    width={20}
+                    height={20}
+                    sizes="20px"
+                    className="w-4 h-4 md:w-5 md:h-5 object-contain opacity-50"
+                  />
                   {item.label}
                 </span>
                 {item.lines.map((line, i) => (

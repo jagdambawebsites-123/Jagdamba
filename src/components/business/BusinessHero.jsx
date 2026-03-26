@@ -1,6 +1,5 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ButtonPrimary from "../landingPage/ButtonPrimary";
@@ -16,16 +15,20 @@ export default function BusinessHero({ image, mobileImage, title, link, buttonTe
         {mobileImage && (
           <Image
             src={mobileImage}
-            alt="Hero Background"
+            alt={`${title} mobile hero background`}
             fill
+            priority
+            sizes="100vw"
             className="object-cover md:hidden"
           />
         )}
         {/* Desktop image */}
         <Image
           src={image}
-          alt="Hero Background"
+          alt={`${title} hero background`}
           fill
+          priority
+          sizes="100vw"
           className={`object-cover ${mobileImage ? 'hidden md:block' : ''}`}
         />
         {/* Main Overlay */}

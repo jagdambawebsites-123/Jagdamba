@@ -48,11 +48,12 @@ export default function ResortExperiences({
           <div className="grid grid-cols-3 overflow-hidden">
             {visibleItems.map((exp, idx) => (
               <div key={`${exp.label}-${idx}`} className="relative overflow-hidden group" style={{ aspectRatio: "4/3" }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={exp.src}
                   alt={exp.label}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+                  fill
+                  sizes="33vw"
+                  className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
                 />
                 <div className="absolute bottom-0 left-0 right-0 px-2 py-2 md:py-6 bg-gradient-to-t from-black/70 to-transparent flex justify-center">
                   <span className="text-white font-serif font-normal text-[12px] md:text-[28px] leading-[100%] tracking-normal text-center">
