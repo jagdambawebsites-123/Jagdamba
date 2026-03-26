@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export default function MallClientsSection() {
   const brands = [
@@ -37,9 +38,12 @@ export default function MallClientsSection() {
                 key={index}
                 className="flex justify-center items-center w-[100px] h-[100px] lg:w-70 lg:h-70 mx-4 lg:mx-8 shrink-0"
               >
-                <img
+                <Image
                   src={brand.src}
                   alt={brand.name}
+                  width={280}
+                  height={280}
+                  sizes="(min-width: 1024px) 280px, 100px"
                   className="w-full h-full object-contain"
                 />
               </div>

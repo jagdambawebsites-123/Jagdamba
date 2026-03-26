@@ -1,13 +1,17 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ResortGalleryBanner({ image, quote, buttonText, buttonLink }) {
   return (
-    <div className="relative w-full">
+    <div className="relative w-full aspect-[16/9] md:aspect-[5/2]">
 
-      <img
+      <Image
         src={image}
         alt="Resort Gallery"
-        className="w-full h-auto block"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover"
       />
 
       <div className="absolute inset-0 z-10 flex items-center px-6 md:px-10 xl:px-25">

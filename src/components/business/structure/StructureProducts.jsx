@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const PRODUCTS = [
     { name: "Gallery Structure", src: "/images/business/structure/gallery.svg" },
     { name: "Chimney", src: "/images/business/structure/chimney.svg" },
@@ -32,12 +34,14 @@ export default function StructureProducts({ products = PRODUCTS }) {
                     {products.map((product, index) => (
                         <div
                             key={index}
-                            className="shrink-0 w-[44vw] md:w-100 h-35 md:h-70 rounded-3xl overflow-hidden"
+                            className="relative shrink-0 w-[44vw] md:w-100 h-35 md:h-70 rounded-3xl overflow-hidden"
                         >
-                            <img
+                            <Image
                                 src={product.src}
                                 alt={product.name}
-                                className="w-full h-full object-cover"
+                                fill
+                                sizes="(min-width: 768px) 400px, 44vw"
+                                className="object-cover"
                             />
                         </div>
                     ))}

@@ -49,9 +49,12 @@ export default function ClientsSection() {
                 key={index}
                 className="flex justify-center items-center w-[150px] sm:w-[200px] mx-4 sm:mx-8"
               >
-                <img
+                <Image
                   src={client.src}
                   alt={client.name}
+                  width={180}
+                  height={48}
+                  sizes="180px"
                   className="h-8 sm:h-10 md:h-12 w-auto object-contain transition-all duration-300"
                   style={{ filter: 'brightness(0) saturate(100%) invert(11%) sepia(69%) saturate(750%) hue-rotate(208deg) brightness(95%)' }}
                 />

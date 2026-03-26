@@ -25,7 +25,7 @@ export default function NewsCard({ image, source, title, date, href }) {
                 className="bg-white overflow-hidden border border-gray-300 flex flex-col h-full w-full transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-y-1 group-hover:border-blue-900/10"
                 style={{ borderRadius: '26px' }}
             >
-                {/* Image Section - Simplified for visibility */}
+                {/* Image Section */}
                 <div
                     className="w-full h-60 md:h-64 overflow-hidden bg-gray-100 flex items-center justify-center"
                     style={{ borderRadius: '26px 26px 0 0' }}
