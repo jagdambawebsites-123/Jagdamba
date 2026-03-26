@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -139,6 +139,8 @@ function ArrowUpRightIcon({ className }) {
 
 const TrailerPage = () => {
     const [currentProduct, setCurrentProduct] = useState(0);
+    const scrollRef = useRef(null);
+    const [isPaused, setIsPaused] = useState(false);
 
     const nextProduct = () => {
         setCurrentProduct((prev) => (prev + 1) % PRODUCTS.length);
@@ -147,6 +149,25 @@ const TrailerPage = () => {
     const prevProduct = () => {
         setCurrentProduct((prev) => (prev - 1 + PRODUCTS.length) % PRODUCTS.length);
     };
+
+    useEffect(() => {
+        if (isPaused) return;
+
+        const interval = setInterval(() => {
+            if (scrollRef.current) {
+                const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+                const maxScroll = scrollWidth - clientWidth;
+
+                if (scrollLeft >= maxScroll - 10) {
+                    scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
+                } else {
+                    scrollRef.current.scrollBy({ left: clientWidth, behavior: "smooth" });
+                }
+            }
+        }, 3000);
+
+        return () => clearInterval(interval);
+    }, [isPaused]);
 
     return (
         <div className="w-full bg-white">
@@ -352,7 +373,12 @@ const TrailerPage = () => {
                     </h2>
 
                     {/* horizontal scroller container */}
-                    <div className="flex overflow-x-auto gap-4 md:gap-8 pb-8 px-2 md:px-0 scrollbar-hide snap-x transition-all duration-500">
+                    <div
+                        ref={scrollRef}
+                        onMouseEnter={() => setIsPaused(true)}
+                        onMouseLeave={() => setIsPaused(false)}
+                        className="flex overflow-x-auto gap-4 md:gap-8 pb-8 px-2 md:px-0 scrollbar-hide snap-x transition-all duration-500 scroll-smooth"
+                    >
                         {FACILITIES.map((facility, idx) => (
                             <div
                                 key={idx}

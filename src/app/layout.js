@@ -15,6 +15,7 @@ import {
   toAbsoluteUrl,
   websiteJsonLd,
 } from "@/lib/seo";
+import GlobalScrollAnimation from "@/components/GlobalScrollAnimation";
 
 const sanomat = localFont({
   src: "../fonts/Sanomat SansRegular.woff",
@@ -125,6 +126,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} ${sanomat.variable} ${sanomatWeb.variable} ${libreBaskerville.variable} ${libreFranklin.variable} ${playfairDisplay.variable} antialiased`}
       >
         <Header />
+        <GlobalScrollAnimation />
         {children}
         <Footer />
         <Analytics />

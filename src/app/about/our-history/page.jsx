@@ -218,13 +218,13 @@ export default function About() {
       <section className="relative w-full h-screen flex flex-col items-center snap-start text-center px-4 bg-[#111C55] pt-72">
 
         <div className="flex flex-col items-center justify-center flex-1 px-4">
-          <h1 className="text-[26px] md:text-[70px] font-(family-name:--font-sanomat) font-normal text-[#b89146] mb-6 max-w-4xl leading-[135%] md:leading-[84px] tracking-normal text-center">
+          <h1 className="text-[26px] md:text-[70px] font-(family-name:--font-sanomat) font-normal text-[#b89146] mb-6 max-w-4xl leading-[135%] md:leading-[84px] tracking-normal text-center animate-fade-in-up">
             20+ Years of Pioneering Excellence And Innovation
           </h1>
 
-          <div className="h-12 md:h-16 my-4 md:my-6" style={{ width: '3px', backgroundImage: 'repeating-linear-gradient(to bottom, white 0, white 8px, transparent 8px, transparent 26px)' }} />
+          <div className="h-12 md:h-16 my-4 md:my-6 animate-fade-in-up" style={{ width: '3px', backgroundImage: 'repeating-linear-gradient(to bottom, white 0, white 8px, transparent 8px, transparent 26px)', animationDelay: '0.2s' }} />
 
-          <p className="max-w-3xl text-white/70 font-sans font-normal text-[16px] md:text-[30px] leading-[21px] md:leading-[48px] tracking-normal text-center">
+          <p className="max-w-3xl text-white/70 font-sans font-normal text-[16px] md:text-[30px] leading-[21px] md:leading-[48px] tracking-normal text-center animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
             Our vision has driven us, our passion has inspired us,
             <br className="hidden sm:block" />
             and our relentless pursuit of excellence has defined

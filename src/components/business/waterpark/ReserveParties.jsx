@@ -39,12 +39,16 @@ export default function ReserveParties() {
     },
   ];
 
+  const [isPaused, setIsPaused] = useState(false);
+
   useEffect(() => {
+    if (isPaused) return;
+
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
     }, 5000);
     return () => clearInterval(timer);
-  }, [slides.length]);
+  }, [slides.length, isPaused]);
 
   return (
     <section className="relative w-full py-20 bg-[#F5F5F5] overflow-hidden flex flex-col items-center">
@@ -66,7 +70,11 @@ export default function ReserveParties() {
       </div>
 
       {/* Carousel Container */}
-      <div className="relative z-10 w-full max-w-5xl px-4 md:px-8">
+      <div 
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+        className="relative z-10 w-full max-w-5xl px-4 md:px-8"
+      >
         {/* We use a fixed minimum height so the absolutely positioned slides don't collapse the container */}
         <div className="relative bg-white rounded-3xl md:rounded-[2.5rem] shadow-xl overflow-hidden min-h-[650px] md:min-h-[450px] w-full">
           {slides.map((slide, index) => (

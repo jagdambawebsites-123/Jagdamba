@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
 const TimelineSection = ({
@@ -21,8 +21,34 @@ const TimelineSection = ({
   titleClassName,
   descClassName,
 }) => {
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      {
+        threshold: 0.2, // Trigger when 20% of the section is visible
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section className={`relative w-full min-h-screen md:h-screen flex flex-col items-center snap-start overflow-hidden pt-24 pb-6 ${isDarkBlue ? 'bg-[#111C55]' : ''}`}>
+    <section ref={sectionRef} className={`relative w-full min-h-screen md:h-screen flex flex-col items-center snap-start overflow-hidden pt-24 pb-6 ${isDarkBlue ? 'bg-[#111C55]' : ''}`}>
 
       {/* ── Stroke wave images (flag sections) ── */}
       {isDarkBlue && stroke1 && (
@@ -73,7 +99,7 @@ const TimelineSection = ({
       </div>
 
       {/* ── Year Heading ── */}
-      <div className="relative z-10 flex justify-center w-full mt-10 lg:mt-14 mb-6 md:mb-8">
+      <div className={`relative z-10 flex justify-center w-full mt-10 lg:mt-14 mb-6 md:mb-8 fade-in-up ${isVisible ? 'visible' : ''}`}>
         <h2 className="text-[36px] md:text-[64px] font-serif font-normal text-[#b89146] leading-[100%] tracking-normal text-center capitalize select-none">
           {year}
         </h2>
@@ -81,7 +107,7 @@ const TimelineSection = ({
 
       {textOnly ? (
         /* ── Text-Only Hero-Style Layout ── */
-        <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 max-w-7xl mx-auto mb-16 flex-1">
+        <div className={`relative z-10 flex flex-col items-center justify-center text-center px-6 max-w-7xl mx-auto mb-16 flex-1 fade-in-up ${isVisible ? 'visible' : ''}`} style={{ transitionDelay: '0.2s' }}>
           {title && (
             <h3 className={titleClassName || "text-[24px] md:text-[28px] font-serif font-normal text-[#b89146] mb-6 leading-[100%] tracking-normal capitalize text-center"}>
               {title}
@@ -96,7 +122,7 @@ const TimelineSection = ({
       ) : (
         /* ── Standard Image + Text Card ── */
         <div
-          className={`relative z-10 flex flex-col md:flex-row ${isReversed ? 'md:flex-row-reverse' : 'md:flex-row'} w-[320px] h-[390px] md:w-[88%] md:h-auto max-w-5xl 2xl:max-w-6xl bg-white shadow-2xl overflow-hidden mx-auto mb-6 md:min-h-[360px] lg:min-h-[440px] 2xl:min-h-[400px] 2xl:max-h-[560px]`}
+          className={`relative z-10 flex flex-col md:flex-row ${isReversed ? 'md:flex-row-reverse' : 'md:flex-row'} w-[320px] h-[390px] md:w-[88%] md:h-auto max-w-5xl 2xl:max-w-6xl bg-white shadow-2xl overflow-hidden mx-auto mb-6 md:min-h-[360px] lg:min-h-[440px] 2xl:min-h-[400px] 2xl:max-h-[560px] fade-in-up ${isVisible ? 'visible' : ''}`} style={{ transitionDelay: '0.3s' }}
         >
           {/* Top (mobile) / Left or Right (desktop): Content Image */}
           <div className="relative w-full md:w-1/2 shrink-0 h-[55%] md:h-auto">
