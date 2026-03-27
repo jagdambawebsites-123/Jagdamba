@@ -99,7 +99,7 @@ const TimelineSection = ({
       </div>
 
       {/* ── Year Heading ── */}
-      <div className={`relative z-10 flex justify-center w-full mt-10 lg:mt-14 mb-6 md:mb-8 fade-in-up ${isVisible ? 'visible' : ''}`}>
+      <div className={`relative z-10 flex justify-center w-full mt-14 lg:mt-20 mb-6 md:mb-8 fade-in-up ${isVisible ? 'visible' : ''}`}>
         <h2 className="text-[36px] md:text-[64px] font-serif font-normal text-[#b89146] leading-[100%] tracking-normal text-center capitalize select-none">
           {year}
         </h2>
@@ -162,7 +162,7 @@ const TimelineSection = ({
             const isLast = y === allYears[allYears.length - 1];
             const showLabel = isActive || isFirst || isLast;
             return (
-              <div key={y} className="flex items-center gap-2">
+              <div key={y} className="flex items-center gap-4">
                 {showLabel ? (
                   <span className={`text-xs font-bold tracking-widest transition-all duration-300 ${isActive ? 'text-white opacity-100' : 'text-white/30'}`}>
                     {y}

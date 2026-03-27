@@ -64,7 +64,7 @@ export default function HeroSection() {
             className="object-cover"
           />
           {/* Main Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/25 via-black/7 to-transparent" />
         </div>
       ))}
 

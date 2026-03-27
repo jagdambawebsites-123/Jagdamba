@@ -58,7 +58,7 @@
 }
 
 .animate-gallery-scroll {
-  animation: gallery-scroll-step 30s linear infinite;
+  animation: gallery-scroll-step 200s linear infinite;
 }
 
 /* Hide scrollbar for snap-scroll containers */
@@ -120,6 +120,7 @@ input::-webkit-inner-spin-button {
 
 input[type=number] {
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 a,
