@@ -60,7 +60,8 @@ export default function GlobalScrollAnimation() {
 
             // Skip elements that might already have other conflicting animations or shouldn't be animated
             // For instance, SVGs inside icons, etc. The querySelector already limits this.
-
+            if (el.closest('[data-no-global-animate="true"]') || el.hasAttribute('data-no-global-animate')) return;
+            
             el.classList.add('global-fade-in');
             intersectionObserver.observe(el);
             observedElements.add(el);

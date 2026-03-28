@@ -67,6 +67,7 @@ export default function Header() {
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [expandedMobileItem, setExpandedMobileItem] = useState(null);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const pathname = usePathname();
 
@@ -84,7 +85,7 @@ export default function Header() {
   const isNews = pathname === '/news';
 
   // When dropdown is open, the header turns white so we need dark text/logo
-  const isDarkHeader = isDropdownOpen
+  const isDarkHeader = isDropdownOpen || isScrolled
     ? false
     : (!isManagingDirectors && !isBoardsOfDirectors && !isContact && !isNews) || isMobileMenuOpen || isRoot || isTrailer;
 
@@ -94,6 +95,22 @@ export default function Header() {
     setIsMobileMenuOpen(false);
     setExpandedMobileItem(null);
   }, [pathname]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Adjusted threshold; 780px turns it white right before completely leaving a large hero
+      if (window.scrollY > 780) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // initialize
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleMouseEnter = (item) => {
     if (isMobileMenuOpen) return;
@@ -128,20 +145,20 @@ export default function Header() {
     // 1. Mobile menu always takes priority
     if (isMobileMenuOpen) return 'bg-black/95';
 
-    // 2. Dropdown open: white background to stay in sync with the curtain below
-    if (isDropdownOpen) return 'bg-white';
+    // 2. Dropdown open or scrolled down: solid white background
+    if (isDropdownOpen || isScrolled) return 'bg-white shadow-md';
 
     // 3. White Header Pages: Only for specific list pages
-    if (isManagingDirectors || isBoardsOfDirectors || isContact || isNews) return 'bg-white';
+    if (isManagingDirectors || isBoardsOfDirectors || isContact || isNews) return 'bg-white shadow-sm';
 
     // 4. Background for pages with Hero images (Home, Trailer) - Added black shade effect
-    if (isRoot || isTrailer) return 'bg-gradient-to-b from-black/90 via-black/40 to-transparent';
+    if (isRoot || isTrailer) return 'bg-gradient-to-b from-black/60 via-black/20 to-transparent';
 
     // 5. Specific Background for history page
     if (pathname.toLowerCase() === '/about/our-history') return 'bg-[#111C55]';
 
     // 6. Default Fallback
-    return 'bg-gradient-to-b from-black/80 to-transparent text-white';
+    return 'bg-gradient-to-b from-black/60 to-transparent text-white';
   };
 
   return (
@@ -152,7 +169,7 @@ export default function Header() {
       onMouseLeave={handleMouseLeave}
     >
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-24 relative z-50">
-        <div className="flex justify-between items-center h-20 md:h-24">
+        <div className="flex justify-between items-center h-24 md:h-32 lg:h-[120px]">
 
           {/* Logo Section - Dynamically swaps based on header background */}
           <div className="flex-shrink-0 flex items-center">

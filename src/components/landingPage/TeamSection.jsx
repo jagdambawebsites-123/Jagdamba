@@ -29,7 +29,9 @@ export default function TeamSection() {
           <div className=" mx-auto px-4 sm:px-6 lg:px-25">
             {/* Header Area */}
             <div className="flex justify-between items-center mb-[24px] md:mb-[60px]">
-              <h2 className="text-[24px] md:text-[40px] font-serif text-[#111C55]">
+              <h2
+                className="text-[24px] md:text-[40px] font-serif text-[#111C55]"
+              >
                 Our <span className="text-[#B88C2E]">Team</span>
               </h2>
 
