@@ -1,4 +1,6 @@
-import Image from "next/image";
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 
 /**
  * NewsCard component
@@ -10,6 +12,27 @@ import Image from "next/image";
  * @param {string} [props.href] - Optional link URL
  */
 export default function NewsCard({ image, source, title, date, href }) {
+    const cardRef = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) {
+                setIsVisible(true);
+                observer.disconnect();
+            }
+        }, {
+            threshold: 0.1,
+            rootMargin: '50px'
+        });
+
+        if (cardRef.current) {
+            observer.observe(cardRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
+
     const CardWrapper = ({ children }) =>
         href ? (
             <a href={href} target="_blank" rel="noopener noreferrer" className="block h-full group">
@@ -22,7 +45,10 @@ export default function NewsCard({ image, source, title, date, href }) {
     return (
         <CardWrapper>
             <div
-                className="bg-white overflow-hidden border border-gray-300 flex flex-col h-full w-full transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-y-1 group-hover:border-blue-900/10"
+                ref={cardRef}
+                data-no-global-animate="true"
+                className={`bg-white overflow-hidden border border-gray-300 flex flex-col h-full w-full transition-all duration-[2500ms] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:shadow-[0_15px_40px_rgba(0,0,0,0.12)] group-hover:-translate-y-2 group-hover:border-blue-900/10 
+                ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
                 style={{ borderRadius: '26px' }}
             >
                 {/* Image Section */}
@@ -33,7 +59,7 @@ export default function NewsCard({ image, source, title, date, href }) {
                     <img
                         src={typeof image === 'string' ? image : image.src}
                         alt={title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        className="w-full h-full object-cover transition-transform duration-[1000ms] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105"
                     />
                 </div>
 

@@ -374,7 +374,7 @@ const TrailerPage = () => {
                     </h2>
 
                     {/* vertical stack scroll animation */}
-                    <ScrollStack useWindowScroll={true} itemStackDistance={20} stackPosition="15%">
+                    <ScrollStack useWindowScroll={true} itemStackDistance={20} stackPosition="22%">
                         {FACILITIES.map((facility, idx) => (
                             <ScrollStackItem
                                 key={idx}
@@ -397,7 +397,7 @@ const TrailerPage = () => {
                                             </div>
                                         </div>
                                         <div className={`relative ${idx >= 2 ? 'w-24 h-24' : 'w-28 h-28'} mt-6 opacity-80`}>
-                                            <Image src={facility.mobileIcon} alt={facility.title.join(" ")} fill className="object-contain animate-spin-slow" />
+                                            <Image src={facility.mobileIcon} alt={facility.title.join(" ")} fill className="object-contain" />
                                         </div>
                                     </div>
 
@@ -413,7 +413,7 @@ const TrailerPage = () => {
                                         </div>
                                         <div className="w-1/3 flex justify-end">
                                             <div className={`relative ${idx >= 2 ? 'w-40 lg:w-60 2xl:w-64 h-40 lg:h-60 2xl:h-64' : 'w-48 lg:w-72 2xl:w-80 h-48 lg:h-72 2xl:h-80'} opacity-90 transition-transform duration-1000 group-hover:scale-105`}>
-                                                <Image src={facility.icon} alt={facility.title.join(" ")} fill className="object-contain animate-spin-slow" />
+                                                <Image src={facility.icon} alt={facility.title.join(" ")} fill className="object-contain" />
                                             </div>
                                         </div>
                                     </div>
